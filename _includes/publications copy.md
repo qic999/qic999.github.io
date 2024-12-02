@@ -1,24 +1,33 @@
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
+<h2 id="publications" style="margin: 2px 0px -15px;">Publications
+(
+  <span class="filters">
+        <a id="filter-selected" onclick="applyFilter(this, showSelected)">Selected</a> /
+        <a onclick="applyFilter(this, showByDate)">All</a>
+  </span>
+)
+</h2>
+
+
 
 <div class="publications">
 <ol class="bibliography">
 
+<td style="padding-top:0px;padding-bottom:2px;width:100%;vertical-align:middle">
+  <p><em>(* indicates equal contribution)</em></p>
+  <p><span class="filters" id="research-topics">
+  <strong>Research Topics:</strong>
+      <a onclick="applyFilter(this, filterByTopic('med'))">Medical Imaging</a> / 
+      <a onclick="applyFilter(this, filterByTopic('bio'))">Biological Imaging</a> / 
+      <a onclick="applyFilter(this, filterByTopic('cv'))">Computer Vision</a>
+  </span></p>
+</td>
 
-<div class="main-content">
 
-<div class="main-more-container">
-  <div id="main-pub-container">
-    <p class="subtitle-aux"><span class="bold">Topics:</span>
-        <a href="#topic-bio" onClick="return publicationByTopicSpecific(this)" data-topic="bio">Biological Imaging</a> /
-        <a href="#topic-med" onClick="return publicationByTopicSpecific(this)" data-topic="med">Medical Imaging</a> /
-        <a href="#topic-cv" onClick="return publicationByTopicSpecific(this)" data-topic="cv">Computer Vision </a> 
-        <span class="note">(*: indicates equal contribution.)</span>
-    </p>
-
-<div id="main-pub-card-container" class="activated hide">
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="publicationsTable">
+  <tbody>
   {% for link in site.data.publications.main %}
-  <li>
-    <div class="pub-card" data-topic="{{ link.topic }}" data-year="{{ link.year }}" data-selected="{{ link.selected }}" >
+  <tr class="bottom-line publication" data-topic="{{ link.topic }}" data-year="{{ link.year }}" data-selected="{{ link.selected }}" >
+    <li>
       <div class="pub-row" >
         <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
           {% if link.image %} 
@@ -55,15 +64,13 @@
           </div>
         </div>
       </div>
-    </div>
-  </li>
-  <br>
+    </li>
+    <br>
+  </tr>
   {% endfor %}
 
-</div>
-</div>
-</div>
-</div>
+</tbody>
+</table>
 
 </ol>
 </div>

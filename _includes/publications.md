@@ -1,27 +1,27 @@
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
+<h2 id="publications" style="margin: 2px 0px -15px;">Publications
+(
+  <span class="filters">
+        <a id="filter-selected" onclick="applyFilter(this, showSelected)">Selected</a> /
+        <a onclick="applyFilter(this, showByDate)">All</a>
+  </span>
+)
+</h2>
+
+
 
 <div class="publications">
 <ol class="bibliography">
 
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-  <tr>
-    <td style="padding-top:20px;padding-bottom:20px;width:100%;vertical-align:middle">
-      <!-- <heading>Publications</heading> -->
-      <span class="filters">
-        <a id="filter-selected" onclick="applyFilter(this, showSelected)">Selected</a> /
-        <a onclick="applyFilter(this, showByDate)">All</a>
-      </span>
-      <p><span class="filters" id="research-topics">
-      <strong>Research Topics:</strong>
-          <a onclick="applyFilter(this, filterByTopic('med'))">Medical Imaging</a> / 
-          <a onclick="applyFilter(this, filterByTopic('bio'))">Biological Imaging</a> / 
-          <a onclick="applyFilter(this, filterByTopic('cv'))">Computer Vision</a>
-      </span></p>
-      <p><em>(* indicates equal contribution)</em></p>
-    </td>
-  </tr>
-</tbody>
-</table>
+<td style="padding-top:0px;padding-bottom:2px;width:100%;vertical-align:middle">
+  <p><em>(* indicates equal contribution)</em></p>
+  <p><span class="filters" id="research-topics">
+  <strong>Research Topics:</strong>
+      <a onclick="applyFilter(this, filterByTopic('med'))">Medical Imaging</a> / 
+      <a onclick="applyFilter(this, filterByTopic('bio'))">Biological Imaging</a> / 
+      <a onclick="applyFilter(this, filterByTopic('cv'))">Computer Vision</a>
+  </span></p>
+</td>
+
 
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="publicationsTable">
   <tbody>

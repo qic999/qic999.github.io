@@ -108,7 +108,7 @@ main:
     topic: bio
 
   - title: Self-Supervised Neuron Segmentation with Multi-Agent Reinforcement Learning
-    authors: Yinda Chen, Wei Huang, Shenglong Zhou, <strong>Qi Chen*</strong>, Zhiwei Xiong. 
+    authors: Yinda Chen, Wei Huang, Shenglong Zhou, <strong>Qi Chen</strong>, Zhiwei Xiong. 
     conference_short: IJCAI
     conference: International Joint Conference on Artificial Intelligence <strong>(IJCAI)</strong>, 2023.
     pdf: https://arxiv.org/pdf/2310.04148
@@ -121,7 +121,7 @@ main:
     topic: bio
 
   - title: Learning multiscale consistency for self-supervised electron microscopy instance segmentation
-    authors: Yinda Chen, Wei Huang, Xiaoyu Liu, Shiyu Deng, <strong>Qi Chen*</strong>, Zhiwei Xiong.
+    authors: Yinda Chen, Wei Huang, Xiaoyu Liu, Shiyu Deng, <strong>Qi Chen</strong>, Zhiwei Xiong.
     conference_short: ICASSP
     conference: International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2023.
     pdf: https://arxiv.org/pdf/2308.09917
