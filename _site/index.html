@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="./assets/css/font.css">
     
     
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
+    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
+    <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
     
 
   </head>
@@ -92,22 +92,23 @@
 
       <h2 id="about-me">About Me</h2>
 
-<p>I am a Ph.D. student at …</p>
+<p>I am a Master’s student at …</p>
 
 <h2 id="research-interests">Research Interests</h2>
 
 <ul>
-  <li><strong>Computer Vision:</strong> image recognition, image generation, video captioning</li>
-  <li><strong>Machine Learning:</strong> meta-learning, incremental learning, transfer learning</li>
+  <li><strong>Medical Imaging:</strong> Scaling Annotations, Data Synthesis, Image Construction.</li>
+  <li><strong>Biological Imaging:</strong> Computational Pathology, Neuroscience, Connectomics.</li>
+  <li><strong>Computer Vision:</strong> Image Segmentation, Video Generation, Multi-Object Tracking.</li>
 </ul>
 
 <h2 id="news">News</h2>
 
 <ul>
-  <li><strong>[Feb. 2020]</strong> Our paper about incremental learning is accepted to CVPR 2020.</li>
-  <li><strong>[Feb. 2020]</strong> We will host the ACM Multimedia Asia 2020 conference in Singapore!</li>
-  <li><strong>[Sept. 2019]</strong> Our paper about few-shot learning is accepted to NeurIPS 2019.</li>
-  <li><strong>[Mar. 2019]</strong> Our paper about few-shot learning is accepted to CVPR 2019.</li>
+  <li><strong>[Nov. 2024]</strong> Three papers are submitted to CVPR 2025.</li>
+  <li><strong>[Jul. 2024]</strong> Our paper about MRI recontruction is accepted to MICCAI 2024.</li>
+  <li><strong>[Jun. 2024]</strong> Our book chapter about tumor synthesis is accepted.</li>
+  <li><strong>[Mar. 2024]</strong> Our paper about tumor synthesis is accepted to CVPR 2024.</li>
 </ul>
 
 <h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
@@ -115,347 +116,372 @@
 <div class="publications">
 <ol class="bibliography">
 
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding-top:20px;padding-bottom:20px;width:100%;vertical-align:middle">
+      <!-- <heading>Publications</heading> -->
+      <span class="filters">
+        <a id="filter-selected" onclick="applyFilter(this, showSelected)">Selected</a> /
+        <a onclick="applyFilter(this, showByDate)">All</a>
+      </span>
+      <p><span class="filters" id="research-topics">
+      <strong>Research Topics:</strong>
+          <a onclick="applyFilter(this, filterByTopic('med'))">Medical Imaging</a> / 
+          <a onclick="applyFilter(this, filterByTopic('bio'))">Biological Imaging</a> / 
+          <a onclick="applyFilter(this, filterByTopic('cv'))">Computer Vision</a>
+      </span></p>
+      <p><em>(* indicates equal contribution)</em></p>
+    </td>
+  </tr>
+</tbody>
+</table>
 
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example_2.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">CVPR</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024towards.pdf">Towards Generalizable Tumor Synthesis</a></div>
-      <div class="author"><strong>Qi Chen</strong>, Xiaoxi Chen, Haorui Song, Alan Yuille, Zhiwei Xiong, Wei Chen, Zongwei Zhou</div>
-      <div class="periodical"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2024.</em>
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="publicationsTable">
+  <tbody>
+  
+  <tr class="bottom-line publication" data-topic="med" data-year="2024" data-selected="true">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example_2.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">CVPR</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024towards.pdf">Towards Generalizable Tumor Synthesis</a></div>
+            <div class="author"><strong>Qi Chen</strong>, Xiaoxi Chen, Haorui Song, Alan Yuille, Zhiwei Xiong, Wei Chen, Zongwei Zhou</div>
+            <div class="periodical"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2024.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024towards.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/MrGiovanni/DiffTumor" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024towards.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/MrGiovanni/DiffTumor" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example_2.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">Book Chapter</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024analyzing.pdf">Analyzing Tumors by Synthesis</a></div>
-      <div class="author"><strong>Qi Chen</strong>, Yuxiang Lai, Xiaoxi Chen, Qixin Hu, Alan Yuille, Zongwei Zhou</div>
-      <div class="periodical"><em>Generative Machine Learning Models in Medical Image Computing.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="med" data-year="2024" data-selected="true">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example_2.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">Book Chapter</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024analyzing.pdf">Analyzing Tumors by Synthesis</a></div>
+            <div class="author"><strong>Qi Chen</strong>, Yuxiang Lai, Xiaoxi Chen, Qixin Hu, Alan Yuille, Zongwei Zhou</div>
+            <div class="periodical"><em>Generative Machine Learning Models in Medical Image Computing.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024analyzing.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/MrGiovanni/DiffTumor" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024analyzing.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/MrGiovanni/DiffTumor" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">RSNA</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2002.10211.pdf">Developing Synthetic Tumors in Liver, Pancreas, and Kidney using Generative AIs</a></div>
-      <div class="author"><strong>Qi Chen</strong>, Alan Yuille, Zongwei Zhou</div>
-      <div class="periodical"><em>Radiological Society of North America <strong>(RSNA)</strong>, 2024.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="med" data-year="2024" data-selected="">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">RSNA</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://arxiv.org/pdf/2002.10211.pdf">Developing Synthetic Tumors in Liver, Pancreas, and Kidney using Generative AIs</a></div>
+            <div class="author"><strong>Qi Chen</strong>, Alan Yuille, Zongwei Zhou</div>
+            <div class="periodical"><em>Radiological Society of North America <strong>(RSNA)</strong>, 2024.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://arxiv.org/pdf/2002.10211.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/MrGiovanni/DiffTumor" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2002.10211.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/MrGiovanni/DiffTumor" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">MICCAI</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2409.14113">Accelerated Multi-Contrast MRI Reconstruction via Frequency and Spatial Mutual Learning</a></div>
-      <div class="author"><strong>Qi Chen</strong>, Xiaohan Xing, Zhen Chen, Zhiwei Xiong</div>
-      <div class="periodical"><em>International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2024.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="med" data-year="2024" data-selected="true">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">MICCAI</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://arxiv.org/pdf/2409.14113">Accelerated Multi-Contrast MRI Reconstruction via Frequency and Spatial Mutual Learning</a></div>
+            <div class="author"><strong>Qi Chen</strong>, Xiaohan Xing, Zhen Chen, Zhiwei Xiong</div>
+            <div class="periodical"><em>International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2024.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://arxiv.org/pdf/2409.14113" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/qic999/FSMNet" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2409.14113" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/qic999/FSMNet" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">RSNA</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2308.16461"></a></div>
-      <div class="author"><strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong</div>
-      <div class="periodical"><em>International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2024.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="bio" data-year="2024" data-selected="true">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">ISBI</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://arxiv.org/pdf/2308.16461"></a></div>
+            <div class="author"><strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong</div>
+            <div class="periodical"><em>International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2024.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://arxiv.org/pdf/2308.16461" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/qic999/AdaSyn" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+             
+            <strong> <i style="color:#e74d3c">Oral Presentation</i></strong>
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2308.16461" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/qic999/AdaSyn" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-       
-      <strong> <i style="color:#e74d3c">Oral Presentation</i></strong>
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">ICCVW</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://openaccess.thecvf.com/content/ICCV2023W/BIC/papers/Chen_PCTrans_Position-Guided_Transformer_with_Query_Contrast_for_Biological_Instance_Segmentation_ICCVW_2023_paper.pdf">Position-Guided Transformer with Query Contrast for Biological Instance Segmentation</a></div>
-      <div class="author"><strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, BIC<strong>(ICCV)</strong>, 2023.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="bio" data-year="2023" data-selected="true">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">ICCVW</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://openaccess.thecvf.com/content/ICCV2023W/BIC/papers/Chen_PCTrans_Position-Guided_Transformer_with_Query_Contrast_for_Biological_Instance_Segmentation_ICCVW_2023_paper.pdf">Position-Guided Transformer with Query Contrast for Biological Instance Segmentation</a></div>
+            <div class="author"><strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong</div>
+            <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision<strong>(ICCV)</strong>, BIC, 2023.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://openaccess.thecvf.com/content/ICCV2023W/BIC/papers/Chen_PCTrans_Position-Guided_Transformer_with_Query_Contrast_for_Biological_Instance_Segmentation_ICCVW_2023_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/qic999/PCTrans" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://openaccess.thecvf.com/content/ICCV2023W/BIC/papers/Chen_PCTrans_Position-Guided_Transformer_with_Query_Contrast_for_Biological_Instance_Segmentation_ICCVW_2023_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/qic999/PCTrans" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">MICCAI</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="hhttps://link.springer.com/chapter/10.1007/978-3-031-16440-8_4">Mask Rearranging Data Augmentation for 3D Mitochondria Segmentation</a></div>
-      <div class="author"><strong>Qi Chen</strong>, Mingxing Li, Jiacheng Li, Bo Hu, Zhiwei Xiong</div>
-      <div class="periodical"><em>International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2022.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="bio" data-year="2022" data-selected="">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">MICCAI</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="hhttps://link.springer.com/chapter/10.1007/978-3-031-16440-8_4">Mask Rearranging Data Augmentation for 3D Mitochondria Segmentation</a></div>
+            <div class="author"><strong>Qi Chen</strong>, Mingxing Li, Jiacheng Li, Bo Hu, Zhiwei Xiong</div>
+            <div class="periodical"><em>International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2022.</em>
+            </div>
+          <div class="links">
+             
+            <a href="hhttps://link.springer.com/chapter/10.1007/978-3-031-16440-8_4" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/qic999/MRDA_MitoSeg" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="hhttps://link.springer.com/chapter/10.1007/978-3-031-16440-8_4" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/qic999/MRDA_MitoSeg" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">TMI</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://ieeexplore.ieee.org/abstract/document/10530168/">A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes</a></div>
-      <div class="author">Yicong Li, Wanhua Li*, <strong>Qi Chen*</strong>, Wei Huang*, Yuda Zou*, Xiao Xin, Kazunori Shinomiya, Pat Gunn, Nishika Gupta, Alexey Polilov, Yongchao Xu, Yueyi Zhang, Zhiwei Xiong, Hanspeter Pfister, Dmitri B. Chklovskii, Donglai Wei, Jingpeng Wu.</div>
-      <div class="periodical"><em>IEEE Transactions on Medical Imaging <strong>(TMI)</strong>, 2024.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="bio" data-year="2024" data-selected="">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">TMI</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://ieeexplore.ieee.org/abstract/document/10530168/">A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes</a></div>
+            <div class="author">Yicong Li, Wanhua Li*, <strong>Qi Chen*</strong>, Wei Huang*, Yuda Zou*, Xiao Xin, Kazunori Shinomiya, Pat Gunn, Nishika Gupta, Alexey Polilov, Yongchao Xu, Yueyi Zhang, Zhiwei Xiong, Hanspeter Pfister, Dmitri B. Chklovskii, Donglai Wei, Jingpeng Wu.</div>
+            <div class="periodical"><em>IEEE Transactions on Medical Imaging <strong>(TMI)</strong>, 2024.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://ieeexplore.ieee.org/abstract/document/10530168/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://ieeexplore.ieee.org/abstract/document/10530168/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">IJCAI</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2310.04148">Self-Supervised Neuron Segmentation with Multi-Agent Reinforcement Learning</a></div>
-      <div class="author">Yinda Chen, Wei Huang, Shenglong Zhou, <strong>Qi Chen*</strong>, Zhiwei Xiong.</div>
-      <div class="periodical"><em>International Joint Conference on Artificial Intelligence <strong>(IJCAI)</strong>, 2023.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="bio" data-year="2023" data-selected="">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">IJCAI</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://arxiv.org/pdf/2310.04148">Self-Supervised Neuron Segmentation with Multi-Agent Reinforcement Learning</a></div>
+            <div class="author">Yinda Chen, Wei Huang, Shenglong Zhou, <strong>Qi Chen*</strong>, Zhiwei Xiong.</div>
+            <div class="periodical"><em>International Joint Conference on Artificial Intelligence <strong>(IJCAI)</strong>, 2023.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://arxiv.org/pdf/2310.04148" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/ydchen0806/dbMiM" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2310.04148" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/ydchen0806/dbMiM" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-     
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-     
-    <abbr class="badge">ICASSP</abbr>
-    
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2308.09917">Learning multiscale consistency for self-supervised electron microscopy instance segmentation</a></div>
-      <div class="author">Yinda Chen, Wei Huang, Xiaoyu Liu, Shiyu Deng, <strong>Qi Chen*</strong>, Zhiwei Xiong.</div>
-      <div class="periodical"><em>International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2023.</em>
+    </li>
+    <br />
+  </tr>
+  
+  <tr class="bottom-line publication" data-topic="bio" data-year="2023" data-selected="">
+    <li>
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+           
+          <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+           
+          <abbr class="badge">ICASSP</abbr>
+          
+          
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+            <div class="title"><a href="https://arxiv.org/pdf/2308.09917">Learning multiscale consistency for self-supervised electron microscopy instance segmentation</a></div>
+            <div class="author">Yinda Chen, Wei Huang, Xiaoyu Liu, Shiyu Deng, <strong>Qi Chen*</strong>, Zhiwei Xiong.</div>
+            <div class="periodical"><em>International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2023.</em>
+            </div>
+          <div class="links">
+             
+            <a href="https://arxiv.org/pdf/2308.09917" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            
+             
+            <a href="https://github.com/ydchen0806/MS-Con-EM-Seg" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            
+            
+            
+            
+            
+          </div>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2308.09917" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/ydchen0806/MS-Con-EM-Seg" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br />
+    </li>
+    <br />
+  </tr>
+  
 
-
+</tbody>
+</table>
 
 </ol>
 </div>
@@ -465,16 +491,18 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr2023.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021-2023</autocolor></a></li>
-  <li><a href="http://iccv2021.thecvf.com/"><autocolor>IEEE/CVF International Conference on Computer Vision (ICCV) 2021</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2022</autocolor></a></li>
+  <li><a href="http://cvpr2024.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024-2025</autocolor></a></li>
+  <li><a href="https://iclr.cc/"><autocolor>International Conference on Learning Representations (ICLR) 2025</autocolor></a></li>
+  <li><a href="https://aaai.org/conference/aaai/aaai-25/"><autocolor>Association for the Advancement of Artificial Intelligence (AAAI) 2025</autocolor></a></li>
+  <li><a href="https://neurips.cc/"><autocolor>European Conference on Computer Vision (NeurIPS) 2024</autocolor></a></li>
+  <li><a href="https://conferences.miccai.org/2024/en/"><autocolor>International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2024</autocolor></a></li>
 </ul>
 
 <h4 style="margin:0 10px 0;">Journal Reviewers</h4>
 
 <ul style="margin:0 0 20px;">
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</autocolor></a></li>
-  <li><a href="https://www.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li>
+  <li><a href="https://www.ieeetmi.org/"><autocolor>IEEE Transactions on Medical Imaging (TMI)</autocolor></a></li>
+  <!-- <li><a href="https://www.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li> -->
 </ul>
 
 

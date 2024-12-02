@@ -9,6 +9,9 @@ main:
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/teaser_example_2.png
     # notes: Early Accept
+    year: 2024
+    topic: med
+    selected: true
 
   - title: Analyzing Tumors by Synthesis
     authors: <strong>Qi Chen</strong>, Yuxiang Lai, Xiaoxi Chen, Qixin Hu, Alan Yuille, Zongwei Zhou
@@ -19,6 +22,9 @@ main:
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/teaser_example_2.png
     # notes: Early Accept
+    year: 2024
+    topic: med
+    selected: true
 
   - title: Developing Synthetic Tumors in Liver, Pancreas, and Kidney using Generative AIs
     authors: <strong>Qi Chen</strong>, Alan Yuille, Zongwei Zhou
@@ -30,6 +36,8 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2024
+    topic: med
 
   - title: Accelerated Multi-Contrast MRI Reconstruction via Frequency and Spatial Mutual Learning
     authors: <strong>Qi Chen</strong>, Xiaohan Xing, Zhen Chen, Zhiwei Xiong
@@ -41,10 +49,13 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2024
+    topic: med
+    selected: true
 
   - title: 
     authors: <strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong
-    conference_short: RSNA
+    conference_short: ISBI
     conference: International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2024.
     pdf: https://arxiv.org/pdf/2308.16461
     code: https://github.com/qic999/AdaSyn
@@ -52,17 +63,23 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2024
+    topic: bio
+    selected: true
 
   - title: Position-Guided Transformer with Query Contrast for Biological Instance Segmentation
     authors: <strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong
     conference_short: ICCVW
-    conference: Proceedings of the IEEE/CVF International Conference on Computer Vision, BIC<strong>(ICCV)</strong>, 2023.
+    conference: Proceedings of the IEEE/CVF International Conference on Computer Vision<strong>(ICCV)</strong>, BIC, 2023.
     pdf: https://openaccess.thecvf.com/content/ICCV2023W/BIC/papers/Chen_PCTrans_Position-Guided_Transformer_with_Query_Contrast_for_Biological_Instance_Segmentation_ICCVW_2023_paper.pdf
     code: https://github.com/qic999/PCTrans
     # page: https://class-il.mpi-inf.mpg.de/mnemonics/
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2023
+    topic: bio
+    selected: true
 
   - title: Mask Rearranging Data Augmentation for 3D Mitochondria Segmentation
     authors: <strong>Qi Chen</strong>, Mingxing Li, Jiacheng Li, Bo Hu, Zhiwei Xiong
@@ -74,6 +91,8 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2022
+    topic: bio
 
   - title: A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes
     authors: Yicong Li, Wanhua Li*, <strong>Qi Chen*</strong>, Wei Huang*, Yuda Zou*, Xiao Xin, Kazunori Shinomiya, Pat Gunn, Nishika Gupta, Alexey Polilov, Yongchao Xu, Yueyi Zhang, Zhiwei Xiong, Hanspeter Pfister, Dmitri B. Chklovskii, Donglai Wei, Jingpeng Wu.
@@ -85,6 +104,8 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2024
+    topic: bio
 
   - title: Self-Supervised Neuron Segmentation with Multi-Agent Reinforcement Learning
     authors: Yinda Chen, Wei Huang, Shenglong Zhou, <strong>Qi Chen*</strong>, Zhiwei Xiong. 
@@ -96,6 +117,8 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+    year: 2023
+    topic: bio
 
   - title: Learning multiscale consistency for self-supervised electron microscopy instance segmentation
     authors: Yinda Chen, Wei Huang, Xiaoyu Liu, Shiyu Deng, <strong>Qi Chen*</strong>, Zhiwei Xiong.
@@ -107,6 +130,5 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
-
-
-
+    year: 2023
+    topic: bio

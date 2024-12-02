@@ -3,31 +3,22 @@
 <div class="publications">
 <ol class="bibliography">
 
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-  <tr>
-    <td style="padding-top:20px;padding-bottom:20px;width:100%;vertical-align:middle">
-      <!-- <heading>Publications</heading> -->
-      <span class="filters">
-        <a id="filter-selected" onclick="applyFilter(this, showSelected)">Selected</a> /
-        <a onclick="applyFilter(this, showByDate)">All</a>
-      </span>
-      <p><span class="filters" id="research-topics">
-      <strong>Research Topics:</strong>
-          <a onclick="applyFilter(this, filterByTopic('med'))">Medical Imaging</a> / 
-          <a onclick="applyFilter(this, filterByTopic('bio'))">Biological Imaging</a> / 
-          <a onclick="applyFilter(this, filterByTopic('cv'))">Computer Vision</a>
-      </span></p>
-      <p><em>(* indicates equal contribution)</em></p>
-    </td>
-  </tr>
-</tbody>
-</table>
 
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="publicationsTable">
-  <tbody>
+<div class="main-content">
+
+<div class="main-more-container">
+  <div id="main-pub-container">
+    <p class="subtitle-aux"><span class="bold">Topics:</span>
+        <a href="#topic-bio" onClick="return publicationByTopicSpecific(this)" data-topic="bio">Biological Imaging</a> /
+        <a href="#topic-med" onClick="return publicationByTopicSpecific(this)" data-topic="med">Medical Imaging</a> /
+        <a href="#topic-cv" onClick="return publicationByTopicSpecific(this)" data-topic="cv">Computer Vision </a> 
+        <span class="note">(*: indicates equal contribution.)</span>
+    </p>
+
+<div id="main-pub-card-container" class="activated hide">
   {% for link in site.data.publications.main %}
-  <tr class="bottom-line publication" data-topic="{{ link.topic }}" data-year="{{ link.year }}" data-selected="{{ link.selected }}" >
-    <li>
+  <li>
+    <div class="pub-card" data-topic="{{ link.topic }}" data-year="{{ link.year }}" data-selected="{{ link.selected }}" >
       <div class="pub-row" >
         <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
           {% if link.image %} 
@@ -64,13 +55,15 @@
           </div>
         </div>
       </div>
-    </li>
-    <br>
-  </tr>
+    </div>
+  </li>
+  <br>
   {% endfor %}
 
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div>
 
 </ol>
 </div>
