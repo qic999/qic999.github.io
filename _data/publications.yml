@@ -53,7 +53,7 @@ main:
     notes: Oral Presentation
     image: ./assets/img/teaser_example.png
 
-  - title: PCTrans: Position-Guided Transformer with Query Contrast for Biological Instance Segmentation
+  - title: Position-Guided Transformer with Query Contrast for Biological Instance Segmentation
     authors: <strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong
     conference_short: ICCVW
     conference: Proceedings of the IEEE/CVF International Conference on Computer Vision, BIC<strong>(ICCV)</strong>, 2023.
@@ -75,7 +75,7 @@ main:
     # notes: Oral Presentation
     image: ./assets/img/teaser_example.png
 
-  - title: WASPSYN: A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes
+  - title: A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes
     authors: Yicong Li, Wanhua Li*, <strong>Qi Chen*</strong>, Wei Huang*, Yuda Zou*, Xiao Xin, Kazunori Shinomiya, Pat Gunn, Nishika Gupta, Alexey Polilov, Yongchao Xu, Yueyi Zhang, Zhiwei Xiong, Hanspeter Pfister, Dmitri B. Chklovskii, Donglai Wei, Jingpeng Wu.
     conference_short: TMI
     conference: IEEE Transactions on Medical Imaging <strong>(TMI)</strong>, 2024.

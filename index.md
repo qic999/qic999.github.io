@@ -4,19 +4,21 @@ layout: homepage
 
 ## About Me
 
-I am a Ph.D. student at ...
+I am a Master's student at ...
 
 ## Research Interests
 
-- **Computer Vision:** image recognition, image generation, video captioning
-- **Machine Learning:** meta-learning, incremental learning, transfer learning
+- **Medical imaging:** Scaling Annotations, Data Synthesis, Image Construction
+- **biological imaging:** Computational Pathology, Neuroscience, Connectomics.
+- **Computer Vision:** Image Segmentation, Video Generation, Multi-Object Tracking
+
 
 ## News
 
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019.
+- **[Nov. 2024]** Three paper are submitted to CVPR 2025.
+- **[Jul. 2024]** Our paper about MRI contruction is accepted to MICCAI 2024.
+- **[Jun. 2024]** Our book chapter about tumor synthesis is accepted.
+- **[Mar. 2024]** Our paper about tumor synthesis is accepted to CVPR 2024.
 
 {% include_relative _includes/publications.md %}
 
