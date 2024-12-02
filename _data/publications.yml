@@ -1,22 +1,112 @@
 main:
 
-  - title: Continual Learning for Abdominal Multi-Organ and Tumor Segmentation
-    authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou* (*Corresponding authors)
-    conference_short: MICCAI
-    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
-    pdf: https://arxiv.org/pdf/2306.00988.pdf
-    code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/teaser_example_2.png
-    notes: Early Accept
-
-  - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
-    authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
+  - title: Towards Generalizable Tumor Synthesis
+    authors: <strong>Qi Chen</strong>, Xiaoxi Chen, Haorui Song, Alan Yuille, Zhiwei Xiong, Wei Chen, Zongwei Zhou
     conference_short: CVPR
-    conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.
+    conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2024.
+    pdf: https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024towards.pdf
+    code: https://github.com/MrGiovanni/DiffTumor
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    image: ./assets/img/teaser_example_2.png
+    # notes: Early Accept
+
+  - title: Analyzing Tumors by Synthesis
+    authors: <strong>Qi Chen</strong>, Yuxiang Lai, Xiaoxi Chen, Qixin Hu, Alan Yuille, Zongwei Zhou
+    conference_short: Book Chapter
+    conference: Generative Machine Learning Models in Medical Image Computing.
+    pdf: https://www.cs.jhu.edu/~alanlab/Pubs24/chen2024analyzing.pdf
+    code: https://github.com/MrGiovanni/DiffTumor
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    image: ./assets/img/teaser_example_2.png
+    # notes: Early Accept
+
+  - title: Developing Synthetic Tumors in Liver, Pancreas, and Kidney using Generative AIs
+    authors: <strong>Qi Chen</strong>, Alan Yuille, Zongwei Zhou
+    conference_short: RSNA
+    conference: Radiological Society of North America <strong>(RSNA)</strong>, 2024.
     pdf: https://arxiv.org/pdf/2002.10211.pdf
-    code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
-    page: https://class-il.mpi-inf.mpg.de/mnemonics/
-    bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    code: https://github.com/MrGiovanni/DiffTumor
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+  - title: Accelerated Multi-Contrast MRI Reconstruction via Frequency and Spatial Mutual Learning
+    authors: <strong>Qi Chen</strong>, Xiaohan Xing, Zhen Chen, Zhiwei Xiong
+    conference_short: MICCAI
+    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2024.
+    pdf: https://arxiv.org/pdf/2409.14113
+    code: https://github.com/qic999/FSMNet
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+  - title: 
+    authors: <strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong
+    conference_short: RSNA
+    conference: International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2024.
+    pdf: https://arxiv.org/pdf/2308.16461
+    code: https://github.com/qic999/AdaSyn
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     notes: Oral Presentation
     image: ./assets/img/teaser_example.png
+
+  - title: PCTrans: Position-Guided Transformer with Query Contrast for Biological Instance Segmentation
+    authors: <strong>Qi Chen</strong>, Wei Huang, Yueyi Zhang, Zhiwei Xiong
+    conference_short: ICCVW
+    conference: Proceedings of the IEEE/CVF International Conference on Computer Vision, BIC<strong>(ICCV)</strong>, 2023.
+    pdf: https://openaccess.thecvf.com/content/ICCV2023W/BIC/papers/Chen_PCTrans_Position-Guided_Transformer_with_Query_Contrast_for_Biological_Instance_Segmentation_ICCVW_2023_paper.pdf
+    code: https://github.com/qic999/PCTrans
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+  - title: Mask Rearranging Data Augmentation for 3D Mitochondria Segmentation
+    authors: <strong>Qi Chen</strong>, Mingxing Li, Jiacheng Li, Bo Hu, Zhiwei Xiong
+    conference_short: MICCAI
+    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2022.
+    pdf: hhttps://link.springer.com/chapter/10.1007/978-3-031-16440-8_4
+    code: https://github.com/qic999/MRDA_MitoSeg
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+  - title: WASPSYN: A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes
+    authors: Yicong Li, Wanhua Li*, <strong>Qi Chen*</strong>, Wei Huang*, Yuda Zou*, Xiao Xin, Kazunori Shinomiya, Pat Gunn, Nishika Gupta, Alexey Polilov, Yongchao Xu, Yueyi Zhang, Zhiwei Xiong, Hanspeter Pfister, Dmitri B. Chklovskii, Donglai Wei, Jingpeng Wu.
+    conference_short: TMI
+    conference: IEEE Transactions on Medical Imaging <strong>(TMI)</strong>, 2024.
+    pdf: https://ieeexplore.ieee.org/abstract/document/10530168/
+    # code: https://github.com/qic999/MRDA_MitoSeg
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+  - title: Self-Supervised Neuron Segmentation with Multi-Agent Reinforcement Learning
+    authors: Yinda Chen, Wei Huang, Shenglong Zhou, <strong>Qi Chen*</strong>, Zhiwei Xiong. 
+    conference_short: IJCAI
+    conference: International Joint Conference on Artificial Intelligence <strong>(IJCAI)</strong>, 2023.
+    pdf: https://arxiv.org/pdf/2310.04148
+    code: https://github.com/ydchen0806/dbMiM
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+  - title: Learning multiscale consistency for self-supervised electron microscopy instance segmentation
+    authors: Yinda Chen, Wei Huang, Xiaoyu Liu, Shiyu Deng, <strong>Qi Chen*</strong>, Zhiwei Xiong.
+    conference_short: ICASSP
+    conference: International Conference on Acoustics, Speech, and Signal Processing <strong>(ICASSP)</strong>, 2023.
+    pdf: https://arxiv.org/pdf/2308.09917
+    code: https://github.com/ydchen0806/MS-Con-EM-Seg
+    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # notes: Oral Presentation
+    image: ./assets/img/teaser_example.png
+
+
+
