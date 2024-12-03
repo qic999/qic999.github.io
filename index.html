@@ -187,7 +187,7 @@
           <tr class="bottom-line publication" onmouseout="difftumor_stop()" onmouseover="difftumor_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
             <td class="pub-image-box">
               <div class="one">
-                <div class="two" id='difftumore_image'><img style="width:100%; height: auto;" src='images_new/difftumor1.png'></div>
+                <div class="two" id='difftumore_image'><img style="width:120%; height: auto;" src='images_new/difftumor2.png'></div>
                 <img style="width:100%; height: auto;" src='images_new/difftumor2.png'>
               </div>
               <script type="text/javascript">
@@ -230,23 +230,23 @@
               <h2 id="research-interests">Submissions (preprint)</h2>
               <p><span class="filters" id="research-topics">
               <strong>Research Topics:</strong>
-                  <a onclick="applyFilter(this, filterByTopic('bio'))">Biological Imaging</a> / 
-                  <a onclick="applyFilter(this, filterByTopic('med'))">Medical Imaging</a> / 
-                  <a onclick="applyFilter(this, filterByTopic('cv'))">Computer Vision</a>
+                  <a onclick="applyFilter(this, filterByTopic_('bio'))">Biological Imaging</a> / 
+                  <a onclick="applyFilter(this, filterByTopic_('med'))">Medical Imaging</a> / 
+                  <a onclick="applyFilter(this, filterByTopic_('cv'))">Computer Vision</a>
               </span></p>
               <p><em>(* indicates equal contribution)</em></p>
             </td>
           </tr>
         </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="publicationsTable">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:collapse;margin-right:auto;margin-left:auto;" id="submissionTable">
           <tbody>
             <!-- -------- -->
             <tr class="bottom-line publication" onmouseout="cancerverse_stop()" onmouseover="cancerverse_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
               <td class="pub-image-box">
                 <div class="one">
                   <div class="two" id='cancerverse_image'><img style="width:100%; height: 100%;" src='images_new/cancerverse1.png'></div>
-                  <img style="width:100%; height: 100%;" src='images_new/cancerverse2.png'>
+                  <img style="width:100%; height: 100%;" src='images_new/cancerverse1.png'>
                 </div>
                 <script type="text/javascript">
                   function cancerverse_start() {
@@ -349,6 +349,18 @@
   </table>
 
   <script>
+    function filterByTopic_(topic) {
+      const rows = document.querySelectorAll('#submissionTable tbody tr');
+      rows.forEach(row => {
+          const topics = row.dataset.topic.split(',').map(t => t.trim()); // Split topics into an array
+            if (topics.includes(topic)) {
+                row.classList.remove('hidden'); // Show if the topic matches
+            } else {
+                row.classList.add('hidden'); // Hide otherwise
+            }
+        });
+    }
+  
     function clearActiveFilter() {
         // Remove the 'active' class from all filters
         const filters = document.querySelectorAll('.filters a');
