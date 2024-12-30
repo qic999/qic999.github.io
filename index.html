@@ -293,7 +293,7 @@
               </div>
               <script type="text/javascript">
                 function FSMNet_start() {
-                  document.difftumor_start('FSMNet_image').style.opacity = "1";
+                  document.FSMNet_start('FSMNet_image').style.opacity = "1";
                 }
                 function FSMNet_stop() {
                   document.getElementById('FSMNet_image').style.opacity = "0";
@@ -319,7 +319,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line publication" onmouseout="Adasyn_stop()" onmouseover="Adasyn_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+          <tr class="bottom-line publication" onmouseout="Adasyn_stop()" onmouseover="Adasyn_start()" bgcolor="#ffffd0" data-selected="true" data-topic="bio">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='adasyn_image'><img style="width:120%; height: auto;" src='images_new/adasyn.png'></div>
@@ -327,7 +327,7 @@
               </div>
               <script type="text/javascript">
                 function Adasyn_start() {
-                  document.difftumor_start('adasyn_image').style.opacity = "1";
+                  document.Adasyn_start('adasyn_image').style.opacity = "1";
                 }
                 function Adasyn_stop() {
                   document.getElementById('adasyn_image').style.opacity = "0";
@@ -352,6 +352,39 @@
           </tr>
           <!-- -------- -->
 
+          <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="WASPSYN_stop()" onmouseover="WASPSYN_start()" bgcolor="#ffffd0" data-selected="true" data-topic="bio">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='WASPSYN_image'><img style="width:120%; height: auto;" src='images_new/adasyn.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/adasyn.png'>
+              </div>
+              <script type="text/javascript">
+                function WASPSYN_start() {
+                  document.WASPSYN_start('WASPSYN_image').style.opacity = "1";
+                }
+                function WASPSYN_stop() {
+                  document.getElementById('WASPSYN_image').style.opacity = "0";
+                }
+                WASPSYN_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10530168">
+                <papertitle> WASPSYN: A Challenge for Domain Adaptive Synapse Detection in Microwasp Brain Connectomes </papertitle>
+              </a>
+              <br>
+              Yicong Li, Wanhua Li*, <b>Qi Chen</b>*, Wei Huang*, Yuda Zou*, Xin Xiao, Kazunori Shinomiya, Pat Gunn, Nishika Gupta, Alexey Polilov, Yongchao Xu, Yueyi Zhang, Zhiwei Xiong, Hanspeter Pfister, Donglai Wei, Jingpeng Wu
+              <br>
+              <em>TMI</em>, 2024 
+              <br>
+              <a href="https://ieeexplore.ieee.org/abstract/document/10530168">arXiv</a>  /
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/9169">website</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
 
         </tbody>
         </table>
