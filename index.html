@@ -192,7 +192,7 @@
               </div>
               <script type="text/javascript">
                 function difftumor_start() {
-                  document.difftumor_start('difftumor_image').style.opacity = "1";
+                  document.getElementById('difftumor_image').style.opacity = "1";
                 }
                 function difftumor_stop() {
                   document.getElementById('difftumor_image').style.opacity = "0";
@@ -226,7 +226,7 @@
               </div>
               <script type="text/javascript">
                 function chapter_start() {
-                  document.difftumor_start('chapter_image').style.opacity = "1";
+                  document.getElementById('chapter_image').style.opacity = "1";
                 }
                 function chapter_stop() {
                   document.getElementById('chapter_image').style.opacity = "0";
@@ -260,7 +260,7 @@
               </div>
               <script type="text/javascript">
                 function FSMNet_start() {
-                  document.difftumor_start('FSMNet_image').style.opacity = "1";
+                  document.getElementById('FSMNet_image').style.opacity = "1";
                 }
                 function FSMNet_stop() {
                   document.getElementById('FSMNet_image').style.opacity = "0";
@@ -294,7 +294,7 @@
               </div>
               <script type="text/javascript">
                 function Adasyn_start() {
-                  document.Adasyn_start('adasyn_image').style.opacity = "1";
+                  document.getElementById('adasyn_image').style.opacity = "1";
                 }
                 function Adasyn_stop() {
                   document.getElementById('adasyn_image').style.opacity = "0";
@@ -328,7 +328,7 @@
               </div>
               <script type="text/javascript">
                 function WASPSYN_start() {
-                  document.WASPSYN_start('WASPSYN_image').style.opacity = "1";
+                  document.getElementById('WASPSYN_image').style.opacity = "1";
                 }
                 function WASPSYN_stop() {
                   document.getElementById('WASPSYN_image').style.opacity = "0";
@@ -354,6 +354,40 @@
           <!-- -------- -->
 
           <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="conem_stop()" onmouseover="conem_start()" data-selected="false" data-topic="bio">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='dbMiM_image'><img style="width:120%; height: auto;" src='images_new/conem.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/conem.png'>
+              </div>
+              <script type="text/javascript">
+                function conem_start() {
+                  document.getElementById('conem_image').style.opacity = "1";
+                }
+                function conem_stop() {
+                  document.getElementById('conem_image').style.opacity = "0";
+                }
+                conem_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://ieeexplore.ieee.org/document/10446055">
+                <papertitle> Learning multiscale consistency for self-supervised electron microscopy instance segmentation </papertitle>
+              </a>
+              <br>
+              Yinda Chen, Wei Huang, Xiaoyu Liu, <b>Qi Chen</b>, Zhiwei Xiong
+              <br>
+              <em>ICASSP</em>, 2024
+              <br>
+              <a href="https://arxiv.org/pdf/2308.09917.pdf">arXiv</a>  /
+              <a href="https://github.com/ydchen0806/MS-Con-EM-Seg">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+
+          <!-- -------- -->
           <tr class="bottom-line publication" onmouseout="PCTrans_stop()" onmouseover="PCTrans_start()" bgcolor="#ffffd0" data-selected="true" data-topic="bio">
             <td class="pub-image-box">
               <div class="one">
@@ -362,7 +396,7 @@
               </div>
               <script type="text/javascript">
                 function PCTrans_start() {
-                  document.PCTrans_start('PCTrans_image').style.opacity = "1";
+                  document.getElementById('PCTrans_image').style.opacity = "1";
                 }
                 function PCTrans_stop() {
                   document.getElementById('PCTrans_image').style.opacity = "0";
@@ -388,40 +422,6 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line publication" onmouseout="conem_stop()" onmouseover="conem_start()" data-selected="false" data-topic="bio">
-            <td class="pub-image-box">
-              <div class="one">
-                <div class="two" id='dbMiM_image'><img style="width:120%; height: auto;" src='images_new/conem.png'></div>
-                <img style="width:100%; height: auto;" src='images_new/conem.png'>
-              </div>
-              <script type="text/javascript">
-                function conem_start() {
-                  document.conem_start('conem_image').style.opacity = "1";
-                }
-                function conem_stop() {
-                  document.getElementById('conem_image').style.opacity = "0";
-                }
-                conem_stop()
-              </script>
-            </td>
-
-            <td class="pub-text-box">
-              <a href="https://ieeexplore.ieee.org/document/10446055">
-                <papertitle> Learning multiscale consistency for self-supervised electron microscopy instance segmentation </papertitle>
-              </a>
-              <br>
-              Yinda Chen, Wei Huang, Xiaoyu Liu, <b>Qi Chen</b>, Zhiwei Xiong
-              <br>
-              <em>ICASSP</em>, 2024
-              <br>
-              <a href="https://arxiv.org/pdf/2308.09917.pdf">arXiv</a>  /
-              <a href="https://github.com/ydchen0806/MS-Con-EM-Seg">code</a>
-              <br>
-            </td>
-          </tr>
-          <!-- -------- -->
-           
-          <!-- -------- -->
           <tr class="bottom-line publication" onmouseout="dbMiM_stop()" onmouseover="dbMiM_start()" data-selected="false" data-topic="bio">
             <td class="pub-image-box">
               <div class="one">
@@ -430,7 +430,7 @@
               </div>
               <script type="text/javascript">
                 function dbMiM_start() {
-                  document.dbMiM_start('dbMiM_image').style.opacity = "1";
+                  document.getElementById('dbMiM_image').style.opacity = "1";
                 }
                 function dbMiM_stop() {
                   document.getElementById('dbMiM_image').style.opacity = "0";
@@ -464,7 +464,7 @@
               </div>
               <script type="text/javascript">
                 function MitoSeg_start() {
-                  document.MitoSeg_start('MitoSeg_image').style.opacity = "1";
+                  document.getElementById('MitoSeg_image').style.opacity = "1";
                 }
                 function MitoSeg_stop() {
                   document.getElementById('MitoSeg_image').style.opacity = "0";
@@ -615,6 +615,43 @@
               </td>
             </tr>
             <!-- -------- -->
+
+            <!-- -------- -->
+            <tr class="bottom-line publication" onmouseout="MMR_stop()" onmouseover="MMR_start()" data-selected="false" data-topic="med,cv">
+              <td class="pub-image-box">
+                <div class="one">
+                  <div class="two" id='mmr_image'><img style="width:100%; height: 100%;" src='images_new/mmr.png'></div>
+                  <img style="width:100%; height: 100%;" src='images_new/mmr.png'>
+                </div>
+                <script type="text/javascript">
+                  function MMR_start() {
+                    document.getElementById('mmr_image').style.opacity = "1";
+                  }
+  
+                  function MMR_stop() {
+                    document.getElementById('mmr_image').style.opacity = "0";
+                  }
+                  MMR_stop()
+                </script>
+              </td>
+  
+              <td class="pub-text-box">
+                <a href="#">
+                  <papertitle> MMR-Mamba: Multi-Contrast MRI Reconstruction with Mamba and Spatial-Frequency Information Fusion </papertitle>
+                </a>
+                <br>
+                Jing Zou, Lanqing Liu, <b>Qi Chen</b>, Shujun Wang, Xiaohan Xing, Jing Qin
+                <br>
+                <em>Submitted to MedIA</em>
+                <br>
+                <a href="https://arxiv.org/abs/2406.18950">arXiv</a>  /
+                <a href="#">code</a>
+                <br>
+              </td>
+            </tr>
+            <!-- -------- -->
+
+
 
           </tbody>
         </table>
