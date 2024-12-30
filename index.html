@@ -388,20 +388,54 @@
           <!-- -------- -->
 
           <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="conem_stop()" onmouseover="conem_start()" data-selected="false" data-topic="bio">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='dbMiM_image'><img style="width:120%; height: auto;" src='images_new/conem.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/conem.png'>
+              </div>
+              <script type="text/javascript">
+                function conem_start() {
+                  document.conem_start('conem_image').style.opacity = "1";
+                }
+                function conem_stop() {
+                  document.getElementById('conem_image').style.opacity = "0";
+                }
+                conem_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://ieeexplore.ieee.org/document/10446055">
+                <papertitle> Learning multiscale consistency for self-supervised electron microscopy instance segmentation </papertitle>
+              </a>
+              <br>
+              Yinda Chen, Wei Huang, Xiaoyu Liu, <b>Qi Chen</b>, Zhiwei Xiong
+              <br>
+              <em>ICASSP</em>, 2024
+              <br>
+              <a href="https://arxiv.org/pdf/2308.09917.pdf">arXiv</a>  /
+              <a href="https://github.com/ydchen0806/MS-Con-EM-Seg">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+           
+          <!-- -------- -->
           <tr class="bottom-line publication" onmouseout="dbMiM_stop()" onmouseover="dbMiM_start()" data-selected="false" data-topic="bio">
             <td class="pub-image-box">
               <div class="one">
-                <div class="two" id='PCTrans_image'><img style="width:120%; height: auto;" src='images_new/pctrans.png'></div>
+                <div class="two" id='dbMiM_image'><img style="width:120%; height: auto;" src='images_new/pctrans.png'></div>
                 <img style="width:100%; height: auto;" src='images_new/pctrans.png'>
               </div>
               <script type="text/javascript">
                 function dbMiM_start() {
-                  document.PCTrans_start('dbMiM_image').style.opacity = "1";
+                  document.dbMiM_start('dbMiM_image').style.opacity = "1";
                 }
                 function dbMiM_stop() {
                   document.getElementById('dbMiM_image').style.opacity = "0";
                 }
-                PCTrans_stop()
+                dbMiM_stop()
               </script>
             </td>
 
@@ -568,7 +602,7 @@
   
               <td class="pub-text-box">
                 <a href="#">
-                  <papertitle> Text-Driven Tumor Synthesis </papertitle>
+                  <papertitle> ScaleMAI: Accelerating the Development of Trusted Datasets and AI Models - A Large-Scale Case Study of Pancreatic Cancer Diagnosis, Staging, & Planning </papertitle>
                 </a>
                 <br>
                 Wenxuan Li, Pedro R. A. S. Bassi, Tianyu Lin, Yu-Cheng Chou, Xinze Zhou, Yucheng Tang, Fabian Isensee, Kang Wang, <b>Qi Chen</b>, Xiaowei Xu, Xiaoxi Chen, Lizhou Wu, Qilong Wu, Yuxuan Zhao, Dexin Yu, Kai Ding, Yannick Kirchhoff, Maximilian Rouven Rokuss, Saikat Roy, Constantin Ulrich, Klaus Maier-Hein, Yang Yang, Alan Yuille, Zongwei Zhou
