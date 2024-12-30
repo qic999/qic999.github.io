@@ -388,6 +388,40 @@
           <!-- -------- -->
 
           <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="dbMiM_stop()" onmouseover="dbMiM_start()" data-selected="false" data-topic="bio">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='PCTrans_image'><img style="width:120%; height: auto;" src='images_new/pctrans.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/pctrans.png'>
+              </div>
+              <script type="text/javascript">
+                function dbMiM_start() {
+                  document.PCTrans_start('dbMiM_image').style.opacity = "1";
+                }
+                function dbMiM_stop() {
+                  document.getElementById('dbMiM_image').style.opacity = "0";
+                }
+                PCTrans_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://www.ijcai.org/proceedings/2023/0068.pdf">
+                <papertitle> Self-Supervised Neuron Segmentation with Multi-Agent Reinforcement Learning </papertitle>
+              </a>
+              <br>
+              Yinda Chen, Wei Huang, Shenglong Zhou, <b>Qi Chen</b>, Zhiwei Xiong
+              <br>
+              <em>IJCAI</em>, 2023
+              <br>
+              <a href="https://www.ijcai.org/proceedings/2023/0068.pdf">arXiv</a>  /
+              <a href="https://github.com/ydchen0806/dbMiM">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+
+          <!-- -------- -->
           <tr class="bottom-line publication" onmouseout="MitoSeg_stop()" onmouseover="MitoSeg_start()" bgcolor="#ffffd0" data-selected="true" data-topic="bio">
             <td class="pub-image-box">
               <div class="one">
