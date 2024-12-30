@@ -17,7 +17,7 @@
           <tr style="padding:0px">
             <td style="padding-right:10%;width:70%;vertical-align:middle">
               <p style="text-align:center">
-                <name>Qi Chen</name>
+                <name>Qi Chen (陈祺)</name>
               </p>
               <p>
               Hello! I am a Research Assistant at <a href="https://english.ucas.ac.cn/">University of Chinese Academy of Sciences</a>, advised by Prof. <a href="https://ling-shao.github.io/">Ling Shao</a> (IEEE Fellow) and <a href="https://sites.google.com/site/yefengzheng/">Yefeng Zheng</a> (IEEE Fellow, AIMBE Fellow).
@@ -218,20 +218,87 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line publication" onmouseout="difftumor_stop()" onmouseover="difftumor_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+          <tr class="bottom-line publication" onmouseout="chapter_stop()" onmouseover="chapter_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='chapter_image'><img style="width:120%; height: auto;" src='images_new/chapter.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/chapter.png'>
+              </div>
+              <script type="text/javascript">
+                function chapter_start() {
+                  document.difftumor_start('chapter_image').style.opacity = "1";
+                }
+                function chapter_stop() {
+                  document.getElementById('chapter_image').style.opacity = "0";
+                }
+                chapter_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://papers.miccai.org/miccai-2024/039-Paper2570.html">
+                <papertitle> Analyzing Tumors by Synthesis </papertitle>
+              </a>
+              <br>
+              <b>Qi Chen</b>, Yuxiang Lai, Xiaoxi Chen,Qixin Hu, Zhiwei Xiong, Alan Yuille, Zongwei Zhou
+              <br>
+              <em>Chapter</em>, 2024 (Generative Machine Learning Models in Medical Image Computing)
+              <br>
+              <a href="https://arxiv.org/pdf/2409.06035">arXiv</a>  /
+              <a href="https://github.com/MrGiovanni/DiffTumor">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+
+          <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="FSMNet_stop()" onmouseover="FSMNet_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='FSMNet_image'><img style="width:120%; height: auto;" src='images_new/FSMNet.png'></div>
                 <img style="width:100%; height: auto;" src='images_new/FSMNet.png'>
               </div>
               <script type="text/javascript">
-                function difftumor_start() {
+                function FSMNet_start() {
                   document.difftumor_start('FSMNet_image').style.opacity = "1";
                 }
-                function difftumor_stop() {
+                function FSMNet_stop() {
                   document.getElementById('FSMNet_image').style.opacity = "0";
                 }
-                difftumor_stop()
+                FSMNet_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://papers.miccai.org/miccai-2024/039-Paper2570.html">
+                <papertitle> Accelerated Multi-Contrast MRI Reconstruction via Frequency and Spatial Mutual Learning </papertitle>
+              </a>
+              <br>
+              <b>Qi Chen</b>, Xiaohan Xing, Zhen Chen, Zhiwei Xiong
+              <br>
+              <em>MICCAI</em>, 2024
+              <br>
+              <a href="https://arxiv.org/pdf/2409.14113">arXiv</a>  /
+              <a href="https://github.com/qic999/FSMNet">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+          <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="FSMNet_stop()" onmouseover="FSMNet_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='FSMNet_image'><img style="width:120%; height: auto;" src='images_new/FSMNet.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/FSMNet.png'>
+              </div>
+              <script type="text/javascript">
+                function FSMNet_start() {
+                  document.difftumor_start('FSMNet_image').style.opacity = "1";
+                }
+                function FSMNet_stop() {
+                  document.getElementById('FSMNet_image').style.opacity = "0";
+                }
+                FSMNet_stop()
               </script>
             </td>
 
