@@ -218,7 +218,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line publication" onmouseout="chapter_stop()" onmouseover="chapter_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+          <tr class="bottom-line publication" onmouseout="chapter_stop()" onmouseover="chapter_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='chapter_image'><img style="width:120%; height: auto;" src='images_new/chapter.png'></div>
@@ -252,7 +252,7 @@
           <!-- -------- -->
 
           <!-- -------- -->
-          <tr class="bottom-line publication" onmouseout="FSMNet_stop()" onmouseover="FSMNet_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+          <tr class="bottom-line publication" onmouseout="FSMNet_stop()" onmouseover="FSMNet_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med">
             <td class="pub-image-box">
               <div class="one">
                 <div class="two" id='FSMNet_image'><img style="width:120%; height: auto;" src='images_new/FSMNet.png'></div>
@@ -313,6 +313,40 @@
               <br>
               <a href="https://arxiv.org/pdf/2409.14113">arXiv</a>  /
               <a href="https://github.com/qic999/FSMNet">code</a>
+              <br>
+            </td>
+          </tr>
+          <!-- -------- -->
+
+          <!-- -------- -->
+          <tr class="bottom-line publication" onmouseout="Adasyn_stop()" onmouseover="Adasyn_start()" bgcolor="#ffffd0" data-selected="true" data-topic="med,cv">
+            <td class="pub-image-box">
+              <div class="one">
+                <div class="two" id='adasyn_image'><img style="width:120%; height: auto;" src='images_new/adasyn.png'></div>
+                <img style="width:100%; height: auto;" src='images_new/adasyn.png'>
+              </div>
+              <script type="text/javascript">
+                function Adasyn_start() {
+                  document.difftumor_start('adasyn_image').style.opacity = "1";
+                }
+                function Adasyn_stop() {
+                  document.getElementById('adasyn_image').style.opacity = "0";
+                }
+                Adasyn_stop()
+              </script>
+            </td>
+
+            <td class="pub-text-box">
+              <a href="https://papers.miccai.org/miccai-2024/039-Paper2570.html">
+                <papertitle> Domain adaptive synapse detection with weak point annotations </papertitle>
+              </a>
+              <br>
+              <b>Qi Chen</b>, Wei Huang, Yueyi Zhang, Zhiwei Xiong
+              <br>
+              <em>ISBI</em>, 2024 <strong class="highlight">Oral</strong>
+              <br>
+              <a href="https://arxiv.org/pdf/2308.16461">arXiv</a>  /
+              <a href="https://github.com/qic999/AdaSyn">code</a>
               <br>
             </td>
           </tr>
