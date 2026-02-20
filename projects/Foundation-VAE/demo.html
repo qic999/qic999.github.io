@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foundation VAE for CT Reconstruction, Augmentation, and Generation</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --ink: #10223a;
+      --muted: #4d5f78;
+      --line: #d8e0ea;
+      --brand: #0b6cf0;
+      --brand-2: #22a9a2;
+      --maxw: 1080px;
+      --radius: 14px;
+      --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 420px at 20% -10%, #dbe9ff 0%, rgba(219,233,255,0) 60%),
+        radial-gradient(1200px 420px at 90% -20%, #dffaf2 0%, rgba(223,250,242,0) 58%),
+        var(--bg);
+      font-family: var(--font-ui);
+      line-height: 1.6;
+    }
+    h1, h2, .authors, .affils, .subtitle, .badge, figcaption, p, li {
+      font-family: var(--font-ui);
+    }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 36px 18px 56px;
+    }
+    .hero {
+      text-align: center;
+      padding: 10px 0 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+      line-height: 1.25;
+      letter-spacing: 0.01em;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .authors {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .author-name {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    .affils {
+      margin-top: 6px;
+      color: #2f3f55;
+      font-size: 0.95rem;
+    }
+    .badges {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border: 1px solid rgba(11,108,240,0.25);
+    }
+    .badge.secondary {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 16px;
+      box-shadow: 0 4px 18px rgba(16,34,58,0.05);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+    }
+    p { margin: 0; }
+    .kpi {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    figure { margin: 0; }
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 11px;
+      border: 1px solid #ced8e5;
+      background: #000;
+    }
+    figcaption {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 8px;
+      text-align: center;
+      font-weight: 500;
+    }
+    pre {
+      margin: 0;
+      padding: 14px;
+      border-radius: 10px;
+      background: #f2f5fa;
+      border: 1px solid var(--line);
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+    .foot {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    @media (min-width: 860px) {
+      .grid.two {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Foundation VAE for CT Reconstruction, Augmentation, and Generation</h1>
+      <div class="authors">
+        <span class="author-name">Qi Chen*</span><sup>1</sup>,
+        <span class="author-name">Shuhan Ding*</span><sup>2</sup>,
+        <span class="author-name">Yu Gu</span><sup>3</sup>,
+        <span class="author-name">Nan Liu</span><sup>2</sup>,
+        <span class="author-name">Jiang Bian</span><sup>3</sup>,
+        <span class="author-name">Alan Yuille</span><sup>1</sup>,
+        <span class="author-name">Zongwei Zhou</span><sup>1</sup>,
+        <span class="author-name">Jingjing Fu</span><sup>3</sup>
+      </div>
+      <div class="affils">
+        <sup>1</sup>Johns Hopkins University,
+        <sup>2</sup>Duke-NUS Medical School,
+        <sup>3</sup>Microsoft Research<br />
+        * Equal contribution
+      </div>
+      <div class="subtitle">
+        Preprint (February 18, 2026)
+      </div>
+      <div class="badges">
+        <a class="badge" href="../ICML_2026_Foundation_VAE.pdf">Paper (PDF)</a>
+        <a class="badge secondary" href="https://github.com/qic999/Foundation-VAE">GitHub</a>
+        <a class="badge secondary" href="https://huggingface.co/qicq1c/Foundation-VAE">HuggingFace</a>
+        <a class="badge secondary" href="#bibtex">BibTeX</a>
+        <a class="badge secondary" href="#results">Results</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Abstract</h2>
+      <p>
+        We show that a single Foundation VAE, pretrained on natural images and videos, can serve as a unified
+        training-free interface for CT reconstruction, augmentation, and generation. With frozen encoder and decoder,
+        reconstructions preserve anatomy while suppressing acquisition noise, and training segmentation models on
+        reconstructed CT improves boundary quality. In the same latent space, a conditional latent diffusion model
+        generates anatomically consistent healthy and abnormal CT with explicit anatomy and report conditioning.
+      </p>
+      <ul class="kpi">
+        <li>+3.9% average NSD improvement for pancreatic tumor and lung tumor segmentation.</li>
+        <li>3.9% lower average FVD and 36.2% higher CT-CLIP score for CT generation.</li>
+        <li>+2.76% AUC gain on 18-type downstream multi-label disease classification.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Method Overview</h2>
+      <p>
+        The framework has three connected parts: (1) CT reconstruction using frozen Foundation VAE,
+        <strong>x~ = D(E(x))</strong>; (2) CT augmentation by using reconstructed volumes as a boundary-stable training view;
+        (3) CT generation by conditional latent diffusion in the same fixed latent space with organ masks, disease masks,
+        and radiology reports.
+      </p>
+    </section>
+
+    <section class="section" id="results">
+      <h2>Qualitative Results</h2>
+      <div class="grid">
+        <figure>
+          <img src="figure/figure1/lung_066_grid_allz_loop_small.gif" alt="MSD Lung reconstruction and segmentation comparison" loading="eager" />
+          <figcaption>MSD Task06 Lung: reconstruction and segmentation comparison.</figcaption>
+        </figure>
+        <figure>
+          <img src="figure/figure1/pancreas_095_grid_allz_loop.gif" alt="MSD Pancreas reconstruction and segmentation comparison" loading="eager" />
+          <figcaption>MSD Task07 Pancreas: reconstruction and segmentation comparison.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Controllable CT Generation</h2>
+      <figure>
+        <img src="figure/figure2/three_view_valid_991_a_1_loop_small.gif" alt="Three-view CT generation with anatomy and report conditioning" loading="eager" />
+        <figcaption>
+          Three-view (axial/coronal/sagittal) generated CT with report conditioning.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>Anatomical and Pathological Grounding</h2>
+      <figure>
+        <img src="figure/figure3/loop_small.gif" alt="Anatomical and pathological grounding comparison" loading="eager" />
+        <figcaption>
+          Spatial grounding under organ and disease mask constraints.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="bibtex">
+      <h2>BibTeX</h2>
+      <pre>@article{chen2026foundationvae,
+  title   = {Foundation VAE for CT Reconstruction, Augmentation, and Generation},
+  author  = {Chen, Qi and Ding, Shuhan and Gu, Yu and Liu, Nan and Bian, Jiang and Yuille, Alan and Zhou, Zongwei and Fu, Jingjing},
+  journal = {ICML 2026 (Preprint)},
+  year    = {2026}
+}</pre>
+    </section>
+
+    <div class="foot">
+      Local project page demo for ICML 2026 Foundation VAE.
+    </div>
+  </main>
+</body>
+</html>
