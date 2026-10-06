@@ -193,8 +193,9 @@ sup { font-size: .65em; vertical-align: super; margin-inline: 2px 3px; }
 /* Impeccable / distill: one reading axis, retained identity, fewer ornaments. */
 :root { --content-width: 1100px; }
 .paper-header { text-align: center; padding-top: 48px; }
-.project-brand { font-size: 43px; }
-.paper-header h1 { max-width: 1040px; margin-inline: auto; font-size: 34px; font-weight: 500; }
+.project-brand { font-size: 56px; }
+.project-brand img { width: 64px; height: 64px; }
+.paper-header h1 { max-width: 1100px; margin-inline: auto; font-size: 42px; line-height: 1.2; font-weight: 500; margin-block: 22px 28px; }
 .teaser { max-width: 1080px; }
 .sec { max-width: 980px; padding-top: 60px; }
 .sec h2 { text-align: center; }
@@ -203,14 +204,25 @@ sup { font-size: .65em; vertical-align: super; margin-inline: 2px 3px; }
 .demo { max-width: 1100px; }
 .section-heading { margin-bottom: 26px; }
 .page-footer { max-width: 980px; }
+@media (max-width: 1100px) {
+  .title-break { display: none; }
+}
 @media (max-width: 800px) {
-  .paper-header h1 { font-size: 30px; }
+  .project-brand { font-size: 50px; }
+  .project-brand img { width: 60px; height: 60px; }
+  .paper-header h1 { font-size: 36px; }
 }
 @media (max-width: 560px) {
   .paper-header { padding-top: 30px; }
-  .project-brand { font-size: 34px; }
-  .project-brand img { width: 43px; height: 43px; }
-  .paper-header h1 { font-size: 26px; margin-block: 17px 20px; }
+  .project-brand { font-size: 40px; }
+  .project-brand img { width: 48px; height: 48px; }
+  .paper-header h1 { font-size: 30px; margin-block: 18px 22px; }
   .sec { padding-top: 40px; }
   .sec h2 { text-align: left; }
+}
+
+@media (max-width: 380px) {
+  .project-brand { font-size: 36px; }
+  .project-brand img { width: 44px; height: 44px; }
+  .paper-header h1 { font-size: 28px; }
 }
