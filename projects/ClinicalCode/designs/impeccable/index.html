@@ -3,22 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="https://qic999.github.io/projects/ClinicalCode/">
-  <meta property="og:title" content="ClinicalCode: Animating the Clinical Source Code">
-  <meta property="og:image" content="https://qic999.github.io/projects/ClinicalCode/assets/images/liver-case-poster.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>ClinicalCode: Animating the Clinical Source Code</title>
+  <meta name="robots" content="noindex">
+  <title>ClinicalCode: impeccable design study</title>
   <meta name="description" content="ClinicalCode: a typed, executable clinical-state representation for medical world models across CT and MRI.">
-  <link rel="icon" type="image/png" href="assets/images/clinicalcode-logo.png">
-  <link rel="stylesheet" href="assets/css/clinicalcode.css?v=3">
-  <link rel="stylesheet" href="assets/css/liver-case.css?v=3">
-  <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.js","three/addons/":"./assets/vendor/"}}</script>
+  <link rel="icon" type="image/png" href="../../assets/images/clinicalcode-logo.png">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="../../assets/css/liver-case.css?v=3">
+  <script type="importmap">{"imports":{"three":"../../assets/vendor/three.module.js","three/addons/":"../../assets/vendor/"}}</script>
 </head>
 <body class="design-impeccable">
 <a class="skip-link" href="#top-demo">Skip to video demonstration</a>
-<main id="top"><header class="container paper-header"><a href="#top" class="project-brand" aria-label="ClinicalCode, top of page"><img src="assets/images/clinicalcode-logo.png" width="52" height="52" alt=""><span>Clinical<span>Code</span></span></a><h1>Animating the Clinical Source Code<br class="title-break"> of Disease Progression for Medical World Models</h1><p class="authors"><a href="https://qic999.github.io/">Qi Chen<sup>1</sup></a><a href="https://www.cs.jhu.edu/~ayuille/">Alan L. Yuille<sup>1</sup></a><a href="https://beckschen.github.io/">Jieneng Chen<sup>2</sup></a></p>
+<main id="top"><header class="container paper-header"><a href="#top" class="project-brand" aria-label="ClinicalCode, top of page"><img src="../../assets/images/clinicalcode-logo.png" width="52" height="52" alt=""><span>Clinical<span>Code</span></span></a><h1>Animating the Clinical Source Code<br class="title-break"> of Disease Progression for Medical World Models</h1><p class="authors"><a href="https://qic999.github.io/">Qi Chen<sup>1</sup></a><a href="https://www.cs.jhu.edu/~ayuille/">Alan L. Yuille<sup>1</sup></a><a href="https://beckschen.github.io/">Jieneng Chen<sup>2</sup></a></p>
 <p class="affiliations"><span><sup>1</sup>Johns Hopkins University</span><span><sup>2</sup>Stanford University</span></p><nav class="resources" aria-label="Project resources"><a class="resource-primary" href="#top-demo"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path d="M5 3v10l8-5Z" fill="currentColor"/></svg>Video</a><a href="#explore">Interactive demo</a><a href="#abstract">Overview</a><a href="#cite">BibTeX</a></nav></header><figure class="container teaser" aria-label="ClinicalCode overview">
-  <a href="assets/images/workflow-overview.png" target="_blank" rel="noopener" aria-label="Open the ClinicalCode workflow figure at full size"><img src="assets/images/workflow-overview.png" width="1672" height="941" fetchpriority="high" alt="Four separate parts: CT, parsing with organ and lesion masks, structured ClinicalCode, and simulation of anatomy and lesion evolution."></a>
+  <a href="../../assets/images/workflow-overview.png" target="_blank" rel="noopener" aria-label="Open the ClinicalCode workflow figure at full size"><img src="../../assets/images/workflow-overview.png" width="1672" height="941" fetchpriority="high" alt="Four separate parts: CT, parsing with organ and lesion masks, structured ClinicalCode, and simulation of anatomy and lesion evolution."></a>
   <figcaption>From medical observations to structured clinical states and action-conditioned trajectories.<span class="figure-note">AI-generated concept illustration. The video below uses real CT and matching reference masks.</span></figcaption>
 </figure><section class="container sec" id="abstract" aria-labelledby="abstract-title">
     <div class="section-heading"><div><h2 id="abstract-title">Overview</h2></div></div>
@@ -32,14 +29,14 @@
     <div class="section-heading"><div><h2 id="video-title">Video demonstration</h2></div></div>
     <div class="demo-box">
       <button type="button" class="demo-cover" id="demo-play" aria-label="Play the 20-second ClinicalCode liver-case video">
-        <img src="assets/images/liver-case-poster.jpg" width="1920" height="1080" alt="Four separate panels: real CT, matching reference segmentation, structured ClinicalCode, and 3D simulation.">
+        <img src="../../assets/images/liver-case-poster.jpg" width="1920" height="1080" alt="Four separate panels: real CT, matching reference segmentation, structured ClinicalCode, and 3D simulation.">
         <span class="demo-cta"><span class="demo-btn"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.6v8.8L12 8z" fill="currentColor"/></svg>Play video</span><span class="demo-note">20 seconds</span></span>
       </button>
-      <video id="demo-video" controls playsinline preload="none" poster="assets/images/liver-case-poster.jpg" hidden aria-label="ClinicalCode liver-case video"><source src="assets/video/clinicalcode-liver-case.mp4" type="video/mp4"><track label="English" kind="captions" srclang="en" src="assets/video/clinicalcode-liver-case.vtt" default>Your browser does not support embedded video. <a href="assets/video/clinicalcode-liver-case.mp4">Download the video.</a></video>
+      <video id="demo-video" controls playsinline preload="none" poster="../../assets/images/liver-case-poster.jpg" hidden aria-label="ClinicalCode liver-case video"><source src="../../assets/video/clinicalcode-liver-case.mp4" type="video/mp4"><track label="English" kind="captions" srclang="en" src="../../assets/video/clinicalcode-liver-case.vtt" default>Your browser does not support embedded video. <a href="../../assets/video/clinicalcode-liver-case.mp4">Download the video.</a></video>
     </div>
 
     <p class="media-note">Real CT and matching reference masks anchor the walkthrough. State evolution is a schematic, rule-driven illustration.</p>
-    <p class="video-download"><a href="assets/video/clinicalcode-liver-case.mp4" download>Download MP4</a><a href="case-film/">Open animation</a><a href="assets/images/liver-case-poster.jpg" download>Download case figure</a></p>
+    <p class="video-download"><a href="../../assets/video/clinicalcode-liver-case.mp4" download>Download MP4</a><a href="../../case-film/">Open animation</a><a href="../../assets/images/liver-case-poster.jpg" download>Download case figure</a></p>
   </section><section class="container sec" id="explore" aria-labelledby="explore-title">
     <div class="section-heading"><div><h2 id="explore-title">Explore a liver lesion in 4D</h2></div></div>
     <div class="switch cc-tabs" role="tablist" aria-label="Explore the representation">
@@ -85,7 +82,7 @@
     </div>
     <div class="case-controls"><div><label class="case-action-label" for="case-action">Candidate action</label><select class="case-action-select" id="case-action" aria-label="Candidate action for the illustrative rollout"></select></div><div class="case-transport"><button class="btn btn-solid" id="case-play" type="button" disabled aria-pressed="false"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10l8-5Z" fill="currentColor"/></svg><span id="case-play-label">Play trajectory</span></button><div class="case-timeline-track"><label class="sr-only" for="case-time">Simulation day</label><input id="case-time" type="range" min="0" max="90" step="0.1" value="45"><div class="case-time-labels"><span>Day 0</span><span>30</span><span>60</span><span>90</span></div></div><output id="case-day" for="case-time">Day 45</output></div></div>
     <div class="case-notes"><p>Baseline surfaces come from the CT reference masks. Future volume, tissue composition, and uncertainty visualize the existing rule-contract states; the interior core is a schematic encoding, not a measured necrosis map or a patient forecast.</p><button class="btn" id="case-reset" type="button">Reset to baseline</button></div>
-    <p class="note" id="viewer-error" role="status" hidden>The interactive renderer could not start. <a href="#top-demo">Watch the video</a> or <a href="assets/data/trajectories.json">inspect the example states</a>.</p>
+    <p class="note" id="viewer-error" role="status" hidden>The interactive renderer could not start. <a href="#top-demo">Watch the video</a> or <a href="../../assets/data/trajectories.json">inspect the example states</a>.</p>
   </div>
 </div>
     <div id="panel-code" class="explorer-panel" role="tabpanel" aria-labelledby="tab-code" hidden>
@@ -104,13 +101,13 @@
     </div>
     <div id="panel-method" class="explorer-panel" role="tabpanel" aria-labelledby="tab-method" hidden>
       <div class="method-steps"><div><span>01</span><h3>Compile</h3><p>Ground the clinical state in imaging tools and pre-decision context.</p></div><div><span>02</span><h3>Roll forward</h3><p>Predict changes to mutable fields for each candidate action.</p></div><div><span>03</span><h3>Validate</h3><p>Check types, units, bounds, time, and provenance.</p></div><div><span>04</span><h3>Decode</h3><p>Map validated trajectories to documented treatment actions.</p></div></div>
-      <a href="assets/images/method.png" target="_blank" rel="noopener" class="method-figure"><img src="assets/images/method.png" width="2268" height="1200" loading="lazy" alt="The paper's framework: tool-grounded ClinicalCode compilation, action-conditioned code dynamics, and calibrated treatment decoding."></a><p class="note">Framework figure from the manuscript. Open the figure to inspect its details.</p>
+      <a href="../../assets/images/method.png" target="_blank" rel="noopener" class="method-figure"><img src="../../assets/images/method.png" width="2268" height="1200" loading="lazy" alt="The paper's framework: tool-grounded ClinicalCode compilation, action-conditioned code dynamics, and calibrated treatment decoding."></a><p class="note">Framework figure from the manuscript. Open the figure to inspect its details.</p>
     </div>
-    <noscript><p>The interactive controls require JavaScript. <a href="assets/video/clinicalcode-liver-case.mp4">Watch the MP4</a> or <a href="assets/data/trajectories.json">read the example states</a>.</p></noscript>
+    <noscript><p>The interactive controls require JavaScript. <a href="../../assets/video/clinicalcode-liver-case.mp4">Watch the MP4</a> or <a href="../../assets/data/trajectories.json">read the example states</a>.</p></noscript>
   </section><section class="container sec" id="results" aria-labelledby="results-title">
     <div class="section-heading"><div><h2 id="results-title">Results</h2></div></div>
     <p class="sec-lede">Treatment-action prediction results reported in the manuscript. CT and MRI have separate cohorts and evaluation protocols.</p>
-    <div class="results-toolbar" role="group" aria-label="Results modality"><button class="btn btn-small result-tab is-on" aria-pressed="true" data-results="ct">CT treatment planning</button><button class="btn btn-small result-tab" aria-pressed="false" data-results="mri">Longitudinal glioma MRI</button><a href="assets/data/results.csv" download class="a-quiet">Download CSV</a></div>
+    <div class="results-toolbar" role="group" aria-label="Results modality"><button class="btn btn-small result-tab is-on" aria-pressed="true" data-results="ct">CT treatment planning</button><button class="btn btn-small result-tab" aria-pressed="false" data-results="mri">Longitudinal glioma MRI</button><a href="../../assets/data/results.csv" download class="a-quiet">Download CSV</a></div>
     <div class="table-wrap"><table class="lb results-table"><caption class="sr-only" id="result-caption">CT treatment planning, F1 in percent</caption><thead><tr><th scope="col" class="c-model">Method / configuration</th><th scope="col">Internal F1 ↑</th><th scope="col">External F1 ↑</th></tr></thead><tbody id="results-body"></tbody></table></div>
     <p class="note" id="results-note"></p>
     <details class="drop"><summary>Evaluation context</summary><div class="drop-body"><p>The tables measure agreement with documented treatment actions. They do not establish causal treatment benefit. The MRI external result uses the official UCSF test partition with no UCSF fitting or calibration. CT single-model and ensemble configurations are listed separately. Interactive demo values are illustrative and do not contribute to these scores.</p></div></details>
@@ -126,6 +123,6 @@
   url    = {https://qic999.github.io/projects/ClinicalCode/}
 }</code></pre><span class="sr-only" id="copy-status" role="status"></span>
   </section><footer class="container page-footer"><span>ClinicalCode · Research manuscript, 2026</span><a href="https://qic999.github.io/">Qi Chen</a></footer></main>
-<script src="assets/js/app.js?v=3" defer></script>
+<script src="../shared/page.js?v=3" defer></script>
 </body>
 </html>

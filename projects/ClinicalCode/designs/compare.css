@@ -1,0 +1,13 @@
+:root{color-scheme:light;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#183d53;background:#fff}
+@font-face{font-family:Inter;src:url('../assets/fonts/inter-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
+*{box-sizing:border-box}body{margin:0;height:100dvh;display:grid;grid-template-rows:auto auto auto minmax(0,1fr)}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 28px}
+.review-title{display:flex;align-items:center;gap:8px;font-size:15px}.review-title span{font-size:13px;color:#536570;margin-left:6px}
+.review-links{display:flex;gap:24px;font-size:13px}a{color:#087775;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:36px}
+.variants{display:flex;gap:30px;padding:0 28px;border-bottom:1px solid #d7e0e4}
+.variants button{display:flex;align-items:baseline;gap:12px;font:inherit;font-size:14px;background:#fff;color:#536570;border:0;border-bottom:2px solid transparent;padding:13px 0;cursor:pointer}
+.variants b{font-weight:600}.variants span{font-size:12px}.variants [aria-selected=true]{color:#087775;border-bottom-color:#087775}
+button:focus-visible,a:focus-visible{outline:2px solid #087775;outline-offset:4px}
+#version-description{font-size:12px;color:#536570;line-height:1.5;margin:0;padding:8px 28px}
+main{min-height:0}iframe{display:block;border:0;width:100%;height:100%;background:#fff}
+@media(max-width:650px){header{padding:10px 16px;gap:16px}.review-title{font-size:14px}.review-title img{width:25px;height:25px}.review-title span{display:none}.review-links{font-size:11px;gap:14px}.variants{gap:0;justify-content:space-between;padding-inline:16px}.variants button{flex-direction:column;align-items:flex-start;gap:4px;font-size:12px;padding-block:10px}.variants span{font-size:11px}#version-description{font-size:11px;padding-inline:16px}}

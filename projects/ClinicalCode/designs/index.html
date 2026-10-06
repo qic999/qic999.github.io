@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>ClinicalCode · 三版设计对照</title>
+  <link rel="icon" type="image/png" href="../assets/images/clinicalcode-logo.png">
+  <link rel="stylesheet" href="compare.css">
+</head>
+<body>
+  <header>
+    <div class="review-title"><img src="../assets/images/clinicalcode-logo.png" width="30" height="30" alt=""><strong>ClinicalCode</strong><span>设计对照</span></div>
+    <div class="review-links"><a href="../?v=2" target="_blank" rel="noopener">查看原版</a><a id="open-version" href="impeccable/" target="_blank" rel="noopener">单独打开当前版</a></div>
+  </header>
+  <nav class="variants" role="tablist" aria-label="切换设计版本">
+    <button id="tab-impeccable" role="tab" aria-selected="true" aria-controls="preview-panel" data-version="impeccable"><b>Impeccable</b><span>经典论文页</span></button>
+    <button id="tab-taste" role="tab" aria-selected="false" aria-controls="preview-panel" tabindex="-1" data-version="taste"><b>Taste Skill</b><span>图像与演示优先</span></button>
+    <button id="tab-ui-ux-pro-max" role="tab" aria-selected="false" aria-controls="preview-panel" tabindex="-1" data-version="ui-ux-pro-max"><b>UI/UX Pro Max</b><span>学术期刊排版</span></button>
+  </nav>
+  <p id="version-description" aria-live="polite">居中标题、单列阅读与简洁的资源链接。保留研究图像的主导位置。</p>
+  <main id="preview-panel" role="tabpanel" aria-labelledby="tab-impeccable">
+    <iframe id="preview" src="impeccable/" title="Impeccable 版 ClinicalCode 网页" allow="clipboard-write" loading="eager"></iframe>
+  </main>
+  <script src="compare.js" defer></script>
+</body>
+</html>

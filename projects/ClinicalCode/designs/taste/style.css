@@ -1,0 +1,75 @@
+/* Taste: research-led visual showcase. Dials: variance 4, motion 2, density 4.
+   Existing assets and scientific content stay fixed across the studies. */
+:root { --sans: 'Source Sans 3', sans-serif; --content-width: 1240px; }
+body { font-size: 18px; line-height: 1.65; }
+.masthead { display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 84px; border-bottom: 1px solid var(--line); }
+.masthead .project-brand { font-size: 27px; }
+.masthead .project-brand img { width: 38px; height: 38px; }
+.masthead > div { display: flex; gap: 28px; font-size: 15px; }
+.masthead > div a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; }
+.masthead > div a:hover { color: var(--teal); text-decoration: underline; }
+.paper-header { padding-top: 32px; }
+.paper-header h1 { max-width: 1100px; font-size: 42px; font-weight: 600; letter-spacing: -.025em; line-height: 1.15; margin: 0 0 25px; text-wrap: pretty; }
+.paper-meta { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.authors, .affiliations { justify-content: flex-start; }
+.authors { font-size: 18px; gap: 5px 26px; }
+.affiliations { font-size: 15px; gap: 0 24px; }
+.resources { flex-shrink: 0; margin-top: 0; gap: 20px; font-size: 16px; }
+.resources .resource-primary { background: #fff; color: var(--teal); padding: 0; border-radius: 0; }
+.resources a { text-decoration: underline; text-decoration-color: #a7bfbe; text-underline-offset: 6px; }
+.resources a:hover { text-decoration-color: var(--teal); }
+.teaser { margin-top: 14px; }
+.teaser figcaption { max-width: none; text-align: left; margin-top: 12px; font-size: 16px; }
+.figure-note { font-size: 13px; }
+.sec { padding-block: 52px 24px; }
+h2 { font-size: 30px; font-weight: 600; }
+.reading-copy { font-size: 18px; }
+#abstract, #results, #cite { display: grid; grid-template-columns: 220px minmax(0,1fr); column-gap: 48px; }
+#abstract > *, #results > *, #cite > * { grid-column: 2; }
+#abstract > .section-heading, #results > .section-heading, #cite > .section-heading { grid-column: 1; grid-row: 1 / span 8; }
+.representation-details { font-size: 16px; }
+.switch { gap: 44px; }
+.sw { font-size: 18px; }
+.btn { font-size: 15px; }
+.example-label, .note { font-size: 14px; }
+.results-table { font-size: 16px; }
+.results-table thead th { font-size: 14px; }
+.demo .media-note { font-size: 15px; text-align: left; max-width: none; }
+.video-download { justify-content: flex-start; font-size: 14px; }
+.viewer3d { height: 360px; }
+@media (max-width: 1050px) {
+  .paper-meta { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .paper-header h1 { font-size: 38px; }
+  #abstract, #results, #cite { grid-template-columns: 170px minmax(0,1fr); column-gap: 28px; }
+}
+@media (max-width: 700px) {
+  #abstract, #results, #cite { display: block; }
+  .paper-header h1 { font-size: 34px; }
+  .masthead > div { gap: 20px; }
+  .resources { flex-wrap: wrap; gap: 22px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .masthead { min-height: 70px; gap: 18px; }
+  .masthead .project-brand { font-size: 23px; gap: 5px; }
+  .masthead .project-brand img { width: 31px; height: 31px; }
+  .masthead > div { gap: 16px; font-size: 14px; }
+  .masthead > div a:last-child { display: none; }
+  .paper-header { padding-top: 28px; }
+  .paper-header h1 { font-size: 31px; line-height: 1.14; margin-bottom: 20px; }
+  .authors { font-size: 16px; gap: 5px 20px; }
+  .affiliations { font-size: 14px; }
+  .paper-meta { gap: 12px; }
+  .resources { font-size: 15px; gap: 19px; }
+  .teaser { margin-top: 2px; }
+  .teaser figcaption { font-size: 15px; }
+  .sec { padding-block: 38px 16px; }
+  h2 { font-size: 27px; }
+  .sw { font-size: 15px; }
+  .switch { gap: 16px; }
+  .btn { font-size: 14px; }
+  .reading-copy { font-size: 17px; }
+  .viewer3d { height: 300px; }
+  .results-table { font-size: 14px; }
+  .results-table thead th { font-size: 12px; }
+}

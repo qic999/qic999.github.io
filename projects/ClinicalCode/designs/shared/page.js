@@ -32,4 +32,4 @@ $('copy-citation').addEventListener('click',async()=>{
   $('copy-citation').textContent='Copied';$('copy-status').textContent='BibTeX copied to clipboard.';setTimeout(()=>{$('copy-citation').textContent='Copy BibTeX'},1800);
 });
 let started=false;
-new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!started){started=true;import('./liver-case.js?v=3').catch(error=>{console.error(error);$('viewer-error').hidden=false;document.querySelectorAll('.viewer-loading').forEach(x=>x.textContent='3D view unavailable');});}},{rootMargin:'250px'}).observe($('explore'));
+new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!started){started=true;(document.getElementById('liver-case') ? import('../../assets/js/liver-case.js?v=3') : import('../../assets/js/explorer.js')).catch(error=>{console.error(error);$('viewer-error').hidden=false;document.querySelectorAll('.viewer-loading').forEach(x=>x.textContent='3D view unavailable');});}},{rootMargin:'250px'}).observe($('explore'));

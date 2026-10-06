@@ -1,0 +1,55 @@
+/* UI/UX Pro Max: verified Academic / Research typography pairing.
+   No matched whole-page pattern; composition follows the research brief.
+   White surfaces and medical navy/teal override the generic palette. */
+:root { --sans: Atkinson, sans-serif; --content-width: 1100px; --serif: 'Crimson Pro', Georgia, serif; }
+body { font-size: 17px; line-height: 1.7; }
+.paper-header { text-align: center; padding-top: 36px; }
+.project-brand { font-size: 30px; font-weight: 700; }
+.project-brand img { width: 43px; height: 43px; }
+.paper-header h1 { max-width: 1040px; margin: 22px auto 23px; font: 500 49px/1.08 var(--serif); letter-spacing: -.022em; }
+.authors { font-size: 18px; gap: 6px 28px; }
+.affiliations { font-size: 15px; }
+.resources { border-block: 1px solid var(--line); width: fit-content; margin: 24px auto 0; gap: 35px; padding: 3px 18px; font-size: 15px; }
+.resources .resource-primary { background: #fff; color: var(--teal); padding: 0; border-radius: 0; }
+.resources .resource-primary:hover { text-decoration: underline; }
+.teaser { margin-top: 26px; }
+.teaser figcaption { font-size: 15px; }
+.figure-note { font-size: 13px; }
+.sec { max-width: 1020px; padding-top: 52px; }
+.section-heading { border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 25px; }
+h2 { font: 500 36px/1.15 var(--serif); letter-spacing: -.015em; }
+h3 { font-family: var(--serif); font-size: 27px; font-weight: 500; }
+#abstract, #cite { max-width: 800px; }
+.reading-copy { font-family: var(--serif); font-size: 23px; line-height: 1.5; letter-spacing: 0; }
+.representation-details { font-size: 15px; }
+.representation-details b { font-weight: 700; }
+.btn { font-size: 14px; border-radius: 2px; }
+.sw { font-size: 16px; }
+.demo-btn { border-radius: 2px; }
+.note, .media-note { font-size: 14px; }
+.results-table { font-size: 16px; }
+.results-table .ours .c-model { font-weight: 700; }
+.results-table thead th { font-size: 14px; }
+.metric b { font-weight: 400; }
+.page-footer { max-width: 1020px; font-size: 14px; }
+@media (max-width: 800px) {
+  .paper-header h1 { font-size: 43px; }
+}
+@media (max-width: 560px) {
+  .paper-header { padding-top: 28px; }
+  .project-brand { font-size: 28px; }
+  .paper-header h1 { font-size: 36px; line-height: 1.08; margin-block: 20px; }
+  .authors { font-size: 16px; gap: 4px 18px; }
+  .affiliations { font-size: 14px; }
+  .resources { width: 100%; gap: 18px; padding-inline: 0; font-size: 14px; }
+  .teaser { margin-top: 14px; }
+  .teaser figcaption { font-size: 14px; }
+  .sec { padding-top: 40px; }
+  h2 { font-size: 32px; }
+  .reading-copy { font-size: 21px; }
+  .sw { font-size: 14px; }
+  .btn { font-size: 13px; }
+  .results-table { font-size: 14px; }
+  .results-table thead th { font-size: 12px; }
+  .page-footer { font-size: 13px; }
+}

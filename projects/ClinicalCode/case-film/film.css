@@ -1,0 +1,44 @@
+body { margin: 0; overflow-x: hidden; }
+#case-film-viewport { position: relative; width: 100%; overflow: hidden; }
+#case-film-stage { position: absolute; width: 1920px; height: 1080px; padding: 38px 64px 24px; transform-origin: top left; background: #fff; }
+.film-header { display: flex; justify-content: space-between; align-items: center; height: 53px; }
+.film-header .project-brand { font-size: 31px; }
+.film-header .project-brand img { width: 43px; height: 43px; }
+.film-header > span { font-size: 15px; color: var(--muted); }
+#case-film-stage h1 { font-size: 40px; font-weight: 500; margin-top: 21px; text-wrap: nowrap; }
+#panel-trajectories { padding-top: 32px; }
+#liver-case { display: block; }
+.case-heading, .case-notes, .case-controls { display: none; }
+.case-stage { display: grid; grid-template-columns: 222px 222px 320px minmax(0,1fr); gap: 30px; }
+.case-input { display: contents; }
+.case-parse { margin: 0; }
+.case-code, .case-output { order: initial; grid-column: auto; grid-row: auto; }
+.case-part-heading { height: 36px; margin-bottom: 15px; }
+.case-part-heading h4 { font-size: 23px; }
+.case-part-heading > span, .case-part-heading > output { font-size: 12px; }
+.case-code pre { font-size: 14px; line-height: 1.9; padding-top: 16px; columns: 1; max-height: none; }
+.case-code pre > code { display: inline; }
+.case-code .code-note { font-size: 13px; line-height: 1.8; margin-top: 17px; }
+.case-slice-control { font-size: 13px; margin-top: 12px; }
+.case-mask-controls { font-size: 13px; margin-top: 12px; }
+.case-input canvas { margin-top: 0; }
+.case-view-tabs { gap: 28px; }
+.case-view-tabs button { font-size: 14px; min-height: 44px; }
+.case-viewer { height: 485px; }
+.case-inset-label { font-size: 12px; bottom: 176px; right: 14px; }
+.case-viewer-hint { display: none; }
+.case-mode-controls button { min-height: 42px; font-size: 13px; padding: 8px 15px; }
+.case-baseline-label { font-size: 13px; }
+.case-metrics { padding-top: 14px; margin-top: 18px; }
+.case-metrics span { font-size: 14px; }
+.case-metrics b { font-size: 28px; }
+.case-legend { font-size: 12px; margin-top: 9px; }
+.film-footer { position: absolute; bottom: 38px; left: 64px; right: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding-top: 20px; }
+.film-footer p { font-size: 21px; color: var(--navy); }
+.film-footer > span { font: 13px var(--mono); color: var(--muted); }
+.film-progress { height: 2px; position: absolute; bottom: 0; left: 64px; right: 64px; background: #fff; }
+.film-progress i { display: block; height: 100%; background: var(--teal); }
+.film-controls { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 24px; font-size: 13px; }
+.film-controls input { width: min(380px,35vw); }
+.capture .film-controls { display: none; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }

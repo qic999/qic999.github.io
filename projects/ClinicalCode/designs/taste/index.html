@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>ClinicalCode: taste design study</title>
+  <meta name="description" content="ClinicalCode: a typed, executable clinical-state representation for medical world models across CT and MRI.">
+  <link rel="icon" type="image/png" href="../../assets/images/clinicalcode-logo.png">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"../../assets/vendor/three.module.js","three/addons/":"../../assets/vendor/"}}</script>
+</head>
+<body class="design-taste">
+<a class="skip-link" href="#top-demo">Skip to video demonstration</a>
+<main id="top"><nav class="container masthead" aria-label="Page sections"><a href="#top" class="project-brand" aria-label="ClinicalCode, top of page"><img src="../../assets/images/clinicalcode-logo.png" width="52" height="52" alt=""><span>Clinical<span>Code</span></span></a><div><a href="#explore">Demo</a><a href="#results">Results</a><a href="#cite">Cite</a></div></nav>
+<header class="container paper-header"><h1>Animating the Clinical Source Code<br class="title-break"> of Disease Progression for Medical World Models</h1><div class="paper-meta"><div><p class="authors"><a href="https://qic999.github.io/">Qi Chen<sup>1</sup></a><a href="https://www.cs.jhu.edu/~ayuille/">Alan L. Yuille<sup>1</sup></a><a href="https://beckschen.github.io/">Jieneng Chen<sup>2</sup></a></p>
+<p class="affiliations"><span><sup>1</sup>Johns Hopkins University</span><span><sup>2</sup>Stanford University</span></p></div><nav class="resources" aria-label="Project resources"><a class="resource-primary" href="#top-demo"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path d="M5 3v10l8-5Z" fill="currentColor"/></svg>Video</a><a href="#explore">Interactive demo</a><a href="#abstract">Overview</a><a href="#cite">BibTeX</a></nav></div></header><figure class="container teaser" aria-label="ClinicalCode overview">
+  <a href="../../assets/images/workflow-overview.png" target="_blank" rel="noopener" aria-label="Open the ClinicalCode workflow figure at full size"><img src="../../assets/images/workflow-overview.png" width="1672" height="941" fetchpriority="high" alt="Four separate parts: CT, parsing with organ and lesion masks, structured ClinicalCode, and simulation of anatomy and lesion evolution."></a>
+  <figcaption>From medical observations to structured clinical states and action-conditioned trajectories.<span class="figure-note">AI-generated concept illustration. The video below uses real CT and matching reference masks.</span></figcaption>
+</figure><section class="container sec" id="abstract" aria-labelledby="abstract-title">
+    <div class="section-heading"><div><h2 id="abstract-title">Overview</h2></div></div>
+    <div class="reading-copy"><p>Medical world models should describe how disease state evolves under candidate interventions. ClinicalCode uses a typed, executable representation for anatomy, lesions, imaging phenotype, clinical context, time, uncertainty, missingness, and provenance.</p><p>Compilers build this state from CT, MRI, and pre-decision observations. An action-conditioned dynamics model rolls the state forward, while validation checks expose inconsistent fields and temporal changes. A calibrated decoder then connects the trajectories to documented treatment actions.</p><p>This explicit interface lets researchers inspect individual variables, edit a state, and distinguish errors in perception, state evolution, and treatment decoding. The framework is evaluated across CT treatment planning and longitudinal glioma MRI.</p></div>
+  <details class="representation-details"><summary>What the representation makes explicit</summary><ul>
+      <li><span><b>A clinical state you can read.</b> Anatomy, lesion geometry, imaging phenotype, and context are represented with explicit types, units, and sources.</span></li>
+      <li><span><b>Actions condition the future.</b> Candidate interventions produce separate trajectories over the same shared clinical-state interface.</span></li>
+      <li><span><b>Every change has a place.</b> Missing observations, predicted fields, and uncertainty stay visible throughout the rollout.</span></li>
+      <li><span><b>Validate before decoding.</b> Schema and temporal checks precede the calibrated mapping from trajectories to documented treatment actions.</span></li>
+    </ul></details></section><section class="container sec demo" id="top-demo" aria-labelledby="video-title">
+    <div class="section-heading"><div><h2 id="video-title">Video demonstration</h2></div></div>
+    <div class="demo-box">
+      <button type="button" class="demo-cover" id="demo-play" aria-label="Play the 48-second ClinicalCode video">
+        <img src="../../assets/images/video-poster.jpg" width="1920" height="1080" alt="Four separate panels: real CT, matching reference segmentation, structured ClinicalCode, and 3D simulation.">
+        <span class="demo-cta"><span class="demo-btn"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.6v8.8L12 8z" fill="currentColor"/></svg>Play video</span><span class="demo-note">48 seconds</span></span>
+      </button>
+      <video id="demo-video" controls playsinline preload="none" poster="../../assets/images/video-poster.jpg" hidden aria-label="ClinicalCode framework video"><source src="../../assets/video/clinicalcode-demo.mp4" type="video/mp4"><track label="English" kind="captions" srclang="en" src="../../assets/video/clinicalcode-demo.vtt" default>Your browser does not support embedded video. <a href="../../assets/video/clinicalcode-demo.mp4">Download the video.</a></video>
+    </div>
+    
+    <p class="media-note">Real CT and matching reference masks anchor the walkthrough. State evolution is a schematic, rule-driven illustration.</p>
+    <p class="video-download"><a href="../../assets/video/clinicalcode-demo.mp4" download>Download MP4</a><a href="../../demo/">Open animation</a><a href="../../assets/images/workflow-real-ct.png" download>Download workflow figure</a></p>
+  </section><section class="container sec" id="explore" aria-labelledby="explore-title">
+    <div class="section-heading"><div><h2 id="explore-title">Interactive state trajectories</h2></div></div>
+    <div class="switch cc-tabs" role="tablist" aria-label="Explore the representation">
+      <button class="sw" id="tab-trajectories" role="tab" aria-selected="true" aria-controls="panel-trajectories" data-panel="trajectories"><span class="sw-title">State trajectories</span></button>
+      <button class="sw" id="tab-code" role="tab" aria-selected="false" aria-controls="panel-code" data-panel="code" tabindex="-1"><span class="sw-title">Inside the code</span></button>
+      <button class="sw" id="tab-method" role="tab" aria-selected="false" aria-controls="panel-method" data-panel="method" tabindex="-1"><span class="sw-title">The framework</span></button>
+    </div>
+    <div id="panel-trajectories" class="explorer-panel" role="tabpanel" aria-labelledby="tab-trajectories">
+      <div class="explorer-bar"><div class="mode-tabs" role="group" aria-label="Visualized state field"><button class="btn btn-small modebtn active" data-mode="geometry" aria-pressed="true">Geometry</button><button class="btn btn-small modebtn" data-mode="viability" aria-pressed="false">Viability proxy</button><button class="btn btn-small modebtn" data-mode="uncertainty" aria-pressed="false">Uncertainty</button></div><span class="example-label">Rule-driven illustrative example</span></div>
+      <div class="compare">
+        <article class="comparison-panel"><div class="comparison-head"><span class="letter">A</span><label for="selectA">Candidate action</label><select id="selectA" aria-label="Candidate action A"></select></div><div class="viewer3d" id="viewerA"><span class="viewer-loading">Loading 3D view…</span></div><div class="metrics" id="metricsA"></div></article>
+        <article class="comparison-panel"><div class="comparison-head"><span class="letter orange">B</span><label for="selectB">Candidate action</label><select id="selectB" aria-label="Candidate action B"></select></div><div class="viewer3d" id="viewerB"><span class="viewer-loading">Loading 3D view…</span></div><div class="metrics" id="metricsB"></div></article>
+      </div>
+      <div class="timeline"><button class="btn btn-solid" id="play" aria-label="Play trajectory" disabled>Play</button><div class="timeline-track"><label class="sr-only" for="time">Simulation day</label><input id="time" type="range" min="0" max="90" step="0.1" value="0"><div class="tick-labels"><span>Day 0</span><span>30</span><span>60</span><span>90</span></div></div><output id="day" for="time">Day 0</output></div>
+      <div class="explorer-foot"><span id="fieldLegend">Explicit 3D boundary and shape</span><span>Drag to rotate · scroll to zoom</span><button class="btn btn-small" id="reset-view">Reset views</button></div>
+      <p class="note demo-provenance">This example interpolates frozen rule-contract states at days 0, 30, 60, and 90. Its geometry, viability proxy, and illustrative uncertainty show how to inspect the representation; they are not learned patient forecasts or measured treatment effects.</p>
+      <p class="note" id="viewer-error" role="status" hidden>The interactive renderer could not start. You can still watch the <a href="#top-demo">video walkthrough</a> and inspect the <a href="../../assets/data/trajectories.json">example states</a>.</p>
+    </div>
+    <div id="panel-code" class="explorer-panel" role="tabpanel" aria-labelledby="tab-code" hidden>
+      <div class="code-layout"><div><h3>A field is more than a value.</h3><p>Each state field carries its type and unit, observability, uncertainty, source, and mutability. An unobserved quantity stays missing.</p><div class="field-list"><span>Context</span><span>Anatomy</span><span>Lesion</span><span>Phenotype</span><span>Physiology</span><span>History</span><span>Time</span><span>Provenance</span></div><p class="note">Illustrative schema excerpt. The missing volume is deliberate; this example contains no patient measurements.</p></div><pre class="code schema-code"><code><span class="syn-comment">// An inspectable field in a ClinicalCode state</span>
+{
+  <span class="syn-key">"lesion.volume"</span>: {
+    <span class="syn-key">"value"</span>: <span class="syn-value">null</span>,
+    <span class="syn-key">"type"</span>: <span class="syn-string">"float"</span>,
+    <span class="syn-key">"unit"</span>: <span class="syn-string">"mL"</span>,
+    <span class="syn-key">"observability"</span>: <span class="syn-string">"missing"</span>,
+    <span class="syn-key">"uncertainty"</span>: <span class="syn-value">null</span>,
+    <span class="syn-key">"source"</span>: <span class="syn-value">null</span>,
+    <span class="syn-key">"mutability"</span>: <span class="syn-string">"mutable"</span>
+  }
+}</code></pre></div>
+    </div>
+    <div id="panel-method" class="explorer-panel" role="tabpanel" aria-labelledby="tab-method" hidden>
+      <div class="method-steps"><div><span>01</span><h3>Compile</h3><p>Ground the clinical state in imaging tools and pre-decision context.</p></div><div><span>02</span><h3>Roll forward</h3><p>Predict changes to mutable fields for each candidate action.</p></div><div><span>03</span><h3>Validate</h3><p>Check types, units, bounds, time, and provenance.</p></div><div><span>04</span><h3>Decode</h3><p>Map validated trajectories to documented treatment actions.</p></div></div>
+      <a href="../../assets/images/method.png" target="_blank" rel="noopener" class="method-figure"><img src="../../assets/images/method.png" width="2268" height="1200" loading="lazy" alt="The paper's framework: tool-grounded ClinicalCode compilation, action-conditioned code dynamics, and calibrated treatment decoding."></a><p class="note">Framework figure from the manuscript. Open the figure to inspect its details.</p>
+    </div>
+    <noscript><p>The interactive controls require JavaScript. <a href="../../assets/video/clinicalcode-demo.mp4">Watch the MP4</a> or <a href="../../assets/data/trajectories.json">read the example states</a>.</p></noscript>
+  </section><section class="container sec" id="results" aria-labelledby="results-title">
+    <div class="section-heading"><div><h2 id="results-title">Results</h2></div></div>
+    <p class="sec-lede">Treatment-action prediction results reported in the manuscript. CT and MRI have separate cohorts and evaluation protocols.</p>
+    <div class="results-toolbar" role="group" aria-label="Results modality"><button class="btn btn-small result-tab is-on" aria-pressed="true" data-results="ct">CT treatment planning</button><button class="btn btn-small result-tab" aria-pressed="false" data-results="mri">Longitudinal glioma MRI</button><a href="../../assets/data/results.csv" download class="a-quiet">Download CSV</a></div>
+    <div class="table-wrap"><table class="lb results-table"><caption class="sr-only" id="result-caption">CT treatment planning, F1 in percent</caption><thead><tr><th scope="col" class="c-model">Method / configuration</th><th scope="col">Internal F1 ↑</th><th scope="col">External F1 ↑</th></tr></thead><tbody id="results-body"></tbody></table></div>
+    <p class="note" id="results-note"></p>
+    <details class="drop"><summary>Evaluation context</summary><div class="drop-body"><p>The tables measure agreement with documented treatment actions. They do not establish causal treatment benefit. The MRI external result uses the official UCSF test partition with no UCSF fitting or calibration. CT single-model and ensemble configurations are listed separately. Interactive demo values are illustrative and do not contribute to these scores.</p></div></details>
+  </section><section class="container sec" id="cite" aria-labelledby="cite-title">
+    <div class="section-heading"><div><h2 id="cite-title">Citation</h2></div></div>
+    <div class="citation-heading"><span>Research manuscript · 2026</span><button class="btn btn-small" id="copy-citation">Copy BibTeX</button></div>
+    <pre class="code citation"><code id="bibtex">@misc{chen2026clinicalcode,
+  title  = {Animating the Clinical Source Code of Disease
+            Progression for Medical World Models},
+  author = {Chen, Qi and Yuille, Alan L. and Chen, Jieneng},
+  year   = {2026},
+  note   = {Research manuscript},
+  url    = {https://qic999.github.io/projects/ClinicalCode/}
+}</code></pre><span class="sr-only" id="copy-status" role="status"></span>
+  </section><footer class="container page-footer"><span>ClinicalCode · Research manuscript, 2026</span><a href="https://qic999.github.io/">Qi Chen</a></footer></main>
+<script src="../shared/page.js" defer></script>
+</body>
+</html>

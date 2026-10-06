@@ -1,6 +1,10 @@
 /* Shared research content and controls. Direction-specific composition lives
    in each study's style.css; no changes apply to the existing project page. */
-@font-face { font-family: Inter; src: url('../fonts/inter-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: Inter; src: url('../../assets/fonts/inter-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Source Sans 3'; src: url('fonts/source-sans-3-latin.woff2') format('woff2'); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: 'Crimson Pro'; src: url('fonts/crimson-pro-latin.woff2') format('woff2'); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: Atkinson; src: url('fonts/atkinson-regular-latin.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Atkinson; src: url('fonts/atkinson-bold-latin.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 :root {
   color-scheme: light;
   --navy: #183d53; --teal: #087775; --ink: #273a45; --muted: #526570;
@@ -31,7 +35,6 @@ h3 { font-size: 22px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 50; background: var(--navy); color: #fff; padding: 12px 20px; transform: translateY(-160%); }
 .skip-link:focus { transform: none; }
-.skip-link:not(:focus) { clip-path: inset(50%); width: 1px; height: 1px; padding: 0; overflow: hidden; }
 .project-brand { display: inline-flex; align-items: center; gap: 9px; color: var(--navy); font-weight: 600; letter-spacing: -.025em; line-height: 1; text-decoration: none; }
 .project-brand img { flex: 0 0 auto; width: 52px; height: 52px; object-fit: contain; }
 .project-brand > span > span { color: var(--teal); }
@@ -188,29 +191,4 @@ sup { font-size: .65em; vertical-align: super; margin-inline: 2px 3px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
-}
-
-/* Impeccable / distill: one reading axis, retained identity, fewer ornaments. */
-:root { --content-width: 1100px; }
-.paper-header { text-align: center; padding-top: 48px; }
-.project-brand { font-size: 43px; }
-.paper-header h1 { max-width: 1040px; margin-inline: auto; font-size: 34px; font-weight: 500; }
-.teaser { max-width: 1080px; }
-.sec { max-width: 980px; padding-top: 60px; }
-.sec h2 { text-align: center; }
-#abstract, #cite { max-width: 780px; }
-.reading-copy, .representation-details { margin-inline: auto; }
-.demo { max-width: 1100px; }
-.section-heading { margin-bottom: 26px; }
-.page-footer { max-width: 980px; }
-@media (max-width: 800px) {
-  .paper-header h1 { font-size: 30px; }
-}
-@media (max-width: 560px) {
-  .paper-header { padding-top: 30px; }
-  .project-brand { font-size: 34px; }
-  .project-brand img { width: 43px; height: 43px; }
-  .paper-header h1 { font-size: 26px; margin-block: 17px 20px; }
-  .sec { padding-top: 40px; }
-  .sec h2 { text-align: left; }
 }
