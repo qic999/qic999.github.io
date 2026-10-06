@@ -71,3 +71,8 @@ and [case metadata](../ct-case.json). No new patient identifiers or NIfTI files
 are distributed. Cite Wasserthal et al., Radiology: Artificial Intelligence 2023,
 [doi:10.1148/ryai.230024](https://pubs.rsna.org/doi/10.1148/ryai.230024), for
 TotalSegmentator.
+
+
+## TACE atlas animation
+
+Z-Anatomy / BodyParts3D, adapted under CC BY-SA 4.0. See [TACE sources and modifications](../tace/README.md) and [full attribution](../tace/ASSETS.md).

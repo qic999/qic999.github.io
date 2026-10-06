@@ -41,4 +41,47 @@ body { margin: 0; overflow-x: hidden; }
 .film-controls { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 24px; font-size: 13px; }
 .film-controls input { width: min(380px,35vw); }
 .capture .film-controls { display: none; }
+#case-film-stage .case-view-menu { display: none; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+
+/* Final TACE example, rendered with the same four-part sequence. */
+#case-film-stage .tace-active .case-stage { grid-template-columns: 190px 190px 300px minmax(0,1fr); gap: 30px; }
+#case-film-stage .case-part-heading h4 { font-size: 26px; }
+#case-film-stage .case-view-tabs button { font-size: 18px; }
+#case-film-stage .tace-origin { font-size: 16px; }
+#case-film-stage .tace-active .case-code pre { font-size: 18px !important; line-height: 1.65 !important; }
+#case-film-stage .tace-visual { grid-template-columns: .36fr .64fr; gap: 16px; }
+#case-film-stage .tace-anatomy canvas { height: 570px; object-fit: contain; }
+#case-film-stage .tace-detail { padding-top: 0; }
+#case-film-stage .tace-detail canvas { max-height: 390px; object-fit: contain; }
+#case-film-stage .tace-visual figcaption { font-size: 24px; }
+#case-film-stage .tace-phase { font-size: 32px; margin-top: 28px; }
+#case-film-stage .tace-steps button { font-size: 22px; }
+#case-film-stage .tace-transport { display: none; }
+#case-film-stage .case-reset-row { display: none; }
+#case-film-stage .tace-display { padding-top: 12px; }
+#case-film-stage .case-code pre { font-size: 15px; }
+#case-film-stage .film-footer p { font-size: 24px; }
+
+/* Keep the same composition through the Simulation → TACE crossfade. */
+#case-film-stage .sequence-enabled .case-stage { grid-template-columns: 222px 222px 340px minmax(0,1fr); gap: 30px; }
+#case-film-stage .sequence-enabled .case-input { display: contents; }
+#case-film-stage .sequence-enabled .case-parse { margin: 0; }
+#case-film-stage .sequence-enabled .case-code pre { font-size: 16px !important; line-height: 1.75 !important; }
+#case-film-stage .sequence-enabled .case-part-heading { height: 42px; margin-bottom: 16px; }
+#case-film-stage .sequence-enabled .case-part-heading h4 { font-size: 26px; }
+#case-film-stage .sequence-enabled .case-viewer { height: 465px; }
+#case-film-stage .sequence-enabled .case-metrics b { font-size: 28px; }
+#case-film-stage .sequence-enabled .case-view-actions #case-state-label { font-size: 28px; }
+#case-film-stage .sequence-enabled .tace-origin { font-size: 16px; }
+#case-film-stage .sequence-enabled .tace-visual { grid-template-columns: .36fr .64fr; gap: 16px; }
+#case-film-stage .sequence-enabled .tace-phase { font-size: 32px; }
+#case-film-stage .workflow-nav { margin: 0 0 28px; }
+#case-film-stage .workflow-steps { gap: 24px; }
+#case-film-stage .workflow-step { font-size: 23px; }
+#case-film-stage .workflow-track { height: 4px; margin-top: 14px; }
+#case-film-stage .workflow-play, #case-film-stage .workflow-clock { display: none; }
+
+#case-film-stage h1 { margin-top: 12px; }
+#case-film-stage #panel-trajectories { padding-top: 16px; }
+#case-film-stage .workflow-nav { margin-bottom: 16px; }

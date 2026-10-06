@@ -1,0 +1,73 @@
+/* Existing ClinicalCode typography, with labels outside the rendered anatomy. */
+.case-view-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.case-view-actions #case-state-label { font: 11px/1.4 var(--mono); color: var(--muted); }
+.case-view-menu { position: relative; flex: 0 0 auto; }
+.case-view-menu summary { display: flex; align-items: center; justify-content: center; width: 40px; height: 36px; list-style: none; color: var(--navy); cursor: pointer; border-radius: 4px; }
+.case-view-menu summary::-webkit-details-marker { display: none; }
+.case-view-menu summary:hover, .case-view-menu[open] summary { color: var(--teal); }
+.case-view-menu summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.case-view-options { position: absolute; top: calc(100% + 4px); right: 0; z-index: 20; width: 180px; padding: 4px; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+.case-view-options button { display: block; width: 100%; min-height: 44px; padding: 10px 12px; text-align: left; border: 0; background: #fff; color: var(--ink); font: 400 16px/1.4 var(--sans); }
+.case-view-options button[aria-pressed=true] { color: var(--teal); font-weight: 600; }
+.case-view-options button:hover { color: var(--teal); }
+.tace-active .case-stage { grid-template-columns: 164px 218px minmax(0,1fr); gap: 26px; }
+.tace-active .case-code-scenes > pre:not(.tace-code),
+.tace-active .evolution-scene,
+.tace-active > .case-controls, .tace-active > .case-reset-row,
+.tace-active #case-state-label { display: none; }
+.tace-active .case-part-heading h4 { font-size: 20px; }
+.tace-active .case-mask-controls, .tace-active .case-slice-control { font-size: 13px; }
+.tace-code { font-size: 13px !important; line-height: 1.85 !important; }
+.tace-code .tace-live { color: var(--teal); font-weight: 600; }
+.tace-origin { font: 14px/1.4 var(--sans); color: var(--muted); text-decoration: none; }
+.tace-display { background: #fff; padding-top: 20px; color: var(--navy); }
+.tace-visual { display: grid; grid-template-columns: minmax(0,.44fr) minmax(0,.56fr); align-items: start; gap: 8px; }
+.tace-anatomy, .tace-detail { margin: 0; min-width: 0; }
+.tace-anatomy canvas, .tace-detail canvas { display: block; width: 100%; height: auto; background: #fff; }
+.tace-anatomy canvas { aspect-ratio: 760 / 1420; }
+.tace-detail canvas { aspect-ratio: 850 / 610; }
+.tace-anatomy figcaption, .tace-detail figcaption { font-size: 16px; font-weight: 500; text-align: center; line-height: 1.4; }
+.tace-detail { padding-top: 22px; }
+.tace-phase { margin-top: 28px; font-size: 22px; font-weight: 600; line-height: 1.3; text-wrap: balance; }
+.tace-steps { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 12px; }
+.tace-steps button { font: 500 16px/1.4 var(--sans); color: var(--muted); border: 0; border-bottom: 2px solid transparent; background: #fff; padding: 9px 0; min-height: 44px; }
+.tace-steps button[aria-current=step] { color: var(--teal); border-bottom-color: var(--teal); }
+.tace-steps button:disabled { cursor: wait; }
+.tace-transport { display: grid; grid-template-columns: auto minmax(60px,1fr) 40px; align-items: center; gap: 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.tace-transport .btn { font-size: 16px; min-width: 104px; }
+.tace-transport input { width: 100%; min-width: 0; min-height: 44px; accent-color: var(--teal); }
+.tace-transport .icon-action { width: 40px; height: 44px; }
+.tace-error { font-size: 16px; margin-block: 16px; }
+.tace-display:fullscreen { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+.tace-display:fullscreen .tace-visual { width: min(100%,1100px); margin-inline: auto; }
+.tace-display:fullscreen .tace-anatomy canvas { max-height: 72vh; object-fit: contain; }
+.tace-display:fullscreen .tace-transport { width: min(100%,1100px); margin-inline: auto; }
+.tace-display:fullscreen .tace-phase { font-size: 32px; }
+@media(max-width:1180px) {
+  .tace-active .case-stage { grid-template-columns: 150px 190px minmax(0,1fr); gap: 20px; }
+  .tace-visual { grid-template-columns: minmax(0,.42fr) minmax(0,.58fr); }
+  .tace-phase { font-size: 20px; margin-top: 18px; }
+  .tace-steps { gap: 0 14px; }
+}
+@media(max-width:950px) {
+  .tace-active .case-stage { grid-template-columns: 180px minmax(0,1fr); gap: 24px; }
+  .tace-active .case-code { grid-column: 1 / -1; }
+  .tace-code { columns: 1 !important; }
+}
+@media(max-width:600px) {
+  .case-view-menu summary { height: 44px; }
+  .tace-active .case-stage { display: contents; }
+  .tace-active .case-code { order: 2; }
+  .tace-active .case-output { order: 3; }
+  .tace-active .case-code pre { max-height: none; }
+  .tace-active .case-part-heading h4 { font-size: 20px; }
+  .tace-visual { grid-template-columns: minmax(0,.40fr) minmax(0,.60fr); gap: 4px; }
+  .tace-anatomy figcaption, .tace-detail figcaption { font-size: 16px; }
+  .tace-detail { padding-top: 0; }
+  .tace-phase { font-size: 20px; margin-top: 20px; }
+  .tace-steps { gap: 0 14px; }
+  .tace-steps button { font-size: 16px; }
+  .tace-origin { font-size: 14px; }
+  .tace-display:fullscreen { padding: 20px; }
+  .tace-display:fullscreen .tace-phase { font-size: 22px; }
+}

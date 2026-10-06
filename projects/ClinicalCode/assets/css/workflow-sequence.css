@@ -1,0 +1,92 @@
+/* A shared clock reveals the clinical workflow, on the page and in the film. */
+.workflow-nav { display: flex; align-items: center; gap: 24px; margin: 8px 0 36px; }
+.workflow-steps { display: flex; flex: 1; gap: 16px; min-width: 0; }
+.workflow-step { display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-width: 0; padding: 6px 0 12px; border: 0; background: transparent; text-align: left; color: var(--muted); font: 500 16px/1.4 var(--sans); cursor: pointer; }
+.workflow-step[aria-current=step] { color: var(--teal); }
+.workflow-step.is-complete { color: var(--navy); }
+.workflow-step:hover { color: var(--teal); }
+.workflow-track { display: block; width: 100%; height: 3px; margin-top: 12px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.workflow-track i { display: block; height: 100%; background: var(--teal); transform: scaleX(0); transform-origin: left; }
+.workflow-play { flex: 0 0 44px; width: 44px; height: 44px; padding: 10px; color: var(--navy); border: 0; background: #fff; cursor: pointer; }
+.workflow-play:hover { color: var(--teal); }
+.workflow-play svg { display: block; width: 24px; height: 24px; }
+.workflow-play .pause-icon, .workflow-play[aria-pressed=true] .play-icon { display: none; }
+.workflow-play[aria-pressed=true] .pause-icon { display: block; }
+.workflow-nav button:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+.workflow-clock { color: var(--muted); font: 12px/1.4 var(--mono); font-variant-numeric: tabular-nums; min-width: 75px; }
+.sequence-enabled > .case-heading { display: none; }
+.sequence-enabled .case-stage { display: grid; grid-template-columns: minmax(145px,.85fr) minmax(145px,.85fr) minmax(225px,1.2fr) minmax(350px,2.15fr); gap: 24px; align-items: start; }
+.sequence-enabled .case-input { display: contents; }
+.sequence-enabled .case-ct-part { transform-origin: top left; }
+.sequence-enabled .case-parse { margin-top: 0; }
+.sequence-enabled .case-code, .sequence-enabled .case-output { grid-column: auto; grid-row: auto; }
+.sequence-enabled .case-part-heading { min-height: 36px; margin-bottom: 12px; }
+.sequence-enabled .case-part-heading h4 { font-size: 20px; }
+.case-output-title { display: grid; min-width: 0; flex: 1; }
+.case-output-title > span { grid-area: 1 / 1; }
+.sequence-enabled .case-output-title > span { display: block !important; }
+.sequence-enabled .case-output > .case-part-heading { align-items: center; }
+.sequence-enabled .case-code pre { font-size: 13px !important; line-height: 1.85 !important; columns: 1; }
+.sequence-enabled .case-code pre > code { display: inline; }
+.sequence-enabled .case-mask-controls, .sequence-enabled .case-slice-control { font-size: 12px; }
+.sequence-enabled .case-code-scenes, .sequence-enabled .simulation-scenes { display: grid; align-items: start; }
+.sequence-enabled .case-code-scenes > pre, .sequence-enabled .simulation-scenes > * { grid-area: 1 / 1; min-width: 0; }
+.sequence-enabled .case-code-scenes > pre, .sequence-enabled .evolution-scene, .sequence-enabled .tace-display { display: block !important; }
+.sequence-enabled .tace-display { padding-top: 0; }
+.sequence-enabled .tace-visual { grid-template-columns: .4fr .6fr; }
+.sequence-enabled .tace-phase { font-size: 20px; }
+.sequence-enabled .tace-code { margin-top: 0; }
+.sequence-enabled:not(.sequence-manual) .tace-steps,
+.sequence-enabled:not(.sequence-manual) .tace-transport,
+.sequence-enabled:not(.sequence-manual) > .case-controls,
+.sequence-enabled:not(.sequence-manual) > .case-reset-row { display: none; }
+.sequence-enabled .case-viewer { height: 360px; }
+.sequence-enabled .case-view-actions #case-state-label { font: 600 20px/1.4 var(--sans); color: var(--teal); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sequence-enabled .case-view-actions { gap: 5px; }
+.sequence-enabled .tace-origin { font-size: 12px; }
+.sequence-enabled .case-fields { gap: 4px; justify-content: flex-end; }
+.sequence-enabled .case-metrics { gap: 8px; }
+.sequence-enabled .case-metrics b { font-size: 20px; }
+.sequence-tween .case-ct-part, .sequence-tween .case-parse, .sequence-tween .case-code,
+.sequence-tween .case-output, .sequence-tween .case-code-scenes > pre,
+.sequence-tween .simulation-scenes > *, .sequence-tween .case-output-title > span { transition: opacity 700ms cubic-bezier(.16,1,.3,1); }
+.sequence-tween .case-ct-part { transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 700ms cubic-bezier(.16,1,.3,1); }
+.sequence-tween .workflow-track i { transition: transform 700ms cubic-bezier(.16,1,.3,1); }
+@media (max-width: 1180px) {
+  #explore .sequence-enabled .case-output-title { min-height: 2.6em; align-items: center; }
+}
+@media (max-width: 1100px) {
+  .sequence-enabled .case-stage { grid-template-columns: 150px minmax(225px,1fr) minmax(310px,1.5fr); }
+  .sequence-enabled .case-input { display: block; }
+  .sequence-enabled .case-parse { margin-top: 24px; }
+}
+@media (max-width: 900px) {
+  #liver-case.sequence-enabled { display: block; }
+  .workflow-nav { gap: 10px; margin-bottom: 20px; }
+  .workflow-steps { position: relative; gap: 8px; padding-top: 25px; }
+  .workflow-step { justify-content: center; min-height: 44px; padding: 8px 0; }
+  .workflow-step-label { position: absolute; left: 0; top: 0; opacity: 0; font-size: 19px; }
+  .workflow-step[aria-current=step] .workflow-step-label { opacity: 1; }
+  .workflow-track { margin-top: 0; }
+  .workflow-clock { display: none; }
+  .sequence-enabled .case-stage { display: grid; grid-template-columns: minmax(0,1fr); min-height: 565px; }
+  .sequence-enabled .case-input { display: contents; }
+  .sequence-enabled .case-ct-part, .sequence-enabled .case-parse,
+  .sequence-enabled .case-code, .sequence-enabled .case-output { grid-area: 1 / 1; order: initial; margin: 0; width: 100%; }
+  .sequence-enabled .case-input canvas { width: min(100%,440px); margin-inline: auto; }
+  .sequence-enabled .case-part-heading { min-height: 44px; }
+  .sequence-enabled .case-part-heading h4 { font-size: 21px; }
+  .sequence-enabled .case-code pre { font-size: 14px !important; max-height: 490px; overflow: auto; }
+  .sequence-enabled .case-mask-controls, .sequence-enabled .case-slice-control { font-size: 15px; }
+  .sequence-enabled .case-mask-controls { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .sequence-enabled .case-mask-controls label { min-height: 44px; }
+  .sequence-enabled .case-viewer { height: 340px; }
+  .sequence-enabled .case-metrics { margin-top: 12px; }
+  .sequence-enabled .tace-anatomy canvas { max-height: 435px; object-fit: contain; }
+  .sequence-enabled .tace-display { padding-top: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sequence-tween .case-ct-part, .sequence-tween .case-parse, .sequence-tween .case-code,
+  .sequence-tween .case-output, .sequence-tween .case-code-scenes > pre,
+  .sequence-tween .simulation-scenes > *, .sequence-tween .case-output-title > span, .sequence-tween .workflow-track i { transition-duration: 180ms; }
+}

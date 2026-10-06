@@ -4,14 +4,14 @@ Static project page for **Animating the Clinical Source Code of Disease Progress
 
 Target URL: https://qic999.github.io/projects/ClinicalCode/
 
-Serve the repository root with `python3 -m http.server 8000`, then open `/projects/ClinicalCode/`. No package installation or build step is required. JavaScript dependencies, fonts, the liver-case demonstration, and gallery thumbnails are local. The SomaAtlas inspector loads source GLB models from `somaatlas.org` on demand, and its downloads link to the original hosted assets.
+This directory is published through GitHub Pages. To preview locally, serve the repository root with a static HTTP server that supports byte ranges, then open `/projects/ClinicalCode/`. Byte-range support enables video seeking. No package installation or build step is required. JavaScript dependencies, fonts, the liver-case demonstration, and gallery thumbnails are local. The SomaAtlas inspector loads source GLB models from `somaatlas.org` on demand, and its downloads link to the original hosted assets.
 
 ## Contents
 
 - `index.html`: the selected Impeccable layout, with the new liver-case film, anatomy-grounded interactive explorer, manuscript result tables, and citation. The explorer retains the Case explorer and Inside the code tabs; the framework tab and its contents were removed at the author’s request.
-- `case-film/`: deterministic 20-second case animation. `window.__CASE_FILM__.frame(seconds)` is asynchronous; `?render=1` hides playback controls. CT, parsing, ClinicalCode, and simulation remain visible together.
-- `assets/video/clinicalcode-liver-case.mp4`: the current embedded video; 1920 × 1080, 24 fps, H.264, 20 seconds, silent, with English WebVTT captions.
-- `assets/js/liver-case.js` and `liver-case-view.js`: reference CT slice selection, independently switchable organ/lesion/muscle/fat overlays, synchronized ClinicalCode fields, 3D liver context, lesion detail, and registered CT sections. The explorer starts at illustrative day 45 and only animates after the visitor presses Play.
+- `case-film/`: deterministic 34-second workflow animation. `window.__CASE_FILM__.frame(seconds)` is asynchronous; `?render=1` hides playback controls. CT, Parsing, ClinicalCode, Tumor Growth, and Treatment Simulation arrive progressively. The final step displays the selected action, TACE.
+- `assets/video/clinicalcode-workflow-steps.mp4`: the current embedded video; 1920 × 1080, 24 fps, H.264, 34 seconds, silent, with English WebVTT captions.
+- `assets/js/liver-case.js` and `liver-case-view.js`: recorded CT slices, independently switchable organ/lesion/muscle/fat overlays, synchronized ClinicalCode fields, 3D liver context, lesion detail, and registered CT sections. The shared `workflow-sequence.js` controller starts with CT and only advances the timeline after the visitor presses Play. The example view menu opens the original manual camera controls.
 - `assets/images/liver-case-poster.jpg`: still from the new case animation.
 - `designs/`: the earlier three-way skill comparison; the selected Impeccable preview also has the new case. The other two studies retain the earlier explorer.
 - `demo/`: deterministic 48-second animation. Four simultaneous regions show **CT → Parsing → ClinicalCode → Simulation**. `window.__FILM__.render(seconds)` seeks to a frame; `?render=1` hides playback controls.

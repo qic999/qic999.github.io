@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>ClinicalCode: Liver case film</title>
-<link rel="icon" href="../assets/images/clinicalcode-logo.png"><link rel="stylesheet" href="../assets/css/clinicalcode.css"><link rel="stylesheet" href="../assets/css/liver-case.css?v=13"><link rel="stylesheet" href="film.css">
+<link rel="icon" href="../assets/images/clinicalcode-logo.png"><link rel="stylesheet" href="../assets/css/clinicalcode.css"><link rel="stylesheet" href="../assets/css/liver-case.css?v=13"><link rel="stylesheet" href="../assets/css/tace-example.css?v=5">
+  <link rel="stylesheet" href="../assets/css/workflow-sequence.css?v=5"><link rel="stylesheet" href="film.css?v=day1">
 <script type="importmap">{"imports":{"three":"../assets/vendor/three.module.js","three/addons/":"../assets/vendor/"}}</script></head>
-<body><div id="case-film-viewport"><main id="case-film-stage"><header class="film-header"><a class="project-brand" href="../"><img src="../assets/images/clinicalcode-logo.png" width="45" height="45" alt=""><span>Clinical<span>Code</span></span></a><span>Real CT · reference anatomy · illustrative dynamics</span></header><h1>Liver lesion: from CT to a 4D clinical state</h1><div id="panel-trajectories" class="explorer-panel" role="tabpanel" aria-labelledby="tab-trajectories">
+<body><div id="case-film-viewport"><main id="case-film-stage"><header class="film-header"><a class="project-brand" href="../"><img src="../assets/images/clinicalcode-logo.png" width="45" height="45" alt=""><span>Clinical<span>Code</span></span></a></header><h1 id="film-title">From CT to a clinical state</h1><div id="panel-trajectories" class="explorer-panel" role="tabpanel" aria-labelledby="tab-trajectories">
   <div id="liver-case">
-    <div class="case-heading"><h3>Liver lesion · arterial CT</h3><span>Real baseline anatomy<br>Illustrative state evolution</span></div>
+    <div class="case-heading"><h3>Liver lesion · arterial CT</h3></div>
     <div class="case-stage">
       <div class="case-input">
-        <div class="case-ct-part"><div class="case-part-heading"><h4>CT</h4><output id="case-slice-label" for="case-slice">33 / 46</output></div><canvas id="case-ct" width="448" height="448" role="img" aria-label="Real baseline arterial CT slice"></canvas><label class="case-slice-control" for="case-slice"><span>Slice</span><input id="case-slice" type="range" min="0" max="45" step="1" value="32" aria-label="Reference CT slice"></label></div>
+        <div class="case-ct-part"><div class="case-part-heading"><h4>CT</h4></div><canvas id="case-ct" width="448" height="448" role="img" aria-label="Real baseline arterial CT slice"></canvas></div>
         <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="CT with liver and lesion reference masks, automated muscle segmentation, and estimated fat"></canvas><div class="case-mask-controls" role="group" aria-label="Visible tissue layers"><label title="Liver reference mask"><input type="checkbox" id="case-organ" checked>Organ</label><label title="Lesion reference mask"><input type="checkbox" id="case-lesion" checked>Lesion</label><label title="Model-segmented named abdominal muscles"><input type="checkbox" id="case-muscle" aria-description="Automated segmentation of visible named muscle groups" checked>Muscle</label><label title="Fat estimate from CT intensity"><input type="checkbox" id="case-fat" aria-description="CT intensity-based fat estimate; not a reference annotation" checked>Fat</label></div></div>
       </div>
-      <div class="case-code"><div class="case-part-heading"><h4>ClinicalCode</h4><span>state.json</span></div>
+      <div class="case-code"><div class="case-part-heading"><h4>ClinicalCode</h4></div>
+        <div class="case-code-scenes">
         <pre aria-label="ClinicalCode fields synchronized with the current illustrative state"><code>{
   <span class="syn-key">"anatomy"</span>: {
     <span class="syn-key">"organ"</span>: <span class="syn-string">"liver"</span>,
@@ -28,22 +30,56 @@
     <span class="syn-key">"dynamics"</span>: <span class="syn-string">"illustrative"</span>
   }
 }</code></pre>
-        <p class="code-note">Move the time slider or choose an action. State fields and the 3D lesion update together.</p>
+<pre id="tace-code" class="tace-code" hidden aria-label="Illustrative TACE state synchronized with the animation"><code>{
+  <span class="syn-key">"action"</span>: <span class="syn-string">"TACE"</span>,
+  <span class="syn-key">"anatomy"</span>:
+    <span class="syn-string">"reference_atlas"</span>,
+  <span class="syn-key">"target"</span>:
+    <span class="syn-string">"tumor_feeder"</span>,
+  <span class="syn-key">"catheter"</span>:
+    <span class="tace-live">"<span id="tace-code-catheter">advancing</span>"</span>,
+  <span class="syn-key">"phase"</span>:
+    <span class="tace-live">"<span id="tace-code-phase">placement</span>"</span>,
+  <span class="syn-key">"particles"</span>: {
+    <span class="syn-key">"released"</span>: <span id="tace-code-released" class="tace-live">0</span>,
+    <span class="syn-key">"lodged"</span>: <span id="tace-code-lodged" class="tace-live">0</span>
+  },
+  <span class="syn-key">"time_s"</span>: <span id="tace-code-time" class="tace-live">0.00</span>,
+  <span class="syn-key">"dynamics"</span>:
+    <span class="syn-string">"illustrative"</span>
+}</code></pre>
+        </div>
       </div>
-      <div class="case-output"><div class="case-part-heading"><h4>Simulation</h4><span id="case-state-label">Illustrative state · day 45</span></div>
-        <div class="case-view-tabs" role="group" aria-label="3D camera view"><button type="button" data-case-view="anatomy" aria-pressed="true">Liver context</button><button type="button" data-case-view="lesion" aria-pressed="false">Lesion detail</button><button type="button" data-case-view="section" aria-pressed="false">CT section</button></div>
-        <div class="case-viewer" id="case-viewer"><span class="viewer-loading">Loading reference anatomy…</span><span class="case-inset-label">Lesion detail</span><span class="case-viewer-hint">Drag to rotate · scroll to zoom</span></div>
-        <div class="case-fields"><div class="case-mode-controls" role="group" aria-label="Visualized clinical field"><button type="button" data-case-mode="tissue" aria-pressed="true">Tissue state</button><button type="button" data-case-mode="geometry" aria-pressed="false">Geometry</button><button type="button" data-case-mode="uncertainty" aria-pressed="false">Uncertainty</button></div><label class="case-baseline-label"><input id="case-baseline" type="checkbox" checked>Baseline outline</label></div>
-        <p class="case-legend" id="case-legend">Coral: lesion shell · blue-grey: illustrative necrotic core</p>
+      <div class="case-output"><div class="case-part-heading"><h4 class="case-output-title"><span id="case-growth-title">Tumor Growth</span><span id="case-treatment-title" hidden>Treatment Simulation</span></h4><div class="case-view-actions"><span id="case-state-label">45 day</span><span id="tace-origin" class="tace-origin" hidden>Action: TACE</span><details class="case-view-menu"><summary aria-label="Example view options" title="Example view options"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></summary><div class="case-view-options" role="group" aria-label="Example views"><button type="button" data-case-view="anatomy" aria-pressed="true">Liver context</button><button type="button" data-case-view="lesion" aria-pressed="false">Lesion detail</button><button type="button" data-case-view="section" aria-pressed="false">CT section</button><button id="tace-select" type="button" aria-pressed="false" aria-controls="tace-display">TACE</button></div></details></div></div>
+
+        <div class="simulation-scenes">
+        <section class="tace-display" id="tace-display" aria-label="Treatment simulation for the selected TACE action" hidden>
+          <video id="tace-video" preload="none" playsinline muted hidden aria-label="TACE anatomy animation"></video>
+          <div class="tace-visual">
+            <figure class="tace-anatomy"><canvas id="tace-context" width="760" height="1420" role="img" aria-label="Reference whole-body anatomy with femoral catheter access and external syringe"></canvas><figcaption>Femoral access</figcaption></figure>
+            <div class="tace-focus"><figure class="tace-detail"><canvas id="tace-detail" width="850" height="610" role="img" aria-label="Enlarged liver with tumor, arterial catheter and embolic particles"></canvas><figcaption>Liver detail</figcaption></figure>
+              <p class="tace-phase" id="tace-phase" role="status">Catheter placement</p>
+              <nav class="tace-steps" aria-label="TACE stages"><button type="button" data-tace-phase="placement" data-seek="0" aria-current="step">Position</button><button type="button" data-tace-phase="delivery" data-seek="4.8" aria-current="false">Deliver</button><button type="button" data-tace-phase="embolization" data-seek="10" aria-current="false">Embolize</button></nav>
+            </div>
+          </div>
+          <p id="tace-loading" class="tace-error" role="status">Loading TACE…</p>
+          <p id="tace-error" class="tace-error" role="status" hidden>Animation unavailable. <button type="button" class="btn" id="tace-retry">Retry</button></p>
+          <div class="tace-transport"><button class="btn btn-solid" id="tace-play" type="button" aria-pressed="false" disabled><span id="tace-play-label">Play</span></button><label for="tace-time" class="sr-only">TACE animation time</label><input id="tace-time" type="range" min="0" max="11.99" value="0" step=".01" aria-label="TACE animation time"><button class="icon-action" id="tace-expand" type="button" aria-label="Expand TACE" title="Expand TACE"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div>
+        </section>
+        <div class="evolution-scene">
+        <div class="case-viewer" id="case-viewer"><span class="viewer-loading">Loading anatomy…</span><span class="case-inset-label">Lesion detail</span></div>
+        <div class="case-fields"><label class="case-baseline-label"><input id="case-baseline" type="checkbox" checked>Baseline outline</label></div>
         <div class="case-metrics"><div><span>Lesion volume</span><b id="case-volume">63.2 mL</b></div><div><span>Necrotic fraction</span><b id="case-necrosis">46%</b></div><div><span>Viability proxy</span><b id="case-viability">0.58</b></div></div>
+        </div>
+        </div>
       </div>
     </div>
     <div class="case-controls"><div><label class="case-action-label" for="case-action">Candidate action</label><select class="case-action-select" id="case-action" aria-label="Candidate action for the illustrative rollout"></select></div><div class="case-transport"><button class="btn btn-solid" id="case-play" type="button" disabled aria-pressed="false"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10l8-5Z" fill="currentColor"/></svg><span id="case-play-label">Play trajectory</span></button><div class="case-timeline-track"><label class="sr-only" for="case-time">Simulation day</label><input id="case-time" type="range" min="0" max="90" step="0.1" value="45"><div class="case-time-labels"><span>Day 0</span><span>30</span><span>60</span><span>90</span></div></div><output id="case-day" for="case-time">Day 45</output></div></div>
-    <div class="case-notes"><p>Baseline surfaces come from the CT reference masks. Future volume, tissue composition, and uncertainty visualize the existing rule-contract states; the interior core is a schematic encoding, not a measured necrosis map or a patient forecast.</p><button class="btn" id="case-reset" type="button">Reset to baseline</button></div>
-    <p class="note" id="viewer-error" role="status" hidden>The interactive renderer could not start. <a href="#top-demo">Watch the video</a> or <a href="../assets/data/trajectories.json">inspect the example states</a>.</p>
+    <div class="case-reset-row"><button class="icon-action" id="case-reset" type="button" aria-label="Reset to baseline" title="Reset to baseline"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.5 6.2M3 4v7h7"/></svg></button></div>
+    <p class="note" id="viewer-error" role="status" hidden>3D view unavailable. <a href="../#top-demo">Watch the video</a> or <a href="../assets/data/trajectories.json">inspect the example states</a>.</p>
   </div>
 </div>
 
-<footer class="film-footer"><p id="film-caption">Real CT and reference masks anchor the clinical state in anatomy.</p><span id="case-film-clock">00:00 / 00:20</span></footer><div class="film-progress"><i id="case-film-progress"></i></div></main></div>
-<div class="film-controls"><button class="btn btn-solid" id="case-film-play">Play film</button><label for="case-film-time">Time</label><input id="case-film-time" type="range" min="0" max="19.99" value="0" step="0.01"><a href="../#explore">Open interactive case</a></div>
-<script src="film.js?v=13" type="module"></script></body></html>
+<footer class="film-footer"><p id="film-caption">CT → Parsing → ClinicalCode → Simulation</p><span id="case-film-clock">00:00 / 00:32</span></footer><div class="film-progress"><i id="case-film-progress"></i></div></main></div>
+<div class="film-controls"><button class="btn btn-solid" id="case-film-play">Play film</button><label for="case-film-time">Time</label><input id="case-film-time" type="range" min="0" max="31.99" value="0" step="0.01"><a href="../#explore">Open interactive case</a></div>
+<script src="film.js?v=day1" type="module"></script></body></html>
