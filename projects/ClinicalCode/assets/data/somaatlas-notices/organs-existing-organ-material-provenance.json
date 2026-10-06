@@ -1,0 +1,272 @@
+{
+  "schema": "lifecode.generated-organ-tissue-materials.v1",
+  "createdAt": "2026-09-15T11:23:09.366075+00:00",
+  "generationMode": "One parallel batch of six independent built-in image_gen calls",
+  "requestedTissueCount": 6,
+  "generationCallCount": 6,
+  "extraVariantsOrRetries": 0,
+  "assets": [
+    {
+      "key": "lung",
+      "file": "generated-lung-material.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "window": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bytes": 2355264,
+      "sha256": "9ee8adba649abfdcf9f617441c18fa9dd855755dff08dcf5dc99f6649b111b56",
+      "author": "LifeCode / OpenAI image generation",
+      "license": "CC-BY-4.0",
+      "provenanceType": "AI-generated illustration",
+      "generator": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: scientific-educational\nAsset type: one square approximately 1024-class tissue appearance map for UV mapping an anatomical 3D model; AI-generated illustration, not a patient photograph or calibrated PBR capture.\nComposition: continuous fully opaque material covering EVERY pixel, including all corners and edges. Perfectly face-on, flat macro surface, consistent focus. No specimen silhouette, organ outline, circular swatch, cutout, transparent pixels, border, vignette, fade, backdrop or perspective shading.\nLighting: extremely uniform neutral diffuse illumination and restrained contrast. No hard specular highlight, shiny white hotspot, cast shadow, directional light gradient, metallic reflection or dramatic lighting. Preserve fine biological texture without baked large-scale relief.\nSubject: healthy-looking lung OUTER visceral pleural surface, natural restrained soft pink. A continuous smooth delicate pleural film over very subtle small pulmonary lobular colour divisions, with only a very few faint hairline superficial vessels. The lobulation is gentle tonal variation under an intact surface, not an open cellular pattern.\nAvoid: open alveoli, alveolar cross-section, honeycomb, foam, sponge, air holes, disease, soot, large vessels, lung outline or lobar fissures.\nConstraints: exactly one square image, one continuous tissue surface, no words, text, labels, symbols, watermark, instruments, containers, hands, fluids, blood drops or separate objects. No organ anatomy drawn into the texture. No deep cracks, large pores or ornamental repeating pattern.",
+      "inputImages": [],
+      "anatomicalReferences": [
+        {
+          "title": "University of Utah WebPath — Normal visceral pleural surface",
+          "url": "https://webpath.med.utah.edu/HISTHTML/NORMAL/NORM041.html",
+          "semanticBasis": "Pleural mesothelial surface lies above connective tissue and peripheral alveoli; the requested external surface must not be an exposed alveolar cut section."
+        }
+      ],
+      "roughnessHint": 0.62,
+      "roughnessHintStatus": "Illustrative integration starting point, not a measured material property.",
+      "processing": "Original generated PNG copied byte-for-byte; no crop, resize, pixel edit, painting, colour adjustment or re-encoding. Embedded provenance preserved.",
+      "validation": {
+        "square": true,
+        "fullOpaqueCanvas": true,
+        "noTextOrOrganSilhouetteObserved": true,
+        "noLargeSpecularHotspotObserved": true,
+        "originalByteCopyVerified": true,
+        "visuallyInspected": true
+      },
+      "limitations": "Generic tissue appearance illustration only; not a patient photograph, tissue-specific calibrated albedo, histology measurement, measured feature scale, measured fibre direction, blood-flow model or calibrated PBR map. Fine generated brightness variation remains. Seamless tiling is not certified."
+    },
+    {
+      "key": "myocardium",
+      "file": "generated-myocardium-material.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "window": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bytes": 2647654,
+      "sha256": "0a19210f1608100f1717fb7272e84c6cb1fdc490e6ef040c40ae8b81bf717fb3",
+      "author": "LifeCode / OpenAI image generation",
+      "license": "CC-BY-4.0",
+      "provenanceType": "AI-generated illustration",
+      "generator": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: scientific-educational\nAsset type: one square approximately 1024-class tissue appearance map for UV mapping an anatomical 3D model; AI-generated illustration, not a patient photograph or calibrated PBR capture.\nComposition: continuous fully opaque material covering EVERY pixel, including all corners and edges. Perfectly face-on, flat macro surface, consistent focus. No specimen silhouette, organ outline, circular swatch, cutout, transparent pixels, border, vignette, fade, backdrop or perspective shading.\nLighting: extremely uniform neutral diffuse illumination and restrained contrast. No hard specular highlight, shiny white hotspot, cast shadow, directional light gradient, metallic reflection or dramatic lighting. Preserve fine biological texture without baked large-scale relief.\nSubject: external cardiac tissue appearance: dark natural muted red myocardium subtly visible beneath a thin smooth epicardial covering. Fine restrained directional texture running mostly horizontally with slight branching variation, only sparse extremely fine superficial vessels. No anatomical heart shape. This is an illustrative macro surface, not a stained microscopic slide.\nAvoid: large coronary arteries, prominent vessel trees, broad white tendon bands, fatty islands, skeletal muscle steak striations, heart silhouette, exposed chamber, valves, cut wall or blood pools.\nConstraints: exactly one square image, one continuous tissue surface, no words, text, labels, symbols, watermark, instruments, containers, hands, fluids, blood drops or separate objects. No organ anatomy drawn into the texture. No deep cracks, large pores or ornamental repeating pattern.",
+      "inputImages": [],
+      "anatomicalReferences": [
+        {
+          "title": "University of Leeds Histology Guide — Heart",
+          "url": "https://histology.leeds.ac.uk/home/circulatory/heart/",
+          "semanticBasis": "Epicardium includes mesothelium/connective tissue and vessels; myocardium is the cardiac muscle layer. This map is an illustrative external epicardial/myocardial appearance, not endocardium or a coronary vascular model."
+        }
+      ],
+      "roughnessHint": 0.58,
+      "roughnessHintStatus": "Illustrative integration starting point, not a measured material property.",
+      "processing": "Original generated PNG copied byte-for-byte; no crop, resize, pixel edit, painting, colour adjustment or re-encoding. Embedded provenance preserved.",
+      "validation": {
+        "square": true,
+        "fullOpaqueCanvas": true,
+        "noTextOrOrganSilhouetteObserved": true,
+        "noLargeSpecularHotspotObserved": true,
+        "originalByteCopyVerified": true,
+        "visuallyInspected": true
+      },
+      "limitations": "Generic tissue appearance illustration only; not a patient photograph, tissue-specific calibrated albedo, histology measurement, measured feature scale, measured fibre direction, blood-flow model or calibrated PBR map. Fine generated brightness variation remains. Seamless tiling is not certified."
+    },
+    {
+      "key": "pancreas",
+      "file": "generated-pancreas-material.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "window": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bytes": 2387671,
+      "sha256": "2c77085cd7e87bd27985c37b4498b83baf5921b8ae7680cc24d4b945e90ce7ea",
+      "author": "LifeCode / OpenAI image generation",
+      "license": "CC-BY-4.0",
+      "provenanceType": "AI-generated illustration",
+      "generator": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: scientific-educational\nAsset type: one square approximately 1024-class tissue appearance map for UV mapping an anatomical 3D model; AI-generated illustration, not a patient photograph or calibrated PBR capture.\nComposition: continuous fully opaque material covering EVERY pixel, including all corners and edges. Perfectly face-on, flat macro surface, consistent focus. No specimen silhouette, organ outline, circular swatch, cutout, transparent pixels, border, vignette, fade, backdrop or perspective shading.\nLighting: extremely uniform neutral diffuse illumination and restrained contrast. No hard specular highlight, shiny white hotspot, cast shadow, directional light gradient, metallic reflection or dramatic lighting. Preserve fine biological texture without baked large-scale relief.\nSubject: pancreatic gland OUTER surface, pale pink with restrained cream-yellow undertones. Closely packed small glandular lobules, delicate fine granular tissue and subtle pale connective-tissue boundaries; mild unevenness only, no deep grooves. Pink glandular tissue remains dominant over faint yellow tones.\nAvoid: large yellow adipose bubbles, isolated grapes or beads, honeycomb, exposed ducts, cut acini with holes, stained histology cells, organ silhouette, large vessels or coarse nodules.\nConstraints: exactly one square image, one continuous tissue surface, no words, text, labels, symbols, watermark, instruments, containers, hands, fluids, blood drops or separate objects. No organ anatomy drawn into the texture. No deep cracks, large pores or ornamental repeating pattern.",
+      "inputImages": [],
+      "anatomicalReferences": [
+        {
+          "title": "University of Leeds Histology Guide — Pancreas",
+          "url": "https://histology.leeds.ac.uk/home/digestive/pancreas/",
+          "semanticBasis": "Pancreas has lobules, connective tissue septa and closely packed exocrine acini. Material should suggest glandular lobulation without presenting a stained microscopic section or exposed duct."
+        }
+      ],
+      "roughnessHint": 0.68,
+      "roughnessHintStatus": "Illustrative integration starting point, not a measured material property.",
+      "processing": "Original generated PNG copied byte-for-byte; no crop, resize, pixel edit, painting, colour adjustment or re-encoding. Embedded provenance preserved.",
+      "validation": {
+        "square": true,
+        "fullOpaqueCanvas": true,
+        "noTextOrOrganSilhouetteObserved": true,
+        "noLargeSpecularHotspotObserved": true,
+        "originalByteCopyVerified": true,
+        "visuallyInspected": true
+      },
+      "limitations": "Generic tissue appearance illustration only; not a patient photograph, tissue-specific calibrated albedo, histology measurement, measured feature scale, measured fibre direction, blood-flow model or calibrated PBR map. Fine generated brightness variation remains. Seamless tiling is not certified."
+    },
+    {
+      "key": "spleen",
+      "file": "generated-spleen-material.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "window": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bytes": 2939670,
+      "sha256": "9faeee936b9b2050a91422b9b81886b3d1d97894cca1af69cdf56711636ad6e0",
+      "author": "LifeCode / OpenAI image generation",
+      "license": "CC-BY-4.0",
+      "provenanceType": "AI-generated illustration",
+      "generator": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: scientific-educational\nAsset type: one square approximately 1024-class tissue appearance map for UV mapping an anatomical 3D model; AI-generated illustration, not a patient photograph or calibrated PBR capture.\nComposition: continuous fully opaque material covering EVERY pixel, including all corners and edges. Perfectly face-on, flat macro surface, consistent focus. No specimen silhouette, organ outline, circular swatch, cutout, transparent pixels, border, vignette, fade, backdrop or perspective shading.\nLighting: extremely uniform neutral diffuse illumination and restrained contrast. No hard specular highlight, shiny white hotspot, cast shadow, directional light gradient, metallic reflection or dramatic lighting. Preserve fine biological texture without baked large-scale relief.\nSubject: intact spleen OUTER capsule surface, muted dark purple-red and burgundy. Smooth continuous capsule with extremely fine natural tissue grain, delicate mottled colour variation and subtle membrane character. Preserve dark rich biological colour under flat diffuse light without glossy hotspots.\nAvoid: internal cut red/white pulp, visible splenic nodules, holes, large veins, fibrous streaks, coarse liver-like lobulation, leathery cracks, liver photo imitation or organ silhouette.\nConstraints: exactly one square image, one continuous tissue surface, no words, text, labels, symbols, watermark, instruments, containers, hands, fluids, blood drops or separate objects. No organ anatomy drawn into the texture. No deep cracks, large pores or ornamental repeating pattern.",
+      "inputImages": [],
+      "anatomicalReferences": [
+        {
+          "title": "University of Leeds Histology Guide — Spleen",
+          "url": "https://histology.leeds.ac.uk/home/lymphoid/lymph_spleen/",
+          "semanticBasis": "A dense capsule covers the spleen; internal red/white pulp is distinct. The map targets the intact external capsule, not the cut pulp."
+        }
+      ],
+      "roughnessHint": 0.57,
+      "roughnessHintStatus": "Illustrative integration starting point, not a measured material property.",
+      "processing": "Original generated PNG copied byte-for-byte; no crop, resize, pixel edit, painting, colour adjustment or re-encoding. Embedded provenance preserved.",
+      "validation": {
+        "square": true,
+        "fullOpaqueCanvas": true,
+        "noTextOrOrganSilhouetteObserved": true,
+        "noLargeSpecularHotspotObserved": true,
+        "originalByteCopyVerified": true,
+        "visuallyInspected": true
+      },
+      "limitations": "Generic tissue appearance illustration only; not a patient photograph, tissue-specific calibrated albedo, histology measurement, measured feature scale, measured fibre direction, blood-flow model or calibrated PBR map. Fine generated brightness variation remains. Seamless tiling is not certified."
+    },
+    {
+      "key": "gastric_serosa",
+      "file": "generated-gastric-serosa-material.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "window": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bytes": 2372832,
+      "sha256": "a3a60f47caaf3c2bcea842d04e266f01fd5822ab66eea7c3ec1e3d41f183a433",
+      "author": "LifeCode / OpenAI image generation",
+      "license": "CC-BY-4.0",
+      "provenanceType": "AI-generated illustration",
+      "generator": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: scientific-educational\nAsset type: one square approximately 1024-class tissue appearance map for UV mapping an anatomical 3D model; AI-generated illustration, not a patient photograph or calibrated PBR capture.\nComposition: continuous fully opaque material covering EVERY pixel, including all corners and edges. Perfectly face-on, flat macro surface, consistent focus. No specimen silhouette, organ outline, circular swatch, cutout, transparent pixels, border, vignette, fade, backdrop or perspective shading.\nLighting: extremely uniform neutral diffuse illumination and restrained contrast. No hard specular highlight, shiny white hotspot, cast shadow, directional light gradient, metallic reflection or dramatic lighting. Preserve fine biological texture without baked large-scale relief.\nSubject: stomach OUTER serosal surface, soft natural pale pink with very fine sparsely scattered branching superficial capillaries. Thin smooth continuous serosal film, very subtle connective-tissue texture and gentle colour variation. A quiet flat tissue surface with sparse hairline red vessels, not a dense vascular diagram.\nAvoid: INTERNAL gastric mucosa, rugae, thick folds, gastric pits, villi, ulcers, thick vessels, organ outline, exposed lumen or stomach cut section.\nConstraints: exactly one square image, one continuous tissue surface, no words, text, labels, symbols, watermark, instruments, containers, hands, fluids, blood drops or separate objects. No organ anatomy drawn into the texture. No deep cracks, large pores or ornamental repeating pattern.",
+      "inputImages": [],
+      "anatomicalReferences": [
+        {
+          "title": "Duke University Histology — GI tract / stomach",
+          "url": "https://histology.oit.duke.edu/NormalBody/GItract/GItract.html",
+          "semanticBasis": "The stomach has external serosal mesothelium; rugae, pits and glands belong to the mucosa. The requested surface is outer serosa, not gastric mucosa."
+        }
+      ],
+      "roughnessHint": 0.58,
+      "roughnessHintStatus": "Illustrative integration starting point, not a measured material property.",
+      "processing": "Original generated PNG copied byte-for-byte; no crop, resize, pixel edit, painting, colour adjustment or re-encoding. Embedded provenance preserved.",
+      "validation": {
+        "square": true,
+        "fullOpaqueCanvas": true,
+        "noTextOrOrganSilhouetteObserved": true,
+        "noLargeSpecularHotspotObserved": true,
+        "originalByteCopyVerified": true,
+        "visuallyInspected": true
+      },
+      "limitations": "Generic tissue appearance illustration only; not a patient photograph, tissue-specific calibrated albedo, histology measurement, measured feature scale, measured fibre direction, blood-flow model or calibrated PBR map. Fine generated brightness variation remains. Seamless tiling is not certified."
+    },
+    {
+      "key": "vessel_wall",
+      "file": "generated-vessel-wall-material.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "window": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "bytes": 2443339,
+      "sha256": "2011ca036ffba2f0de7a9787ee243fdd625980d0764d153db3019ccd5152bfef",
+      "author": "LifeCode / OpenAI image generation",
+      "license": "CC-BY-4.0",
+      "provenanceType": "AI-generated illustration",
+      "generator": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: scientific-educational\nAsset type: one square approximately 1024-class tissue appearance map for UV mapping an anatomical 3D model; AI-generated illustration, not a patient photograph or calibrated PBR capture.\nComposition: continuous fully opaque material covering EVERY pixel, including all corners and edges. Perfectly face-on, flat macro surface, consistent focus. No specimen silhouette, organ outline, circular swatch, cutout, transparent pixels, border, vignette, fade, backdrop or perspective shading.\nLighting: extremely uniform neutral diffuse illumination and restrained contrast. No hard specular highlight, shiny white hotspot, cast shadow, directional light gradient, metallic reflection or dramatic lighting. Preserve fine biological texture without baked large-scale relief.\nSubject: generic illustrative EXTERNAL vascular wall / adventitia, pale blush pink and milky ivory connective tissue. Fine subtle longitudinal collagen running horizontally, a continuous gently fibrous surface, with only a few extremely fine faint superficial vessels. This map is suitable as a generic outer-wall teaching appearance, not a claim about a specific artery or vein histological subtype.\nAvoid: tube or cylinder outline, vessel silhouette, large vessel branches, luminal surface, blood fill, red blood cells, blood drops, circular wall cross-section, thick collagen ropes, tendon bundles, plaques or disease.\nConstraints: exactly one square image, one continuous tissue surface, no words, text, labels, symbols, watermark, instruments, containers, hands, fluids, blood drops or separate objects. No organ anatomy drawn into the texture. No deep cracks, large pores or ornamental repeating pattern.",
+      "inputImages": [],
+      "anatomicalReferences": [
+        {
+          "title": "University of Leeds Histology Guide — Arteries",
+          "url": "https://histology.leeds.ac.uk/home/circulatory/arteries/",
+          "semanticBasis": "The adventitia contains collagen/elastin; larger vessels may have tiny vasa vasorum. This is generic illustrative external connective-tissue wall, not a calibrated vessel-specific histological subtype or luminal blood map."
+        }
+      ],
+      "roughnessHint": 0.64,
+      "roughnessHintStatus": "Illustrative integration starting point, not a measured material property.",
+      "processing": "Original generated PNG copied byte-for-byte; no crop, resize, pixel edit, painting, colour adjustment or re-encoding. Embedded provenance preserved.",
+      "validation": {
+        "square": true,
+        "fullOpaqueCanvas": true,
+        "noTextOrOrganSilhouetteObserved": true,
+        "noLargeSpecularHotspotObserved": true,
+        "originalByteCopyVerified": true,
+        "visuallyInspected": true
+      },
+      "limitations": "Generic tissue appearance illustration only; not a patient photograph, tissue-specific calibrated albedo, histology measurement, measured feature scale, measured fibre direction, blood-flow model or calibrated PBR map. Fine generated brightness variation remains. Seamless tiling is not certified."
+    }
+  ],
+  "referenceUse": "University teaching/primary microscopy resources were consulted for tissue-layer semantics only. No reference image pixels were downloaded, copied into these maps or supplied to the generator. User-requested palette and macro appearance remain illustrative.",
+  "integrationNotes": [
+    "Assign by exact organ or vessel material identity, never map all generic organ slots to one image.",
+    "Use sRGB base colour with a neutral multiplier; retain original PNG metadata and per-image attribution.",
+    "Lung is outer visceral pleura, not an exposed alveolar or diseased honeycomb cut surface.",
+    "Myocardium key is an illustrative external epicardial/myocardial appearance, not a full model of epicardial fat or coronary vessels and not endocardium.",
+    "Pancreas is superficial glandular lobulation, spleen is intact capsule, gastric_serosa is outer stomach serosa rather than mucosal rugae.",
+    "vessel_wall is generic external adventitial connective-tissue appearance; not lumen blood, not intima, and not a measured distinction between named artery/vein histological types.",
+    "These maps do not add anatomical shape, microscopic geometry, vascular connections, optical translucency or mechanics. Root handles 3D material and GLB integration review."
+  ]
+}

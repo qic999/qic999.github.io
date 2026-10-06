@@ -1,0 +1,7 @@
+LifeCode generated anatomy tissue appearances — CC BY 4.0.
+Author: LifeCode / OpenAI image generation. https://creativecommons.org/licenses/by/4.0/
+Ten generated illustrations: skeletal muscle, tendon collagen, cortical bone, hyaline cartilage, lung pleura, external cardiac tissue, pancreas, splenic capsule, gastric serosa and generic vessel adventitia.
+Explicitly named collagenous ligaments reuse the tendon map; fascia, capsules and elastic ligaments are excluded.
+Not patient photographs, calibrated albedo, measured fibre directions, histology or physical parameters.
+Original PNG pixels unchanged. Exact prompts, source paths and hashes in the enclosed provenance JSON.
+Atlas geometry (when supplied separately): see atlas.LICENSE.txt and original per-asset records.

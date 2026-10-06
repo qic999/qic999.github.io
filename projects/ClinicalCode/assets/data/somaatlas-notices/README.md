@@ -3,27 +3,33 @@
 Source: https://somaatlas.org/ (verified 6 October 2026 against the public
 files and the owning SomaAtlas model manifests).
 
-The main gallery contains five anatomical assemblies: heart, hepatobiliary
-anatomy, lungs, superficial muscles/tendons, and major arteries/veins. The
-sixth entry links to the existing ultrasound-guided liver biopsy teaching
-scene. CT/MRI segmentation surfaces have their own imaging-atlas link and
-are not included as anatomical assets in this gallery.
+The main gallery contains ten anatomical models, in this order: Heart,
+Liver & biliary, Lungs, Kidneys, Stomach, Pancreas, Spleen, Trachea & bronchi,
+Muscles & tendons, and Arteries & veins. The five original models are retained;
+the five added organ models come from
+https://somaatlas.org/data/organs/manifest.json. The ultrasound-guided biopsy
+card, image, and catalog entry have been removed. CT/MRI segmentation surfaces
+have their own imaging-atlas link and are excluded from the gallery count.
 
-The inspector loads the original, full-resolution GLBs on demand. The 14 heart
-parts, 7 hepatobiliary parts, 5 lung lobes, 176 muscle/tendon parts and 2 vascular
-groups correspond to actual named source nodes. The 141 source vascular
-structures are merged into two meshes, so individual vessel branches cannot
-be isolated in this viewer. Original names, geometry, materials and units
-remain intact. The separation slider changes display positions only; it is
-not a physical simulation or anatomical deformation.
+The inspector loads the original, full-resolution GLBs on demand. The models
+contain 14/7/5/2/1/1/1/3/176/2 selectable source objects in gallery order,
+**212 in total**. Selections correspond to actual source nodes. The muscle
+assembly contains 170 muscles and 6 tendons/aponeuroses, grouped by original
+anatomical names. The 141 source vascular structures are merged into arteries
+and veins, so individual branches cannot be isolated. Source-node names,
+geometry, materials and units remain intact. Separation changes display
+positions only and is hidden for single-part models; it is not a physical
+simulation or anatomical deformation.
 
-ClinicalCode adaptation: transparent 840 × 600 WebP renders with camera
-framing only. The muscle and vascular overview thumbnails frame the torso;
-the complete original assemblies are available in the viewer. No anatomy,
-texture or simulation result was generated for this gallery. Appearance maps
-in the upstream assets include both photographic and generated tissue imagery,
-with their original provenance retained. See thumbnail-provenance.json for
-source URLs and hashes. Per-image source records also accompany each WebP.
+ClinicalCode adaptation: ten transparent 600 × 600 WebP renders, totaling
+**345,288 bytes**, with camera framing only. The muscle and vascular overview
+thumbnails frame the torso; complete original assemblies remain in the viewer.
+No anatomy, texture or simulation result was generated for this gallery.
+Upstream appearance maps include tissue photographs and generated teaching
+illustrations. See `thumbnail-provenance.json` for source URLs and render
+hashes, the five new `*-source-record.json` files for original organ metadata,
+and `organs-*` notices for source licenses, texture prompts and provenance.
+Per-image records also accompany each WebP.
 
 Required atlas attribution: BodyParts3D — The Database Center for Life Science —
 CC-BY-SA 2.1 Japan; Z-Anatomy — The libre 3D atlas of anatomy — CC-BY-SA 4.0.
@@ -33,11 +39,16 @@ map attribution are retained in atlas-preview.txt and atlas-source.txt.
 The preview notice is retained for its appearance/provenance information;
 the current inspector uses the original GLBs, not those reduced preview meshes.
 
-The biopsy image is the source Blender render at
-https://somaatlas.org/data/biopsy/biopsy-clinical.png. Its pixels are unchanged.
-The public case contains prescribed kinematic states and an educational
-cutaway. It is not a measured ultrasound scan or a validated tissue mechanics
-simulation. Full case attribution and limitations: biopsy-NOTICE.md.
+The kidney source record states that the model may include Lissie Cowley's
+CC-BY-NC 4.0 kidney; exact upstream mapping remains unresolved. Noncommercial
+use only pending clarification, as retained in `kidneys-source-record.json`,
+`organs-source.txt`, and `organs-urinary-source-LICENSE.txt`. The general atlas
+license does not remove this source-specific caveat. New kidney and tracheal
+appearance maps are upstream generated educational illustrations, not patient
+photography, calibrated PBR measurements, or tissue-mechanics parameters.
+
+`biopsy-NOTICE.md` is retained as a historical source notice only; its scene
+and image are no longer part of this gallery.
 
 The separate recorded SOFA contact experiment documents its own geometry,
 material assumptions, forces and displacement:

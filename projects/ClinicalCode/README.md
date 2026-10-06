@@ -39,25 +39,30 @@ Design references: [4DCodeBench](https://4dcodebench.com/) for the initial code-
 
 The header uses the existing Johns Hopkins and Stanford SVG wordmarks, preserving author affiliation numbers. The white Impeccable layout remains unchanged outside this addition.
 
-The `#assets` section presents six larger image entries from [SomaAtlas](https://somaatlas.org/): five detailed anatomical assemblies and an external ultrasound-guided liver biopsy teaching scene. The selection emphasizes tissue appearance and internal anatomical structure on the existing white page, without an added tinted background or enclosing frame.
+The `#assets` section presents ten anatomical models from [SomaAtlas](https://somaatlas.org/) in the order below. The desktop grid has two rows of five above 1050 px, three columns at 701–1050 px, and two columns at 700 px or below. The selection emphasizes tissue appearance and anatomical structure on the existing white page, without an added tinted background or enclosing frame. The ultrasound-guided biopsy card, image, and catalog entry have been removed.
 
 | Anatomical assembly | Selectable source objects |
 | --- | ---: |
 | Heart | 14 |
-| Liver & biliary anatomy | 7 |
+| Liver & biliary | 7 |
 | Lungs | 5 |
+| Kidneys | 2 |
+| Stomach | 1 |
+| Pancreas | 1 |
+| Spleen | 1 |
+| Trachea & bronchi | 3 |
 | Muscles & tendons | 176 |
 | Arteries & veins | 2 merged groups |
 
-The five assemblies contain **204 named selectable objects**. These are anatomical objects, not independent patients or simulation scenarios. The muscle assembly contains 170 muscles and 6 tendons/aponeuroses, grouped by original anatomical names rather than appearance materials. The vascular source's 141 structures are merged into arteries and veins; individual branches cannot be selected separately.
+The ten models contain **212 named selectable source objects**. These are anatomical objects, not independent patients or simulation scenarios. The five original models are retained; kidneys, stomach, pancreas, spleen, and trachea/bronchi come from the [SomaAtlas organ manifest](https://somaatlas.org/data/organs/manifest.json). The muscle assembly contains 170 muscles and 6 tendons/aponeuroses, grouped by original anatomical names rather than appearance materials. The vascular source's 141 structures are merged into arteries and veins; individual branches cannot be selected separately.
 
-Selecting an anatomical entry opens an inline, keyboard-accessible inspector with group and individual isolation, show/hide controls, structure search, display-only separation, and reset. The inspector includes original GLB downloads, an exportable JSON asset record, source metadata, license notices, and the anatomy kit where available. Original full-resolution GLBs load from SomaAtlas on demand. One renderer is created after selection, renders on load, interaction, or resize, and keeps at most two source assemblies cached. Source geometry and materials remain unchanged; separation changes display positions only.
+Selecting an anatomical entry opens an inline, keyboard-accessible inspector with group and individual isolation, show/hide controls, structure search, display-only separation, and reset. Separation is hidden for the single-part stomach, pancreas, and spleen. The inspector includes original GLB downloads, an exportable JSON asset record, source metadata, license notices, and the anatomy kit where available. Original full-resolution GLBs load from SomaAtlas on demand. One renderer is created after selection, renders on load, interaction, or resize, and keeps at most two source assemblies cached. Geometry and materials remain unchanged from those source GLBs; separation changes display positions only.
 
-The five transparent WebP anatomy thumbnails are 840 × 600 renders of the unchanged source models. The muscle and vascular thumbnails frame the torso; their complete assemblies remain available in the inspector. The sixth thumbnail is the original 1100 × 800 biopsy PNG, with unchanged pixels. The six images total **1,390,590 bytes**.
+The ten transparent WebP anatomy thumbnails are 600 × 600 renders of the unchanged source models and total **345,288 bytes**. The muscle and vascular thumbnails frame the torso; their complete assemblies remain available in the inspector.
 
-The 88 CT label surfaces and 10 fetal MRI atlas surfaces are available through the separate [CT / MRI parsing atlas](https://somaatlas.org/atlas/) link. The recorded [SOFA contact replay](https://somaatlas.org/playground/?mode=mechanics) is a separate contextual link. Neither collection contributes to the anatomical gallery count. The biopsy entry opens the existing procedural teaching scene, which uses prescribed states rather than a tissue-mechanics or ultrasound solver.
+The 88 CT label surfaces and 10 fetal MRI atlas surfaces are available through the separate [CT / MRI parsing atlas](https://somaatlas.org/atlas/) link. The recorded [SOFA contact replay](https://somaatlas.org/playground/?mode=mechanics) is a separate contextual link. Neither collection contributes to the anatomical gallery count.
 
-Catalog: `assets/data/somaatlas.json`. Full retained source notices and thumbnail provenance: `assets/data/somaatlas-notices/`. Upstream appearance maps include tissue photographs and generated imagery; their original provenance, attribution, licenses, and source exceptions are retained. No anatomy, texture, or simulation result was generated for this gallery extension. Tissue appearance does not establish measured mechanical properties. Historical CT/MRI source notices remain with the linked imaging examples, and original asset downloads remain hosted by SomaAtlas.
+Catalog: `assets/data/somaatlas.json`. Full retained source notices and thumbnail provenance: `assets/data/somaatlas-notices/`, including `thumbnail-provenance.json`, the five new `*-source-record.json` copies, and `organs-*` notices. Upstream appearance maps include tissue photographs and generated teaching illustrations; their original provenance, attribution, licenses, and source exceptions are retained. The kidney source may include Lissie Cowley's CC-BY-NC 4.0 model; the exact upstream mapping is unresolved, so its noncommercial-use caveat remains pending clarification. No anatomy, texture, or simulation result was generated for this gallery extension. Tissue appearance does not establish measured mechanical properties. Historical CT/MRI source notices remain with the linked imaging examples, and original asset downloads remain hosted by SomaAtlas.
 
 New viewer dependency: the official Three.js 0.167.1 `GLTFLoader`, covered by the existing Three.js MIT license. Source and download URLs were verified on 6 October 2026.
 

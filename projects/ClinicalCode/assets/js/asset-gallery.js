@@ -54,6 +54,9 @@ async function openAsset(asset,{scroll=true}={}) {
   const ticket=++request;selected=asset;
   byId('asset-title').textContent=asset.name;
   byId('asset-use').textContent=asset.use;
+  const singlePart=asset.parts.length===1;
+  inspector.querySelector('.asset-separation').hidden=singlePart;
+  inspector.querySelector('.asset-separation-note').hidden=singlePart;
   for(const key of ['appearance','scope','attribution'])byId('asset-'+key).textContent=asset[key];
   byId('asset-format').textContent=`Original GLB · ${(asset.bytes/1e6).toFixed(1)} MB`;
   byId('asset-topology').textContent=`${asset.triangles.toLocaleString()} triangles · metres`;
@@ -64,7 +67,7 @@ async function openAsset(asset,{scroll=true}={}) {
   partSearch.value='';partSearch.disabled=true;separation.value='0';separation.disabled=true;byId('asset-separation-value').value='0%';
   byId('asset-reset').disabled=true;
   inspector.querySelector('details').open=false;
-  viewerHost.style.backgroundImage=`url("${new URL(asset.thumbnail,root)}")`;
+  viewerHost.style.backgroundImage=`url("${new URL(asset.thumbnail+'?v=10',root)}")`;
   viewerHost.setAttribute('aria-busy','true');
   viewerHost.setAttribute('aria-label',`${asset.name}: interactive 3D anatomy`);
   loading.textContent=`Loading original model (${(asset.bytes/1e6).toFixed(1)} MB)…`;loading.hidden=false;retry.hidden=true;
@@ -78,7 +81,7 @@ async function openAsset(asset,{scroll=true}={}) {
     viewer.resize();
     if(!await viewer.load(asset)||ticket!==request)return;
     viewerHost.style.backgroundImage='none';loading.hidden=true;
-    partSearch.disabled=false;separation.disabled=false;byId('asset-reset').disabled=false;
+    partSearch.disabled=false;separation.disabled=singlePart;byId('asset-reset').disabled=false;
     mountParts();
   } catch(error) {
     if(ticket!==request)return;
@@ -106,7 +109,7 @@ byId('asset-export').addEventListener('click',()=>{
   anchor.href=url;anchor.download=`somaatlas-${selected.id}.json`;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 try {
-  const response=await fetch(new URL('assets/data/somaatlas.json?v=5',root));
+  const response=await fetch(new URL('assets/data/somaatlas.json?v=10',root));
   if(!response.ok)throw new Error('Catalog unavailable');
   catalog=await response.json();
   grid.addEventListener('click',event=>{

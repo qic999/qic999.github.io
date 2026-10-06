@@ -1,0 +1,92 @@
+{
+  "id": "trachea",
+  "label": "Trachea",
+  "scope": "Native trachea and two main bronchial branches; original airway surface retained.",
+  "file": "trachea.glb",
+  "bytes": 2766680,
+  "sha256": "6a88549aedf64263384700f3ff56671455509909867872eb53af9b9f9a35ea26",
+  "nodeCount": 3,
+  "triangleCount": 5620,
+  "boundsM": [
+    [
+      -0.020289333537220955,
+      1.3152920007705688,
+      -0.028082624077796936
+    ],
+    [
+      0.04793775826692581,
+      1.4605664014816284,
+      0.01765947975218296
+    ]
+  ],
+  "units": "metres",
+  "coordinates": "Original source coordinates; viewer up vector recorded in up.",
+  "camera": {
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "frameDirection": [
+      0.15,
+      0.06,
+      1
+    ],
+    "target": [
+      0.013824212364852428,
+      1.3879292011260986,
+      -0.005211572162806988
+    ]
+  },
+  "structures": [
+    {
+      "name": "Trachea",
+      "assetId": "za-airway-32e5d7e1d2f0",
+      "sourceFile": "medical_sim_library/viewer/public/examples/bronchoscopy/native-airway.glb",
+      "triangles": 4756
+    },
+    {
+      "name": "Right main bronchus",
+      "assetId": "za-airway-193609cfd1bf",
+      "sourceFile": "medical_sim_library/viewer/public/examples/bronchoscopy/native-airway.glb",
+      "triangles": 288
+    },
+    {
+      "name": "Left main bronchus",
+      "assetId": "za-airway-3d79616613fd",
+      "sourceFile": "medical_sim_library/viewer/public/examples/bronchoscopy/native-airway.glb",
+      "triangles": 576
+    }
+  ],
+  "selfContained": true,
+  "geometryChanges": "Positions and triangle topology retained; texture, UV and material changed.",
+  "url": "/data/organs/trachea.glb",
+  "poster": "/data/organs/trachea.png",
+  "appearance": "New pale perichondrial outer-wall illustration.",
+  "sources": [
+    {
+      "file": "medical_sim_library/viewer/public/examples/bronchoscopy/native-airway.glb",
+      "sha256": "de64c53584095977a974626cc90dd55d03f6034332c5d0cba2a1b99b7b22aabc"
+    }
+  ],
+  "geometryKind": "atlas",
+  "physicsStatus": "No physical parameters added by this appearance update",
+  "direction": [
+    0.15,
+    0.06,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled",
+  "license": "CC-BY-SA-4.0; retained upstream source notices",
+  "texture": {
+    "file": "trachea-surface.png",
+    "sha256": "e74c8a93bdab7022ad990057a4af54bc5080b89a8be3a209629c74665e83933a",
+    "uv": "isometric planar projection on two longest axes; no measured tissue orientation",
+    "kind": "AI-generated teaching illustration"
+  }
+}

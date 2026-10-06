@@ -1,0 +1,1 @@
+New kidney, bladder and tracheal appearance maps: LifeCode / OpenAI image_gen, 2026-10-06, CC-BY-4.0. Original generated educational illustrations; no patient photography, no calibrated PBR or tissue mechanics. Exact prompts retained.

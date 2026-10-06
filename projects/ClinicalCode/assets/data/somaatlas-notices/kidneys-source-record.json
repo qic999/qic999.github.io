@@ -1,0 +1,90 @@
+{
+  "id": "kidneys",
+  "label": "Kidneys",
+  "scope": "Paired native kidney exteriors in their original relative atlas positions.",
+  "file": "kidneys.glb",
+  "bytes": 2681616,
+  "sha256": "fa18e7229147a2bb106013792da9e61dc4d76afa820ef45ddc96d2357e1d89d0",
+  "nodeCount": 2,
+  "triangleCount": 5304,
+  "boundsM": [
+    [
+      -0.08757544308900833,
+      1.0415968894958496,
+      -0.038555808365345
+    ],
+    [
+      0.09038306772708893,
+      1.1652164459228516,
+      0.013707643374800682
+    ]
+  ],
+  "units": "metres",
+  "coordinates": "Original source coordinates; viewer up vector recorded in up.",
+  "camera": {
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "frameDirection": [
+      0.15,
+      0.06,
+      1
+    ],
+    "target": [
+      0.0014038123190402985,
+      1.1034066677093506,
+      -0.01242408249527216
+    ]
+  },
+  "structures": [
+    {
+      "name": "Kidney.l",
+      "assetId": null,
+      "sourceFile": "medical_sim_visual_assets/ureteroscopy-scenes/prepared/kidney-left.glb",
+      "triangles": 2982
+    },
+    {
+      "name": "Kidney.r",
+      "assetId": null,
+      "sourceFile": "medical_sim_visual_assets/ureteroscopy-scenes/prepared/kidney-right.glb",
+      "triangles": 2322
+    }
+  ],
+  "selfContained": true,
+  "geometryChanges": "Positions and triangle topology retained; texture, UV and material changed.",
+  "url": "/data/organs/kidneys.glb",
+  "poster": "/data/organs/kidneys.png",
+  "appearance": "New renal capsular illustration. This replaces the catalog preview, not the MRI segmentation.",
+  "sources": [
+    {
+      "file": "medical_sim_visual_assets/ureteroscopy-scenes/prepared/kidney-left.glb",
+      "sha256": "3ae66021f68022c2a68a5d2ce90ee7681be8c28be0a0d4e8c762e71cd1ff2da3"
+    },
+    {
+      "file": "medical_sim_visual_assets/ureteroscopy-scenes/prepared/kidney-right.glb",
+      "sha256": "3be3752521e6dee86762007305fbbf70793c74388336d5b801a9f44cc93c0ef2"
+    }
+  ],
+  "geometryKind": "atlas",
+  "physicsStatus": "No physical parameters added by this appearance update",
+  "direction": [
+    0.15,
+    0.06,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled",
+  "license": "Kidney source may include Lissie Cowley CC-BY-NC-4.0; exact upstream mapping unresolved. Noncommercial use only pending clarification; other atlas notices retained.",
+  "texture": {
+    "file": "kidney-surface.png",
+    "sha256": "9ab5916d26d00be258047018321b2b414076d9ecc092f923d9c0f897f3e5afe7",
+    "uv": "isometric planar projection on two longest axes; no measured tissue orientation",
+    "kind": "AI-generated teaching illustration"
+  }
+}

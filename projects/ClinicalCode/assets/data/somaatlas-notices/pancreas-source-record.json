@@ -1,0 +1,74 @@
+{
+  "id": "pancreas",
+  "label": "Pancreas",
+  "scope": "Native pancreas with preserved head, body and tail contour.",
+  "file": "pancreas.glb",
+  "bytes": 2507600,
+  "sha256": "ec43fbfef2b155d406473855452391faab9c28540461ee7e79f3469b7b1cacd0",
+  "nodeCount": 1,
+  "triangleCount": 5222,
+  "boundsM": [
+    [
+      -0.04546678066253662,
+      1.0791330337524414,
+      -0.005127256736159325
+    ],
+    [
+      0.07267440110445023,
+      1.1528730392456055,
+      0.048231665045022964
+    ]
+  ],
+  "units": "metres",
+  "coordinates": "Original source coordinates; viewer up vector recorded in up.",
+  "camera": {
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "frameDirection": [
+      0.15,
+      0.06,
+      1
+    ],
+    "target": [
+      0.013603810220956802,
+      1.1160030364990234,
+      0.02155220415443182
+    ]
+  },
+  "structures": [
+    {
+      "name": "Pancreas",
+      "assetId": "za-73e0f83df8e1",
+      "sourceFile": "medical_sim_library/viewer/public/examples/anatomy-materials/remaining-examples/pancreas.glb",
+      "triangles": 5222
+    }
+  ],
+  "selfContained": true,
+  "geometryChanges": "Selected existing named atlas meshes only; all vertex positions, normals, UVs and triangle connectivity retained. Indices stored losslessly as unsigned 16-bit where possible. Original PNG pixels embedded unchanged. Source node hierarchy flattened with world transforms preserved.",
+  "url": "/data/organs/pancreas.glb",
+  "poster": "/data/organs/pancreas.png",
+  "appearance": "Existing pancreatic lobular surface illustration.",
+  "sources": [
+    {
+      "file": "medical_sim_library/viewer/public/examples/anatomy-materials/remaining-examples/pancreas.glb",
+      "sha256": "a12ae79e1ebe4967e4b42ab0e3b3250f030e098957b183900397f4ff93dc2ed3"
+    }
+  ],
+  "geometryKind": "atlas",
+  "physicsStatus": "No physical parameters added by this appearance update",
+  "direction": [
+    0.15,
+    0.06,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled",
+  "license": "CC-BY-SA-4.0; retained upstream source notices"
+}

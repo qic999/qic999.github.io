@@ -1,0 +1,74 @@
+{
+  "liver": {
+    "file": "/examples/procedures/tissue-photos/human-liver.jpg",
+    "pixels": [
+      1600,
+      1200
+    ],
+    "window": [
+      1080,
+      520,
+      260,
+      260
+    ],
+    "author": "Suseno",
+    "source": "https://commons.wikimedia.org/wiki/File:Human_Hepar.jpg",
+    "license": "Public domain",
+    "description": "Human liver autopsy photograph; original pixels sampled through a tissue-only UV window. Not a calibrated albedo capture.",
+    "sha256": "d5eebf6e8d7643da00918409301a3cf0c8ab0b1e5ff0a92f8e53e90de40537c3"
+  },
+  "gallbladder": {
+    "file": "/examples/procedures/tissue-photos/gallbladder-laparoscopy.jpg",
+    "pixels": [
+      1473,
+      982
+    ],
+    "window": [
+      410,
+      300,
+      350,
+      225
+    ],
+    "author": "Hic et nunc",
+    "source": "https://commons.wikimedia.org/wiki/File:Gallenblase.jpg",
+    "license": "CC-BY-SA-3.0",
+    "description": "Human gallbladder laparoscopic photograph; serosal window avoids the main specular highlight.",
+    "sha256": "fe9ac3927f56cf628b0863fa91ab4cf89eeeb5805a8abcb4f9a526a73c2c8321"
+  },
+  "peritoneum": {
+    "file": "/examples/procedures/tissue-photos/gallbladder-laparoscopy.jpg",
+    "pixels": [
+      1473,
+      982
+    ],
+    "window": [
+      30,
+      550,
+      380,
+      380
+    ],
+    "author": "Hic et nunc",
+    "source": "https://commons.wikimedia.org/wiki/File:Gallenblase.jpg",
+    "license": "CC-BY-SA-3.0",
+    "description": "Vascularized fatty/peritoneal tissue from the same laparoscopic photograph; not a vessel segmentation.",
+    "sha256": "fe9ac3927f56cf628b0863fa91ab4cf89eeeb5805a8abcb4f9a526a73c2c8321"
+  },
+  "skin": {
+    "file": "/examples/procedures/tissue-photos/human-skin.jpg",
+    "pixels": [
+      3693,
+      2462
+    ],
+    "window": [
+      700,
+      350,
+      2000,
+      1800
+    ],
+    "author": "Anonymous / Pixnio",
+    "source": "https://commons.wikimedia.org/wiki/File:Image_skin_texture.jpg",
+    "license": "CC0-1.0",
+    "description": "真实人体皮肤近照；来源未注明具体身体部位，用作通用皮肤外观。",
+    "sha256": "03947d566743beed2fe2357be32a1c3d195ab293d000c910d351e436daa17733"
+  }
+}

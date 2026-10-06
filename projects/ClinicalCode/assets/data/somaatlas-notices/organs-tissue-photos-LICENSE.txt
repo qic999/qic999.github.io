@@ -1,0 +1,4 @@
+Human_Hepar.jpg: Suseno, public-domain release. https://commons.wikimedia.org/wiki/File:Human_Hepar.jpg
+Gallenblase.jpg: Hic et nunc, Creative Commons Attribution-ShareAlike 3.0 Unported. https://commons.wikimedia.org/wiki/File:Gallenblase.jpg
+License: https://creativecommons.org/licenses/by-sa/3.0/
+Original photographs are embedded unchanged. Tissue-only UV windows select surface appearance; no claim of calibrated albedo or patient-matched textures.

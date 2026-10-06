@@ -1,0 +1,31 @@
+Z-Anatomy / BodyParts3D hepatobiliary mesh assets
+
+BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan
+Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0
+
+Original BodyParts3D model: Kousaku OKUBO.
+Z-Anatomy design, 3D and anatomy: Gauthier KERVYN.
+Blender add-on: Marcin ZIELINSKI.
+
+Source: https://github.com/Z-Anatomy/Models-of-human-anatomy
+Pinned commit: 3bdb6a795a5db3c7e6e943d4ad3c4945c354d63e
+Source license: https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/3bdb6a795a5db3c7e6e943d4ad3c4945c354d63e/License.txt
+
+These extracted/adapted mesh assets are distributed under Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Changes made for LifeCode: extracted the actual Liver, Gallbladder and Bile duct;
+evaluated the source liver's authored Subdivision level 1; triangulated;
+generated nondegenerate UV maps and smooth normals; replaced display materials;
+converted coordinates by one rigid transform and uniform metre-to-mm scaling.
+Organ proportions and relative liver/gallbladder position are preserved.
+
+When redistributing these meshes or adaptations, retain attribution and the
+license link, indicate changes, and distribute the adapted mesh assets under
+CC BY-SA 4.0. Do not imply endorsement by the original authors.
+
+No source photographs/textures are included. The supplied simple colors are
+preview materials. Any separately supplied texture assets have their own provenance.
+
+Browser/export appearance adaptation: continuous anterior-inferior photograph UV projection and smooth normals averaged at duplicate seam vertices. Source vertex positions and triangles are unchanged. Atlas duct/artery centreline tubes and short operative teaching segments are documented in README.md.

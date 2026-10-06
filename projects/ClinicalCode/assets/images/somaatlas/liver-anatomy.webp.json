@@ -1,4 +1,4 @@
 {
-  "prompt": "Source: https://somaatlas.org/data/physics/atlas-hepatobiliary.glb. Unmodified atlas geometry and source appearance maps; framed and rendered by Three.js into a transparent 840x600 WebP. Anatomical assembly overview. Credits: Z-Anatomy / BodyParts3D, via SomaAtlas. Atlas adaptations: CC BY-SA 4.0, with upstream notices and source exceptions retained.",
-  "createdAt": "2026-10-06T11:46:39.936Z"
+  "prompt": "Source: https://somaatlas.org/data/physics/atlas-hepatobiliary.glb; rendered with Three.js from unchanged source geometry and materials. 600 x 600 transparent WebP; camera framing only. Z-Anatomy / BodyParts3D, via SomaAtlas. Atlas adaptations: CC BY-SA 4.0, with upstream notices and source exceptions retained.",
+  "createdAt": "2026-10-06T16:38:59.245Z"
 }

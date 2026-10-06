@@ -1,0 +1,74 @@
+{
+  "id": "spleen",
+  "label": "Spleen",
+  "scope": "Native spleen exterior, shape and hilar contour.",
+  "file": "spleen.glb",
+  "bytes": 2983768,
+  "sha256": "a591bf507094731607301bb24ba9e2a4a50c0d2ba358706834a3bca592d93342",
+  "nodeCount": 1,
+  "triangleCount": 1330,
+  "boundsM": [
+    [
+      0.055634208023548126,
+      1.1263840198516846,
+      -0.05195113644003868
+    ],
+    [
+      0.11386805772781372,
+      1.1966139078140259,
+      0.04311465844511986
+    ]
+  ],
+  "units": "metres",
+  "coordinates": "Original source coordinates; viewer up vector recorded in up.",
+  "camera": {
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "frameDirection": [
+      0.4,
+      0.08,
+      1
+    ],
+    "target": [
+      0.08475113287568092,
+      1.1614989638328552,
+      -0.004418238997459412
+    ]
+  },
+  "structures": [
+    {
+      "name": "Spleen",
+      "assetId": "za-ee4b9c9d9e5d",
+      "sourceFile": "medical_sim_library/viewer/public/examples/anatomy-materials/remaining-examples/spleen.glb",
+      "triangles": 1330
+    }
+  ],
+  "selfContained": true,
+  "geometryChanges": "Selected existing named atlas meshes only; all vertex positions, normals, UVs and triangle connectivity retained. Indices stored losslessly as unsigned 16-bit where possible. Original PNG pixels embedded unchanged. Source node hierarchy flattened with world transforms preserved.",
+  "url": "/data/organs/spleen.glb",
+  "poster": "/data/organs/spleen.png",
+  "appearance": "Existing splenic capsular illustration.",
+  "sources": [
+    {
+      "file": "medical_sim_library/viewer/public/examples/anatomy-materials/remaining-examples/spleen.glb",
+      "sha256": "5a2413340b0f2da689353b8b285cb6269dee43f05c5882dff9b166ec41164798"
+    }
+  ],
+  "geometryKind": "atlas",
+  "physicsStatus": "No physical parameters added by this appearance update",
+  "direction": [
+    0.4,
+    0.08,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled",
+  "license": "CC-BY-SA-4.0; retained upstream source notices"
+}

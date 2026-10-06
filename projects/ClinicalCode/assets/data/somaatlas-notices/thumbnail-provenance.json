@@ -4,27 +4,72 @@
     "source": "https://somaatlas.org/data/hero/heart.glb",
     "bounds": null,
     "file": "assets/images/somaatlas/heart-anatomy.webp",
-    "bytes": 48040,
-    "sha256": "25576532303d28be875b823b0a7940c0eae6c29687a4374e7e2b2c8fc86f52cb",
-    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 840x600 transparent WebP; muscular and vascular previews frame the torso."
+    "bytes": 47276,
+    "sha256": "6a48804868f530f9f9f622ed11cdabafb20f7e94e25f2b99874d93df408eb3ad",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
   },
   {
     "id": "atlas-liver",
     "source": "https://somaatlas.org/data/physics/atlas-hepatobiliary.glb",
     "bounds": null,
     "file": "assets/images/somaatlas/liver-anatomy.webp",
-    "bytes": 24744,
-    "sha256": "abe43b8b47b8cfb0f49437980962b3681f5793b84fb968a4bfcd91862567fa63",
-    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 840x600 transparent WebP; muscular and vascular previews frame the torso."
+    "bytes": 21750,
+    "sha256": "e2af668ffb131edc22b89a3cfb0921dae42fb3e33ab2c91f070c30174f692fc8",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
   },
   {
     "id": "atlas-lungs",
     "source": "https://somaatlas.org/data/hero/lungs.glb",
     "bounds": null,
     "file": "assets/images/somaatlas/lungs-anatomy.webp",
-    "bytes": 27246,
-    "sha256": "020a4f03b6b3b87169809cbd2e385e29b7249cf6e5a353221cf38372b893111a",
-    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 840x600 transparent WebP; muscular and vascular previews frame the torso."
+    "bytes": 27042,
+    "sha256": "7852edce8d6c5aad08165081fb8cd68561bc1f4030f0754a3845247591c85f2f",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
+  },
+  {
+    "id": "atlas-kidneys",
+    "source": "https://somaatlas.org/data/organs/kidneys.glb",
+    "bounds": null,
+    "file": "assets/images/somaatlas/kidneys-anatomy.webp",
+    "bytes": 24750,
+    "sha256": "daf163b9a6097ed2c81490b5cd4f9d90fea65a422bb38e19e7bf6eba5423051b",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
+  },
+  {
+    "id": "atlas-stomach",
+    "source": "https://somaatlas.org/data/organs/stomach.glb",
+    "bounds": null,
+    "file": "assets/images/somaatlas/stomach-anatomy.webp",
+    "bytes": 24768,
+    "sha256": "b641f2cffdbbc937ac943aab310d04d2cdfb6c333bc1534680f4c3c25ac0cebd",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
+  },
+  {
+    "id": "atlas-pancreas",
+    "source": "https://somaatlas.org/data/organs/pancreas.glb",
+    "bounds": null,
+    "file": "assets/images/somaatlas/pancreas-anatomy.webp",
+    "bytes": 20528,
+    "sha256": "c343e1a451e4fecc3c782f853c58bdb3ae1aa23189ca1751809d0eef6246e730",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
+  },
+  {
+    "id": "atlas-spleen",
+    "source": "https://somaatlas.org/data/organs/spleen.glb",
+    "bounds": null,
+    "file": "assets/images/somaatlas/spleen-anatomy.webp",
+    "bytes": 25198,
+    "sha256": "5a32f62e5b68eca4201d9186e6b58a3419ac06231b93149e9e22107b844e8967",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
+  },
+  {
+    "id": "atlas-trachea",
+    "source": "https://somaatlas.org/data/organs/trachea.glb",
+    "bounds": null,
+    "file": "assets/images/somaatlas/trachea-anatomy.webp",
+    "bytes": 11244,
+    "sha256": "b7372045f376e73816f7511b20b01f363bd17933074dcdd100d483561ddb39bc",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
   },
   {
     "id": "atlas-muscles",
@@ -42,9 +87,9 @@
       ]
     ],
     "file": "assets/images/somaatlas/muscles-anatomy.webp",
-    "bytes": 95560,
-    "sha256": "0125fad12bb261b664d69e6e4dc76988a2ed10d22997808a3cb986f71328948f",
-    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 840x600 transparent WebP; muscular and vascular previews frame the torso."
+    "bytes": 97384,
+    "sha256": "c2d61d168deca423884afa952667204079b1c1ac820b8c63b33e82e89d629b95",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
   },
   {
     "id": "atlas-vessels",
@@ -62,17 +107,8 @@
       ]
     ],
     "file": "assets/images/somaatlas/vessels-anatomy.webp",
-    "bytes": 45752,
-    "sha256": "2d103d574d1c44025b6e938a2c2ffb943dde5e1ee46468b9b26043be3e62ce4f",
-    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 840x600 transparent WebP; muscular and vascular previews frame the torso."
-  },
-  {
-    "id": "biopsy-clinical",
-    "source": "https://somaatlas.org/data/biopsy/biopsy-clinical.png",
-    "file": "assets/images/somaatlas/biopsy-clinical.png",
-    "bytes": 1149248,
-    "sha256": "b1208200e595eb1f255e924ae55c989774add1a7d816888dec154b3478956c8d",
-    "method": "Original SomaAtlas Blender render, unchanged pixels; source provenance embedded as PNG text.",
-    "terms": "https://somaatlas.org/data/biopsy/NOTICE.md"
+    "bytes": 45348,
+    "sha256": "841ccbd1e5f9b0ad423fd793846992ce1ae0734f9fc9e035413ff1e1d25acf36",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 600x600 transparent WebP; muscular and vascular previews frame the torso."
   }
 ]

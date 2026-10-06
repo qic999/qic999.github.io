@@ -1,0 +1,74 @@
+{
+  "id": "stomach",
+  "label": "Stomach",
+  "scope": "Native stomach surface, including its authored cutaway opening.",
+  "file": "stomach.glb",
+  "bytes": 2611480,
+  "sha256": "48f2343beebee5585df043f29a7cf62ff4b5e7a7e23479f668da80595daedab4",
+  "nodeCount": 1,
+  "triangleCount": 9468,
+  "boundsM": [
+    [
+      -0.028751902282238007,
+      1.1036782264709473,
+      -0.01649501547217369
+    ],
+    [
+      0.10542301833629608,
+      1.229142189025879,
+      0.08882425725460052
+    ]
+  ],
+  "units": "metres",
+  "coordinates": "Original source coordinates; viewer up vector recorded in up.",
+  "camera": {
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "frameDirection": [
+      -0.35,
+      0.04,
+      1
+    ],
+    "target": [
+      0.03833555802702904,
+      1.166410207748413,
+      0.03616462089121342
+    ]
+  },
+  "structures": [
+    {
+      "name": "Stomach",
+      "assetId": "za-035c20b45f92",
+      "sourceFile": "medical_sim_library/viewer/public/examples/anatomy-materials/remaining-examples/gastric-serosa.glb",
+      "triangles": 9468
+    }
+  ],
+  "selfContained": true,
+  "geometryChanges": "Selected existing named atlas meshes only; all vertex positions, normals, UVs and triangle connectivity retained. Indices stored losslessly as unsigned 16-bit where possible. Original PNG pixels embedded unchanged. Source node hierarchy flattened with world transforms preserved.",
+  "url": "/data/organs/stomach.glb",
+  "poster": "/data/organs/stomach.png",
+  "appearance": "Existing gastric serosa illustration; external wall, not mucosal reconstruction.",
+  "sources": [
+    {
+      "file": "medical_sim_library/viewer/public/examples/anatomy-materials/remaining-examples/gastric-serosa.glb",
+      "sha256": "8e6d021802bddaf7c33846bee25d5d2dd16b3d26b761484b7be480d777bff373"
+    }
+  ],
+  "geometryKind": "atlas",
+  "physicsStatus": "No physical parameters added by this appearance update",
+  "direction": [
+    -0.35,
+    0.04,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled",
+  "license": "CC-BY-SA-4.0; retained upstream source notices"
+}

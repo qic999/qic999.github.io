@@ -8,7 +8,7 @@
       "name": "Heart",
       "category": "atlas",
       "categoryLabel": "Anatomical model",
-      "description": "Four chambers, coronary arteries and aortic valve leaflets.",
+      "description": "Chambers, coronary arteries and aortic valve.",
       "appearance": "Illustrated myocardium and coronary surfaces on source atlas geometry.",
       "model": "https://somaatlas.org/data/hero/heart.glb",
       "source": "https://somaatlas.org/data/hero/heart.glb",
@@ -158,7 +158,7 @@
       "name": "Liver & biliary anatomy",
       "category": "atlas",
       "categoryLabel": "Anatomical model",
-      "description": "Liver, gallbladder, bile duct and hepatic arteries.",
+      "description": "Liver, gallbladder, bile duct and arteries.",
       "appearance": "Liver and gallbladder surfaces use source tissue photographs.",
       "model": "https://somaatlas.org/data/physics/atlas-hepatobiliary.glb",
       "source": "https://somaatlas.org/data/physics/atlas-hepatobiliary.glb",
@@ -252,7 +252,8 @@
           ]
         }
       ],
-      "triangles": 19496
+      "triangles": 19496,
+      "cardName": "Liver & biliary"
     },
     {
       "id": "atlas-lungs",
@@ -337,11 +338,266 @@
       "triangles": 42144
     },
     {
+      "id": "atlas-kidneys",
+      "name": "Kidneys",
+      "category": "atlas",
+      "categoryLabel": "Anatomical model",
+      "description": "Paired kidneys with renal capsular detail.",
+      "appearance": "New renal capsular illustration. This replaces the catalog preview, not the MRI segmentation.",
+      "scope": "Paired native kidney exteriors in their original relative atlas positions.",
+      "use": "Rotate the paired kidneys and isolate either side to inspect the external contour.",
+      "model": "https://somaatlas.org/data/organs/kidneys.glb",
+      "source": "https://somaatlas.org/data/organs/kidneys.glb",
+      "sourcePage": "https://somaatlas.org/assets/?organ=kidneys",
+      "download": "https://somaatlas.org/data/organs/kidneys.glb",
+      "downloadLabel": "Download original GLB",
+      "kit": null,
+      "direction": [
+        0.15,
+        0.06,
+        1
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "format": "GLB \u00b7 metres",
+      "bytes": 2681616,
+      "triangles": 5304,
+      "sha256": "fa18e7229147a2bb106013792da9e61dc4d76afa820ef45ddc96d2357e1d89d0",
+      "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled. Kidney source may include Lissie Cowley CC-BY-NC-4.0; exact upstream mapping unresolved. Noncommercial use only pending clarification; other atlas notices retained.",
+      "terms": "https://somaatlas.org/data/organs/NOTICE.txt",
+      "metadata": "https://somaatlas.org/data/organs/kidneys.json",
+      "thumbnail": "assets/images/somaatlas/kidneys-anatomy.webp",
+      "parts": [
+        {
+          "id": "kidneys-0",
+          "node": "Kidney.l",
+          "name": "Left kidney",
+          "group": "Kidneys"
+        },
+        {
+          "id": "kidneys-1",
+          "node": "Kidney.r",
+          "name": "Right kidney",
+          "group": "Kidneys"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Kidneys",
+          "parts": [
+            "kidneys-0",
+            "kidneys-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atlas-stomach",
+      "name": "Stomach",
+      "category": "atlas",
+      "categoryLabel": "Anatomical model",
+      "description": "Gastric surface with an anatomical cutaway.",
+      "appearance": "Existing gastric serosa illustration; external wall, not mucosal reconstruction.",
+      "scope": "Native stomach surface, including its authored cutaway opening.",
+      "use": "Rotate the stomach to examine its outer wall and the source model\u2019s cutaway opening.",
+      "model": "https://somaatlas.org/data/organs/stomach.glb",
+      "source": "https://somaatlas.org/data/organs/stomach.glb",
+      "sourcePage": "https://somaatlas.org/assets/?organ=stomach",
+      "download": "https://somaatlas.org/data/organs/stomach.glb",
+      "downloadLabel": "Download original GLB",
+      "kit": null,
+      "direction": [
+        -0.35,
+        0.04,
+        1
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "format": "GLB \u00b7 metres",
+      "bytes": 2611480,
+      "triangles": 9468,
+      "sha256": "48f2343beebee5585df043f29a7cf62ff4b5e7a7e23479f668da80595daedab4",
+      "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled. CC-BY-SA-4.0; retained upstream source notices",
+      "terms": "https://somaatlas.org/data/organs/NOTICE.txt",
+      "metadata": "https://somaatlas.org/data/organs/stomach.json",
+      "thumbnail": "assets/images/somaatlas/stomach-anatomy.webp",
+      "parts": [
+        {
+          "id": "stomach-0",
+          "node": "Stomach",
+          "name": "Stomach",
+          "group": "Stomach"
+        }
+      ],
+      "groups": []
+    },
+    {
+      "id": "atlas-pancreas",
+      "name": "Pancreas",
+      "category": "atlas",
+      "categoryLabel": "Anatomical model",
+      "description": "Lobular surface, from head to tail.",
+      "appearance": "Existing pancreatic lobular surface illustration.",
+      "scope": "Native pancreas with preserved head, body and tail contour.",
+      "use": "Rotate the pancreas to inspect its head, body and tail in a single source surface.",
+      "model": "https://somaatlas.org/data/organs/pancreas.glb",
+      "source": "https://somaatlas.org/data/organs/pancreas.glb",
+      "sourcePage": "https://somaatlas.org/assets/?organ=pancreas",
+      "download": "https://somaatlas.org/data/organs/pancreas.glb",
+      "downloadLabel": "Download original GLB",
+      "kit": null,
+      "direction": [
+        0.15,
+        0.06,
+        1
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "format": "GLB \u00b7 metres",
+      "bytes": 2507600,
+      "triangles": 5222,
+      "sha256": "ec43fbfef2b155d406473855452391faab9c28540461ee7e79f3469b7b1cacd0",
+      "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled. CC-BY-SA-4.0; retained upstream source notices",
+      "terms": "https://somaatlas.org/data/organs/NOTICE.txt",
+      "metadata": "https://somaatlas.org/data/organs/pancreas.json",
+      "thumbnail": "assets/images/somaatlas/pancreas-anatomy.webp",
+      "parts": [
+        {
+          "id": "pancreas-0",
+          "node": "Pancreas",
+          "name": "Pancreas",
+          "group": "Pancreas"
+        }
+      ],
+      "groups": []
+    },
+    {
+      "id": "atlas-spleen",
+      "name": "Spleen",
+      "category": "atlas",
+      "categoryLabel": "Anatomical model",
+      "description": "Splenic capsule and hilar contour.",
+      "appearance": "Existing splenic capsular illustration.",
+      "scope": "Native spleen exterior, shape and hilar contour.",
+      "use": "Rotate the spleen to inspect its outer capsule and hilar contour.",
+      "model": "https://somaatlas.org/data/organs/spleen.glb",
+      "source": "https://somaatlas.org/data/organs/spleen.glb",
+      "sourcePage": "https://somaatlas.org/assets/?organ=spleen",
+      "download": "https://somaatlas.org/data/organs/spleen.glb",
+      "downloadLabel": "Download original GLB",
+      "kit": null,
+      "direction": [
+        0.4,
+        0.08,
+        1
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "format": "GLB \u00b7 metres",
+      "bytes": 2983768,
+      "triangles": 1330,
+      "sha256": "a591bf507094731607301bb24ba9e2a4a50c0d2ba358706834a3bca592d93342",
+      "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled. CC-BY-SA-4.0; retained upstream source notices",
+      "terms": "https://somaatlas.org/data/organs/NOTICE.txt",
+      "metadata": "https://somaatlas.org/data/organs/spleen.json",
+      "thumbnail": "assets/images/somaatlas/spleen-anatomy.webp",
+      "parts": [
+        {
+          "id": "spleen-0",
+          "node": "Spleen",
+          "name": "Spleen",
+          "group": "Spleen"
+        }
+      ],
+      "groups": []
+    },
+    {
+      "id": "atlas-trachea",
+      "name": "Trachea & bronchi",
+      "category": "atlas",
+      "categoryLabel": "Anatomical model",
+      "description": "Trachea and both main bronchi.",
+      "appearance": "New pale perichondrial outer-wall illustration.",
+      "scope": "Native trachea and two main bronchial branches; original airway surface retained.",
+      "use": "Isolate the trachea or either main bronchus to explore the airway branching.",
+      "model": "https://somaatlas.org/data/organs/trachea.glb",
+      "source": "https://somaatlas.org/data/organs/trachea.glb",
+      "sourcePage": "https://somaatlas.org/assets/?organ=trachea",
+      "download": "https://somaatlas.org/data/organs/trachea.glb",
+      "downloadLabel": "Download original GLB",
+      "kit": null,
+      "direction": [
+        0.15,
+        0.06,
+        1
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "format": "GLB \u00b7 metres",
+      "bytes": 2766680,
+      "triangles": 5620,
+      "sha256": "6a88549aedf64263384700f3ff56671455509909867872eb53af9b9f9a35ea26",
+      "attribution": "Z-Anatomy / BodyParts3D; source-specific notices bundled. CC-BY-SA-4.0; retained upstream source notices",
+      "terms": "https://somaatlas.org/data/organs/NOTICE.txt",
+      "metadata": "https://somaatlas.org/data/organs/trachea.json",
+      "thumbnail": "assets/images/somaatlas/trachea-anatomy.webp",
+      "parts": [
+        {
+          "id": "trachea-0",
+          "node": "Trachea",
+          "name": "Trachea",
+          "group": "Trachea"
+        },
+        {
+          "id": "trachea-1",
+          "node": "Right main bronchus",
+          "name": "Right main bronchus",
+          "group": "Main bronchi"
+        },
+        {
+          "id": "trachea-2",
+          "node": "Left main bronchus",
+          "name": "Left main bronchus",
+          "group": "Main bronchi"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Trachea",
+          "parts": [
+            "trachea-0"
+          ]
+        },
+        {
+          "name": "Main bronchi",
+          "parts": [
+            "trachea-1",
+            "trachea-2"
+          ]
+        }
+      ]
+    },
+    {
       "id": "atlas-muscles",
       "name": "Muscles & tendons",
       "category": "atlas",
       "categoryLabel": "Anatomical model",
-      "description": "Superficial muscle groups with fiber and tendon detail.",
+      "description": "Muscle groups, fibers and tendons.",
       "appearance": "Illustrated muscle-fiber and tendon textures on atlas geometry.",
       "model": "https://somaatlas.org/data/hero/muscles.glb",
       "source": "https://somaatlas.org/data/hero/muscles.glb",
@@ -1632,7 +1888,7 @@
       "name": "Arteries & veins",
       "category": "atlas",
       "categoryLabel": "Anatomical model",
-      "description": "Major vascular anatomy from head to lower limbs.",
+      "description": "Major arteries and veins across the body.",
       "appearance": "Source atlas vessels with arterial and venous colors.",
       "model": "https://somaatlas.org/data/hero/vessels.glb",
       "source": "https://somaatlas.org/data/hero/vessels.glb",
@@ -1707,13 +1963,5 @@
     "mriLabels": 10,
     "representation": "Segmentation-derived surfaces; separate from the anatomical asset selection."
   },
-  "procedure": {
-    "name": "Ultrasound-guided liver biopsy",
-    "url": "https://somaatlas.org/simulations/ultrasound-guided-biopsy/",
-    "poster": "assets/images/somaatlas/biopsy-clinical.png",
-    "source": "https://somaatlas.org/data/biopsy/biopsy-clinical.png",
-    "manifest": "https://somaatlas.org/data/biopsy/case-manifest.json",
-    "notice": "https://somaatlas.org/data/biopsy/NOTICE.md",
-    "description": "Existing procedural teaching scene with five prescribed states; not a tissue mechanics or ultrasound solver."
-  }
+  "sourceManifest": "https://somaatlas.org/data/organs/manifest.json"
 }
