@@ -8,7 +8,7 @@ Serve the repository root with `python3 -m http.server 8000`, then open `/projec
 
 ## Contents
 
-- `index.html`: the selected Impeccable layout, with the new liver-case film, anatomy-grounded interactive explorer, manuscript result tables, and citation.
+- `index.html`: the selected Impeccable layout, with the new liver-case film, anatomy-grounded interactive explorer, manuscript result tables, and citation. The explorer retains the Case explorer and Inside the code tabs; the framework tab and its contents were removed at the author’s request.
 - `case-film/`: deterministic 20-second case animation. `window.__CASE_FILM__.frame(seconds)` is asynchronous; `?render=1` hides playback controls. CT, parsing, ClinicalCode, and simulation remain visible together.
 - `assets/video/clinicalcode-liver-case.mp4`: the current embedded video; 1920 × 1080, 24 fps, H.264, 20 seconds, silent, with English WebVTT captions.
 - `assets/js/liver-case.js` and `liver-case-view.js`: reference CT slice selection, organ/lesion overlays, synchronized ClinicalCode fields, 3D liver context, lesion detail, and registered CT sections. The explorer starts at illustrative day 45 and only animates after the visitor presses Play.

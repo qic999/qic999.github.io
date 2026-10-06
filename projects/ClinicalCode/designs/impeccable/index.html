@@ -40,7 +40,6 @@
     <div class="switch cc-tabs" role="tablist" aria-label="Explore the representation">
       <button class="sw" id="tab-trajectories" role="tab" aria-selected="true" aria-controls="panel-trajectories" data-panel="trajectories"><span class="sw-title">Case explorer</span></button>
       <button class="sw" id="tab-code" role="tab" aria-selected="false" aria-controls="panel-code" data-panel="code" tabindex="-1"><span class="sw-title">Inside the code</span></button>
-      <button class="sw" id="tab-method" role="tab" aria-selected="false" aria-controls="panel-method" data-panel="method" tabindex="-1"><span class="sw-title">The framework</span></button>
     </div>
 <div id="panel-trajectories" class="explorer-panel" role="tabpanel" aria-labelledby="tab-trajectories">
   <div id="liver-case">
@@ -96,10 +95,6 @@
     <span class="syn-key">"mutability"</span>: <span class="syn-string">"mutable"</span>
   }
 }</code></pre></div>
-    </div>
-    <div id="panel-method" class="explorer-panel" role="tabpanel" aria-labelledby="tab-method" hidden>
-      <div class="method-steps"><div><span>01</span><h3>Compile</h3><p>Ground the clinical state in imaging tools and pre-decision context.</p></div><div><span>02</span><h3>Roll forward</h3><p>Predict changes to mutable fields for each candidate action.</p></div><div><span>03</span><h3>Validate</h3><p>Check types, units, bounds, time, and provenance.</p></div><div><span>04</span><h3>Decode</h3><p>Map validated trajectories to documented treatment actions.</p></div></div>
-      <a href="../../assets/images/method.png" target="_blank" rel="noopener" class="method-figure"><img src="../../assets/images/method.png" width="2268" height="1200" loading="lazy" alt="The paper's framework: tool-grounded ClinicalCode compilation, action-conditioned code dynamics, and calibrated treatment decoding."></a><p class="note">Framework figure from the manuscript. Open the figure to inspect its details.</p>
     </div>
     <noscript><p>The interactive controls require JavaScript. <a href="../../assets/video/clinicalcode-liver-case.mp4">Watch the MP4</a> or <a href="../../assets/data/trajectories.json">read the example states</a>.</p></noscript>
   </section><section class="container sec asset-gallery" id="assets" aria-labelledby="assets-title">
