@@ -1,6 +1,6 @@
 const root=new URL('../../',import.meta.url);
 const byId=id=>document.getElementById(id);
-const section=byId('assets'),grid=byId('asset-grid'),inspector=byId('asset-inspector');
+const grid=byId('asset-grid'),inspector=byId('asset-inspector');
 const viewerHost=byId('asset-viewer'),loading=byId('asset-loading'),retry=byId('asset-retry');
 const partList=byId('asset-parts'),partSearch=byId('asset-part-search'),separation=byId('asset-separate');
 let catalog,selected=null,viewer,loadingViewer,request=0,trigger=null;
@@ -17,7 +17,9 @@ function updateParts() {
     row.querySelector('input').checked=part.node.visible;
   }
   const visible=viewer.parts.filter(p=>p.node.visible).map(p=>p.id);
-  byId('asset-part-status').textContent=matches?`${visible.length} of ${viewer.parts.length} structures visible`:'No structures match. Try another name.';
+  const status=byId('asset-part-status');
+  status.textContent=matches?`${visible.length} of ${viewer.parts.length} structures visible`:'No matching structures.';
+  status.classList.toggle('sr-only',matches>0);
   for(const b of byId('asset-groups').children) {
     const ids=b.dataset.group==='all'?viewer.parts.map(p=>p.id):selected.groups[+b.dataset.group].parts;
     b.setAttribute('aria-pressed',String(ids.length===visible.length&&ids.every(id=>visible.includes(id))));
@@ -53,24 +55,22 @@ async function openAsset(asset,{scroll=true}={}) {
   if(!asset)return;
   const ticket=++request;selected=asset;
   byId('asset-title').textContent=asset.name;
-  byId('asset-use').textContent=asset.use;
   const singlePart=asset.parts.length===1;
   inspector.querySelector('.asset-separation').hidden=singlePart;
-  inspector.querySelector('.asset-separation-note').hidden=singlePart;
-  for(const key of ['appearance','scope','attribution'])byId('asset-'+key).textContent=asset[key];
-  byId('asset-format').textContent=`Original GLB · ${(asset.bytes/1e6).toFixed(1)} MB`;
-  byId('asset-topology').textContent=`${asset.triangles.toLocaleString()} triangles · metres`;
-  link('asset-download',asset.download);link('asset-kit',asset.kit);link('asset-terms',asset.terms);link('asset-metadata',asset.metadata);
+  inspector.classList.toggle('is-single-part',singlePart);
+  inspector.querySelector('.asset-structure-panel').hidden=singlePart;
+  link('asset-download',asset.download);
+  byId('asset-download').setAttribute('aria-label',`Download ${asset.name} model`);
   for(const card of grid.querySelectorAll('[data-asset]'))card.setAttribute('aria-expanded',String(card.dataset.asset===asset.id));
   byId('asset-groups').replaceChildren();partList.replaceChildren();
-  byId('asset-part-status').textContent='Loading structures…';
+  byId('asset-part-status').textContent='';
+  byId('asset-part-status').classList.add('sr-only');
   partSearch.value='';partSearch.disabled=true;separation.value='0';separation.disabled=true;byId('asset-separation-value').value='0%';
   byId('asset-reset').disabled=true;
-  inspector.querySelector('details').open=false;
   viewerHost.style.backgroundImage=`url("${new URL(asset.thumbnail+'?v=10',root)}")`;
   viewerHost.setAttribute('aria-busy','true');
   viewerHost.setAttribute('aria-label',`${asset.name}: interactive 3D anatomy`);
-  loading.textContent=`Loading original model (${(asset.bytes/1e6).toFixed(1)} MB)…`;loading.hidden=false;retry.hidden=true;
+  loading.textContent='Loading model…';loading.hidden=false;retry.hidden=true;
   inspector.hidden=false;
   if(scroll){inspector.scrollIntoView({block:'start',behavior:'instant'});inspector.focus({preventScroll:true});}
   viewer?.cancel();
@@ -86,8 +86,7 @@ async function openAsset(asset,{scroll=true}={}) {
   } catch(error) {
     if(ticket!==request)return;
     viewer?.cancel();
-    loading.textContent='The 3D model could not load. Retry, or download the original below.';retry.hidden=false;
-    byId('asset-part-status').textContent='Structure controls become available when the model loads.';
+    loading.textContent='Model unavailable. Retry or use the download icon.';retry.hidden=false;
   } finally { if(ticket===request)viewerHost.setAttribute('aria-busy','false'); }
 }
 byId('asset-close').addEventListener('click',()=>{
@@ -102,12 +101,7 @@ separation.addEventListener('input',()=>{
   if(!viewer?.ready)return;
   byId('asset-separation-value').value=separation.value+'%';viewer.separate(Number(separation.value)/100);
 });
-byId('asset-export').addEventListener('click',()=>{
-  if(!selected)return;
-  const blob=new Blob([JSON.stringify({sourceLibrary:catalog.source,verified:catalog.verified,asset:selected},null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob),anchor=document.createElement('a');
-  anchor.href=url;anchor.download=`somaatlas-${selected.id}.json`;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-});
+
 try {
   const response=await fetch(new URL('assets/data/somaatlas.json?v=10',root));
   if(!response.ok)throw new Error('Catalog unavailable');

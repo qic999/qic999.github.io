@@ -8,9 +8,9 @@
   <meta name="description" content="ClinicalCode: a typed, executable clinical-state representation for medical world models across CT and MRI.">
   <link rel="icon" type="image/png" href="../../assets/images/clinicalcode-logo.png">
   <link rel="stylesheet" href="../shared/base.css">
-  <link rel="stylesheet" href="style.css?v=8"><link rel="stylesheet" href="../../assets/css/liver-case.css?v=3">
+  <link rel="stylesheet" href="style.css?v=12"><link rel="stylesheet" href="../../assets/css/liver-case.css?v=12">
   <script type="importmap">{"imports":{"three":"../../assets/vendor/three.module.js","three/addons/":"../../assets/vendor/"}}</script>
-  <link rel="stylesheet" href="../../assets/css/asset-gallery.css?v=10">
+  <link rel="stylesheet" href="../../assets/css/asset-gallery.css?v=12">
 </head>
 <body class="design-impeccable">
 <a class="skip-link" href="#top-demo">Skip to video demonstration</a>
@@ -20,17 +20,12 @@
 </figure><section class="container sec" id="abstract" aria-labelledby="abstract-title">
     <div class="section-heading"><div><h2 id="abstract-title">Overview</h2></div></div>
     <div class="reading-copy"><p>Medical world models should describe how disease state evolves under candidate interventions. ClinicalCode uses a typed, executable representation for anatomy, lesions, imaging phenotype, clinical context, time, uncertainty, missingness, and provenance.</p><p>Compilers build this state from CT, MRI, and pre-decision observations. An action-conditioned dynamics model rolls the state forward, while validation checks expose inconsistent fields and temporal changes. A calibrated decoder then connects the trajectories to documented treatment actions.</p><p>This explicit interface lets researchers inspect individual variables, edit a state, and distinguish errors in perception, state evolution, and treatment decoding. The framework is evaluated across CT treatment planning and longitudinal glioma MRI.</p></div>
-  <details class="representation-details"><summary>What the representation makes explicit</summary><ul>
-      <li><span><b>A clinical state you can read.</b> Anatomy, lesion geometry, imaging phenotype, and context are represented with explicit types, units, and sources.</span></li>
-      <li><span><b>Actions condition the future.</b> Candidate interventions produce separate trajectories over the same shared clinical-state interface.</span></li>
-      <li><span><b>Every change has a place.</b> Missing observations, predicted fields, and uncertainty stay visible throughout the rollout.</span></li>
-      <li><span><b>Validate before decoding.</b> Schema and temporal checks precede the calibrated mapping from trajectories to documented treatment actions.</span></li>
-    </ul></details></section><section class="container sec demo" id="top-demo" aria-labelledby="video-title">
+</section><section class="container sec demo" id="top-demo" aria-labelledby="video-title">
     <div class="section-heading"><div><h2 id="video-title">Video demonstration</h2></div></div>
     <div class="demo-box">
       <button type="button" class="demo-cover" id="demo-play" aria-label="Play the 20-second ClinicalCode liver-case video">
         <img src="../../assets/images/liver-case-poster.jpg" width="1920" height="1080" alt="Four separate panels: real CT, matching reference segmentation, structured ClinicalCode, and 3D simulation.">
-        <span class="demo-cta"><span class="demo-btn"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.6v8.8L12 8z" fill="currentColor"/></svg>Play video</span><span class="demo-note">20 seconds</span></span>
+        <span class="demo-cta"><span class="demo-btn"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.6v8.8L12 8z" fill="currentColor"/></svg>Play video</span></span>
       </button>
       <video id="demo-video" controls playsinline preload="none" poster="../../assets/images/liver-case-poster.jpg" hidden aria-label="ClinicalCode liver-case video"><source src="../../assets/video/clinicalcode-liver-case.mp4" type="video/mp4"><track label="English" kind="captions" srclang="en" src="../../assets/video/clinicalcode-liver-case.vtt" default>Your browser does not support embedded video. <a href="../../assets/video/clinicalcode-liver-case.mp4">Download the video.</a></video>
     </div>
@@ -43,13 +38,13 @@
     </div>
 <div id="panel-trajectories" class="explorer-panel" role="tabpanel" aria-labelledby="tab-trajectories">
   <div id="liver-case">
-    <div class="case-heading"><h3>Liver lesion · arterial CT</h3><span>Real baseline anatomy<br>Illustrative state evolution</span></div>
+    <div class="case-heading"><h3>Liver lesion · arterial CT</h3></div>
     <div class="case-stage">
       <div class="case-input">
         <div class="case-ct-part"><div class="case-part-heading"><h4>CT</h4><output id="case-slice-label" for="case-slice">33 / 46</output></div><canvas id="case-ct" width="448" height="448" role="img" aria-label="Real baseline arterial CT slice"></canvas><label class="case-slice-control" for="case-slice"><span>Slice</span><input id="case-slice" type="range" min="0" max="45" step="1" value="32" aria-label="Reference CT slice"></label></div>
-        <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4><span>reference masks</span></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="Matching liver and lesion reference segmentation on the CT"></canvas><div class="case-mask-controls"><label><input type="checkbox" id="case-organ" checked>Organ</label><label><input type="checkbox" id="case-lesion" checked>Lesion</label></div></div>
+        <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="Matching liver and lesion reference segmentation on the CT"></canvas><div class="case-mask-controls"><label><input type="checkbox" id="case-organ" checked>Organ</label><label><input type="checkbox" id="case-lesion" checked>Lesion</label></div></div>
       </div>
-      <div class="case-code"><div class="case-part-heading"><h4>ClinicalCode</h4><span>state.json</span></div>
+      <div class="case-code"><div class="case-part-heading"><h4>ClinicalCode</h4></div>
         <pre aria-label="ClinicalCode fields synchronized with the current illustrative state"><code>{
   <span class="syn-key">"anatomy"</span>: {
     <span class="syn-key">"organ"</span>: <span class="syn-string">"liver"</span>,
@@ -67,24 +62,22 @@
     <span class="syn-key">"dynamics"</span>: <span class="syn-string">"illustrative"</span>
   }
 }</code></pre>
-        <p class="code-note">Move the time slider or choose an action. State fields and the 3D lesion update together.</p>
       </div>
-      <div class="case-output"><div class="case-part-heading"><h4>Simulation</h4><span id="case-state-label">Illustrative state · day 45</span></div>
+      <div class="case-output"><div class="case-part-heading"><h4>Simulation</h4><span id="case-state-label">Illustrative · day 45</span></div>
         <div class="case-view-tabs" role="group" aria-label="3D camera view"><button type="button" data-case-view="anatomy" aria-pressed="true">Liver context</button><button type="button" data-case-view="lesion" aria-pressed="false">Lesion detail</button><button type="button" data-case-view="section" aria-pressed="false">CT section</button></div>
-        <div class="case-viewer" id="case-viewer"><span class="viewer-loading">Loading reference anatomy…</span><span class="case-inset-label">Lesion detail</span><span class="case-viewer-hint">Drag to rotate · scroll to zoom</span></div>
+        <div class="case-viewer" id="case-viewer"><span class="viewer-loading">Loading anatomy…</span><span class="case-inset-label">Lesion detail</span></div>
         <div class="case-fields"><div class="case-mode-controls" role="group" aria-label="Visualized clinical field"><button type="button" data-case-mode="tissue" aria-pressed="true">Tissue state</button><button type="button" data-case-mode="geometry" aria-pressed="false">Geometry</button><button type="button" data-case-mode="uncertainty" aria-pressed="false">Uncertainty</button></div><label class="case-baseline-label"><input id="case-baseline" type="checkbox" checked>Baseline outline</label></div>
-        <p class="case-legend" id="case-legend">Coral: lesion shell · blue-grey: illustrative necrotic core</p>
+        <p class="case-legend" id="case-legend">Coral: lesion · blue-grey: necrotic core</p>
         <div class="case-metrics"><div><span>Lesion volume</span><b id="case-volume">63.2 mL</b></div><div><span>Necrotic fraction</span><b id="case-necrosis">46%</b></div><div><span>Viability proxy</span><b id="case-viability">0.58</b></div></div>
       </div>
     </div>
     <div class="case-controls"><div><label class="case-action-label" for="case-action">Candidate action</label><select class="case-action-select" id="case-action" aria-label="Candidate action for the illustrative rollout"></select></div><div class="case-transport"><button class="btn btn-solid" id="case-play" type="button" disabled aria-pressed="false"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10l8-5Z" fill="currentColor"/></svg><span id="case-play-label">Play trajectory</span></button><div class="case-timeline-track"><label class="sr-only" for="case-time">Simulation day</label><input id="case-time" type="range" min="0" max="90" step="0.1" value="45"><div class="case-time-labels"><span>Day 0</span><span>30</span><span>60</span><span>90</span></div></div><output id="case-day" for="case-time">Day 45</output></div></div>
-    <div class="case-notes"><p>Baseline surfaces come from the CT reference masks. Future volume, tissue composition, and uncertainty visualize the existing rule-contract states; the interior core is a schematic encoding, not a measured necrosis map or a patient forecast.</p><button class="btn" id="case-reset" type="button">Reset to baseline</button></div>
-    <p class="note" id="viewer-error" role="status" hidden>The interactive renderer could not start. <a href="#top-demo">Watch the video</a> or <a href="../../assets/data/trajectories.json">inspect the example states</a>.</p>
+    <div class="case-reset-row"><button class="icon-action" id="case-reset" type="button" aria-label="Reset to baseline" title="Reset to baseline"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.5 6.2M3 4v7h7"/></svg></button></div>
+    <p class="note" id="viewer-error" role="status" hidden>3D view unavailable. <a href="#top-demo">Watch the video</a> or <a href="../../assets/data/trajectories.json">inspect the example states</a>.</p>
   </div>
 </div>
     <div id="panel-code" class="explorer-panel" role="tabpanel" aria-labelledby="tab-code" hidden>
-      <div class="code-layout"><div><h3>A field is more than a value.</h3><p>Each state field carries its type and unit, observability, uncertainty, source, and mutability. An unobserved quantity stays missing.</p><div class="field-list"><span>Context</span><span>Anatomy</span><span>Lesion</span><span>Phenotype</span><span>Physiology</span><span>History</span><span>Time</span><span>Provenance</span></div><p class="note">Illustrative schema excerpt. The missing volume is deliberate; this example contains no patient measurements.</p></div><pre class="code schema-code"><code><span class="syn-comment">// An inspectable field in a ClinicalCode state</span>
-{
+      <div class="code-layout"><div><h3>Clinical state fields</h3><p>Typed fields with units, observability, uncertainty, sources and mutability.</p><div class="field-list"><span>Context</span><span>Anatomy</span><span>Lesion</span><span>Phenotype</span><span>Physiology</span><span>History</span><span>Time</span><span>Provenance</span></div></div><pre class="code schema-code"><code>{
   <span class="syn-key">"lesion.volume"</span>: {
     <span class="syn-key">"value"</span>: <span class="syn-value">null</span>,
     <span class="syn-key">"type"</span>: <span class="syn-string">"float"</span>,
@@ -99,84 +92,71 @@
     <noscript><p>The interactive controls require JavaScript. <a href="../../assets/video/clinicalcode-liver-case.mp4">Watch the MP4</a> or <a href="../../assets/data/trajectories.json">read the example states</a>.</p></noscript>
   </section><section class="container sec asset-gallery" id="assets" aria-labelledby="assets-title">
   <div class="section-heading"><h2 id="assets-title">SomaAtlas anatomical assets</h2></div>
-  <p class="asset-intro">Organs, tissue surfaces and the structures within them. Explore the anatomy in 3D, isolate individual components and download the source models.</p>
   <div class="asset-grid" id="asset-grid">
     <a class="asset-card" data-asset="atlas-heart" href="https://somaatlas.org/assets/" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/heart-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Heart: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Heart</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Chambers, coronary arteries and aortic valve.</span><span class="asset-kind">Explore 14 structures in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Heart</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-liver" href="https://somaatlas.org/assets/" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/liver-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Liver &amp; biliary anatomy: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Liver &amp; biliary</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Liver, gallbladder, bile duct and arteries.</span><span class="asset-kind">Explore 7 structures in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Liver &amp; biliary</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-lungs" href="https://somaatlas.org/assets/" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/lungs-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Lungs: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Lungs</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Five lobes with pleural surface detail.</span><span class="asset-kind">Explore 5 structures in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Lungs</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-kidneys" href="https://somaatlas.org/assets/?organ=kidneys" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/kidneys-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Kidneys: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Kidneys</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Paired kidneys with renal capsular detail.</span><span class="asset-kind">Explore 2 structures in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Kidneys</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-stomach" href="https://somaatlas.org/assets/?organ=stomach" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/stomach-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Stomach: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Stomach</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Gastric surface with an anatomical cutaway.</span><span class="asset-kind">Explore in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Stomach</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-pancreas" href="https://somaatlas.org/assets/?organ=pancreas" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/pancreas-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Pancreas: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Pancreas</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Lobular surface, from head to tail.</span><span class="asset-kind">Explore in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Pancreas</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-spleen" href="https://somaatlas.org/assets/?organ=spleen" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/spleen-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Spleen: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Spleen</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Splenic capsule and hilar contour.</span><span class="asset-kind">Explore in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Spleen</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-trachea" href="https://somaatlas.org/assets/?organ=trachea" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/trachea-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Trachea &amp; bronchi: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Trachea &amp; bronchi</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Trachea and both main bronchi.</span><span class="asset-kind">Explore 3 structures in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Trachea &amp; bronchi</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-muscles" href="https://somaatlas.org/assets/" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/muscles-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Muscles &amp; tendons: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Muscles &amp; tendons</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Muscle groups, fibers and tendons.</span><span class="asset-kind">Explore 176 structures in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Muscles &amp; tendons</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
     <a class="asset-card" data-asset="atlas-vessels" href="https://somaatlas.org/assets/" aria-controls="asset-inspector" aria-expanded="false">
       <span class="asset-thumb"><img src="../../assets/images/somaatlas/vessels-anatomy.webp?v=10" width="600" height="600" loading="lazy" decoding="async" alt="Arteries &amp; veins: source anatomy and tissue appearance"></span>
-      <span class="asset-card-heading"><span class="asset-name">Arteries &amp; veins</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span>
-      <span class="asset-caption">Major arteries and veins across the body.</span><span class="asset-kind">Explore 2 vessel groups in 3D</span></a>
+      <span class="asset-card-heading"><span class="asset-name">Arteries &amp; veins</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h11M8 3l5 5-5 5"/></svg></span></a>
   </div>
   <section class="asset-inspector" id="asset-inspector" aria-labelledby="asset-title" tabindex="-1" hidden>
-    <div class="asset-inspector-header"><h3 id="asset-title">Anatomical model</h3><button type="button" class="asset-close" id="asset-close">Close viewer <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg></button></div>
+    <div class="asset-inspector-header"><h3 id="asset-title">Anatomical model</h3><div class="asset-actions">
+      <button type="button" class="icon-action" id="asset-reset" aria-label="Reset view" title="Reset view"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.5 6.2M3 4v7h7"/></svg></button>
+      <a class="icon-action" id="asset-download" href="https://somaatlas.org/resources/" aria-label="Download model" title="Download model"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a>
+      <button type="button" class="icon-action" id="asset-close" aria-label="Close viewer" title="Close viewer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div></div>
     <div class="asset-inspector-body">
       <div class="asset-stage">
         <div class="asset-viewer" id="asset-viewer" aria-busy="false"></div>
-        <p class="asset-loading" id="asset-loading" role="status">Loading original model…</p><button type="button" class="btn" id="asset-retry" hidden>Retry 3D model</button>
-        <div class="asset-view-controls"><span>Drag to rotate · scroll to zoom</span><button type="button" id="asset-reset">Reset view</button></div>
+        <p class="asset-loading" id="asset-loading" role="status">Loading model…</p><button type="button" class="btn" id="asset-retry" hidden>Retry</button>
         <label class="asset-separation" for="asset-separate"><span>Separate structures</span><input id="asset-separate" type="range" min="0" max="100" value="0" step="1" disabled><output for="asset-separate" id="asset-separation-value">0%</output></label>
-        <p class="asset-separation-note">Separation changes the display positions only.</p>
       </div>
       <div class="asset-structure-panel">
-        <p id="asset-use"></p>
         <div class="asset-groups" id="asset-groups" role="group" aria-label="Show an anatomical group"></div>
         <label class="asset-part-search"><span class="sr-only">Find an anatomical structure</span><input id="asset-part-search" type="search" placeholder="Find a structure" autocomplete="off" spellcheck="false" disabled></label>
-        <p class="asset-part-status" id="asset-part-status" role="status" aria-live="polite">Loading structures…</p>
+        <p class="asset-part-status sr-only" id="asset-part-status" role="status" aria-live="polite"></p>
         <div class="asset-parts" id="asset-parts" role="group" aria-label="Show, hide or isolate structures"></div>
-        <p class="asset-parts-help">Checkbox: show or hide · Isolate: view one structure</p>
       </div>
     </div>
-    <div class="asset-file-row"><p><span id="asset-format"></span><span id="asset-topology"></span></p><div class="asset-downloads"><a id="asset-download" class="btn btn-solid" href="https://somaatlas.org/resources/">Download original GLB</a><button type="button" class="btn" id="asset-export">Asset record</button></div></div>
-    <details class="asset-source-details"><summary>Appearance, scope &amp; source</summary><p id="asset-appearance"></p><p id="asset-scope"></p><p>Appearance textures are separate from physical tissue parameters.</p><p id="asset-attribution"></p><div class="asset-credit-links"><a id="asset-terms" href="https://somaatlas.org/data/hero/NOTICE.txt" target="_blank" rel="noopener">Source &amp; license</a><a id="asset-metadata" href="https://somaatlas.org/" target="_blank" rel="noopener">Model metadata</a><a id="asset-kit" href="https://somaatlas.org/" hidden>Download anatomy kit</a></div></details>
   </section>
-  <div class="asset-related"><div><h3>CT / MRI parsing</h3><p>Segmentation-derived surfaces from the imaging examples.</p><a href="https://somaatlas.org/atlas/" target="_blank" rel="noopener">Open the imaging atlas <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9"/></svg></a></div><div><h3>Tissue mechanics</h3><p>Recorded liver contact with forces, displacement and material assumptions.</p><a href="https://somaatlas.org/playground/?mode=mechanics" target="_blank" rel="noopener">Open the SOFA contact replay <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9"/></svg></a></div></div>
-  <p class="asset-library-link"><a href="https://somaatlas.org/" target="_blank" rel="noopener">Explore SomaAtlas <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9"/></svg></a><a href="../../assets/data/somaatlas-notices/README.md" target="_blank" rel="noopener">Sources &amp; credits</a></p>
-  <p class="asset-catalog-error" id="asset-catalog-error" role="status" hidden>Interactive viewer unavailable. The original models are available through the links above.</p>
+  <nav class="asset-links" aria-label="Anatomy resources">
+    <a href="https://somaatlas.org/assets/" target="_blank" rel="noopener">SomaAtlas <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    <a href="https://somaatlas.org/atlas/" target="_blank" rel="noopener">CT / MRI atlas <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    <a href="https://somaatlas.org/playground/?mode=mechanics" target="_blank" rel="noopener">Tissue mechanics <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+  </nav>
+  <p class="asset-catalog-error" id="asset-catalog-error" role="status" hidden>3D viewer unavailable. Open the models on SomaAtlas.</p>
 </section><section class="container sec" id="results" aria-labelledby="results-title">
     <div class="section-heading"><div><h2 id="results-title">Results</h2></div></div>
-    <p class="sec-lede">Treatment-action prediction results reported in the manuscript. CT and MRI have separate cohorts and evaluation protocols.</p>
-    <div class="results-toolbar" role="group" aria-label="Results modality"><button class="btn btn-small result-tab is-on" aria-pressed="true" data-results="ct">CT treatment planning</button><button class="btn btn-small result-tab" aria-pressed="false" data-results="mri">Longitudinal glioma MRI</button><a href="../../assets/data/results.csv" download class="a-quiet">Download CSV</a></div>
-    <div class="table-wrap"><table class="lb results-table"><caption class="sr-only" id="result-caption">CT treatment planning, F1 in percent</caption><thead><tr><th scope="col" class="c-model">Method / configuration</th><th scope="col">Internal F1 ↑</th><th scope="col">External F1 ↑</th></tr></thead><tbody id="results-body"></tbody></table></div>
-    <p class="note" id="results-note"></p>
-    <details class="drop"><summary>Evaluation context</summary><div class="drop-body"><p>The tables measure agreement with documented treatment actions. They do not establish causal treatment benefit. The MRI external result uses the official UCSF test partition with no UCSF fitting or calibration. CT single-model and ensemble configurations are listed separately. Interactive demo values are illustrative and do not contribute to these scores.</p></div></details>
+    <div class="results-toolbar" role="group" aria-label="Results modality"><button class="btn btn-small result-tab is-on" aria-pressed="true" data-results="ct" aria-label="CT treatment planning">CT planning</button><button class="btn btn-small result-tab" aria-pressed="false" data-results="mri" aria-label="Longitudinal glioma MRI">Glioma MRI</button><a href="../../assets/data/results.csv" download class="icon-action" aria-label="Download results CSV" title="Download results CSV"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a></div>
+    <div class="table-wrap"><table class="lb results-table"><caption class="sr-only" id="result-caption">CT treatment planning, F1 in percent</caption><thead><tr><th scope="col" class="c-model">Method / configuration</th><th scope="col">Internal F1 (%) ↑</th><th scope="col">External F1 (%) ↑</th></tr></thead><tbody id="results-body"></tbody></table></div>
   </section><section class="container sec" id="cite" aria-labelledby="cite-title">
     <div class="section-heading"><div><h2 id="cite-title">Citation</h2></div></div>
-    <div class="citation-heading"><span>Research manuscript · 2026</span><button class="btn btn-small" id="copy-citation">Copy BibTeX</button></div>
+    <div class="citation-heading"><button class="btn btn-small" id="copy-citation">Copy BibTeX</button></div>
     <pre class="code citation"><code id="bibtex">@misc{chen2026clinicalcode,
   title  = {Animating the Clinical Source Code of Disease
             Progression for Medical World Models},
@@ -185,8 +165,8 @@
   note   = {Research manuscript},
   url    = {https://qic999.github.io/projects/ClinicalCode/}
 }</code></pre><span class="sr-only" id="copy-status" role="status"></span>
-  </section><footer class="container page-footer"><span>ClinicalCode · Research manuscript, 2026</span><a href="https://qic999.github.io/">Qi Chen</a></footer></main>
-<script src="../shared/page.js?v=3" defer></script>
-<script type="module" src="../../assets/js/asset-gallery.js?v=10"></script>
+  </section><footer class="container page-footer"><span>ClinicalCode</span><a href="../../assets/data/somaatlas-notices/README.md" target="_blank" rel="noopener">Sources &amp; credits</a><a href="https://qic999.github.io/">Qi Chen</a></footer></main>
+<script src="../../assets/js/app.js?v=12" defer></script>
+<script type="module" src="../../assets/js/asset-gallery.js?v=12"></script>
 </body>
 </html>

@@ -53,11 +53,6 @@ sup { font-size: .65em; vertical-align: super; margin-inline: 2px 3px; }
 .reading-copy { max-width: 72ch; }
 .reading-copy p { margin-bottom: 16px; }
 .reading-copy p:last-child { margin-bottom: 0; }
-.representation-details { max-width: 72ch; margin-top: 24px; font-size: 14px; }
-.representation-details summary { cursor: pointer; color: var(--teal); padding-block: 8px; }
-.representation-details ul { margin: 10px 0 0; padding-left: 22px; }
-.representation-details li { padding-left: 3px; margin-bottom: 10px; }
-.representation-details b { font-weight: 600; }
 .demo-box { position: relative; background: #fff; }
 .demo-cover { display: block; position: relative; border: 0; padding: 0; width: 100%; background: #fff; aspect-ratio: 16/9; }
 .demo-cover > img { display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -125,10 +120,7 @@ sup { font-size: .65em; vertical-align: super; margin-inline: 2px 3px; }
 .results-table .ours .c-model { font-weight: 600; }
 .results-table .ours { color: var(--teal); }
 .results-table .ensemble { border-bottom: 1px solid var(--navy); }
-.drop { font-size: 13px; margin-top: 20px; }
-.drop summary { cursor: pointer; padding-block: 10px; color: var(--teal); }
-.drop-body { color: var(--muted); max-width: 88ch; padding-block: 8px; }
-.citation-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 13px; }
+.citation-heading { display: flex; align-items: center; justify-content: flex-end; gap: 20px; color: var(--muted); font-size: 13px; }
 .citation { margin-top: 14px; border-block: 1px solid var(--line); }
 .page-footer { display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding-block: 24px 36px; margin-top: 48px; font-size: 13px; color: var(--muted); }
 .page-footer a { min-height: 32px; }
@@ -194,7 +186,7 @@ sup { font-size: .65em; vertical-align: super; margin-inline: 2px 3px; }
 .sec { max-width: 980px; padding-top: 60px; }
 .sec h2 { text-align: center; }
 #abstract, #cite { max-width: 780px; }
-.reading-copy, .representation-details { margin-inline: auto; }
+.reading-copy { margin-inline: auto; }
 .demo { max-width: 1100px; }
 .section-heading { margin-bottom: 26px; }
 .page-footer { max-width: 980px; }

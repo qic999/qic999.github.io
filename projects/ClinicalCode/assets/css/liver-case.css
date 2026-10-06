@@ -1,10 +1,8 @@
 /* ClinicalCode case experience: reference imaging, inspectable state, anatomy.
    White canvas and the selected Impeccable page identity are retained. */
 #explore { max-width: 1260px; width: min(1260px,calc(100% - 80px)); }
-.case-intro { max-width: 76ch; margin: -6px auto 24px; text-align: center; color: var(--muted); font-size: 15px; }
 .case-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 4px 0 24px; }
 .case-heading h3 { font-size: 21px; font-weight: 500; }
-.case-heading > span { font-size: 12px; color: var(--muted); }
 .case-stage { display: grid; grid-template-columns: 188px 257px minmax(0,1fr); gap: 28px; }
 .case-input, .case-code, .case-output { min-width: 0; }
 .case-part-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
@@ -23,7 +21,6 @@
 .case-code .code-line { display: block; }
 .case-code [data-live-field] { transition: color 160ms; }
 .case-code .field-active { color: var(--teal); font-weight: 600; }
-.case-code .code-note { margin-top: 11px; font-size: 11px; color: var(--muted); line-height: 1.65; }
 .case-view-tabs { display: flex; align-items: center; gap: 18px; border-bottom: 1px solid var(--line); }
 .case-view-tabs button { padding: 9px 0 11px; min-height: 42px; background: #fff; border: 0; border-bottom: 2px solid transparent; font-size: 12px; color: var(--muted); }
 .case-view-tabs button[aria-pressed=true] { color: var(--teal); border-bottom-color: var(--teal); }
@@ -32,7 +29,6 @@
 .case-viewer > canvas:active { cursor: grabbing; }
 .case-inset-label { position: absolute; bottom: 168px; right: 14px; color: var(--muted); font-size: 11px; pointer-events: none; }
 .case-viewer[data-view=lesion] .case-inset-label { display: none; }
-.case-viewer-hint { position: absolute; left: 0; bottom: 4px; pointer-events: none; font-size: 11px; color: var(--muted); }
 .case-fields { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
 .case-mode-controls { display: flex; flex-wrap: wrap; gap: 6px; }
 .case-mode-controls button { min-height: 36px; font-size: 11px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); background: #fff; }
@@ -51,11 +47,6 @@
 .case-transport output { font-size: 13px; color: var(--navy); font-variant-numeric: tabular-nums; text-align: right; }
 .case-time-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
 .case-timeline-track { padding-top: 12px; }
-.case-notes { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-top: 20px; }
-.case-notes p { max-width: 98ch; color: var(--muted); font-size: 12px; line-height: 1.7; }
-.case-notes button { flex-shrink: 0; }
-.case-caption { margin-top: 28px; color: var(--muted); font-size: 13px; }
-.case-caption a { margin-left: 12px; }
 @media (max-width: 1180px) {
   .case-stage { grid-template-columns: 165px 233px minmax(0,1fr); gap: 24px; }
   .case-view-tabs { gap: 13px; }
@@ -71,18 +62,14 @@
   .case-code { grid-column: 1 / -1; }
   .case-code pre { columns: 2; column-gap: 36px; font-size: 12px; }
   .case-code pre > code { display: contents; }
-  .case-code .code-note { font-size: 12px; }
   .case-controls { grid-template-columns: 1fr; gap: 16px; }
   .case-viewer { height: 375px; }
   .case-inset-label { bottom: 145px; }
-  .case-heading > span { max-width: 185px; text-align: right; }
 }
 @media (max-width: 600px) {
   #explore { width: calc(100% - 40px); }
-  .case-intro { text-align: left; font-size: 14px; }
   .case-heading { display: block; margin-block: 0 22px; }
   .case-heading h3 { font-size: 19px; margin-bottom: 7px; }
-  .case-heading > span { font-size: 12px; }
   #liver-case { display: flex; flex-direction: column; gap: 26px; }
   .case-stage { display: contents; }
   .case-heading { order: 0; margin: 0; }
@@ -103,11 +90,12 @@
   .case-metrics b { font-size: 20px; }
   .case-transport { grid-template-columns: 132px minmax(0,1fr) 49px; gap: 10px; }
   .case-transport .btn { font-size: 11px; padding-inline: 10px; }
-  .case-notes { flex-direction: column; gap: 12px; }
   .case-controls { gap: 12px; order: 3; margin-top: 0; }
-  .case-notes { order: 5; margin-top: 0; }
   #viewer-error { order: 6; }
   .case-action-select { font-size: 12px; }
   .case-mask-controls { gap: 10px; }
   .case-legend { font-size: 11px; }
 }
+
+.case-reset-row { display: flex; justify-content: flex-end; margin-top: 10px; }
+@media(max-width:600px) { .case-reset-row { order: 5; margin-top: -14px; } }

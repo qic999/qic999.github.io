@@ -9,7 +9,6 @@ const results = {
 function showResults(modality) {
   $('results-body').innerHTML = results[modality].map(([name,a,b,cls=''])=>`<tr class="${cls}"><th scope="row" class="c-model">${name}</th>${[a,b].map(v=>`<td>${v.toFixed(2)}</td>`).join('')}</tr>`).join('');
   $('result-caption').textContent = `${modality==='ct'?'CT treatment planning':'Glioma MRI treatment planning'}, F1 in percent`;
-  $('results-note').textContent = modality === 'ct' ? 'CT · F1 (%) on the manuscript’s internal and external cohorts. Single-model and ensemble results are separate configurations; selected comparison methods are shown.' : 'MRI · F1 (%) on internal MU and official external UCSF test cohorts. The external ClinicalCode system is frozen, with no UCSF fitting or calibration. Selected comparison methods are shown.';
   document.querySelectorAll('.result-tab').forEach(b=>{b.classList.toggle('is-on',b.dataset.results===modality);b.setAttribute('aria-pressed',String(b.dataset.results===modality));});
 }
 showResults('ct');
@@ -32,4 +31,4 @@ $('copy-citation').addEventListener('click',async()=>{
   $('copy-citation').textContent='Copied';$('copy-status').textContent='BibTeX copied to clipboard.';setTimeout(()=>{$('copy-citation').textContent='Copy BibTeX'},1800);
 });
 let started=false;
-new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!started){started=true;import('./liver-case.js?v=3').catch(error=>{console.error(error);$('viewer-error').hidden=false;document.querySelectorAll('.viewer-loading').forEach(x=>x.textContent='3D view unavailable');});}},{rootMargin:'250px'}).observe($('explore'));
+new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!started){started=true;import('./liver-case.js?v=12').catch(error=>{console.error(error);$('viewer-error').hidden=false;document.querySelectorAll('.viewer-loading').forEach(x=>x.textContent='3D view unavailable');});}},{rootMargin:'250px'}).observe($('explore'));

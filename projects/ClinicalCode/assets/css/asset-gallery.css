@@ -5,7 +5,6 @@
 .affiliation-logos .logo-stanford { height: 39px; }
 .asset-gallery { max-width: 1100px; }
 .asset-gallery .section-heading { margin-bottom: 16px; }
-.asset-intro { max-width: 70ch; margin-inline: auto; text-align: center; }
 .asset-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 36px 24px; margin-top: 32px; }
 .asset-card { display: block; min-width: 0; color: var(--navy); text-decoration: none; }
 .asset-card:hover, .asset-card[aria-expanded="true"] { color: var(--teal); }
@@ -15,57 +14,33 @@
 .asset-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
 .asset-card-heading svg { flex: 0 0 auto; }
 .asset-name { display: block; font-size: 16px; font-weight: 600; line-height: 1.4; }
-.asset-caption { display: block; font-size: 13px; line-height: 1.55; color: var(--muted); margin-top: 5px; min-height: 61px; }
-.asset-kind { display: block; font-size: 12px; line-height: 1.5; color: var(--teal); margin-top: 8px; }
 .asset-inspector { scroll-margin-top: 70px; margin-top: 42px; padding-block: 26px 20px; border-block: 1px solid var(--line); }
 .asset-inspector:focus { outline: none; }
 .asset-inspector-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 15px; }
 .asset-inspector-header h3 { font-size: 26px; font-weight: 600; color: var(--navy); }
-.asset-close { display: inline-flex; align-items: center; gap: 8px; padding: 8px 0 8px 10px; min-height: 44px; border: 0; background: #fff; color: var(--ink); font-size: 13px; }
 .asset-inspector-body { display: grid; grid-template-columns: minmax(0,1.6fr) minmax(270px,1fr); gap: 40px; }
 .asset-stage { min-width: 0; }
 .asset-viewer { width: 100%; height: 440px; background: #fff center/contain no-repeat; }
 .asset-viewer canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
 .asset-viewer canvas:active { cursor: grabbing; }
 .asset-loading { margin: 6px 0; color: var(--muted); font-size: 13px; }
-.asset-view-controls { display: flex; align-items: center; gap: 14px; justify-content: space-between; color: var(--muted); font-size: 12px; }
-.asset-view-controls button { border: 0; background: #fff; color: var(--teal); min-height: 44px; padding: 8px 0; font-size: 12px; }
 .asset-separation { display: flex; align-items: center; gap: 14px; margin-top: 5px; font-size: 12px; color: var(--ink); }
 .asset-separation input { min-width: 20px; min-height: 32px; flex: 1; accent-color: var(--teal); }
 .asset-separation output { width: 34px; text-align: right; font-variant-numeric: tabular-nums; }
-.asset-separation-note { color: var(--muted); font-size: 12px; margin-top: 1px; }
 .asset-structure-panel { padding-top: 8px; }
-.asset-structure-panel > p:first-child { font-size: 14px; line-height: 1.6; }
-.asset-groups { display: flex; flex-wrap: wrap; gap: 0 17px; margin-top: 12px; }
+.asset-groups { display: flex; flex-wrap: wrap; gap: 0 17px; }
 .asset-groups button { border: 0; border-bottom: 2px solid transparent; background: #fff; color: var(--muted); min-height: 40px; padding: 8px 0; font-size: 12px; }
 .asset-groups button[aria-pressed="true"] { border-color: var(--teal); color: var(--teal); }
 .asset-part-search { display: block; margin-top: 18px; }
 .asset-part-search input { display: block; width: 100%; min-height: 42px; border: 1px solid var(--line); border-radius: 2px; background: #fff; padding: 8px 11px; color: var(--ink); font-size: 13px; }
 .asset-part-search input::placeholder { color: var(--muted); opacity: 1; }
-.asset-part-status { margin-top: 8px; color: var(--muted); font-size: 12px; }
+.asset-part-status:not(.sr-only) { margin-top: 8px; color: var(--muted); font-size: 12px; }
 .asset-parts { max-height: 270px; overflow-y: auto; margin-top: 8px; padding-right: 6px; scrollbar-width: thin; scrollbar-color: var(--muted) #fff; }
 .asset-part { display: flex; align-items: center; gap: 8px; min-height: 41px; border-bottom: 1px solid var(--line); }
 .asset-part label { display: flex; gap: 9px; align-items: center; flex: 1; min-height: 41px; font-size: 12px; line-height: 1.4; cursor: pointer; }
 .asset-part input { width: 15px; height: 15px; flex: 0 0 auto; accent-color: var(--teal); }
 .asset-part button { align-self: stretch; border: 0; background: #fff; color: var(--teal); padding: 0 4px; min-width: 44px; font-size: 12px; }
-.asset-part button:hover, .asset-view-controls button:hover { text-decoration: underline; text-underline-offset: 3px; }
-.asset-parts-help { font-size: 12px; margin-top: 9px; color: var(--muted); }
-.asset-file-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
-.asset-file-row p { display: flex; flex-direction: column; gap: 3px; color: var(--muted); font-size: 12px; }
-.asset-downloads { display: flex; gap: 10px; flex-wrap: wrap; }
-.asset-downloads .btn { font-size: 13px; min-height: 44px; }
-.asset-source-details { margin-top: 18px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.asset-source-details summary { cursor: pointer; min-height: 36px; padding: 8px 0; color: var(--ink); }
-.asset-source-details p { margin-top: 10px; max-width: 90ch; }
-.asset-credit-links { display: flex; flex-wrap: wrap; gap: 5px 22px; margin-top: 8px; }
-.asset-credit-links a { min-height: 32px; display: inline-flex; align-items: center; }
-.asset-related { display: grid; grid-template-columns: 1fr 1fr; column-gap: 70px; margin-top: 46px; border-top: 1px solid var(--line); padding-top: 25px; }
-.asset-related h3 { font-size: 16px; font-weight: 500; color: var(--navy); }
-.asset-related p { font-size: 13px; color: var(--muted); margin-top: 6px; max-width: 47ch; }
-.asset-related a, .asset-library-link a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; min-height: 44px; }
-.asset-related a { margin-top: 6px; }
-.asset-library-link { display: flex; gap: 24px; justify-content: center; margin-top: 28px; }
-.asset-library-link a:last-child { color: var(--muted); font-size: 12px; }
+.asset-part button:hover { text-decoration: underline; text-underline-offset: 3px; }
 .asset-catalog-error { margin-top: 20px; font-size: 13px; color: var(--muted); }
 .asset-gallery :disabled { cursor: default; opacity: .6; }
 .asset-gallery [hidden] { display: none !important; }
@@ -86,7 +61,6 @@
   .asset-parts { max-height: 245px; }
   .asset-parts label { min-height: 44px; }
   .asset-part button { min-height: 44px; }
-  .asset-caption { min-height: 0; }
 }
 @media(max-width:560px) {
   .affiliations.affiliation-logos { gap: 16px; margin-top: 17px; flex-wrap: nowrap; }
@@ -94,18 +68,29 @@
   .affiliation-logos img { width: min(39vw,165px); height: auto; }
   .affiliation-logos .logo-stanford { width: min(33vw,140px); height: auto; }
   .affiliation-logos sup { margin-top: 3px; font-size: 12px; }
-  .asset-intro { text-align: left; }
   .asset-grid { gap: 28px 18px; margin-top: 22px; }
   .asset-thumb { aspect-ratio: 1; }
   .asset-name { font-size: 15px; }
   .asset-card-heading { align-items: start; gap: 6px; }
   .asset-card-heading svg { margin-top: 3px; width: 14px; }
-  .asset-caption { font-size: 12px; }
-  .asset-kind { font-size: 12px; }
   .asset-viewer { height: 320px; }
   .asset-inspector-header h3 { font-size: 22px; }
   .asset-separation { gap: 9px; }
-  .asset-related { grid-template-columns: 1fr; gap: 23px; margin-top: 32px; }
-  .asset-library-link { flex-wrap: wrap; justify-content: flex-start; gap: 0 22px; margin-top: 20px; }
   .asset-groups button { min-height: 44px; }
+}
+
+/* Concise controls shared by the selected project pages. */
+.icon-action { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 10px; border: 0; border-radius: 0; background: transparent; color: var(--muted); text-decoration: none; cursor: pointer; }
+.icon-action:hover, .icon-action:focus-visible { color: var(--teal); }
+.icon-action:disabled { opacity: .5; cursor: default; }
+.asset-actions { display: flex; align-items: center; gap: 2px; }
+.results-toolbar .icon-action { margin-left: auto; }
+.asset-inspector.is-single-part .asset-inspector-body { grid-template-columns: minmax(0,1fr); }
+.asset-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; margin-top: 38px; }
+.asset-links a { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; font-size: 13px; }
+.asset-links svg { width: 16px; height: 16px; }
+@media(max-width:560px) {
+  .asset-inspector-header { gap: 10px; }
+  .asset-inspector-header h3 { font-size: 20px; }
+  .asset-links { justify-content: flex-start; gap: 0 22px; margin-top: 24px; }
 }

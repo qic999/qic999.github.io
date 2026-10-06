@@ -34,9 +34,9 @@ function update() {
   write('case-code-volume',volume.toFixed(3));write('case-code-necrosis',state.necrosis.toFixed(3));write('case-code-viability',state.viability.toFixed(3));write('case-code-uncertainty',state.uncertainty.toFixed(3));
   write('case-code-action',regimen.id.replace('public_regimen_','action_'));
   write('case-volume',`${volume.toFixed(1)} mL`);write('case-necrosis',`${Math.round(state.necrosis*100)}%`);write('case-viability',state.viability.toFixed(2));
-  write('case-state-label',`Illustrative state · day ${Math.round(day)}`);
+  write('case-state-label',`Illustrative · day ${Math.round(day)}`);
   const key={tissue:'Tissue state',geometry:'Lesion geometry',uncertainty:'Uncertainty envelope'}[mode];
-  write('case-legend',mode==='tissue'?'Coral: lesion shell · blue-grey: illustrative necrotic core':mode==='geometry'?'Coral: current lesion · fine outline: baseline boundary':'Teal envelope: illustrative uncertainty around the lesion');
+  write('case-legend',mode==='tissue'?'Coral: lesion · blue-grey: necrotic core':mode==='geometry'?'Coral: lesion · outline: baseline':'Teal: uncertainty');
   $('case-viewer').setAttribute('aria-label',`${key}, day ${Math.round(day)}, lesion volume ${volume.toFixed(1)} mL, on reference liver anatomy.`);
   document.querySelectorAll('[data-live-field]').forEach(el=>el.classList.toggle('field-active',el.dataset.liveField===mode));
   view.render();return state;
