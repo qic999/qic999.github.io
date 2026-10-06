@@ -12,9 +12,13 @@
 .case-parse { margin-top: 24px; }
 .case-slice-control { display: flex; align-items: center; gap: 8px; margin: 4px 0 0; font-size: 11px; color: var(--muted); }
 .case-slice-control input { width: 100%; min-width: 0; min-height: 32px; }
-.case-mask-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; font-size: 11px; color: var(--muted); }
-.case-mask-controls label { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; cursor: pointer; }
+.case-mask-controls { display: grid; grid-template-columns: repeat(2,max-content); column-gap: 14px; margin-top: 6px; font-size: 11px; color: var(--muted); }
+.case-mask-controls label { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; cursor: pointer; }
 .case-mask-controls input { margin: 0; accent-color: var(--teal); }
+#case-organ { accent-color: #128570; }
+#case-lesion { accent-color: #c84e3a; }
+#case-muscle { accent-color: #6877c5; }
+#case-fat { accent-color: #a47719; }
 .case-code pre { margin: 0; padding: 15px 0 12px; border-block: 1px solid var(--line); font: 11px/1.85 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); }
 .case-code .syn-key { color: var(--navy); }
 .case-code .syn-string { color: var(--teal); }
@@ -93,7 +97,8 @@
   .case-controls { gap: 12px; order: 3; margin-top: 0; }
   #viewer-error { order: 6; }
   .case-action-select { font-size: 12px; }
-  .case-mask-controls { gap: 10px; }
+  .case-mask-controls { column-gap: 12px; }
+  .case-mask-controls label { min-height: 44px; }
   .case-legend { font-size: 11px; }
 }
 

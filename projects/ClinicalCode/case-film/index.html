@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>ClinicalCode: Liver case film</title>
-<link rel="icon" href="../assets/images/clinicalcode-logo.png"><link rel="stylesheet" href="../assets/css/clinicalcode.css"><link rel="stylesheet" href="../assets/css/liver-case.css"><link rel="stylesheet" href="film.css">
+<link rel="icon" href="../assets/images/clinicalcode-logo.png"><link rel="stylesheet" href="../assets/css/clinicalcode.css"><link rel="stylesheet" href="../assets/css/liver-case.css?v=13"><link rel="stylesheet" href="film.css">
 <script type="importmap">{"imports":{"three":"../assets/vendor/three.module.js","three/addons/":"../assets/vendor/"}}</script></head>
 <body><div id="case-film-viewport"><main id="case-film-stage"><header class="film-header"><a class="project-brand" href="../"><img src="../assets/images/clinicalcode-logo.png" width="45" height="45" alt=""><span>Clinical<span>Code</span></span></a><span>Real CT · reference anatomy · illustrative dynamics</span></header><h1>Liver lesion: from CT to a 4D clinical state</h1><div id="panel-trajectories" class="explorer-panel" role="tabpanel" aria-labelledby="tab-trajectories">
   <div id="liver-case">
@@ -8,7 +8,7 @@
     <div class="case-stage">
       <div class="case-input">
         <div class="case-ct-part"><div class="case-part-heading"><h4>CT</h4><output id="case-slice-label" for="case-slice">33 / 46</output></div><canvas id="case-ct" width="448" height="448" role="img" aria-label="Real baseline arterial CT slice"></canvas><label class="case-slice-control" for="case-slice"><span>Slice</span><input id="case-slice" type="range" min="0" max="45" step="1" value="32" aria-label="Reference CT slice"></label></div>
-        <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4><span>reference masks</span></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="Matching liver and lesion reference segmentation on the CT"></canvas><div class="case-mask-controls"><label><input type="checkbox" id="case-organ" checked>Organ</label><label><input type="checkbox" id="case-lesion" checked>Lesion</label></div></div>
+        <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="CT with liver and lesion reference masks, automated muscle segmentation, and estimated fat"></canvas><div class="case-mask-controls" role="group" aria-label="Visible tissue layers"><label title="Liver reference mask"><input type="checkbox" id="case-organ" checked>Organ</label><label title="Lesion reference mask"><input type="checkbox" id="case-lesion" checked>Lesion</label><label title="Model-segmented named abdominal muscles"><input type="checkbox" id="case-muscle" aria-description="Automated segmentation of visible named muscle groups" checked>Muscle</label><label title="Fat estimate from CT intensity"><input type="checkbox" id="case-fat" aria-description="CT intensity-based fat estimate; not a reference annotation" checked>Fat</label></div></div>
       </div>
       <div class="case-code"><div class="case-part-heading"><h4>ClinicalCode</h4><span>state.json</span></div>
         <pre aria-label="ClinicalCode fields synchronized with the current illustrative state"><code>{
@@ -46,4 +46,4 @@
 
 <footer class="film-footer"><p id="film-caption">Real CT and reference masks anchor the clinical state in anatomy.</p><span id="case-film-clock">00:00 / 00:20</span></footer><div class="film-progress"><i id="case-film-progress"></i></div></main></div>
 <div class="film-controls"><button class="btn btn-solid" id="case-film-play">Play film</button><label for="case-film-time">Time</label><input id="case-film-time" type="range" min="0" max="19.99" value="0" step="0.01"><a href="../#explore">Open interactive case</a></div>
-<script src="film.js" type="module"></script></body></html>
+<script src="film.js?v=13" type="module"></script></body></html>

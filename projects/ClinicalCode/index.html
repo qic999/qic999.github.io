@@ -11,7 +11,7 @@
   <meta name="description" content="ClinicalCode: a typed, executable clinical-state representation for medical world models across CT and MRI.">
   <link rel="icon" type="image/png" href="assets/images/clinicalcode-logo.png">
   <link rel="stylesheet" href="assets/css/clinicalcode.css?v=12">
-  <link rel="stylesheet" href="assets/css/liver-case.css?v=12">
+  <link rel="stylesheet" href="assets/css/liver-case.css?v=13">
   <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.js","three/addons/":"./assets/vendor/"}}</script>
   <link rel="stylesheet" href="assets/css/asset-gallery.css?v=12">
 </head>
@@ -45,7 +45,7 @@
     <div class="case-stage">
       <div class="case-input">
         <div class="case-ct-part"><div class="case-part-heading"><h4>CT</h4><output id="case-slice-label" for="case-slice">33 / 46</output></div><canvas id="case-ct" width="448" height="448" role="img" aria-label="Real baseline arterial CT slice"></canvas><label class="case-slice-control" for="case-slice"><span>Slice</span><input id="case-slice" type="range" min="0" max="45" step="1" value="32" aria-label="Reference CT slice"></label></div>
-        <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="Matching liver and lesion reference segmentation on the CT"></canvas><div class="case-mask-controls"><label><input type="checkbox" id="case-organ" checked>Organ</label><label><input type="checkbox" id="case-lesion" checked>Lesion</label></div></div>
+        <div class="case-parse"><div class="case-part-heading"><h4>Parsing</h4></div><canvas id="case-parsed" width="448" height="448" role="img" aria-label="CT with liver and lesion reference masks, automated muscle segmentation, and estimated fat"></canvas><div class="case-mask-controls" role="group" aria-label="Visible tissue layers"><label title="Liver reference mask"><input type="checkbox" id="case-organ" checked>Organ</label><label title="Lesion reference mask"><input type="checkbox" id="case-lesion" checked>Lesion</label><label title="Model-segmented named abdominal muscles"><input type="checkbox" id="case-muscle" aria-description="Automated segmentation of visible named muscle groups" checked>Muscle</label><label title="Fat estimate from CT intensity"><input type="checkbox" id="case-fat" aria-description="CT intensity-based fat estimate; not a reference annotation" checked>Fat</label></div></div>
       </div>
       <div class="case-code"><div class="case-part-heading"><h4>ClinicalCode</h4></div>
         <pre aria-label="ClinicalCode fields synchronized with the current illustrative state"><code>{
@@ -169,7 +169,7 @@
   url    = {https://qic999.github.io/projects/ClinicalCode/}
 }</code></pre><span class="sr-only" id="copy-status" role="status"></span>
   </section><footer class="container page-footer"><span>ClinicalCode</span><a href="assets/data/somaatlas-notices/README.md" target="_blank" rel="noopener">Sources &amp; credits</a><a href="https://qic999.github.io/">Qi Chen</a></footer></main>
-<script src="assets/js/app.js?v=12" defer></script>
+<script src="assets/js/app.js?v=13" defer></script>
 <script type="module" src="assets/js/asset-gallery.js?v=12"></script>
 </body>
 </html>

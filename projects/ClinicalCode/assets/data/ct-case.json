@@ -24,7 +24,54 @@
   },
   "provenance": {
     "images": "De-identified stored CT replay",
-    "parsing": "Dataset-provided reference masks",
+    "parsing": "Liver and lesion: dataset reference masks; muscle: automated named-muscle segmentation; fat: CT intensity estimate",
     "dynamics": "Separate frozen rule-contract illustration; not a fitted patient forecast"
+  },
+  "parsing_layers": {
+    "organ": {
+      "kind": "reference_annotation",
+      "scope": "Liver including lesion"
+    },
+    "lesion": {
+      "kind": "reference_annotation",
+      "scope": "Liver lesion"
+    },
+    "muscle": {
+      "label": "Muscle",
+      "kind": "automated_segmentation",
+      "method": "TotalSegmentator abdominal_muscles",
+      "software_version": "2.18.0",
+      "scope": "Visible named abdominal and posterior muscle groups; not complete skeletal muscle",
+      "reference_annotation": false,
+      "reference_priority": "Existing liver and lesion masks take precedence; exclude zero-filled exterior padding",
+      "color_rgb": [
+        124,
+        137,
+        215
+      ],
+      "reference": "https://github.com/wasserth/TotalSegmentator"
+    },
+    "fat": {
+      "label": "Fat",
+      "kind": "intensity_estimate",
+      "method": "Body-constrained CT intensity threshold with conservative morphological filtering",
+      "source_intensity_range": [
+        -175,
+        600
+      ],
+      "included_intensity_range": [
+        -174.95,
+        -30
+      ],
+      "processing": "Exclude lower-bound saturation and its one-voxel in-plane interface; exclude muscle/liver/lesion; in-plane opening; remove components below 16 voxels",
+      "scope": "Display estimate on preprocessed cropped CT; no SAT/VAT subdivision or fat-volume measurement",
+      "reference_annotation": false,
+      "color_rgb": [
+        229,
+        185,
+        88
+      ],
+      "reference": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7979624/"
+    }
   }
 }

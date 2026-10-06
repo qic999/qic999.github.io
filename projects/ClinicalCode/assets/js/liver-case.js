@@ -4,13 +4,14 @@ import {LiverCaseView} from './liver-case-view.js';
 
 const $=id=>document.getElementById(id);
 const root=new URL('../',import.meta.url);
+const tissueLayers=['fat','muscle','organ','lesion'];
 const json=async name=>{const r=await fetch(new URL('data/'+name,root));if(!r.ok)throw new Error('Could not load '+name);return r.json();};
 const cache=new Map();
 async function loadSlice(index) {
-  if(!cache.has(index))cache.set(index,Promise.all(['ct','organ','lesion'].map(async type=>{const im=new Image();im.src=new URL(`ct/${type}_${String(index).padStart(3,'0')}.png`,root);await im.decode();return [type,im];})).then(Object.fromEntries));
+  if(!cache.has(index))cache.set(index,Promise.all(['ct',...tissueLayers].map(async type=>{const im=new Image();im.src=new URL(`ct/${type}_${String(index).padStart(3,'0')}.png`,root);await im.decode();return [type,im];})).then(Object.fromEntries).catch(error=>{cache.delete(index);throw error;}));
   return cache.get(index);
 }
-const [anatomy,metadata,trajectories,firstSlice]=await Promise.all([loadAnatomy(),json('ct-case.json'),json('trajectories.json'),loadSlice(32)]);
+const [anatomy,metadata,trajectories,firstSlice]=await Promise.all([loadAnatomy(),json('ct-case.json?v=13'),json('trajectories.json'),loadSlice(32)]);
 const regimens=trajectories.regimens;
 for(const regimen of Object.values(regimens)){const option=document.createElement('option');option.value=regimen.id;option.textContent=regimen.label;$('case-action').append(option);}
 const view=new LiverCaseView($('case-viewer'),anatomy,metadata);
@@ -21,8 +22,7 @@ function write(id,value){if($(id).textContent!==value)$(id).textContent=value;}
 function redrawSlice() {
   const input=$('case-ct').getContext('2d'),parsed=$('case-parsed').getContext('2d');
   input.clearRect(0,0,448,448);input.drawImage(images.ct,0,0);parsed.clearRect(0,0,448,448);parsed.drawImage(images.ct,0,0);
-  if($('case-organ').checked)parsed.drawImage(images.organ,0,0);
-  if($('case-lesion').checked)parsed.drawImage(images.lesion,0,0);
+  for(const type of tissueLayers)if($(`case-${type}`).checked)parsed.drawImage(images[type],0,0);
   view.setSlice(images,slice);view.render();$('case-slice').value=slice;
   write('case-slice-label',`${slice+1} / 46`);write('case-code-slice',String(slice));
 }
@@ -50,7 +50,7 @@ $('case-play').addEventListener('click',()=>{if(playing){pause();return;}if(day>
 $('case-time').addEventListener('input',e=>setDay(e.target.value));
 $('case-slice').addEventListener('input',e=>setSlice(Number(e.target.value)).catch(()=>{write('case-slice-label','Slice unavailable');}));
 $('case-action').addEventListener('change',update);$('case-baseline').addEventListener('change',update);
-for(const id of ['case-organ','case-lesion'])$(id).addEventListener('change',redrawSlice);
+for(const type of tissueLayers)$(`case-${type}`).addEventListener('change',redrawSlice);
 document.querySelectorAll('[data-case-mode]').forEach(el=>el.addEventListener('click',()=>setMode(el.dataset.caseMode)));
 document.querySelectorAll('[data-case-view]').forEach(el=>el.addEventListener('click',()=>setView(el.dataset.caseView)));
 $('case-reset').addEventListener('click',()=>{setView('anatomy');setDay(0);});

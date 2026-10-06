@@ -59,3 +59,15 @@ Historical imaging-source notices are retained for the linked parsing examples:
 CT-LICENSE.txt (3D Slicer CTACardio, automatic TotalSegmentator labels) and
 MRI-CC0-LICENSE.txt (King’s College London fetal population atlas, original
 10-organ label map). Neither collection contributes to the main gallery count.
+
+## CT Parsing overlays
+
+The separate ClinicalCode case explorer adds automated named-muscle segmentation
+from [TotalSegmentator](https://github.com/wasserth/TotalSegmentator) and a
+conservative CT intensity-based fat estimate on its original stored arterial CT.
+They are distinct from the liver and lesion reference annotations. Methods and
+input limitations are documented in the [project README](../../../README.md#parsing-tissue-layers)
+and [case metadata](../ct-case.json). No new patient identifiers or NIfTI files
+are distributed. Cite Wasserthal et al., Radiology: Artificial Intelligence 2023,
+[doi:10.1148/ryai.230024](https://pubs.rsna.org/doi/10.1148/ryai.230024), for
+TotalSegmentator.

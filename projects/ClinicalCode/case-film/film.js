@@ -1,4 +1,4 @@
-import '../assets/js/liver-case.js?v=3';
+import '../assets/js/liver-case.js?v=13';
 const api=window.__CLINICALCASE__,$=id=>document.getElementById(id),duration=20;
 const capture=new URLSearchParams(location.search).has('render');if(capture)document.body.classList.add('capture');
 function fit(){const scale=innerWidth/1920;$('case-film-stage').style.transform=`scale(${scale})`;$('case-film-viewport').style.height=`${1080*scale}px`;}

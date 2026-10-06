@@ -11,7 +11,7 @@ Serve the repository root with `python3 -m http.server 8000`, then open `/projec
 - `index.html`: the selected Impeccable layout, with the new liver-case film, anatomy-grounded interactive explorer, manuscript result tables, and citation. The explorer retains the Case explorer and Inside the code tabs; the framework tab and its contents were removed at the author’s request.
 - `case-film/`: deterministic 20-second case animation. `window.__CASE_FILM__.frame(seconds)` is asynchronous; `?render=1` hides playback controls. CT, parsing, ClinicalCode, and simulation remain visible together.
 - `assets/video/clinicalcode-liver-case.mp4`: the current embedded video; 1920 × 1080, 24 fps, H.264, 20 seconds, silent, with English WebVTT captions.
-- `assets/js/liver-case.js` and `liver-case-view.js`: reference CT slice selection, organ/lesion overlays, synchronized ClinicalCode fields, 3D liver context, lesion detail, and registered CT sections. The explorer starts at illustrative day 45 and only animates after the visitor presses Play.
+- `assets/js/liver-case.js` and `liver-case-view.js`: reference CT slice selection, independently switchable organ/lesion/muscle/fat overlays, synchronized ClinicalCode fields, 3D liver context, lesion detail, and registered CT sections. The explorer starts at illustrative day 45 and only animates after the visitor presses Play.
 - `assets/images/liver-case-poster.jpg`: still from the new case animation.
 - `designs/`: the earlier three-way skill comparison; the selected Impeccable preview also has the new case. The other two studies retain the earlier explorer.
 - `demo/`: deterministic 48-second animation. Four simultaneous regions show **CT → Parsing → ClinicalCode → Simulation**. `window.__FILM__.render(seconds)` seeks to a frame; `?render=1` hides playback controls.
@@ -19,15 +19,24 @@ Serve the repository root with `python3 -m http.server 8000`, then open `/projec
 - `assets/images/workflow-real-ct.png`: still exported from the animation, with original CT pixels, corresponding reference masks, and reconstructed mesh.
 - `assets/images/workflow-overview.png`: AI-generated concept illustration, on white without an enclosing outer frame.
 - `assets/images/clinicalcode-logo.png`: transparent logo created with the native image generation tool: code braces, anatomy, and evolving lesion contours.
-- `assets/ct/`: de-identified windowed CT slices and matching reference overlays, copied unchanged from the stored demonstration.
+- `assets/ct/`: de-identified windowed CT slices and matching liver/lesion reference overlays, copied unchanged from the stored demonstration, plus new data-derived muscle/fat display layers.
 - `assets/data/ct-case.json`: sanitized baseline metadata and source measurements; no original case identifier or private source paths.
 - `assets/data/anatomy-mesh.json`: surfaces extracted from the same reference segmentation. Smoothing affects display geometry only; measurements come from the source voxel counts.
 - `assets/data/trajectories.json`: frozen illustrative rule-driven trajectories, with their original numeric values preserved.
 - `assets/data/results.csv`: selected manuscript comparison rows; CT single-model and ensemble configurations are separate.
 
-The films' CT and masks are recorded reference data. In the current explorer, both the liver and lesion baseline surfaces come from the same reference segmentation. The displayed future lesion volume is the baseline voxel measurement multiplied by the unchanged rule-contract volume ratio. The inner core schematically encodes necrotic fraction; it is not an observed necrosis segmentation. The uncertainty envelope is illustrative. These rollouts are not fitted forecasts for that CT case and do not demonstrate causal treatment benefit. Manuscript scores are independent of these illustrative fixtures.
+The pre-rendered MP4s use recorded CT and reference liver/lesion masks. The interactive case and HTML case-film renderer additionally expose automated muscle and estimated fat layers. In the current explorer, both the liver and lesion baseline surfaces come from the same reference segmentation. The displayed future lesion volume is the baseline voxel measurement multiplied by the unchanged rule-contract volume ratio. The inner core schematically encodes necrotic fraction; it is not an observed necrosis segmentation. The uncertainty envelope is illustrative. These rollouts are not fitted forecasts for that CT case and do not demonstrate causal treatment benefit. Manuscript scores are independent of these illustrative fixtures.
 
 The display loader corrects the stored marching-cubes face winding before computing outward normals. It does not change source vertices, mask pixels, or measurements. CT sections use the image-space millimeter transform and orientation of the original slice exporter.
+
+## Parsing tissue layers
+
+The same 46-slice arterial CT now has four independent display layers: **Organ**, **Lesion**, **Muscle**, and **Fat**. The CT pixels, reference liver/lesion masks, baseline measurements, and illustrative lesion dynamics are unchanged. New layers follow the original `np.rot90` orientation and nearest-neighbor 448 × 448 mask export. Color-coded checkbox controls identify each layer; source descriptions are available on the controls without an extra visible paragraph.
+
+- **Muscle:** a new frozen [TotalSegmentator](https://github.com/wasserth/TotalSegmentator) `abdominal_muscles` inference on this exact stored arterial CT. It is the visible union of named muscle labels, not a complete skeletal-muscle segmentation. The existing portal-venous-phase experiment masks were not substituted. Original output shape and affine are checked against the input. Reference liver/lesion annotations have display priority.
+- **Fat:** a conservative body-constrained intensity estimate, using the same CT and the model's body mask. The stored scan is cropped and preprocessed to approximately −175 to 600; lower-bound saturation and its immediate interface are excluded because clipped air cannot be distinguished from fat. The remaining fat-range candidates up to −30 undergo an in-plane opening and small-component removal, excluding liver, lesion, and muscle. This is not a reference annotation, a SAT/VAT subdivision, or a quantitative body-composition measurement. The general intensity-based approach is described by [Fully automated body composition analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC7979624/); the conservative filtering is specific to this stored replay.
+
+Method and scope are retained in `assets/data/ct-case.json` and PNG metadata. Only sanitized derived PNG overlays are published; original NIfTI files, source identifiers, server paths, and inference logs stay outside the deployment. TotalSegmentator citation: Wasserthal et al., *TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images*, [Radiology: Artificial Intelligence (2023)](https://pubs.rsna.org/doi/10.1148/ryai.230024).
 
 ## Design and dependencies
 
