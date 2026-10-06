@@ -1,0 +1,1191 @@
+/* ===========================================================================
+   The release page's own sections, on site.css's tokens.
+
+   Two accents, and only two: periwinkle for the input side of the benchmark
+   (the video, the geometry, the code the agent writes) and orange for the data
+   side (the split, the categories, the tags). Everything structural stays ink
+   at an alpha, so both themes work from the same rules.
+   =========================================================================== */
+:root{
+  --peri:#7b90e1;
+  --peri-ink:#4a5fb0;          /* the same hue, dark enough for text on paper */
+  --orange:#ec6b14;
+  --orange-ink:#b64d06;
+  --gold:#c9992a; --silver:#8d939b; --bronze:#a9702f;
+  /* the lockup's small type sits darker than the page's usual secondary grey */
+  --ink-80:color-mix(in srgb, var(--ink) 80%, transparent);
+  --ink-68:color-mix(in srgb, var(--ink) 68%, transparent);
+  /* the four matter families, the paper's own colours (the crane palette at 15% less
+     chroma, as hf_figures/dataset_distributions draws them) */
+  --fam-rigid:#7b90e1; --fam-soft:#ec6b14; --fam-codim:#9c8bc3; --fam-flow:#55a19a;
+  /* the paper's one shadow: down-right, dark grey, soft */
+  --shadow:3px 3px 4px rgba(38,38,38,.6);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --peri-ink:#9fb0ee; --orange-ink:#f5934f;
+  --gold:#e0b54a; --silver:#b6bcc4; --bronze:#c98c4a;
+} }
+:root[data-theme="dark"]{
+  --peri-ink:#9fb0ee; --orange-ink:#f5934f;
+  --gold:#e0b54a; --silver:#b6bcc4; --bronze:#c98c4a;
+}
+
+/* --- the institutions, under the authors ----------------------------------- */
+.orgs{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:1.25rem 2.25rem;margin:1.75rem 0 .5rem}
+.org{display:inline-flex;align-items:center;height:2.25rem}
+.org img{height:100%;width:auto;max-width:11rem;object-fit:contain}
+.org-text{font-size:.75rem;line-height:1.15;font-weight:500;letter-spacing:-.005em;
+  text-align:center;color:var(--ink)}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .org img{filter:brightness(0) invert(1);opacity:.92} }
+:root[data-theme="dark"] .org img{filter:brightness(0) invert(1);opacity:.92}
+@media (max-width:640px){ .orgs{gap:1rem 1.5rem} .org{height:1.75rem} }
+
+/* --- lockup -------------------------------------------------------------
+   One width for every line of the lockup, so the title, the authors and the
+   strapline share the page's measure instead of each finding its own. */
+/* the lockup spans the container, like the leaderboard and the demo below it,
+   so the page has one width from the title down */
+:root{ --hero-w:100% }
+/* site.css insets the lockup to columns 3-11 at desktop width. This page wants one
+   width from the title down, so the lockup spans the container like every section. */
+.container.grid > .release-hero{grid-column:1 / -1}
+.release-hero{padding-top:clamp(2rem,5vw,3.5rem);padding-bottom:0;
+  /* .hero centres its children on the cross axis, which sizes each one to its own
+     content; stretching them makes the lockup span the container like everything else */
+  align-items:stretch}
+/* auto cross-axis margins override align-items on a flex item, so the width has
+   to be asked for explicitly or each line shrinks back to its own text */
+.release-hero > *{width:100%;max-width:var(--hero-w);margin-inline:auto}
+/* site.css caps h1.title at 62.5rem, and a type+class selector beats the
+   `.release-hero > *` rule, so the width has to be restated here */
+.release-hero .title{margin:0 auto;max-width:var(--hero-w);font-weight:500;letter-spacing:-.03em;
+  text-wrap:balance;line-height:1.06}
+/* the name is the one place the two accents meet; the rest of the title sits back
+   so the sentence reads as a subtitle rather than as more headline */
+.wordmark{font-weight:700;letter-spacing:-.04em;color:var(--peri-ink);
+  background:linear-gradient(100deg, var(--peri) 0%, var(--orange) 92%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tsub{font-weight:500;color:var(--ink-60);font-size:.82em;letter-spacing:-.02em}
+.authors{margin:1.75rem auto 0;font-size:var(--t-p1);line-height:1.85;font-weight:500}
+.authors .au{margin-right:1.1em;white-space:nowrap}
+/* the three equal-contribution authors, and the note that explains the mark.
+   Not `.eq`: site.css uses that for display equations and it is a flex row. */
+.authors .au.first, .authors .au.first a{color:var(--peri-ink)}
+.authors .au.first sup{color:var(--peri-ink)}
+.eq-note{color:var(--peri-ink)}
+.authors sup{font-size:.7em;vertical-align:super;color:var(--ink-68);margin-left:.05em}
+.equal{margin:.5rem 0 0;font-size:.8125rem;color:var(--ink-68)}
+.release-hero .lede{margin:4.5rem auto 0;max-width:44rem;font-size:var(--t-h3);
+  line-height:1.25;font-weight:500;letter-spacing:-.02em;text-wrap:balance}
+.hero-body{margin:2.5rem auto 0;max-width:48rem;font-size:var(--t-p1);
+  line-height:var(--l-p1);color:var(--ink-60);text-wrap:pretty}
+.hero-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:2rem auto 0}
+.hero-meta{margin:1.75rem auto 0;font-size:var(--t-h5);line-height:var(--l-h5);
+  color:var(--ink-60);font-variant-numeric:tabular-nums}
+.hero-meta strong{font-weight:500;color:var(--ink)}
+.hl-real{color:var(--orange-ink);font-weight:500}
+.hl-synth{color:var(--peri-ink);font-weight:500}
+/* the two ends of the task: the video it is given, the program it must write.
+   These sit in the lede at display size, so they take the wordmark's own two
+   colours rather than the darkened text versions the small type needs. */
+.kw-in{color:var(--peri)}
+.kw-out{color:var(--orange)}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  .kw-in{color:#9fb0ee} .kw-out{color:#f5934f} } }
+:root[data-theme="dark"] .kw-in{color:#9fb0ee}
+:root[data-theme="dark"] .kw-out{color:#f5934f}
+
+/* --- section frame ------------------------------------------------------- */
+/* the page has no sticky header, so a section jumped to lands just under the window's top */
+.sec,#top-demo{scroll-margin-top:3rem}
+.sec{margin-top:4rem}
+/* the three views under the switch belong to it: they follow its rule closely rather than
+   opening a new section's distance below it */
+#tasks.sec,#dataset.sec,#metrics-sec.sec{margin-top:1.5rem}
+.sec > h2, .sec-head h2{font-size:var(--t-h3);font-weight:500;letter-spacing:-.02em;margin:0}
+.sec > h2{margin-bottom:1.5rem}
+.sec h3{font-size:var(--t-h5);font-weight:500;letter-spacing:-.01em;margin:2.5rem 0 .75rem}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;
+  flex-wrap:wrap;padding-bottom:.75rem;margin-bottom:1.25rem;border-bottom:1px solid var(--ink-12)}
+/* the switch carries the heading for the tasks and the composition, so their heads
+   hold only controls; keep those on the right, where they sat beside a heading. The
+   leaderboard's head still has both and stays spaced apart. */
+.sec-head > :first-child:last-child:not(h2){margin-left:auto}
+.sec-sub{margin:.5rem 0 0;max-width:72ch;font-size:var(--t-p2);line-height:var(--l-p2);
+  color:var(--ink-60)}
+.note{margin:1rem 0 0;font-size:var(--t-p2);line-height:var(--l-p2);color:var(--ink-60)}
+.sec p{font-size:var(--t-p1);line-height:var(--l-p1)}
+.sec p + p{margin-top:1.5rem}
+/* a lead-in line sits close over its code block; a list of notes reads at the notes' size */
+.sec p + .code{margin-top:.75rem}
+.sec .code + p:not(.note){margin-top:1.5rem}
+.sec ul.note{padding-left:1.25rem;font-size:var(--t-p1);line-height:var(--l-p1);display:flex;flex-direction:column;gap:.25rem}
+
+/* --- tab pills ----------------------------------------------------------- */
+.lbtabs{display:flex;gap:.375rem;flex-wrap:wrap}
+.lbtab.is-on,.ontab.is-on{background:var(--ink);color:var(--on-ink)}
+.lbtab.is-on:hover,.ontab.is-on:hover{background:var(--ink)}
+
+/* --- leaderboard table --------------------------------------------------- */
+.lb{width:100%;border-collapse:collapse;font-size:var(--t-p2);
+  font-variant-numeric:tabular-nums}
+.lb th,.lb td{padding:.3125rem .625rem;text-align:right;white-space:nowrap;
+  line-height:1.3;border-bottom:1px solid var(--ink-12);vertical-align:middle}
+.lb thead th{position:sticky;top:0;background:var(--paper);z-index:1;
+  font-weight:500;color:var(--ink-60);font-size:.75rem;letter-spacing:.01em;
+  border-bottom:1px solid var(--ink)}
+.lb th.sortable{cursor:pointer;user-select:none}
+.lb th.sortable:hover{color:var(--ink)}
+.lb th .arr{opacity:0;margin-left:.25rem}
+.lb th[aria-sort] .arr{opacity:1}
+.lb th[aria-sort]{color:var(--ink)}
+.lb .c-rank{text-align:center;width:3rem;color:var(--ink-60)}
+/* the top three carry a medal; everything below is a plain number */
+.lb .medal{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;
+  height:1.5rem;border-radius:50%;font-weight:600;font-size:.75rem;color:#fff;
+  background:var(--ink-44)}
+.lb .medal.m1{background:var(--gold)}
+.lb .medal.m2{background:var(--silver)}
+.lb .medal.m3{background:var(--bronze)}
+.lb tr.r1 .c-model,.lb tr.r2 .c-model,.lb tr.r3 .c-model{font-weight:500}
+.lb .c-model{text-align:left;white-space:nowrap}
+.lb .c-harness{text-align:left;color:var(--ink-60)}
+.lb tbody tr:hover{background:var(--ink-4)}
+.lb .mname{display:flex;align-items:center;gap:.5rem}
+.lb .mname img{width:14px;height:14px;flex:0 0 auto}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .lb .mname img.mono{filter:invert(1)} }
+:root[data-theme="dark"] .lb .mname img.mono{filter:invert(1)}
+.lb .dash{color:var(--ink-44)}
+/* a number with its own share of the column drawn as a rule beneath it */
+.barcell{position:relative}
+.barcell .fill{position:absolute;right:.625rem;bottom:.3rem;height:2px;
+  background:var(--peri);border-radius:1px}
+.lb tbody tr:hover .fill{opacity:.7}
+.lb .lead td{font-weight:500}
+.lb .grp{border-bottom:1px solid var(--ink);color:var(--ink);font-size:.6875rem;
+  letter-spacing:.04em;text-transform:uppercase}
+.lb .sep{border-left:1px solid var(--ink-12)}
+
+/* the capability view, drawn as the paper's leaderboard figure: right-aligned names,
+   one block ruled in black with the spec drop shadow, thick rules around the scores */
+.cap-wrap{overflow-x:auto;padding:.5rem 0 1rem}
+/* a grid: the column names over the block, the model names left of it, the keys right */
+.capfig{--rh:2.125rem;--cw:5.25rem;display:grid;grid-template-columns:auto auto auto;column-gap:.75rem;
+  align-items:start;width:max-content;margin:0 auto}
+.cap-heads{grid-column:2;grid-row:1;align-self:end}
+.cap-names{grid-column:1;grid-row:2}
+.cap-box{grid-column:2;grid-row:2}
+.cap-keys{grid-column:3;grid-row:2}
+.cap-names{padding-top:2px}
+.cap-n{height:var(--rh);margin-bottom:1px;display:flex;align-items:center;justify-content:flex-end;gap:.4rem;
+  white-space:nowrap;color:var(--ink);font-size:.875rem}
+.cap-n img{width:1rem;height:1rem;object-fit:contain}
+.cap-box{display:grid;grid-template-columns:repeat(9,var(--cw));grid-auto-rows:var(--rh);gap:1px;
+  background:#000;border:2px solid #000;box-shadow:3px 3px 4px rgba(38,38,38,.6)}
+.cap-c{display:flex;align-items:center;justify-content:center;color:#111;font-size:.875rem;
+  font-variant-numeric:tabular-nums}
+.cap-c.w{color:#fff}
+.cap-c.strong{font-weight:700}
+.cap-heads{display:grid;grid-template-columns:repeat(9,var(--cw));gap:1px;padding:0 2px;margin-bottom:.5rem;align-items:end}
+.cap-heads button{font:inherit;text-align:center;color:var(--ink);font-size:.8125rem;line-height:1.2;padding:0 .2rem;
+  background:none;border:0;cursor:pointer;border-radius:3px}
+.cap-heads button:hover{background:var(--ink-12)}
+.cap-heads button.on{font-weight:600}
+.cap-heads .arr{font-size:.7em}
+/* rows slide when the sort changes */
+#lbv-caps [data-run]{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+/* one cell pointed at: it lifts on the paper's shadow, and its row and column are framed
+   (below); no cell changes colour, since the colours are the values */
+.cap-c{position:relative;transition:transform .45s cubic-bezier(.2,.7,.2,1),scale .12s ease,box-shadow .12s ease}
+.cap-c.lift{z-index:3;scale:1.1;outline:2px solid #000;box-shadow:3px 3px 6px rgba(38,38,38,.6)}
+/* the thick rules before the families and before Overall, and the row and column frames,
+   laid over the grid: cell j starts at j column widths plus j one-pixel gaps */
+.cap-box{position:relative}
+.cap-rule{position:absolute;top:0;bottom:0;width:2px;left:calc(var(--j) * (var(--cw) + 1px) - 1.5px);
+  background:#000;z-index:1;pointer-events:none}
+.cap-frame{--before:1.5px;--after:1.5px;position:absolute;display:none;z-index:2;pointer-events:none;border:2px solid #000}
+.cap-frame.first{--before:2px}
+.cap-frame.last{--after:2px}
+.capfig.focus .cap-frame{display:block}
+/* Frame strokes share the centres of the grid lines and the outer border. */
+.cap-frame.row{left:-2px;right:-2px;top:calc(var(--i) * (var(--rh) + 1px) - var(--before));height:calc(var(--rh) + var(--before) + var(--after))}
+.cap-frame.col{top:-2px;bottom:-2px;left:calc(var(--j) * (var(--cw) + 1px) - var(--before));width:calc(var(--cw) + var(--before) + var(--after))}
+.cap-n.hl span{-webkit-text-stroke:.4px currentColor}
+.cap-heads button.hl{font-weight:600}
+/* its value on its key */
+.cap-key-b{position:relative}
+.cap-mark{position:absolute;left:-.7rem;width:0;height:0;margin-top:-.4rem;border:.4rem solid transparent;
+  border-left:.6rem solid var(--ink);opacity:0;transition:top .15s ease,opacity .12s}
+.cap-mark.on{opacity:1}
+.cap-keys{display:flex;flex-direction:column;gap:1.25rem;padding-top:2px;margin-left:1rem}
+.cap-key-t{font-size:.75rem;color:var(--ink);margin-bottom:.25rem}
+.cap-key-b{display:flex;gap:.3rem;height:12rem}
+.cap-key-bar{width:.8rem;border:1px solid #000}
+.cap-key-ticks{display:flex;flex-direction:column;justify-content:space-between;font-size:.6875rem;
+  color:var(--ink-60);font-variant-numeric:tabular-nums}
+
+/* --- usage: the paper's Figure 2 left, any score against tokens or dollars ---- */
+#lbv-usage{position:relative}
+.use-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.25rem;margin:.25rem 0 .75rem}
+.use-sel{display:inline-flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--ink)}
+.use-sel select{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--ink-12);
+  border-radius:999px;height:1.75rem;padding:0 .75rem}
+.use-seg{display:inline-flex;gap:.25rem}
+.use-seg .is-on{background:var(--ink);color:var(--on-ink)}
+.use-key{margin:0}
+.use-lic{display:inline-flex;align-items:center;gap:.4rem;font:inherit;color:var(--ink);background:none;border:0;
+  padding:0;cursor:pointer}
+.use-lic.muted{opacity:.35}
+.k-ring{width:.8rem;height:.8rem;border-radius:50%;border:2px solid;background:#fff;box-sizing:border-box}
+.k-front{width:1.2rem;height:2.4px;background:#8b9de5}
+/* the Elo plot keeps the width its labels need; narrower than that it scrolls sideways */
+.uplot{overflow-x:auto}
+.uplot svg{display:block;width:100%;min-width:46rem;height:auto;overflow:visible}
+.uplot .u-front{fill:none;stroke:#8b9de5;stroke-width:2.6;stroke-linejoin:round}
+.uplot .um{transition:transform .5s ease}
+.uplot .um.off{display:none}
+.uplot .u-ci{stroke-width:1.8;fill:none;stroke-linecap:round}
+.uplot .u-lead{stroke:#8a8f99;stroke-width:.9}
+.uplot .u-lab{transition:none}
+.uplot .guide{stroke:var(--ink-60);stroke-width:1;stroke-dasharray:4 4}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .uplot image.mono{filter:none} }
+:root[data-theme="dark"] .uplot image.mono{filter:none}
+#lbv-usage .um{transition:transform .5s ease,opacity .15s}
+#lbv-usage.focus .um:not(.on){opacity:.25}
+
+/* --- questions ----------------------------------------------------------- */
+.qa{border-bottom:1px solid var(--ink-12)}
+.qa summary{cursor:pointer;list-style:none;padding:.5rem 2rem .5rem 0;position:relative;
+  font-size:.9375rem;font-weight:500;letter-spacing:-.01em;
+  transition:color var(--dur) var(--ease)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--ink-60)}
+.qa summary::after{content:"";position:absolute;right:.25rem;top:1.05rem;width:.5rem;
+  height:.5rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);transition:transform var(--dur) var(--ease)}
+.qa[open] summary::after{transform:rotate(-135deg)}
+.qa-body{padding:0 0 .875rem}
+.qa-body p{margin:0;color:var(--ink-60)}
+.qa-body p + p{margin-top:.75rem}
+.mlist{list-style:none;padding:0;margin:1.25rem 0;display:grid;gap:.75rem}
+.mlist li{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;font-size:var(--t-p2);
+  line-height:var(--l-p2);padding-bottom:.75rem;border-bottom:1px solid var(--ink-4)}
+.mlist .mfam{font-weight:500}
+.mlist .mwhat{color:var(--ink-60)}
+@media (max-width:600px){ .mlist li{grid-template-columns:1fr;gap:.25rem} }
+
+/* --- a fold-away reference block ---------------------------------------- */
+.drop{margin-top:1rem;border-top:1px solid var(--ink-12)}
+.drop summary{cursor:pointer;list-style:none;padding:.75rem 1.5rem .75rem 0;position:relative;
+  font-size:var(--t-p2);color:var(--ink-60)}
+.drop summary::-webkit-details-marker{display:none}
+.drop summary:hover{color:var(--ink)}
+.drop summary::after{content:"";position:absolute;right:.25rem;top:1.05rem;width:.45rem;
+  height:.45rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg)}
+.drop[open] summary::after{transform:rotate(-135deg)}
+.drop-body{padding-bottom:1rem;max-width:80ch}
+
+/* --- task instances ------------------------------------------------------ */
+#tasks .thumbs{margin-top:0}
+.filters{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.geo-filter[aria-pressed="true"]{background:var(--peri);color:#fff}
+.geo-filter[aria-pressed="true"]:hover{background:var(--peri-ink)}
+.more-row{display:flex;justify-content:center;margin-top:1.5rem}
+
+/* a thumbnail plays its input video on hover, so the grid reads as footage */
+.thumb{position:relative;overflow:hidden}
+.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity 160ms var(--ease)}
+.thumb.playing video{opacity:1}
+.thumb .kind{position:absolute;left:.375rem;top:.375rem;padding:.1rem .4rem;border-radius:2px;
+  font-size:.625rem;font-weight:500;letter-spacing:.02em;text-transform:uppercase;
+  color:#fff;background:color-mix(in srgb, var(--orange) 92%, transparent)}
+.thumb .kind.synthetic{background:color-mix(in srgb, var(--peri) 92%, transparent)}
+
+/* the card one task opens into, before the full comparison */
+.card{border:1px solid var(--ink-12);border-radius:var(--r-md);overflow:hidden;
+  display:grid;grid-template-columns:1fr;margin-bottom:2rem}
+@media (min-width:820px){ .card{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)} }
+.card-media{background:var(--ink-4);position:relative}
+.card-media video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.card-body{padding:1.5rem 1.75rem;display:flex;flex-direction:column;gap:1rem}
+.card-body h3{margin:0;font-size:var(--t-h5);font-weight:500;letter-spacing:-.01em}
+.card-note{margin:0;font-size:var(--t-p2);line-height:var(--l-p2);color:var(--ink-60)}
+.facts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(7rem,1fr));gap:.75rem 1.25rem;
+  font-size:var(--t-p2)}
+.facts-grid dt{color:var(--ink-44);font-size:.75rem;letter-spacing:.01em}
+.facts-grid dd{margin:.1rem 0 0;font-variant-numeric:tabular-nums}
+.tagrow{display:flex;flex-wrap:wrap;gap:.375rem}
+.tagrow span{padding:.2rem .5rem;border-radius:2rem;font-size:.75rem;
+  background:color-mix(in srgb, var(--orange) 12%, transparent);color:var(--orange-ink)}
+.tagrow span.geo{background:color-mix(in srgb, var(--peri) 14%, transparent);color:var(--peri-ink)}
+.card-cta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto}
+
+/* --- the dataset breakdown, shaped like the paper's Figure 3 -------------
+   One horizontal bar per row, filled in the family's own colour: the solid
+   half is real, the washed half simulated, the count sits inside each half and
+   the total sits past the end. An axis runs under each column so the rows can
+   be read against a scale rather than against each other. */
+.onto{display:block}
+.opanel.wide .bars,.opanel.wide .oaxis{max-width:64rem}
+.opanel.wide .bar,.opanel.wide .oaxis{grid-template-columns:12rem 1fr 5rem}
+/* the value axis's spine, down the left of the bars to meet the axis below */
+.opanel.wide .bars{position:relative}
+.opanel.wide .bars::before{content:"";position:absolute;left:12.75rem;top:-.25rem;bottom:-.5rem;border-left:1px solid var(--ink)}
+@media (max-width:640px){
+  /* the bars take the whole width after the names; the total past each bar's end sits in room
+     kept at the track's right (the padding), so a long bar is not squeezed by its own total */
+  .opanel.wide .bar,.opanel.wide .oaxis{grid-template-columns:6.5rem 1fr 0}
+  .opanel.wide .bars::before{left:7.25rem}
+  .opanel .bar .btrack{margin-right:-.75rem;padding-right:4.75rem}
+  .opanel .bar .bcard{flex-shrink:0}
+  .opanel .oaxis .track{margin-right:4rem}
+}
+.opanel h3{margin:0 0 .25rem;font-size:var(--t-h5);font-weight:500;letter-spacing:-.01em}
+.opanel .osub{margin:0 0 1.25rem;font-size:var(--t-p2);line-height:var(--l-p2);
+  color:var(--ink-60);max-width:56ch}
+.bars{display:grid;gap:.5rem}
+.bar{display:grid;grid-template-columns:9.5rem 1fr 2.5rem;align-items:center;gap:.75rem;
+  font-size:var(--t-p2)}
+.bar .bname{text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  color:var(--ink)}
+.bar .btrack{height:1.15rem;display:flex;align-items:center;position:relative}
+/* one card per row, as the paper's bars: black-edged, the real and simulated halves
+   ruled apart inside it, and one shadow for the whole card */
+.bar .bcard{height:100%;display:flex;border:1px solid #000;box-shadow:var(--shadow)}
+.bar .bseg{height:100%;display:flex;align-items:center;justify-content:center;
+  font-size:.6875rem;font-weight:500;color:#000;overflow:hidden}
+.bar .bseg + .bseg{border-left:1px solid #000}
+.bar .btotal{padding-left:.5rem;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.bar .btotal i{font-style:normal;margin-left:.5em}
+.bar.group{display:block;margin-top:.75rem}
+.bar.group:first-child{margin-top:0}
+.bar.group .bname{font-weight:500;text-align:left;color:var(--ink-60);font-size:.75rem;
+  letter-spacing:.02em;text-transform:uppercase}
+/* a long family name runs over the axis rule; it sits on the paper, so the rule stops at it */
+.bar.group .bname{position:relative;z-index:1;display:inline-block;width:max-content;overflow:visible;background:var(--paper);padding-right:.4rem}
+.oaxis{display:grid;grid-template-columns:9.5rem 1fr 2.5rem;gap:.75rem;margin-top:.5rem}
+.oaxis .track{position:relative;height:1.25rem;border-top:1px solid var(--ink)}
+.oaxis .tick{position:absolute;top:0;transform:translateX(-50%);font-size:.6875rem;
+  color:var(--ink);padding-top:.25rem}
+.oaxis .tick::before{content:"";position:absolute;left:50%;top:0;width:1px;height:3px;
+  background:var(--ink-12)}
+.oaxis .cap{grid-column:2;font-size:var(--t-p2);color:var(--ink-60);text-align:center;
+  margin-top:.25rem}
+.key{display:flex;gap:1rem;margin:0 0 1rem;font-size:var(--t-p2);color:var(--ink-60)}
+.key span{display:inline-flex;align-items:center;gap:.4rem}
+.key i{width:.8rem;height:.8rem;display:inline-block;border-radius:.2rem}
+.key i.real{background:var(--peri)}
+.key i.synth{background:color-mix(in srgb, var(--peri) 45%, #fff)}
+@media (max-width:640px){
+  .bar,.oaxis{grid-template-columns:6.5rem 1fr 2.25rem}
+  /* a long family name is wrapped rather than cut: the label is the row's only key */
+  .bar .bname{white-space:normal;line-height:1.2;font-size:.8125rem}
+}
+
+/* --- run it -------------------------------------------------------------- */
+#run pre{margin:0;padding:1rem 1.25rem;overflow-x:auto;font-family:var(--mono);
+  font-size:var(--t-code);line-height:var(--l-code)}
+#run code{font-family:var(--mono)}
+#cite pre{margin:0;padding:1rem 1.25rem;overflow-x:auto;font-family:var(--mono);
+  font-size:var(--t-code);line-height:var(--l-code)}
+
+/* --- metrics frame ------------------------------------------------------- */
+.pane-metrics{overflow:hidden}
+#metrics-frame{display:block;width:100%;height:min(80vh,44rem);border:0;background:transparent}
+
+/* --- footer -------------------------------------------------------------- */
+.fbottom{margin-top:4rem;padding-block:1.5rem;border-top:1px solid var(--ink-12);
+  font-size:var(--t-p2);color:var(--ink-60)}
+
+/* the sticky masthead must not land on top of the card when it scrolls into view */
+#card{scroll-margin-top:calc(var(--header-h) + 1.5rem)}
+
+/* --- one column width for the whole page --------------------------------
+   The prose used to sit in a six-column rail while every other section ran
+   the full container, which read as two different pages. The rail now spans
+   the container like the demo above it, and the measure is held by the
+   paragraphs themselves rather than by the grid. */
+.container.grid > .rail{grid-column:1 / -1}
+.rail p, .rail .note, .rail li, .rail .code, .rail h2, .rail h3,
+#faq .qa, .drop-body{max-width:none}
+
+/* --- tokens column ------------------------------------------------------- */
+.lb .tok{color:var(--ink-60)}
+
+/* --- the stage: the input column gets a header row of its own, so the video
+   and the first row of renders start on the same line ---------------------- */
+/* The task sits on the left with its facts under it, every reconstruction on the
+   right. Both columns open with a header of the same height, so the input video and
+   the first row of renders start on the same line. */
+#stage .cmp{display:grid;grid-template-columns:1fr;gap:1.5rem var(--gap)}
+@media (min-width:960px){ #stage .cmp{grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+  align-items:start} }
+.stage-top{display:grid;grid-template-columns:1fr;gap:1.5rem;min-width:0}
+.ref .mhead{min-height:2.5rem;align-items:center;display:flex;gap:.5rem 1rem;
+  margin-bottom:-.75rem}
+.ref .mhead h3{font-size:var(--t-h5);font-weight:500;margin:0}
+@media (min-width:960px){
+  .cmp .mhead h3{white-space:nowrap}
+  .cmp .geo-hint{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+}
+/* Four across when the whole field is shown. auto-fill at a 9.5rem minimum put seven
+   in a row once the renders moved to their own full-width row, which is smaller than
+   the thumbnails the task was picked from. */
+#mgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:53.75rem){ #mgrid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:45rem){ #mgrid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:30rem){ #mgrid{grid-template-columns:minmax(0,1fr)} }
+
+/* the caption under each render: the rank is the thing being looked up, so it reads
+   at full strength and the top three carry the leaderboard's medals */
+#mgrid figcaption{font-size:.875rem;color:var(--ink)}
+#mgrid .rk{font-variant-numeric:tabular-nums;color:var(--ink-60);font-weight:500;
+  min-width:1.75rem}
+#mgrid .rk.m1,#mgrid .rk.m2,#mgrid .rk.m3{display:inline-flex;align-items:center;
+  justify-content:center;width:1.4rem;height:1.4rem;min-width:0;border-radius:50%;
+  color:#fff;font-size:.75rem;font-weight:600}
+#mgrid .rk.m1{background:var(--gold)}
+#mgrid .rk.m2{background:var(--silver)}
+#mgrid .rk.m3{background:var(--bronze)}
+#mgrid .lbl{font-weight:500;color:var(--ink)}
+.ref .mhead h3{font-size:var(--t-h5);font-weight:500;margin:0}
+.rhint{font-size:var(--t-p2);color:var(--ink-60)}
+
+/* the facts under the input video, at reading size and in the page's accents */
+.info dl{font-size:var(--t-p1)!important;line-height:1.5!important;gap:.7rem 1.5rem!important}
+.info dt{color:var(--ink-44);font-size:var(--t-p2)}
+.info .ihead{grid-column:1 / -1;margin:.75rem 0 0;font-size:.75rem;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--ink-60);font-weight:500}
+/* the categorization is a fold: the heading is its handle, with a chevron like the FAQ's */
+.info .icat > summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.5rem}
+.info .icat > summary::-webkit-details-marker{display:none}
+.info .icat > summary::after{content:"";width:.4rem;height:.4rem;border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;transform:translateY(-.15rem) rotate(45deg);
+  transition:transform var(--dur) var(--ease)}
+.info .icat[open] > summary::after{transform:translateY(.1rem) rotate(-135deg)}
+.info .icat > summary:hover{color:var(--ink)}
+.info .icat > dl{margin-top:.7rem}
+.info .tagp{padding:.22rem .6rem;border-radius:2rem;font-size:.875rem;line-height:1.2;
+  background:var(--ink-4);color:var(--ink)}
+.info .tagp.cat{background:color-mix(in srgb, var(--orange) 14%, transparent);
+  color:var(--orange-ink)}
+.info .tagp.dyn{background:color-mix(in srgb, var(--peri) 16%, transparent);
+  color:var(--peri-ink)}
+
+/* --- accents on the things that open ------------------------------------ */
+.qa summary:hover,.drop summary:hover{color:var(--peri-ink)}
+.qa[open] > summary,.drop[open] > summary{color:var(--peri-ink)}
+.rail a.a-body:hover,.note a.a-body:hover{color:var(--peri-ink)}
+.lb th.sortable:hover{color:var(--peri-ink)}
+.mast-nav .navlink:hover{color:var(--peri-ink)}
+
+/* the rule under each score: the summary in periwinkle, the judge in orange */
+.barcell .fill.f-overall{background:var(--peri)}
+.barcell .fill.f-vqa{background:var(--orange)}
+
+/* --- the two juries ------------------------------------------------------ */
+.figblock{margin:0 0 2rem}
+.figblock img{display:block;width:100%;height:auto;border-radius:var(--r-md)}
+.figblock figcaption{margin-top:.75rem;font-size:var(--t-p2);line-height:var(--l-p2);
+  color:var(--ink-60)}
+.lb .delta{color:var(--ink-60)}
+.lb .move{margin-left:.4rem;font-size:.75rem}
+.lb .move.up{color:var(--peri-ink)}
+.lb .move.down{color:var(--orange-ink)}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .figblock img{
+  background:#fff} }
+:root[data-theme="dark"] .figblock img{background:#fff}
+
+/* each institution logo carries the number the authors' superscripts point at */
+.orgnum{display:inline;font-size:.8rem;font-weight:500;color:var(--ink);align-self:flex-start;margin-right:.2rem}
+
+/* --- the switch over tasks / composition / metrics ------------------------------
+   site.css sizes .sw-title just under the hero, which is right for a page that opens
+   on it. Here it follows the questions, so it is set like the page's other section
+   headings and given room to read as a new mode rather than the tail of the Q&A. */
+.switch{margin-top:7rem}
+.sw-title{font-size:var(--t-h3);line-height:1.32;letter-spacing:-.02em}
+@media (max-width:53.75rem){ .switch{margin-top:5rem} }
+
+/* --- the two columns of tasks ---------------------------------------------------
+   site.css sets these headers at body size; they name the halves of the benchmark,
+   so they carry the weight of a heading instead. */
+.tcol h4{display:inline-flex;align-items:baseline;gap:.4rem;margin:0 0 1rem;
+  padding:.15rem .6rem .25rem;border-radius:2.5rem;
+  font-size:var(--t-h4);line-height:1.26;letter-spacing:-.01em}
+.tcol h4 span{font-weight:400;opacity:.72;font-variant-numeric:tabular-nums}
+.tcol h4.k-real{color:var(--orange-ink);background:color-mix(in srgb, var(--orange) 13%, transparent)}
+.tcol h4.k-synthetic{color:var(--peri-ink);background:color-mix(in srgb, var(--peri) 15%, transparent)}
+
+/* --- the two juries compared: the paper's agreement panel and a rank slope chart --- */
+#lbv-align{position:relative}
+.align-key{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;font-size:.8125rem;color:var(--ink);margin:.25rem 0 .75rem;padding-left:3px}
+.align-key span{display:inline-flex;align-items:center;gap:.4rem}
+.align-key i{display:inline-block}
+.k-dot{width:.7rem;height:.7rem;border-radius:50%;box-shadow:0 0 0 1.5px #fff,0 0 0 1.8px #000}
+.k-bar{width:1.2rem;height:2px;background:#c8d0f2}
+.k-fit{width:1.2rem;height:2px;background:var(--ink)}
+.k-diag{width:1.2rem;border-top:1.5px dashed #b8b8b8}
+.align-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+@media (max-width:900px){ .align-grid{grid-template-columns:1fr} }
+.aplot svg{display:block;width:100%;height:auto;overflow:visible}
+.aplot .grid{stroke:var(--ink-12);stroke-width:1}
+.aplot .axis{stroke:var(--ink);stroke-width:1.2}
+.aplot .tick{fill:var(--ink);font-size:12px}
+.aplot .axt{fill:var(--ink);font-size:14px}
+.aplot .stat{fill:var(--ink);font-size:12px}
+.aplot .diag{stroke:#b8b8b8;stroke-width:1.1;stroke-dasharray:5 4}
+.aplot .fit{stroke:var(--ink);stroke-width:1.7}
+.aplot .ci{stroke-width:1.3;opacity:.8}
+.aplot .lead{stroke:#8a8f99;stroke-width:1}
+.aplot .nm{fill:var(--ink);font-size:12px}
+.aplot .nm .eff{fill:var(--ink-60)}
+.aplot .rk{fill:var(--ink-60);font-size:12px;font-variant-numeric:tabular-nums}
+.aplot .link{stroke-width:2;opacity:.75}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .aplot image.mono{filter:invert(1)} }
+:root[data-theme="dark"] .aplot image.mono{filter:invert(1)}
+/* one model lit: everything else steps back */
+#lbv-align [data-run]{transition:opacity .15s}
+#lbv-align.focus [data-run]:not(.on){opacity:.18}
+#lbv-align.focus .ci.on{opacity:1}
+#lbv-align.focus .slope.on .link{opacity:1;stroke-width:3}
+#lbv-align.focus .lab.on .lead{stroke:var(--ink)}
+.align-tip{position:absolute;z-index:5;pointer-events:none;display:flex;flex-direction:column;gap:.15rem;
+  padding:.5rem .7rem;background:var(--paper);border:1px solid var(--ink);box-shadow:3px 3px 4px rgba(38,38,38,.35);
+  font-size:.8125rem;color:var(--ink);white-space:nowrap}
+.align-tip i{font-style:normal;color:var(--ink-60)}
+.uplot .ax-tag{fill:var(--ink)}
+.uplot .ax-tag-t{fill:var(--paper);font-size:12px;font-variant-numeric:tabular-nums}
+
+/* --- where the reader is, down the left edge ----------------------------------
+   A hairline with one dot per section. The part already read fills with the
+   title's periwinkle-to-orange, and the dot of the section on screen breathes.
+   Names show on hover, or beside the lit dot once the margin is wide enough to
+   hold them. Where the rail shows it stands in for the browser's scrollbar. */
+.pnav{display:none}
+@media (min-width:1360px){
+  html{scrollbar-width:none}
+  html::-webkit-scrollbar{display:none}
+  .pnav{position:fixed;z-index:30;left:clamp(18px,2vw,40px);top:50%;transform:translateY(-50%);
+    display:flex;flex-direction:column;--row:2.25rem;--dot:7px}
+}
+.pnav-track{position:absolute;left:calc(var(--dot) / 2 - 1px);top:calc(var(--row) / 2);bottom:calc(var(--row) / 2);
+  width:2px;border-radius:1px;background:var(--ink-12)}
+.pnav-fill{position:absolute;left:0;top:0;width:100%;height:0;border-radius:1px;
+  background:linear-gradient(to bottom,var(--peri),var(--orange));}
+.pnav a{position:relative;display:flex;align-items:center;gap:.8rem;height:var(--row);
+  text-decoration:none;color:var(--ink-44)}
+.pnav b{position:relative;flex:none;width:var(--dot);height:var(--dot);border-radius:50%;
+  background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--ink-12);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease)}
+.pnav a.read b{background:var(--c);box-shadow:none}
+.pnav a.on b{background:var(--c);box-shadow:none;transform:scale(1.45)}
+/* the lit dot breathes: a halo in its own colour swells and fades */
+.pnav a.on b::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);
+  animation:pnav-breathe 2.4s ease-in-out infinite}
+@keyframes pnav-breathe{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(3.2);opacity:0}}
+.pnav a span{font-size:.75rem;letter-spacing:.01em;white-space:nowrap;padding:.15rem .45rem;border-radius:.3rem;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  opacity:0;transform:translateX(-4px);pointer-events:none;
+  transition:opacity .2s var(--ease),transform .2s var(--ease),color .2s var(--ease)}
+.pnav:hover a span{opacity:1;transform:none;pointer-events:auto}
+.pnav a:nth-of-type(2) span{transition-delay:.02s} .pnav a:nth-of-type(3) span{transition-delay:.04s}
+.pnav a:nth-of-type(4) span{transition-delay:.06s} .pnav a:nth-of-type(5) span{transition-delay:.08s}
+.pnav a:nth-of-type(6) span{transition-delay:.1s}  .pnav a:nth-of-type(7) span{transition-delay:.12s}
+.pnav a:nth-of-type(8) span{transition-delay:.14s}
+.pnav a.on span{color:var(--ink)}
+.pnav a:hover span{color:var(--ink)}
+.pnav a:hover b{transform:scale(1.45)}
+.pnav a:focus-visible{outline:none}
+.pnav a:focus-visible span{opacity:1;transform:none;outline:1px solid var(--ink)}
+@media (min-width:1600px){ .pnav a.on span{opacity:1;transform:none} }
+@media (prefers-reduced-motion:reduce){ .pnav a.on b::after{animation:none;display:none} }
+
+/* a model added after the geometry was rendered has no clip and nothing went wrong,
+   so its panel is not set in the error colour the way a broken world is */
+.mgrid .notyet strong{color:var(--ink-44)}
+
+/* --- how this page departs from site.css ---------------------------------------- */
+/* headings a step heavier than the house 500 */
+.release-hero .title,.sec > h2,.sec-head h2,.sw-title,.lb-wins-head h3{font-weight:600}
+/* Reading text sits back from the headings it follows, but only a little: a 60% ink
+   is the page's grey for labels and captions, and a paragraph at that weight reads as
+   secondary. 74% keeps the distinction without the wash. */
+:root{ --ink-read:color-mix(in srgb, var(--ink) 74%, transparent) }
+.sec p,.qa-body p,.drop-body p,.sec-lede{color:var(--ink-read)}
+
+/* The art is pale ink drawn against white, so with the white keyed out it reads as
+   almost nothing on the dark theme. There it sits on the plate it used to carry
+   baked into the file. */
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .projlogo img{
+  background:#fff;border-radius:8px} }
+:root[data-theme="dark"] .projlogo img{background:#fff;border-radius:8px}
+
+/* the line answering the question, set like the question so it finishes the thought */
+/* the question gets the width the container allows rather than a reading measure:
+   it is one sentence and should not break into four short lines */
+.release-hero .lede{max-width:60rem}
+.release-hero .hero-body{max-width:52rem;margin-top:1.75rem}
+/* the counts are three figures, not a sentence: a row that wraps whole items instead
+   of breaking a phrase across lines */
+.release-hero .hero-meta{display:flex;flex-wrap:wrap;justify-content:center;
+  align-items:baseline;gap:.5rem 2.25rem;margin-top:2.5rem;max-width:none;
+  font-size:var(--t-h5);color:var(--ink-60)}
+.release-hero .hero-meta span{display:inline-flex;align-items:baseline;gap:.4rem;
+  white-space:nowrap}
+.release-hero .hero-meta b{font-size:var(--t-h3);font-weight:500;color:var(--ink);
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+/* the two halves in the figures' own orange and periwinkle: the darker text inks read
+   as brown and navy at this size, apart from every plot below */
+.release-hero .hero-meta b.hl-real{color:var(--orange)}
+.release-hero .hero-meta b.hl-synth{color:var(--peri)}
+/* two lines: agents and tasks, then the real and simulated halves */
+.release-hero .hero-meta .hm-break{flex-basis:100%;height:0}
+@media (max-width:640px){ .release-hero .hero-meta{column-gap:1rem} }
+
+/* --- an open task leads with its best four -------------------------------------- */
+/* exactly four across, the same as the full field, so each gets a quarter of the width
+   rather than whatever a minimum column size happens to allow */
+#mgrid.top{grid-template-columns:repeat(4,1fr)}
+/* Four renders whole, then the top of the next four fading out, so the field is
+   visibly longer than what is shown. The fading row has a height of its own and the
+   control sits after it, which is what the earlier version got wrong: it masked six
+   full panes and pulled the control up onto them. */
+.mgrid.top > .pane:nth-child(n+5):nth-child(-n+8){height:5.5rem;overflow:hidden;
+  pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,#000,transparent);
+  mask-image:linear-gradient(to bottom,#000,transparent)}
+/* the pane is a flex column and the frame carries aspect-ratio 16/9, so a height on
+   the pane makes the frame shrink to fit rather than be cut. Pinned, the frame keeps
+   the width's height and the pane simply clips it. */
+.mgrid.top > .pane:nth-child(n+5):nth-child(-n+8) > *{flex:0 0 auto}
+.mgrid.top > .pane:nth-child(n+9){display:none}
+.mgrid-more-row{display:flex;justify-content:center;margin-top:1rem}
+.mgrid-more-row .btn{background:var(--ink);color:var(--on-ink)}
+.mgrid-more-row .btn:hover{background:var(--ink-60)}
+@media (max-width:53.75rem){ #mgrid.top{grid-template-columns:1fr}
+  .mgrid.top > .pane:nth-child(n+2):nth-child(-n+3){height:5.5rem;overflow:hidden;pointer-events:none;
+    -webkit-mask-image:linear-gradient(to bottom,#000,transparent);
+    mask-image:linear-gradient(to bottom,#000,transparent)}
+  .mgrid.top > .pane:nth-child(n+2):nth-child(-n+3) > *{flex:0 0 auto}
+  .mgrid.top > .pane:nth-child(n+4){display:none} }
+
+/* --- the task grid says there is more below ------------------------------------- */
+/* the cut row fades instead of stopping mid-thumbnail, so the button below reads as
+   the way on rather than as decoration */
+.thumbs.cut .tgrid{-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 5.5rem),transparent);
+  mask-image:linear-gradient(to bottom,#000 calc(100% - 5.5rem),transparent)}
+.more-row{position:relative;margin-top:-2.5rem;z-index:1}
+.more-row .btn{background:var(--ink);color:var(--on-ink)}
+.more-row .btn:hover{background:var(--ink-60)}
+
+/* --- the filter chips ------------------------------------------------------------
+   These sat on a 4% fill with no edge, which reads as a label rather than a control.
+   A hairline gives them a boundary, and the pressed state fills them in. */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.filters .btn-small{border:1px solid var(--ink-12);background:var(--paper);
+  color:var(--ink-60);font-weight:500}
+.filters .btn-small:hover{border-color:var(--ink-44);background:var(--ink-4);color:var(--ink)}
+.famtag[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.famtag[aria-pressed="true"]:hover{background:var(--ink-60);border-color:var(--ink-60);color:var(--on-ink)}
+.geo-filter[aria-pressed="true"]{border-color:var(--peri)}
+
+
+/* --- the clip that shows what a task is ----------------------------------------- */
+
+/* --- an open task ----------------------------------------------------------------
+   Two rows rather than two columns: the reference video and what the scene is made of
+   side by side on top, then every render across the full width below. The renders are
+   what the page compares, and beside a column of tags they never had the width for it. */
+@media (min-width:960px){
+  #stage .cmp{grid-template-columns:1fr;row-gap:2.25rem}
+  .stage-top{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--gap) 2rem}
+}
+.ref .mhead .rhint{display:none}
+
+/* --- the leaderboard's top three -------------------------------------------------
+   a medal in the first cell is easy to miss in a table this wide; the row carries it */
+.lb tr.r1 td{background:color-mix(in srgb, var(--peri) 12%, transparent)}
+.lb tr.r2 td{background:color-mix(in srgb, var(--peri) 8%, transparent)}
+.lb tr.r3 td{background:color-mix(in srgb, var(--peri) 5%, transparent)}
+.lb tr.r1 .c-model,.lb tr.r2 .c-model,.lb tr.r3 .c-model{font-weight:600}
+.lb tr.r1 td:first-child{border-top-left-radius:6px;border-bottom-left-radius:6px}
+.lb tr.r1 td:last-child{border-top-right-radius:6px;border-bottom-right-radius:6px}
+
+/* the three things the code has to define: set at full ink against the paragraph's
+   60%, which marks them without italics or a rule under them */
+.hero-body .k3{font-weight:500;color:var(--ink)}
+
+/* --- what the tasks are made of, over the grid that holds them -------------------
+   The four families were a row of chips here and a panel of bars in another tab. One
+   thing now: the bars are the filter, each task counted once under its main matter so
+   the four sum to 200, and each states both halves. */
+.compstrip{margin:0 0 1.25rem}
+.cs-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.25rem;margin:0 0 .875rem}
+.cs-title{font-size:var(--t-h5);font-weight:500;color:var(--ink)}
+.cs-key{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;color:var(--ink-60)}
+.cs-key i{width:.65rem;height:.65rem;border-radius:2px;display:inline-block}
+.cs-key i.real,.cf-bar i.real{background:var(--orange)}
+.cs-key i.synth,.cf-bar i.synth{background:var(--peri)}
+.cs-key i.synth{margin-left:.6rem}
+.cs-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+@media (max-width:53.75rem){ .cs-row{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.cf{appearance:none;font:inherit;text-align:left;cursor:pointer;display:flex;
+  flex-direction:column;gap:.25rem;padding:.75rem .875rem .875rem;border-radius:8px;
+  border:1px solid var(--ink-12);background:var(--paper);
+  transition:border-color var(--dur) var(--ease),background var(--dur) var(--ease)}
+.cf:hover{border-color:var(--ink-44);background:var(--ink-4)}
+.cf[aria-pressed="true"]{border-color:var(--peri);background:color-mix(in srgb, var(--peri) 12%, transparent);
+  box-shadow:inset 0 0 0 1px var(--peri)}
+.cf[aria-pressed="true"] .cf-lab,.cf[aria-pressed="true"] .cf-n{color:var(--peri-ink)}
+.cf:focus-visible{outline:2px solid var(--peri);outline-offset:2px}
+.cf-lab{font-size:.9375rem;font-weight:500;color:var(--ink);line-height:1.25}
+.cf-n small{font-size:.8125rem;font-weight:400;color:var(--ink-60);margin-left:.15rem;
+  letter-spacing:0}
+.cf-n{font-size:var(--t-h3);font-weight:500;color:var(--ink);line-height:1.1;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.cf-split{display:flex;align-items:baseline;gap:.3rem;font-size:.8125rem;color:var(--ink-60);
+  font-variant-numeric:tabular-nums}
+.cf-split b{font-weight:500}
+.cf-split b.real{color:var(--orange-ink)}
+.cf-split b.synth{color:var(--peri-ink);margin-left:.5rem}
+.cf-bar{display:flex;height:.4rem;margin-top:.4rem;border-radius:2px;overflow:hidden;
+  background:var(--ink-4)}
+.cf-bar i{display:block;height:100%}
+
+/* --- where the benchmark itself starts ------------------------------------------
+   Scrolling past the leaderboard and the prose, the switch was the first thing with
+   no name over it. This is a step above the switch titles so the three read as its
+   views rather than as three separate sections. */
+/* The gap that used to sit over the switch belongs over the heading now: grid items
+   do not collapse margins, so leaving both stranded the heading 8.5rem above its own
+   tabs. */
+/* every part of the page opens with the same heading: large, centred, ruled off */
+h2.part-head{grid-column:1 / -1;margin:7rem 0 2rem;padding-bottom:1.125rem;
+  border-bottom:1px solid var(--ink-12);text-align:center;
+  font-size:clamp(1.875rem, 1.4rem + 1.6vw, 2.5rem);
+  line-height:1.15;font-weight:600;letter-spacing:-.025em}
+h2.part-head + .switch{margin-top:0}
+.sec:has(> .part-head){margin-top:0}
+#top-demo h2.part-head{margin-top:2.5rem}
+@media (max-width:53.75rem){ h2.part-head{margin-top:5rem} }
+/* the answers follow the paragraph they belong to */
+
+/* the geometry filter rides the strip's header line, so the tasks section needs no
+   head of its own; the cube is the mark the thumbnails carry */
+.cs-head .geo-filter{margin-left:auto}
+.cs-head .geo-filter svg{margin-right:.15rem}
+/* the two breakdowns run one after the other now */
+.onto .opanel + .opanel{margin-top:3rem}
+
+/* what the figure below it shows, in a sentence */
+.sec-lede{margin:-.25rem 0 1.5rem;max-width:none;font-size:var(--t-p1);
+  line-height:var(--l-p1);color:var(--ink-read);text-wrap:pretty}
+
+/* a model named in running text, marked the way the leaderboard names it */
+.mref{display:inline-flex;align-items:baseline;gap:.3em;white-space:nowrap;
+  font-weight:500;color:var(--ink)}
+.mref img{width:.95em;height:.95em;flex:0 0 auto;align-self:center}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .mref img.mono{filter:invert(1)} }
+:root[data-theme="dark"] .mref img.mono{filter:invert(1)}
+
+/* --- the task cards are the way in ----------------------------------------------
+   They played their input on hover, which says they are alive but not that they open
+   anything. Each now says what opening it gives you, and the card takes a ring. */
+/* The nudge points into the grid until a task is opened. By default it sits over the
+   grid; given a wide enough window it moves out into the page margin, where it takes
+   no width from the grid at all. */
+.grid-row{position:relative}
+.grid-hint{display:flex;align-items:center;gap:.5rem;margin:0 0 .75rem;
+  font-size:.9375rem;font-weight:500;line-height:1.3;color:var(--peri-ink)}
+.grid-hint.done{display:none}
+.gn-arrow{flex:0 0 auto;animation:gn-bob-down 1.9s var(--ease) infinite}
+@keyframes gn-bob-down{0%,100%{transform:rotate(38deg) translate(0,0)}
+  50%{transform:rotate(38deg) translate(4px,0)}}
+/* 90rem is where the margin beside a 76rem container is wide enough to hold it */
+@media (min-width:90rem){
+  .grid-hint{position:absolute;right:100%;top:1.25rem;width:8rem;margin:0 .5rem 0 0;
+    flex-direction:column;align-items:flex-end;gap:.35rem;text-align:right}
+  .gn-arrow{animation-name:gn-bob}
+}
+@keyframes gn-bob{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,0)}}
+@media (prefers-reduced-motion:reduce){ .gn-arrow{animation:none} }
+.thumb-cta{position:absolute;left:50%;bottom:.5rem;
+  transform:translate(-50%,.35rem);display:inline-flex;align-items:center;gap:.3rem;
+  padding:.25rem .625rem;border-radius:2.5rem;background:var(--ink);color:var(--on-ink);
+  font-size:.75rem;font-weight:500;white-space:nowrap;pointer-events:none;opacity:0;
+  transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.thumb:hover .thumb-cta,.thumb:focus-visible .thumb-cta{opacity:1;transform:translate(-50%,0)}
+.thumb:hover{outline:2px solid var(--peri);outline-offset:2px}
+.thumb:focus-visible{outline:2px solid var(--peri);outline-offset:2px}
+/* the open task keeps the ink ring, so the two never read as the same state */
+.thumb[aria-current="true"]:hover{outline-color:var(--ink)}
+/* real scenes ring in the orange of the real column, simulated ones in periwinkle */
+.thumb:has(.kind.real):not([aria-current="true"]):is(:hover,:focus-visible){outline-color:var(--orange)}
+/* the ring sits 4px outside the thumb; the grid's mask (the fading cut) ends at the grid's
+   edge, so the grid is widened by that much on every side to keep the ring whole */
+.tgrid{padding:4px;margin:-4px}
+@media (hover:none){ .thumb-cta{opacity:1;transform:translate(-50%,0)} }
+
+/* the heading and its hint are different sizes, so centring them on the flex line
+   left the smaller one sitting high; they share a baseline instead */
+.mcol .mhead{align-items:baseline}
+
+/* --- a scene with reference geometry --------------------------------------------
+   The input and its geometry are the same thing twice, so they belong beside each
+   other rather than stacked, and the column takes more of the row to hold them. */
+#stage.has-geo .ref{display:grid;grid-template-columns:1fr 1fr;gap:.5rem var(--gap);
+  align-content:start}
+#stage.has-geo .ref > .mhead{grid-column:1 / -1}
+@media (min-width:960px){
+  #stage.has-geo .stage-top{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+}
+@media (max-width:52rem){ #stage.has-geo .ref{grid-template-columns:1fr} }
+
+/* the two column headings carry the panes under them; a step up from body size */
+.ref .mhead h3,.mcol .mhead h3{font-size:var(--t-h4)}
+
+/* --- the model's name, on its render --------------------------------------------
+   Under the frame it was one line of grey among many and had to be matched back to
+   the picture above it. On the render it is unambiguous. */
+#mgrid .plabel{position:absolute;left:.4rem;top:.4rem;z-index:3;display:inline-flex;
+  align-items:center;gap:.3rem;max-width:calc(100% - .8rem);padding:.2rem .5rem;
+  border-radius:5px;background:rgba(255,255,255,.95);
+  box-shadow:inset 0 0 0 1.25px rgba(8,8,8,.85);
+  font-size:.8125rem;line-height:1.25;color:#141414}
+#mgrid .plabel .lbl{font-weight:500;color:inherit;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;min-width:0}
+#mgrid .plabel .prk{color:#6b6b6b;font-variant-numeric:tabular-nums;font-weight:500}
+#mgrid .plogo{width:.95rem;height:.95rem;flex:0 0 auto}
+/* the fading row shows the label and little else, which is the point */
+.mgrid.top > .pane:nth-child(n+5):nth-child(-n+8) .plabel{opacity:.9}
+
+/* the aside in a lede, for what a column means */
+.lede-note{color:var(--ink-44)}
+.sec-lede + .sec-lede{margin-top:-.75rem}
+
+/* --- static against dynamic -----------------------------------------------------
+   A row per model: the two scores as dots on one track, joined by the gap. Laid out
+   on a grid so the name column and the plot column line up down the figure. */
+/* half the width of the section: eighteen short rows do not need the full measure */
+.gapfig{max-width:38rem;margin:2.5rem 0 0}
+.gap-key{display:flex;flex-direction:column;gap:.3rem;margin:0 0 .875rem;padding-left:.2rem;
+  font-size:var(--t-p2);color:var(--ink-60)}
+.gap-key span{display:inline-flex;align-items:baseline;gap:.45rem}
+.gap-key b{font-weight:500}
+.gap-key span:first-child b{color:var(--orange-ink)}
+.gap-key span:last-child b{color:var(--peri-ink)}
+.gap-key i{width:.7rem;height:.7rem;border-radius:50%;align-self:center;
+  box-shadow:0 0 0 1.5px var(--paper),0 0 0 2.2px var(--ink),2px 2px 3px rgba(38,38,38,.6)}
+.gap-key i.dyn,.gap-dot.dyn{background:var(--orange)}
+.gap-key i.sta,.gap-dot.sta{background:var(--peri)}
+/* the name column is as wide as the longest name, and each name, logo first, is set
+   flush against the start of the plot, as the paper sets them */
+/* on a phone the plot keeps its width and a long name gives way */
+.gap-plot{display:grid;grid-template-columns:minmax(0,max-content) minmax(12rem,1fr)}
+.gap-row,.gap-grid,.gap-axis{grid-column:1 / -1;display:grid;grid-template-columns:subgrid;
+  align-items:center;column-gap:.5rem}
+.gap-row{height:1.6rem}
+.gap-name{display:flex;align-items:center;gap:.4rem;justify-content:flex-end;
+  font-size:var(--t-p2);color:var(--ink);white-space:nowrap;min-width:0}
+.gap-name img{width:.9rem;height:.9rem;flex:0 0 auto}
+.gap-name span{overflow:hidden;text-overflow:ellipsis}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .gap-name img.mono{filter:invert(1)} }
+:root[data-theme="dark"] .gap-name img.mono{filter:invert(1)}
+/* the track is the 0-1 axis; everything on it is placed by percentage */
+/* both ends need room for a value label: without the left margin a score near zero
+   put its number under the model's name */
+.gap-track{position:relative;height:100%;margin:0 2.5rem}
+.gap-grid{height:.5rem}
+.gap-grid .gap-track i{position:absolute;top:0;bottom:-100vh;width:1px;
+  background:var(--ink-12)}
+/* room on the left for the longest name when it grows on hover; the plot clips its grid lines, so it would clip the name too */
+.gap-plot{position:relative;overflow:hidden;padding-left:1.25rem}
+.gap-line{position:absolute;top:50%;height:3px;margin-top:-1.5px;border-radius:2px;
+  background:color-mix(in srgb, var(--ink) 28%, transparent)}
+/* the paper's markers: a white ring, a black edge and the one drop shadow */
+.gap-dot{position:absolute;top:50%;width:.8rem;height:.8rem;margin:-.4rem 0 0 -.4rem;
+  border-radius:50%;z-index:1;
+  box-shadow:0 0 0 1.5px var(--paper),0 0 0 2.2px var(--ink),3px 3px 4px rgba(38,38,38,.6);
+  transition:transform .18s ease}
+/* a row pointed at grows a little and the others step back */
+.gap-row{transition:opacity .18s ease}
+.gap-name,.gap-v{transition:transform .18s ease,color .18s ease}
+.gap-name{transform-origin:right center}
+.gap-plot:has(.gap-row:hover) .gap-row:not(:hover){opacity:.3}
+.gap-row:hover .gap-dot{transform:scale(1.35)}
+/* heavier by a stroke, not by font-weight: a bolder name is wider, the name column is
+   as wide as its longest name, and the whole plot would slide when that one is pointed at */
+.gap-row:hover .gap-name{transform:scale(1.06);-webkit-text-stroke:.4px currentColor}
+.gap-row:hover .gap-v{color:var(--ink);font-weight:600}
+.gap-v{position:absolute;top:50%;transform:translateY(-50%);font-size:.75rem;
+  font-weight:400;color:var(--ink-60);font-variant-numeric:tabular-nums}
+.gap-v.lo{margin-left:-.9rem;transform:translate(-100%,-50%)}
+.gap-v.hi{margin-left:.9rem}
+.gap-row:hover .gap-v.lo{transform:translate(calc(-100% - .2rem),-50%)}
+.gap-row:hover .gap-v.hi{transform:translate(.2rem,-50%)}
+.gap-axis{height:1.75rem}
+.gap-axis .gap-track{border-top:1.5px solid var(--ink)}
+.gap-axis .gap-track b{position:absolute;top:.35rem;transform:translateX(-50%);
+  font-size:var(--t-p2);font-weight:400;color:var(--ink-60)}
+.gap-foot{margin:.5rem 0 0;font-size:var(--t-p2);color:var(--ink-44)}
+@media (max-width:53.75rem){
+  .gap-track{margin:0 1.9rem}
+  .gap-v{font-size:.6875rem}
+}
+
+/* --- what makes a task hard ------------------------------------------------------
+   Seven contrasts by six families, square cells so the map reads as a grid of equal
+   weights rather than a table of rows. Half the section, like the figure above it. */
+.effects{margin:2.5rem 0 0}
+/* the same construction as the capability figure above it: a framed block on black
+   rules, the column names over it and the row names to its left */
+.eff-wrap{overflow-x:auto;padding:.5rem 0 1rem}
+.efffig{--rh:2.125rem;--cw:5.25rem;display:grid;grid-template-columns:auto auto;
+  column-gap:.75rem;align-items:start;width:max-content}
+.eff-heads{grid-column:2;grid-row:1;align-self:end;display:grid;
+  grid-template-columns:repeat(6,var(--cw));gap:1px;padding:0 2px;margin-bottom:.5rem;
+  align-items:end}
+.eff-heads > span{text-align:center;color:var(--ink);font-size:.8125rem;line-height:1.2;
+  padding:0 .2rem}
+.eff-names{grid-column:1;grid-row:2;padding-top:2px}
+.eff-n{height:var(--rh);margin-bottom:1px;display:flex;align-items:center;
+  justify-content:flex-end;white-space:nowrap;color:var(--ink);font-size:.875rem}
+.eff-box{grid-column:2;grid-row:2;display:grid;grid-template-columns:repeat(6,var(--cw));
+  grid-auto-rows:var(--rh);gap:1px;background:#000;border:2px solid #000;
+  box-shadow:3px 3px 4px rgba(38,38,38,.6)}
+.eff-c{position:relative;display:flex;align-items:center;justify-content:center;
+  color:#111;font-size:.875rem;font-variant-numeric:tabular-nums;background:#fff;
+  transition:scale .12s ease,box-shadow .12s ease}
+/* one cell pointed at, as in the capability figure: it lifts on the paper's shadow and
+   its row and column are framed. No cell changes colour, since the colours are values. */
+.eff-c.lift{z-index:3;scale:1.1;outline:2px solid #000;box-shadow:3px 3px 6px rgba(38,38,38,.6)}
+.eff-box{position:relative}
+.eff-frame{position:absolute;display:none;z-index:2;pointer-events:none;border:2px solid #000}
+.efffig.focus .eff-frame{display:block}
+.eff-frame.row{left:-1px;right:-1px;top:calc(var(--i, 0) * (var(--rh) + 1px) - 1px);
+  height:calc(var(--rh) + 2px)}
+.eff-frame.col{top:-1px;bottom:-1px;left:calc(var(--j, 0) * (var(--cw) + 1px) - 1px);
+  width:calc(var(--cw) + 2px)}
+.eff-n.hl,.eff-heads span.hl{font-weight:600}
+/* a robust effect is set bold and ruled under, as the paper marks it */
+.eff-c.strong{font-weight:700}
+.eff-c.strong::after{content:"";position:absolute;left:50%;bottom:.3rem;width:2.1rem;
+  height:2px;margin-left:-1.05rem;background:currentColor}
+/* the darkest fills take light type, as there */
+.eff-c.w{color:#fff}
+.eff-c.na{color:#868686;font-style:italic;background:#e9e7e1}
+.eff-k{display:inline-block;width:.7rem;height:.7rem;border-radius:2px;
+  vertical-align:-1px;margin:0 .1rem}
+.eff-k.neg{background:#ee7a2c}
+.eff-k.pos{background:#8699e3}
+
+/* --- key findings: a finding, then the figure that carries it -------------------- */
+.find + .find{margin-top:3.5rem}
+/* the findings are numbered, the number set small beside the heading */
+#findings{counter-reset:find}
+.find{counter-increment:find}
+.find h3::before{content:counter(find, decimal-leading-zero);display:inline-block;
+  margin-right:.75rem;font-size:var(--t-h5);font-weight:600;letter-spacing:.02em;
+  color:var(--peri);font-variant-numeric:tabular-nums;vertical-align:.2em}
+.find h3,h3.sub-head{margin:0 0 .875rem;font-size:var(--t-h3);font-weight:600;letter-spacing:-.02em;
+  line-height:1.25}
+.find p{margin:0 0 1rem;font-size:var(--t-p1);line-height:var(--l-p1);color:var(--ink-read)}
+.find p strong{color:var(--ink);font-weight:500}
+.find-duo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+  gap:1rem 2.5rem;align-items:start}
+.find-duo .find-t{position:sticky;top:1.5rem}
+.find-duo .find-f{min-width:0;overflow-x:auto}
+.find-duo .gapfig,.find-duo .effects{margin:0}
+.find-duo .gapfig{margin-left:auto}
+.find-duo .effects{max-width:none}
+/* the figure's own cells set its width, so it narrows from there */
+.find-duo .efffig{--cw:4.25rem;--rh:1.9rem}
+/* the key sits on the line of the heading opposite it rather than above the plot */
+.find-duo .align-key{margin:.35rem 0 1rem}
+/* the static figures (scene effects, alignment) are pictures, not scrollers:
+   they fit their column, so a whole finding sits on one screen */
+.find-duo .find-f.find-static{overflow:visible}
+.find-alignment{grid-template-columns:minmax(0,1fr) minmax(0,33.75rem);column-gap:2rem}
+.find-alignment #lbv-align{width:100%;max-width:33.75rem;margin-left:auto}
+#align-scatter{--label-size:13.5px}
+#align-scatter .nm,#align-scatter .tick,#align-scatter .stat{font-size:var(--label-size)}
+#align-scatter .axt{font-size:15.5px}
+.find-static .efffig{width:100%;grid-template-columns:auto minmax(0,1fr)}
+.find-static .eff-heads,.find-static .eff-box{grid-template-columns:repeat(6,minmax(0,1fr))}
+.find-static .eff-wrap{overflow:visible;padding-bottom:.5rem}
+@media (max-width:64rem){
+  .find-duo{grid-template-columns:minmax(0,1fr)}
+  .find-duo .find-t{position:static}
+  .find-alignment #lbv-align{margin-left:0}
+}
+@media (max-width:40rem){
+  #align-scatter{--label-size:15px}
+  #align-scatter .axt{font-size:17px}
+}
+
+
+/* --- how a case was solved ------------------------------------------------------- */
+/* the matter each case is about: found by the space around it rather than by a rule
+   and a colour, which was more than a one-word heading needs */
+.howlist{display:flex;flex-direction:column;gap:3rem;margin-top:1.25rem}
+.howcase h4{margin:0 0 .6rem;font-size:var(--t-h4);font-weight:600;letter-spacing:-.015em}
+.howcase p{margin:0}
+/* a heading can carry more than one scene, so the rows after the first take air */
+.howcase .hv-row + p{margin-top:2rem}
+/* one height, whatever width the clip's own shape implies: a 16:9 box around each
+   would letterbox the square renders and pretend they are all the same picture */
+.hv-row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;
+  gap:1rem var(--gap);margin-top:.875rem}
+.hv{margin:0;display:flex;flex-direction:column;gap:.4rem;min-width:0;max-width:100%}
+.hv .frame.media{aspect-ratio:auto;background:none;width:auto;overflow:visible}
+/* site.css absolutely positions a video inside .frame.media and stretches it to the
+   frame; here the video sets the frame's size, so it has to be in the flow. That rule
+   is .frame.media video, so this one has to be at least as specific. */
+.hv .frame.media video{position:static;display:block;height:11rem;width:auto;
+  min-width:6rem;max-width:100%;inset:auto;object-fit:cover;background:var(--ink-4);
+  border-radius:var(--r-md)}
+/* four or five clips stay on one line on a wide screen: a smaller frame, not a lone clip on a second row */
+.hv-row:has(> .hv:nth-child(4)) .hv .frame.media video{height:9rem}
+@media (max-width:53.75rem){ .hv .frame.media video{height:9rem} }
+.hv figcaption{display:flex;flex-direction:column;align-items:center;gap:.1rem;
+  font-size:var(--t-p2);line-height:1.35;text-align:center}
+.hv-who{display:inline-flex;align-items:center;gap:.35rem;font-weight:500;color:var(--ink)}
+.hv-who img{width:.9rem;height:.9rem;flex:0 0 auto}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .hv-who img.mono{filter:invert(1)} }
+:root[data-theme="dark"] .hv-who img.mono{filter:invert(1)}
+.hv-what{color:var(--ink-44)}
+.hv.ref .hv-who{color:var(--ink-60)}
+
+.howcase .drop{margin-top:1.25rem}
+.howcase .mlist .mfam{display:inline-flex;align-items:center;gap:.4rem}
+.howcase .mlist .mfam img{width:.9rem;height:.9rem;flex:0 0 auto}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .howcase .mlist img.mono{filter:invert(1)} }
+:root[data-theme="dark"] .howcase .mlist img.mono{filter:invert(1)}
+
+/* what makes the motion: out of a solver, or written down. The section is about that
+   split, so the two carry the page's two accents rather than one emphasis. */
+.howcase .sim,.find p .sim{color:var(--peri-ink);font-weight:500}
+.howcase .pre,.find p .pre{color:var(--orange-ink);font-weight:500}
+
+/* the opening, before the scenes */
+.how-points{margin:1rem 0 0;padding-left:1.15rem;display:flex;flex-direction:column;
+  gap:.6rem;font-size:var(--t-p1);line-height:var(--l-p1);color:var(--ink-read)}
+.how-points li::marker{color:var(--ink-44)}
+.how-points strong{color:var(--ink);font-weight:500}
+
+/* the camera flag sits bottom left: the model's name holds the top-left corner of every
+   render, and drawn above it the flag was covered */
+.mgrid .flag{top:auto;bottom:.5rem}
+
+/* --- key takeaways: the five findings at a glance, closing the hero. No frame: set
+   like Key findings, numbers in periwinkle, emphasis at the same weight as there */
+.takeaways{margin:3.5rem auto 0;max-width:46rem;text-align:left;counter-reset:tk}
+.part-head + .takeaways{margin-top:0}
+.takeaways ul{margin:0;padding:0;list-style:none}
+.takeaways li{counter-increment:tk;display:grid;grid-template-columns:2.25rem 1fr;
+  padding:.75rem 0;font-size:var(--t-p1);line-height:var(--l-p1);color:var(--ink-read);text-wrap:pretty}
+.takeaways li + li{border-top:1px solid var(--ink-12)}
+.takeaways li::before{content:counter(tk, decimal-leading-zero);font-size:var(--t-h5);font-weight:600;
+  letter-spacing:.02em;color:var(--peri);font-variant-numeric:tabular-nums}
+.takeaways b{font-weight:500;color:var(--ink)}
+@media (max-width:40rem){ .takeaways li{grid-template-columns:2rem 1fr} }
+
+/* --- usage plot split keys: real and synthetic tasks as filters, both on by default */
+.k-sq{width:.7rem;height:.7rem;border-radius:2px}
+
+/* --- phones ------------------------------------------------------------------------
+   The wide figures keep their size and scroll sideways, with their row names held in
+   place and the cut edge faded, so it reads as more to the right rather than an end. */
+.table-wrap.more,.cap-wrap.more,.eff-wrap.more,.uplot.more,.aplot.more{
+  -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 2.5rem),transparent);
+  mask-image:linear-gradient(to right,#000 calc(100% - 2.5rem),transparent)}
+.nm-s{display:none}
+@media (max-width:640px){
+  /* models go by the paper's short names (Table A5), without logos, so the name column stays
+     narrow and the numbers get the width; a long name wraps onto a second line */
+  .nm-l{display:none}
+  .nm-s{display:inline}
+  .lb .mname img,.cap-n img,.gap-name img{display:none}
+  .nm-s .nb{white-space:nowrap}
+  /* the dumbbell rows are one line high: short names, one line each */
+  .gap-name{font-size:.75rem}
+  .gap-name span{overflow:visible;white-space:nowrap}
+  /* the zero line close to the names; the room a low score's number needs is on the left of its dot,
+     which never comes near zero here */
+  .gap-track{margin:0 2rem 0 .75rem}
+  .gap-plot{padding-left:0}
+  .lb{font-size:.8125rem}
+  .lb th,.lb td{padding:.3125rem .4rem}
+  .lb .c-rank{width:1.75rem;min-width:1.75rem;max-width:1.75rem;padding-inline:.15rem}
+  .lb .medal{width:1.3rem;height:1.3rem;font-size:.6875rem}
+  .lb .c-model{white-space:normal;min-width:7rem;line-height:1.2}
+  .lb thead th{white-space:normal;line-height:1.2;vertical-align:bottom}
+  /* rank and model stay at the left while the scores scroll under them; each sticky cell is
+     opaque (the top three carry their tint mixed into the paper), the head's corner above them
+     stays too, so nothing slides out from behind it, and a rule marks where the scrolling starts */
+  .lb .c-rank,.lb .c-model{position:sticky;z-index:1;background:var(--paper)}
+  .lb .c-rank{left:0}
+  .lb .c-model{left:1.75rem;box-shadow:inset -1px 0 0 var(--ink-12)}
+  .lb thead th.c-rank,.lb thead th.c-model{z-index:3}
+  .lb tr.r1 td.c-rank,.lb tr.r1 td.c-model{background:color-mix(in srgb, var(--peri) 12%, var(--paper))}
+  .lb tr.r2 td.c-rank,.lb tr.r2 td.c-model{background:color-mix(in srgb, var(--peri) 8%, var(--paper))}
+  .lb tr.r3 td.c-rank,.lb tr.r3 td.c-model{background:color-mix(in srgb, var(--peri) 5%, var(--paper))}
+  .lb tbody tr:hover td.c-rank,.lb tbody tr:hover td.c-model{background:color-mix(in srgb, var(--ink) 4%, var(--paper))}
+  /* the two heat figures: smaller cells, short column names that may wrap, names to the left */
+  .capfig,.efffig{--rh:1.875rem;--cw:2.75rem;column-gap:.4rem}
+  .cap-n{font-size:.75rem;white-space:normal;text-align:right;line-height:1.1;max-width:5.75rem}
+  .eff-n{font-size:.75rem;white-space:normal;text-align:right;line-height:1.1;max-width:6.5rem}
+  .cap-heads button,.eff-heads > span{font-size:.625rem;line-height:1.15;padding:0 .1rem}
+  .cap-c,.eff-c{font-size:.6875rem}
+  .eff-c.strong::after{width:1.4rem;margin-left:-.7rem;bottom:.25rem}
+  .cap-keys{margin-left:.5rem}
+  /* the heat figures keep their row names at the left too: the names column and the empty corner
+     over it are opaque and sit above the scrolling cells and their column names */
+  /* the names column runs on past the last row, so the block's drop shadow slides under it too */
+  .cap-names,.eff-names{position:sticky;left:0;z-index:5;background:var(--paper);padding-right:.4rem;
+    padding-bottom:.75rem;margin-bottom:-.75rem;box-shadow:.4rem 0 0 var(--paper)}
+  .capfig::before,.efffig::before{content:"";grid-column:1;grid-row:1;position:sticky;left:0;z-index:5;
+    align-self:stretch;background:var(--paper);box-shadow:.4rem 0 0 var(--paper)}
+  /* the demo runs edge to edge: every pixel of width goes to its stage */
+  .demo-box{margin-inline:calc(-1 * var(--pad))}
+  .demo-cover{border-radius:0;aspect-ratio:600/845}
+  /* an open task's renders two across: the best four whole, the next two fading out */
+  #mgrid,#mgrid.top{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mgrid.top > .pane:nth-child(n+2):nth-child(-n+4){display:flex;height:auto;overflow:visible;pointer-events:auto;
+    -webkit-mask-image:none;mask-image:none}
+  .mgrid.top > .pane:nth-child(n+5):nth-child(-n+6){display:flex;height:4.5rem;overflow:hidden;pointer-events:none;
+    -webkit-mask-image:linear-gradient(to bottom,#000,transparent);
+    mask-image:linear-gradient(to bottom,#000,transparent)}
+  .mgrid.top > .pane:nth-child(n+5):nth-child(-n+6) > *{flex:0 0 auto}
+  #mgrid .plabel{font-size:.6875rem;max-width:calc(100% - .8rem)}
+  /* the task grid two across, its "see the reconstructions" chip small enough to leave the picture */
+  .tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .thumb-cta{font-size:.625rem;padding:.15rem .45rem;bottom:.35rem}
+  /* the three views of the benchmark side by side as plain tabs, without their descriptions */
+  .switch{grid-template-columns:repeat(3,minmax(0,1fr));gap:.25rem;margin-top:3.5rem}
+  .sw{padding:.75rem .25rem .875rem;gap:0}
+  .sw-title{font-size:1rem;line-height:1.25}
+  .sw-sub{display:none}
+  /* the four family cards: tighter, the real and simulated counts free to wrap on a small phone */
+  .cf{padding:.625rem .75rem .75rem}
+  .cf-split{flex-wrap:wrap;row-gap:0}
+  /* the case clips: the reference across the width, the agents two to a row */
+  .hv-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .75rem}
+  .hv.ref{grid-column:1 / -1}
+  .hv .frame.media video,.hv-row:has(> .hv:nth-child(4)) .hv .frame.media video{width:100%;height:auto;min-width:0}
+  .hv figcaption{font-size:.75rem}
+}
+
+/* on a phone the categorization is usually folded, so the space it leaves under the
+   input video closes up to the reconstructions */
+@media (max-width:640px){
+  #stage .cmp{row-gap:1.25rem}
+  .info .ihead{margin-top:.25rem}
+  /* .sec h3 would otherwise put 2.5rem over the reconstructions' heading */
+  #stage .mcol .mhead h3{margin:0}
+}

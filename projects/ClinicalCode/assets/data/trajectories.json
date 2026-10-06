@@ -1,0 +1,161 @@
+{
+  "status": "research_only_uncalibrated_rule_visualization",
+  "regimens": {
+    "public_regimen_1": {
+      "id": "public_regimen_1",
+      "label": "Cisplatin + Doxorubicin + Lipiodol + Mitomycin",
+      "actions": [
+        "Cisplatin",
+        "Doxorubicin",
+        "Lipiodol",
+        "Mitomycin"
+      ],
+      "days": [
+        0,
+        30,
+        60,
+        90
+      ],
+      "volume_ratio": [
+        1.0,
+        0.9128640926,
+        0.834181536,
+        0.761182964
+      ],
+      "necrotic_fraction": [
+        0.0,
+        0.2972070568,
+        0.6219337644,
+        0.9793290043
+      ],
+      "perfusion_proxy": [
+        1.0,
+        0.860667,
+        0.721334,
+        0.582001
+      ],
+      "uncertainty_sd": [
+        0.08,
+        0.13,
+        0.19,
+        0.26
+      ]
+    },
+    "public_regimen_2": {
+      "id": "public_regimen_2",
+      "label": "Doxorubicin + LC Beads + Lipiodol",
+      "actions": [
+        "Doxorubicin",
+        "LC Beads",
+        "Lipiodol"
+      ],
+      "days": [
+        0,
+        30,
+        60,
+        90
+      ],
+      "volume_ratio": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "necrotic_fraction": [
+        0.0,
+        0.23465689101243925,
+        0.4693137820248785,
+        0.7039706730373178
+      ],
+      "perfusion_proxy": [
+        1.0,
+        0.7873330000000001,
+        0.5746660000000001,
+        0.3619990000000001
+      ],
+      "uncertainty_sd": [
+        0.08,
+        0.13,
+        0.19,
+        0.26
+      ]
+    },
+    "public_regimen_3": {
+      "id": "public_regimen_3",
+      "label": "Cisplatin + Lipiodol",
+      "actions": [
+        "Cisplatin",
+        "Lipiodol"
+      ],
+      "days": [
+        0,
+        30,
+        60,
+        90
+      ],
+      "volume_ratio": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "necrotic_fraction": [
+        0.0,
+        0.13201252162451602,
+        0.26402504324903203,
+        0.3960375648735481
+      ],
+      "perfusion_proxy": [
+        1.0,
+        0.897333,
+        0.7946660000000001,
+        0.6919990000000001
+      ],
+      "uncertainty_sd": [
+        0.08,
+        0.13,
+        0.19,
+        0.26
+      ]
+    },
+    "public_regimen_4": {
+      "id": "public_regimen_4",
+      "label": "Cisplatin + Lipiodol + Mitomycin",
+      "actions": [
+        "Cisplatin",
+        "Lipiodol",
+        "Mitomycin"
+      ],
+      "days": [
+        0,
+        30,
+        60,
+        90
+      ],
+      "volume_ratio": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "necrotic_fraction": [
+        0.0,
+        0.19799818765960953,
+        0.39599637531921905,
+        0.5939945629788286
+      ],
+      "perfusion_proxy": [
+        1.0,
+        0.882667,
+        0.765334,
+        0.6480009999999999
+      ],
+      "uncertainty_sd": [
+        0.08,
+        0.13,
+        0.19,
+        0.26
+      ]
+    }
+  }
+}

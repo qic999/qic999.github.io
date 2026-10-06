@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+ClinicalCode animates the clinical source code of disease progression.
+Clinical observations become executable states and inspectable futures.
+
+00:06.000 --> 00:14.000
+A tool-grounded compiler maps CT, MRI, and pre-decision context
+into a shared clinical-state representation.
+
+00:14.000 --> 00:22.000
+Each field carries its value, type, unit, observability,
+uncertainty, source, and mutability. Missing stays missing.
+
+00:22.000 --> 00:34.000
+Candidate actions produce separate trajectories from one starting state.
+This visualization replays illustrative rule-driven states, not learned patient forecasts.
+
+00:34.000 --> 00:42.000
+Schema, bounds, time, and provenance checks precede calibrated decoding.
+Agreement with documented actions does not establish treatment benefit.
+
+00:42.000 --> 00:48.000
+Compile. Predict. Validate. Decode.
+Explore ClinicalCode at qic999.github.io/projects/ClinicalCode.

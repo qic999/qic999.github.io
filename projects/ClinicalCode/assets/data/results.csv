@@ -1,0 +1,16 @@
+modality,method,internal_f1_percent,external_f1_percent
+CT,Qwen3-VL-4B,65.26,53.33
+CT,Claude Opus 4.8,65.92,73.06
+CT,Lingshu-7B,54.44,73.47
+CT,MedGemma 1.5-4B,49.47,73.47
+CT,MeWM,52.38,64.08
+CT,V-JEPA 2,51.54,68.3
+CT,Clin-JEPA,61.11,66.94
+CT,ClinicalCode single model,66.52,80.54
+CT,ClinicalCode ensemble,71.88,84.69
+MRI,Qwen3-VL-4B,32.18,34.67
+MRI,Claude Sonnet 5,48.89,52.67
+MRI,MedGemma 1.5-4B,36.54,54.67
+MRI,V-JEPA 2,30.13,39.67
+MRI,Clin-JEPA,44.1,50.27
+MRI,ClinicalCode,58.12,55.33
