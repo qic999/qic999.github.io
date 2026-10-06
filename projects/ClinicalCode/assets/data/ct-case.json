@@ -1,0 +1,30 @@
+{
+  "modality": "CT",
+  "phase": "arterial",
+  "shape": [
+    321,
+    304,
+    46
+  ],
+  "spacing_mm": [
+    0.8,
+    0.8,
+    3.0
+  ],
+  "anatomy": {
+    "organ": "liver",
+    "volume_ml": 896.135
+  },
+  "lesion": {
+    "label": "lesion_1",
+    "volume_ml": 72.384
+  },
+  "time": {
+    "baseline_day": 0
+  },
+  "provenance": {
+    "images": "De-identified stored CT replay",
+    "parsing": "Dataset-provided reference masks",
+    "dynamics": "Separate frozen rule-contract illustration; not a fitted patient forecast"
+  }
+}

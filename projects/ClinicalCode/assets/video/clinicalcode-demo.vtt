@@ -1,25 +1,25 @@
 WEBVTT
 
-00:00.000 --> 00:06.000
-ClinicalCode animates the clinical source code of disease progression.
-Clinical observations become executable states and inspectable futures.
+00:00.000 --> 00:08.000
+A real CT volume anchors the clinical state in image evidence.
+The example uses de-identified arterial CT with 46 axial slices.
 
-00:06.000 --> 00:14.000
-A tool-grounded compiler maps CT, MRI, and pre-decision context
-into a shared clinical-state representation.
+00:08.000 --> 00:16.000
+Parsing separates the liver and lesion into spatial objects.
+These are matching dataset reference masks, replayed here.
 
-00:14.000 --> 00:22.000
-Each field carries its value, type, unit, observability,
-uncertainty, source, and mutability. Missing stays missing.
+00:16.000 --> 00:25.000
+ClinicalCode binds measurements, units, time, and sources.
+The lesion volume is 72.384 mL in the reference segmentation.
 
-00:22.000 --> 00:34.000
-Candidate actions produce separate trajectories from one starting state.
-This visualization replays illustrative rule-driven states, not learned patient forecasts.
+00:25.000 --> 00:34.000
+The upper 3D view reconstructs the reference anatomy.
+The lower view illustrates explicit state evolution over time.
 
-00:34.000 --> 00:42.000
-Schema, bounds, time, and provenance checks precede calibrated decoding.
-Agreement with documented actions does not establish treatment benefit.
+00:34.000 --> 00:44.000
+The volume and viability proxy follow a frozen rule contract.
+This schematic rollout is not a learned patient forecast.
 
-00:42.000 --> 00:48.000
-Compile. Predict. Validate. Decode.
-Explore ClinicalCode at qic999.github.io/projects/ClinicalCode.
+00:44.000 --> 00:48.000
+Clinical observations become structured code,
+then an explicit, inspectable state trajectory.

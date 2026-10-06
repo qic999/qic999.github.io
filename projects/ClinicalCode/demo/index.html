@@ -1,32 +1,56 @@
 <!doctype html>
-<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ClinicalCode — Animated walkthrough</title><link rel="icon" href="../assets/images/favicon.svg"><link rel="stylesheet" href="../assets/css/reference-base.css"><link rel="stylesheet" href="../assets/css/reference-release.css"><link rel="stylesheet" href="../assets/css/clinicalcode.css"><link rel="stylesheet" href="film.css"><script type="importmap">{"imports":{"three":"../assets/vendor/three.module.js","three/addons/":"../assets/vendor/"}}</script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ClinicalCode — From CT to simulation</title><link rel="icon" href="../assets/images/clinicalcode-logo.png"><link rel="stylesheet" href="film.css"><script type="importmap">{"imports":{"three":"../assets/vendor/three.module.js","three/addons/":"../assets/vendor/"}}</script></head>
 <body>
 <main id="film-viewport"><div id="film-stage">
-  <div class="film-brand"><span class="wordmark">ClinicalCode</span><span>AN EXPLICIT CLINICAL WORLD MODEL</span></div><span class="film-counter" id="scene-counter">01 / 06</span>
-  <section class="scene intro" data-scene="0"><img src="../assets/images/clinicalcode-mark.svg" alt="Code to clinical state" class="intro-mark"><h1><span class="wordmark">ClinicalCode</span></h1><p class="intro-title">Animating the Clinical Source Code<br>of Disease Progression</p><p class="intro-line">Clinical observations <span>→</span> executable state <span>→</span> inspectable futures</p><p class="film-authors">Qi Chen · Alan L. Yuille · Jieneng Chen</p><div class="film-orgs"><img src="../assets/images/jhu.svg" alt="Johns Hopkins University"><img src="../assets/images/stanford.svg" alt="Stanford University"></div></section>
-  <section class="scene" data-scene="1"><p class="chapter">01 · COMPILE THE EVIDENCE</p><h2>Observations become an explicit state.</h2><p class="scene-lede">Ground clinical fields in imaging tools and pre-decision context.</p><div class="compile-flow"><div class="film-card evidence-card"><span class="mini-label">INPUT</span><div class="scan-symbol" aria-hidden="true"><span>CT</span><i></i><span>MRI</span></div><h3>Clinical observations</h3><div class="mini-chips"><span>CT / MRI</span><span>Clinical context</span><span>Prior history</span></div></div><span class="flow-arrow">→</span><div class="film-card compiler-card"><span class="mini-label">TOOL-GROUNDED COMPILER</span><div class="tool-line"><b>01</b> Segmentation</div><div class="tool-line"><b>02</b> Geometry extraction</div><div class="tool-line"><b>03</b> Imaging phenotype</div><div class="tool-line"><b>04</b> Schema construction</div></div><span class="flow-arrow orange-text">→</span><div class="film-card state-card"><span class="mini-label">CLINICALCODE</span><pre>{
-  context,
-  anatomy,
-  lesion,
-  phenotype,
-  physiology,
-  history,
-  time,
-  provenance
-}</pre></div></div></section>
-  <section class="scene" data-scene="2"><p class="chapter">02 · INSPECT THE SOURCE CODE</p><h2>A field is more than a value.</h2><p class="scene-lede">Clinical meaning travels with the state, all the way through the rollout.</p><div class="inspect-layout"><div class="film-card inspect-code"><span class="mini-label">ILLUSTRATIVE SCHEMA</span><pre><span class="syn-key">"lesion.volume"</span>: {
-  <span class="syn-key">"value"</span>: <span class="syn-value">null</span>,
-  <span class="syn-key">"type"</span>: <span class="syn-string">"float"</span>,
-  <span class="syn-key">"unit"</span>: <span class="syn-string">"mL"</span>,
-  <span class="syn-key">"observability"</span>: <span class="syn-string">"missing"</span>,
-  <span class="syn-key">"uncertainty"</span>: <span class="syn-value">null</span>,
-  <span class="syn-key">"source"</span>: <span class="syn-value">null</span>,
-  <span class="syn-key">"mutability"</span>: <span class="syn-string">"mutable"</span>
-}</pre></div><div class="field-explanations"><div><b>Typed &amp; measured</b><span>Explicit data types and clinical units.</span></div><div><b>Observed or missing</b><span>An unknown value is not a normal finding.</span></div><div><b>Traceable</b><span>Every field retains its evidence source.</span></div><div><b>Editable &amp; verifiable</b><span>Separate fixed context from mutable state.</span></div></div></div></section>
-  <section class="scene" data-scene="3"><p class="chapter">03 · ROLL FORWARD UNDER CANDIDATE ACTIONS</p><h2>One starting state. Separate trajectories.</h2><p class="scene-lede">Time changes explicit fields; the renderer makes those changes visible.</p><div class="film-rollouts"><div class="film-card rollout-card"><div class="rollout-heading"><span>A</span><div><b>Candidate action A</b><small>Cisplatin + Doxorubicin + Lipiodol + Mitomycin</small></div></div><div class="film-viewer" id="film-viewA"></div><div class="film-stats" id="film-statsA"></div></div><div class="film-card rollout-card"><div class="rollout-heading"><span class="orange-text">B</span><div><b>Candidate action B</b><small>Cisplatin + Lipiodol</small></div></div><div class="film-viewer" id="film-viewB"></div><div class="film-stats" id="film-statsB"></div></div></div><div class="film-timeline"><span>Day 0</span><div><i id="rollout-progress"></i></div><b id="rollout-day">Day 0</b><span>Day 90</span></div><p class="rollout-note">Illustrative rule-driven trajectories · viability proxy visualized on schematic 3D geometry</p></section>
-  <section class="scene" data-scene="4"><p class="chapter">04 · VALIDATE, THEN DECODE</p><h2>Each change can be checked.</h2><p class="scene-lede">A validated trajectory becomes an auditable input to treatment-action decoding.</p><div class="validation-layout"><div class="validation-list"><div class="check-line"><span>✓</span><div><b>Schema &amp; units</b><small>Fields have a defined type and measurement unit.</small></div></div><div class="check-line"><span>✓</span><div><b>Admissible bounds</b><small>Values satisfy representation-level constraints.</small></div></div><div class="check-line"><span>✓</span><div><b>Temporal consistency</b><small>The baseline and future horizons remain ordered.</small></div></div><div class="check-line"><span>✓</span><div><b>Provenance &amp; missingness</b><small>Observed, missing, and predicted values stay distinct.</small></div></div></div><span class="flow-arrow">→</span><div class="film-card decoder-card"><span class="mini-label">CALIBRATED DECODER</span><div class="decoder-icon">{ } <span>→</span> ✓</div><h3>Documented treatment actions</h3><p>Evaluate action prediction.<br>Inspect the trajectory behind it.</p><span class="decoder-note">Retrospective action agreement<br>does not establish treatment benefit.</span></div></div></section>
-  <section class="scene outro" data-scene="5"><p class="chapter">MEDICAL WORLD MODELS, WITH AN EXPLICIT INTERFACE</p><h2>Inspect the state.<br>Understand what changed.</h2><div class="closing-steps"><span>Compile</span><i>→</i><span>Predict</span><i>→</i><span>Validate</span><i>→</i><span>Decode</span></div><div class="outro-brand wordmark">ClinicalCode</div><p class="outro-url">qic999.github.io/projects/ClinicalCode</p><p class="outro-note">Explore the framework, interactive states, and CT / MRI results.</p></section>
-  <div class="film-bottom"><span id="film-note">Research framework · illustrative walkthrough</span><div class="chapter-progress"><i id="film-progress"></i></div><span id="film-time">00:00 / 00:48</span></div>
+  <header class="film-brand"><img src="../assets/images/clinicalcode-logo.png" alt=""><strong>Clinical<span>Code</span></strong><span class="brand-divider"></span><span>MEDICAL WORLD MODELS</span><a href="../" class="film-site">qic999.github.io/projects/ClinicalCode</a></header>
+  <h1>From clinical observations to an executable world model.</h1>
+  <div class="workflow">
+    <section class="part" id="part-ct"><h2><span>01</span> CT</h2><div class="part-body">
+      <div class="file-label"><b>ct.nii.gz</b><span>axial slice</span></div>
+      <div class="ct-display"><canvas id="ct-canvas" width="448" height="448" aria-label="Real de-identified abdominal CT"></canvas><div class="scan-caption"><span>ARTERIAL CT</span><span id="slice-index">33 / 46</span></div></div>
+      <div class="scan-ticks"><i id="slice-progress"></i></div>
+      <p class="panel-caption">A real CT volume</p><p class="panel-detail">0.8 × 0.8 × 3.0 mm<br>46 axial slices · liver window</p>
+    </div></section>
+    <div class="connector"><span>parse</span><svg viewBox="0 0 46 20"><path d="M2 10H41M33 2l9 8-9 8"/></svg><i></i></div>
+    <section class="part" id="part-parsing"><h2><span>02</span> Parsing</h2><div class="part-body">
+      <div class="file-label"><b>segmentation.png</b><span>overlay</span></div>
+      <div class="parsed-image"><canvas id="parsed-canvas" width="448" height="448" aria-label="CT with matching liver and lesion reference masks"></canvas></div>
+      <div class="mask-grid"><div><div class="file-label">liver_mask</div><canvas id="liver-canvas" width="448" height="448"></canvas></div><div><div class="file-label">lesion_mask</div><canvas id="lesion-canvas" width="448" height="448"></canvas></div></div>
+      <div class="mask-legend"><span><i></i>Liver</span><span><i></i>Lesion</span><small>Reference masks</small></div>
+    </div></section>
+    <div class="connector"><span>compile</span><svg viewBox="0 0 46 20"><path d="M2 10H41M33 2l9 8-9 8"/></svg><i></i></div>
+    <section class="part" id="part-code"><h2><span>03</span> ClinicalCode</h2><div class="part-body">
+      <div class="file-label"><b>clinicalcode.json</b><span id="code-status">typed state</span></div>
+      <div class="code-editor"><pre>{</pre><div class="code-group" data-field="0"><pre>  <b>"anatomy"</b>: {
+    "organ": <em>"liver"</em>,
+    "volume_ml": <u>896.135</u>
+  },</pre></div><div class="code-group" data-field="1"><pre>  <b>"lesion"</b>: {
+    "label": <em>"lesion_1"</em>,
+    "volume_ml": <u>72.384</u>,
+    "source": <em>"lesion_mask"</em>
+  },</pre></div><div class="code-group" data-field="2"><pre>  <b>"phenotype"</b>: {
+    "mean_hu": <u>40.77</u>
+  },</pre></div><div class="code-group" data-field="3"><pre>  <b>"time"</b>: {
+    "baseline_day": <u>0</u>,
+    "rollout_day": <u id="code-day">0</u>
+  },</pre></div><div class="code-group" data-field="4"><pre>  <b>"provenance"</b>: {
+    "masks": <em>"reference"</em>,
+    "dynamics": <em>"illustrative"</em>
+  }</pre></div><pre>}</pre></div>
+      <div class="code-foot"><span>TYPE</span><span>UNIT</span><span>SOURCE</span><span>TIME</span></div>
+    </div></section>
+    <div class="connector"><span>simulate</span><svg viewBox="0 0 46 20"><path d="M2 10H41M33 2l9 8-9 8"/></svg><i></i></div>
+    <section class="part" id="part-simulation"><h2><span>04</span> Simulation</h2><div class="part-body">
+      <div class="file-label"><b>3D anatomy</b><span>liver + lesion</span></div>
+      <div class="anatomy-display" id="anatomy"><span class="view-label">Reconstructed from reference masks</span></div>
+      <div class="file-label evolution-label"><b>State evolution</b><span>illustrative rollout</span></div>
+      <div class="evolution-display"><div id="evolution"></div><div class="evolution-days"><span>Day 0</span><span>Day <b id="mid-day">0</b></span><span>Day <b id="end-day">0</b></span></div></div>
+      <div class="simulation-metrics"><div><span>Volume ratio</span><strong id="volume-ratio">1.00</strong></div><div><span>Viability proxy</span><strong id="viability">1.00</strong></div><div><span>Rollout</span><strong id="simulation-day">Day 0</strong></div></div>
+    </div></section>
+  </div>
+  <div class="narration"><span id="chapter-label">01 / OBSERVE</span><p id="narration">The clinical state starts with a real CT volume.</p></div>
+  <footer class="film-bottom"><span>Real CT + reference masks · schematic rule-driven dynamics</span><div class="progress"><i id="film-progress"></i></div><span id="film-time">00:00 / 00:48</span></footer>
 </div></main>
-<div class="film-controls"><a href="../">← Project page</a><button class="btn btn-solid" id="film-play">Play animation</button><label class="sr-only" for="film-scrub">Animation time</label><input type="range" id="film-scrub" min="0" max="48" step="0.1" value="0"><a href="../assets/video/clinicalcode-demo.mp4" download>Download MP4 ↓</a></div>
-<script type="module" src="film.js"></script></body></html>
+<div class="film-controls"><button id="film-play">Play animation</button><label for="film-scrub">Time</label><input id="film-scrub" type="range" min="0" max="47.99" step=".01" value="0"><a href="../">Back to project ↗</a><a href="../assets/video/clinicalcode-demo.mp4" download>Download MP4 ↓</a></div>
+<script type="module" src="film.js"></script>
+</body></html>

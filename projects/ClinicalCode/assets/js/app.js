@@ -31,10 +31,12 @@ $('copy-citation').addEventListener('click',async()=>{
   catch { const range=document.createRange();range.selectNodeContents($('bibtex'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);$('copy-status').textContent='Citation selected. Press Control+C or Command+C to copy.';return; }
   $('copy-citation').textContent='Copied';$('copy-status').textContent='BibTeX copied to clipboard.';setTimeout(()=>{$('copy-citation').textContent='Copy BibTeX'},1800);
 });
-const links=[...document.querySelectorAll('.pnav a')];
+const links=[...document.querySelectorAll('.site-nav a[href^="#"]')];
 const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
 let pendingScroll=false;
 function updateNav(){pendingScroll=false;let current=0;sections.forEach((section,i)=>{if(section.getBoundingClientRect().top<innerHeight*.36)current=i;});links.forEach((a,i)=>{a.classList.toggle('on',i===current);if(i===current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
 addEventListener('scroll',()=>{if(!pendingScroll){pendingScroll=true;requestAnimationFrame(updateNav)}},{passive:true});updateNav();
 let started=false;
 new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!started){started=true;import('./explorer.js').catch(error=>{console.error(error);$('viewer-error').hidden=false;document.querySelectorAll('.viewer-loading').forEach(x=>x.textContent='3D view unavailable');});}},{rootMargin:'250px'}).observe($('explore'));
+
+$('mask-toggle').addEventListener('click',()=>{const visible=$('mask-toggle').getAttribute('aria-pressed')!=='true';$('mask-toggle').setAttribute('aria-pressed',String(visible));$('hero-masks').hidden=!visible;$('mask-toggle').innerHTML=visible?'Masks on <span aria-hidden="true">◉</span>':'Masks off <span aria-hidden="true">○</span>';});

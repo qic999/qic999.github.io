@@ -161,16 +161,16 @@ class TumorView {
     this.controls.autoRotate = true;
     this.controls.autoRotateSpeed = 0.26;
 
-    this.scene.add(new THREE.HemisphereLight(0xd9efff, 0xc4c4d5, 2.2));
+    this.scene.add(new THREE.HemisphereLight(0xd9efff, 0xc6d7d8, 2.2));
     const key = new THREE.DirectionalLight(0xffffff, 3.2);
     key.position.set(4, 5, 6);
     this.scene.add(key);
-    const rim = new THREE.DirectionalLight(0xc4ceff, 1.8);
+    const rim = new THREE.DirectionalLight(0x9cdbd7, 1.8);
     rim.position.set(-5, 1, -3);
     this.scene.add(rim);
 
     this.geometryMaterial = new THREE.MeshStandardMaterial({
-      color: 0x9aabed,
+      color: 0x62aaa9,
       roughness: 0.42,
       metalness: 0.025,
     });
