@@ -4,7 +4,7 @@ Static project page for **Animating the Clinical Source Code of Disease Progress
 
 Target URL: https://qic999.github.io/projects/ClinicalCode/
 
-Serve the repository root with `python3 -m http.server 8000`, then open `/projects/ClinicalCode/`. No package installation or build step is required. All runtime dependencies, fonts, data, and media are local.
+Serve the repository root with `python3 -m http.server 8000`, then open `/projects/ClinicalCode/`. No package installation or build step is required. JavaScript dependencies, fonts, the liver-case demonstration, and gallery thumbnails are local. The SomaAtlas inspector loads source GLB models from `somaatlas.org` on demand, and its downloads link to the original hosted assets.
 
 ## Contents
 
