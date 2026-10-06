@@ -1,0 +1,938 @@
+[
+  {
+    "id": "atlas-liver",
+    "source": "https://somaatlas.org/data/hero/preview/liver.glb",
+    "node": null,
+    "file": "assets/images/somaatlas/atlas-liver.webp",
+    "bytes": 9874,
+    "sha256": "252f142badcc8a15154c9c8d512645d6071361ef529147f095badb70dcb0d37a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "atlas-heart",
+    "source": "https://somaatlas.org/data/hero/preview/heart.glb",
+    "node": null,
+    "file": "assets/images/somaatlas/atlas-heart.webp",
+    "bytes": 13848,
+    "sha256": "60a7acae1d2874b7185565f395fb585b6b4c4f0f582d122093792978e6256486",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "atlas-lungs",
+    "source": "https://somaatlas.org/data/hero/preview/lungs.glb",
+    "node": null,
+    "file": "assets/images/somaatlas/atlas-lungs.webp",
+    "bytes": 8066,
+    "sha256": "70ba5192fd8e991e69c2c6d81fbbd5d57e6feec06d046c9cfef697eb4bd3e670",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "atlas-muscles",
+    "source": "https://somaatlas.org/data/hero/preview/muscles.glb",
+    "node": null,
+    "file": "assets/images/somaatlas/atlas-muscles.webp",
+    "bytes": 11756,
+    "sha256": "2c80fdc6268db5dcc59d9f182e6616b10c6632721d1abcdf95a70302182b5048",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "atlas-vessels",
+    "source": "https://somaatlas.org/data/hero/preview/vessels.glb",
+    "node": null,
+    "file": "assets/images/somaatlas/atlas-vessels.webp",
+    "bytes": 10832,
+    "sha256": "c81ea744581e3e3725d6f181a72d6d182953b0c07867c765ba66e267d5240fca",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "physics-liver",
+    "source": "https://somaatlas.org/data/physics/patient-liver.glb",
+    "node": null,
+    "file": "assets/images/somaatlas/physics-liver.webp",
+    "bytes": 5396,
+    "sha256": "defd12681e44498c5837fd5665aa7831bd591ba7870d45786aafc16e731086fd",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-5",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_5_liver",
+    "file": "assets/images/somaatlas/ct-5.webp",
+    "bytes": 8102,
+    "sha256": "01262012816de1a8cc776c660a143bb4fd28c32effb21d7369673f2fc4e00347",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-51",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_51_heart",
+    "file": "assets/images/somaatlas/ct-51.webp",
+    "bytes": 8930,
+    "sha256": "c30637f1c8f6f7fd4a4ca3430c930186dab3b5e1bcb6ed98effc539b9407a640",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-2",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_2_kidney_right",
+    "file": "assets/images/somaatlas/ct-2.webp",
+    "bytes": 6870,
+    "sha256": "0a1aba92330de78b195b7efa1d23634e53c0c78a91cadc67e14b643a12dc08eb",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-6",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_6_stomach",
+    "file": "assets/images/somaatlas/ct-6.webp",
+    "bytes": 8378,
+    "sha256": "e547b5dd34257ee17416fb1e7d1b7df2f2c2c27abdc8c49bd927e8ad145c21a9",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-7",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_7_pancreas",
+    "file": "assets/images/somaatlas/ct-7.webp",
+    "bytes": 6260,
+    "sha256": "79d47534e476f87b5ac751622c5ede658f4fb9d0841e3508c5e383c886ed87ae",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-52",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_52_aorta",
+    "file": "assets/images/somaatlas/ct-52.webp",
+    "bytes": 4100,
+    "sha256": "703f0df16172214b93f06bce91056809f48d7e789e22e271e5179278bffc1ec4",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-1",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_1_lungs",
+    "file": "assets/images/somaatlas/mri-1.webp",
+    "bytes": 9346,
+    "sha256": "52ffe186df2c64a09b3cdb3eb615e54fa71fdde526c3bd3595e78c91a62195ef",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-2",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_2_liver",
+    "file": "assets/images/somaatlas/mri-2.webp",
+    "bytes": 9400,
+    "sha256": "90dbc4f590317fbd97805b439f08548f4181e0d43eaf248012184d2930ceff89",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-6",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_6_renal-parenchyma",
+    "file": "assets/images/somaatlas/mri-6.webp",
+    "bytes": 7772,
+    "sha256": "62137e1bcdf31596911f9f5b9738ac11a34ecf5bca25e63e06848a8cc9c40ab6",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-1",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_1_spleen",
+    "file": "assets/images/somaatlas/ct-1.webp",
+    "bytes": 7584,
+    "sha256": "75b1b93604dd00ec4255ea4dfac04449394d5fae3c21eff50c9e5bad1daedc38",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-16",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_16_trachea",
+    "file": "assets/images/somaatlas/ct-16.webp",
+    "bytes": 5670,
+    "sha256": "a5a2e0e20fac8f254719fb4d9b4c3b11c47045d76d845691ed0eb563d412329f",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-7",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_7_bladder",
+    "file": "assets/images/somaatlas/mri-7.webp",
+    "bytes": 6564,
+    "sha256": "96e656bfed8bda7806514ae59c09ece4edff3f2384bca652622a0cbc1c60170a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-3",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_3_kidney_left",
+    "file": "assets/images/somaatlas/ct-3.webp",
+    "bytes": 7662,
+    "sha256": "32689e1ed8e0fae53966832dd286bc1753f494ef2ece5b309dfdbca8c769ca6d",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-4",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_4_gallbladder",
+    "file": "assets/images/somaatlas/ct-4.webp",
+    "bytes": 5188,
+    "sha256": "5012a218913eacad1683d6654b693d19a4422a864a9f05e29a5e5ab4dc004dc9",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-8",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_8_adrenal_gland_right",
+    "file": "assets/images/somaatlas/ct-8.webp",
+    "bytes": 3496,
+    "sha256": "66d2adf6b9f2f3d6806ed62d1b635288a8d27b4a993e88fb4da06c0cdb9cec42",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-9",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_9_adrenal_gland_left",
+    "file": "assets/images/somaatlas/ct-9.webp",
+    "bytes": 3262,
+    "sha256": "d83ff1407eb7ff14fb4b89cb13ab6bcbcf348cbde4ac15b5bc311856b195b2fe",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-10",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_10_lung_upper_lobe_left",
+    "file": "assets/images/somaatlas/ct-10.webp",
+    "bytes": 6096,
+    "sha256": "1d5996c8a9b48e6f1a96ae7308e4cb8a406b5aa00717e2f0e273ef3b80806ee5",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-11",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_11_lung_lower_lobe_left",
+    "file": "assets/images/somaatlas/ct-11.webp",
+    "bytes": 7608,
+    "sha256": "5aab30d4438dbbd99b8e73bbcc3f1de6c36c93544069e0335d1d182dc23870ec",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-12",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_12_lung_upper_lobe_right",
+    "file": "assets/images/somaatlas/ct-12.webp",
+    "bytes": 7894,
+    "sha256": "959120c1b753aaa6a4e4ac7fbaf70bd447eaf0729f2d2ab40ce5191bfcf9f71b",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-13",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_13_lung_middle_lobe_right",
+    "file": "assets/images/somaatlas/ct-13.webp",
+    "bytes": 7052,
+    "sha256": "d74293bf1d7f6647bc6b4e28c668a369248c48269511babc71081548e1e875b3",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-14",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_14_lung_lower_lobe_right",
+    "file": "assets/images/somaatlas/ct-14.webp",
+    "bytes": 8222,
+    "sha256": "fa243baaab5f654486000ee16c85e69fff7eb05532dde31c54c8d233aeca0e00",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-15",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_15_esophagus",
+    "file": "assets/images/somaatlas/ct-15.webp",
+    "bytes": 3680,
+    "sha256": "64037ab635e69e1bbdedf9793b9c63d4b087f6ccbf62ed6ba225166a64e4fb0d",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-17",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_17_thyroid_gland",
+    "file": "assets/images/somaatlas/ct-17.webp",
+    "bytes": 5658,
+    "sha256": "a80523d172ae250953f55be9c01d55a8d4016a59af522a25ed782dcc7b2f37c6",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-18",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_18_small_bowel",
+    "file": "assets/images/somaatlas/ct-18.webp",
+    "bytes": 10512,
+    "sha256": "f835e0b212e1a75dcea952e09303909ffd50f63a352f3c6ed920f4f5393ecf1f",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-19",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_19_duodenum",
+    "file": "assets/images/somaatlas/ct-19.webp",
+    "bytes": 6604,
+    "sha256": "2ca032ff66b0cf1f676fdc750cbdbf2daa22e76adadd666bde69ce5545b7870c",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-20",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_20_colon",
+    "file": "assets/images/somaatlas/ct-20.webp",
+    "bytes": 10484,
+    "sha256": "58ac7eae6e6dc33700a2f3859cc13831b9670070e3726941f266bc462bbda3a1",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-28",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_28_vertebrae_L4",
+    "file": "assets/images/somaatlas/ct-28.webp",
+    "bytes": 2728,
+    "sha256": "e5cd6b8f7fa316f2f5645160c02ed63cb9f2c32586b3d43011b61efbe585ed6f",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-29",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_29_vertebrae_L3",
+    "file": "assets/images/somaatlas/ct-29.webp",
+    "bytes": 5258,
+    "sha256": "6f499174ffa0179db4e98b080e90db05831fcc6edf1f308947d8786d02e5fb81",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-30",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_30_vertebrae_L2",
+    "file": "assets/images/somaatlas/ct-30.webp",
+    "bytes": 5706,
+    "sha256": "a9b9de04ed765e8a487360bfce3a5e9e8d7e787f03992f7231ef91347b1d0ff0",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-31",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_31_vertebrae_L1",
+    "file": "assets/images/somaatlas/ct-31.webp",
+    "bytes": 5084,
+    "sha256": "a9bc3b0b08572f8993679fc69135222cccca5e3619b5836ec88a81003a6c2628",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-32",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_32_vertebrae_T12",
+    "file": "assets/images/somaatlas/ct-32.webp",
+    "bytes": 5342,
+    "sha256": "16e0e623e0c630a234a569536ef953a6426fc6d24a1b7b6eb5faf76062364b75",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-33",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_33_vertebrae_T11",
+    "file": "assets/images/somaatlas/ct-33.webp",
+    "bytes": 4798,
+    "sha256": "44ddc17e71642fef66b77aa57e38edac9797578172d6ba8ea759a0985a2e05ae",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-34",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_34_vertebrae_T10",
+    "file": "assets/images/somaatlas/ct-34.webp",
+    "bytes": 4764,
+    "sha256": "f13069286118db50f028e644d97f56b9985a2b64527ce4c2d04840a995a42da0",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-35",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_35_vertebrae_T9",
+    "file": "assets/images/somaatlas/ct-35.webp",
+    "bytes": 5002,
+    "sha256": "38c501aa0512f67495e1a9591efc68ca93e823fa49e384641e408b36fcb09673",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-36",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_36_vertebrae_T8",
+    "file": "assets/images/somaatlas/ct-36.webp",
+    "bytes": 4654,
+    "sha256": "9cf5e564036b767d9ea4be38835b8adde8d49678ae1dab297969908c4dfe2c8a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-37",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_37_vertebrae_T7",
+    "file": "assets/images/somaatlas/ct-37.webp",
+    "bytes": 4840,
+    "sha256": "ffb5556608548de1c352475851d395fa76d1193352859b345eab45b5a9cc7f95",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-38",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_38_vertebrae_T6",
+    "file": "assets/images/somaatlas/ct-38.webp",
+    "bytes": 4886,
+    "sha256": "2e8cd4a5eecabe755dd1963bc2a7d717d265235415b4b00c82bcbf1cdcb59ac3",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-39",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_39_vertebrae_T5",
+    "file": "assets/images/somaatlas/ct-39.webp",
+    "bytes": 5552,
+    "sha256": "535ef9fca36efb2aa2d27d9afbd6b35a2fc7d547c43d66b2814734fa3f22d001",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-40",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_40_vertebrae_T4",
+    "file": "assets/images/somaatlas/ct-40.webp",
+    "bytes": 5518,
+    "sha256": "e3c452e577e6fb343dbae876bcc94ab249b6b35b3a84d8c6ee1a06b7e3c2ac55",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-41",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_41_vertebrae_T3",
+    "file": "assets/images/somaatlas/ct-41.webp",
+    "bytes": 6000,
+    "sha256": "e1e08e9479e713babedff8275a6329d36e55a48e98e4b6ad8346f5fcaad58c07",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-42",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_42_vertebrae_T2",
+    "file": "assets/images/somaatlas/ct-42.webp",
+    "bytes": 5702,
+    "sha256": "d6cabc44b3f88553f32c2cbf6273efefeb6ea518af78d50eb9eaa0ce7a7381d6",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-43",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_43_vertebrae_T1",
+    "file": "assets/images/somaatlas/ct-43.webp",
+    "bytes": 4918,
+    "sha256": "03ee7a0928caa59f91e8cb02104a116111f6decbe5186596cb3c9ae3f6f13fba",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-44",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_44_vertebrae_C7",
+    "file": "assets/images/somaatlas/ct-44.webp",
+    "bytes": 3540,
+    "sha256": "948a25093aee1c46ef8fc5c9cabc04b102226e56bde4e09119cc98001ac01d6e",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-53",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_53_pulmonary_vein",
+    "file": "assets/images/somaatlas/ct-53.webp",
+    "bytes": 6538,
+    "sha256": "464b8fddc79859aa75e97e428b6557de78a5ce3d8937501cecc0d416abbadb35",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-54",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_54_brachiocephalic_trunk",
+    "file": "assets/images/somaatlas/ct-54.webp",
+    "bytes": 3580,
+    "sha256": "d97ed931a5909ff6401bd958e40cdfb0b1bcebe051fb5ba1547fd88c10cb29a4",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-55",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_55_subclavian_artery_right",
+    "file": "assets/images/somaatlas/ct-55.webp",
+    "bytes": 4482,
+    "sha256": "7efa57f31c97ccafd7c056d2fe173f1a0ca06ba458b3afbf0be31f1e0849733f",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-56",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_56_subclavian_artery_left",
+    "file": "assets/images/somaatlas/ct-56.webp",
+    "bytes": 4720,
+    "sha256": "ae4820d66c499594f2b729fcbdfc5ef392ad659c763f6a167ad20feeccd20f76",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-57",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_57_common_carotid_artery_right",
+    "file": "assets/images/somaatlas/ct-57.webp",
+    "bytes": 3220,
+    "sha256": "5cd9a601680855c64ac645d46851215339f5916d51bde4ef3eee90f20aa01b5d",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-58",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_58_common_carotid_artery_left",
+    "file": "assets/images/somaatlas/ct-58.webp",
+    "bytes": 2240,
+    "sha256": "2c4ec383fac7bfb10704ee1abd8c0ef759690423be297e3ba153ee146c01e041",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-59",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_59_brachiocephalic_vein_left",
+    "file": "assets/images/somaatlas/ct-59.webp",
+    "bytes": 5688,
+    "sha256": "f770c6e8735066f815187f3976887145d3d2bb8578a2d8386792f3c1fadf7bf0",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-60",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_60_brachiocephalic_vein_right",
+    "file": "assets/images/somaatlas/ct-60.webp",
+    "bytes": 4166,
+    "sha256": "354b1cfe5465990a91f4a29122664ca3e2572bdf67389fcfd951959f6000cf4d",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-61",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_61_atrial_appendage_left",
+    "file": "assets/images/somaatlas/ct-61.webp",
+    "bytes": 3998,
+    "sha256": "fa6eb4972da0fc11374f332f751a23ecd48c53ecf175b6dfe46b377403934dfe",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-62",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_62_superior_vena_cava",
+    "file": "assets/images/somaatlas/ct-62.webp",
+    "bytes": 4116,
+    "sha256": "bc45487a22a0347b15d768e87e5a105d11b03717adde8aeca30ac96a19a71779",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-63",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_63_inferior_vena_cava",
+    "file": "assets/images/somaatlas/ct-63.webp",
+    "bytes": 3736,
+    "sha256": "5df0ba604fc81c25e55ae8c8cf75f6eeb57461d1625cda1a2711e7f9bbe19802",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-64",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_64_portal_vein_and_splenic_vein",
+    "file": "assets/images/somaatlas/ct-64.webp",
+    "bytes": 3370,
+    "sha256": "cd12f031b1587ab6e5f43274445e7fbc3104c230340457f0468af867409aeeee",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-69",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_69_humerus_left",
+    "file": "assets/images/somaatlas/ct-69.webp",
+    "bytes": 5662,
+    "sha256": "0588cadd1e6f242ed360868645ac0a5874f7b576b24577bd8ebeb4a4ad1824ce",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-70",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_70_humerus_right",
+    "file": "assets/images/somaatlas/ct-70.webp",
+    "bytes": 5270,
+    "sha256": "d0e2d89613b74bd43a62e0ac943a406a7b9849f7a23567be476910cb29c0b860",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-71",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_71_scapula_left",
+    "file": "assets/images/somaatlas/ct-71.webp",
+    "bytes": 7206,
+    "sha256": "eb45e87f77870414cc2cc5c346d5a24628f90d30981690efeda92827e35b1847",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-72",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_72_scapula_right",
+    "file": "assets/images/somaatlas/ct-72.webp",
+    "bytes": 8746,
+    "sha256": "c6e3078ca818c4141907ce50c86c0172573eab48fb17deefe617212056759d4c",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-73",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_73_clavicula_left",
+    "file": "assets/images/somaatlas/ct-73.webp",
+    "bytes": 5398,
+    "sha256": "4002e32f4af160a45e951a4d0e35f317a19071345b283103d766268f9ec6d65c",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-74",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_74_clavicula_right",
+    "file": "assets/images/somaatlas/ct-74.webp",
+    "bytes": 5026,
+    "sha256": "0a73d4565a3ab6270b18899b9f0d5747bd17e87221e0f2c1aa379b65ee32e966",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-79",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_79_spinal_cord",
+    "file": "assets/images/somaatlas/ct-79.webp",
+    "bytes": 3070,
+    "sha256": "6906530b205fee892fe07004e43b2eaa2509952351b300d8e81dc3a9e280df9b",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-86",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_86_autochthon_left",
+    "file": "assets/images/somaatlas/ct-86.webp",
+    "bytes": 6646,
+    "sha256": "b1755a188ea0da7d57fbf257228390c5c4bc149a047c28cef35eaee4992c8a10",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-87",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_87_autochthon_right",
+    "file": "assets/images/somaatlas/ct-87.webp",
+    "bytes": 5724,
+    "sha256": "c30d361dd5140f347ab42eaf11df40274ac2d94f3059d9b468fd701f3c6fabb9",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-88",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_88_iliopsoas_left",
+    "file": "assets/images/somaatlas/ct-88.webp",
+    "bytes": 4406,
+    "sha256": "fc7291cf1306c28ed482e28b255c27cb935ddf3da8bad012c61e7b496ddf0eb9",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-89",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_89_iliopsoas_right",
+    "file": "assets/images/somaatlas/ct-89.webp",
+    "bytes": 5196,
+    "sha256": "8fe7fcd9fabed51ccbc5c5a318eac2af051ecc59489b6c9c5f82aefffc988a0e",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-92",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_92_rib_left_1",
+    "file": "assets/images/somaatlas/ct-92.webp",
+    "bytes": 4846,
+    "sha256": "1a00c0207e211e6a3e76f608e93c370a4f75ef40983f90c348de913f52a1124f",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-93",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_93_rib_left_2",
+    "file": "assets/images/somaatlas/ct-93.webp",
+    "bytes": 4586,
+    "sha256": "a7dcb74a724b57d3fef0495e38fe6bc8e1c2037bb980e76e2be49355cad64421",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-94",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_94_rib_left_3",
+    "file": "assets/images/somaatlas/ct-94.webp",
+    "bytes": 4236,
+    "sha256": "9fda2bdc5b0f74da9020f6b0338204de1de53222cc3b7cde69fa1d5ff8df0cf9",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-95",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_95_rib_left_4",
+    "file": "assets/images/somaatlas/ct-95.webp",
+    "bytes": 4490,
+    "sha256": "2475cdaca900b9aef062299b4e2c5fd07aba8534c842ad4181443eb17a0cf6ce",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-96",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_96_rib_left_5",
+    "file": "assets/images/somaatlas/ct-96.webp",
+    "bytes": 4446,
+    "sha256": "3a34ae32c115b6859160da8a75bb93810953b0c88a379e738af806cb76bee80e",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-97",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_97_rib_left_6",
+    "file": "assets/images/somaatlas/ct-97.webp",
+    "bytes": 4230,
+    "sha256": "30ee54416a1416ba543d4bd83099071efb885b3018fe0310865af98df74106e2",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-98",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_98_rib_left_7",
+    "file": "assets/images/somaatlas/ct-98.webp",
+    "bytes": 5104,
+    "sha256": "16dd1de1c83d3367afaa0ce1c3d7bb0776ec51dc499d769c49e1aa98c36057cb",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-99",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_99_rib_left_8",
+    "file": "assets/images/somaatlas/ct-99.webp",
+    "bytes": 5282,
+    "sha256": "ecdc4082e44c30c3858513ab37a74b1d2d559f5d860ab6c3a33a0e1e62870bb7",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-100",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_100_rib_left_9",
+    "file": "assets/images/somaatlas/ct-100.webp",
+    "bytes": 4886,
+    "sha256": "2d9480c8d2c64a20ca0851860bcf0f6e77842d93e6207d679ac1736f601e8897",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-101",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_101_rib_left_10",
+    "file": "assets/images/somaatlas/ct-101.webp",
+    "bytes": 3952,
+    "sha256": "286b86f895f4362d40759875b5904d24fc9f99027b831b86ba8488a840d75188",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-102",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_102_rib_left_11",
+    "file": "assets/images/somaatlas/ct-102.webp",
+    "bytes": 4040,
+    "sha256": "83c34d0995839506e5f02014655cd4532262697c53b2b6d00038292709fee1fa",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-103",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_103_rib_left_12",
+    "file": "assets/images/somaatlas/ct-103.webp",
+    "bytes": 3930,
+    "sha256": "f377bcad260f1d142bbc7a0f51021e6fc6e7bf7af86d2f1b7d85dcfea3d4869a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-104",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_104_rib_right_1",
+    "file": "assets/images/somaatlas/ct-104.webp",
+    "bytes": 5770,
+    "sha256": "b87f74974546473dc4aaf4aae19d871634879bdf8e45e526b42375043ce05bc1",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-105",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_105_rib_right_2",
+    "file": "assets/images/somaatlas/ct-105.webp",
+    "bytes": 5154,
+    "sha256": "1a334cf668860e5b09ffbbba691aab06c679eb0b01742a2de8f65131a28dc2e0",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-106",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_106_rib_right_3",
+    "file": "assets/images/somaatlas/ct-106.webp",
+    "bytes": 5614,
+    "sha256": "4133f51407b610ae1b7bb4bb7cb694d2cb1c140b7545b6e76317ed80b021bb65",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-107",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_107_rib_right_4",
+    "file": "assets/images/somaatlas/ct-107.webp",
+    "bytes": 4704,
+    "sha256": "2ca8515b199caeec8f0e94c748d4cbcb902145a7cb5fa46ce4fa770005768aaa",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-108",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_108_rib_right_5",
+    "file": "assets/images/somaatlas/ct-108.webp",
+    "bytes": 4542,
+    "sha256": "cf2cff736c32d650ac4830b5fbe10d8e009ed80bb506d40e69b576b33211312a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-109",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_109_rib_right_6",
+    "file": "assets/images/somaatlas/ct-109.webp",
+    "bytes": 4460,
+    "sha256": "a0ef52d3e39501df1aa410f82976492cee7ccb14dc503f10c95d85fc8c7e3f50",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-110",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_110_rib_right_7",
+    "file": "assets/images/somaatlas/ct-110.webp",
+    "bytes": 4320,
+    "sha256": "9adbb76d253797b91858b230be6b948de7966003d24ab64eb869ad1731e3684a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-111",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_111_rib_right_8",
+    "file": "assets/images/somaatlas/ct-111.webp",
+    "bytes": 4062,
+    "sha256": "758cd13dcd52541d1a7aa60915e83ef321bb117a034b5bdee9f273cf5bfb7713",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-112",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_112_rib_right_9",
+    "file": "assets/images/somaatlas/ct-112.webp",
+    "bytes": 4316,
+    "sha256": "31041aeba83def4f348047cee06854b35fc824aaad9bcd955ab8715c1c0e45d7",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-113",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_113_rib_right_10",
+    "file": "assets/images/somaatlas/ct-113.webp",
+    "bytes": 4450,
+    "sha256": "2ce766d4b2f777818ceede3d01e324115013ad63b8b4bebd22f25f844cbd647b",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-114",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_114_rib_right_11",
+    "file": "assets/images/somaatlas/ct-114.webp",
+    "bytes": 4182,
+    "sha256": "5a963303b7ff2161d129f700d94297bd9255817323804715a699e9e9405120e7",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-115",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_115_rib_right_12",
+    "file": "assets/images/somaatlas/ct-115.webp",
+    "bytes": 4752,
+    "sha256": "49eb12ef45f0cf648028c3a75cc16059584940aedb8a0cc1cc5bf63ac83183c8",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-116",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_116_sternum",
+    "file": "assets/images/somaatlas/ct-116.webp",
+    "bytes": 4996,
+    "sha256": "7025a337e5b2f231f4bfcf3f0b3b4a19b8c78ccf1a838eac89d916d4fc4a4d73",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "ct-117",
+    "source": "https://somaatlas.org/data/imaging/ct-organs.glb",
+    "node": "label_117_costal_cartilages",
+    "file": "assets/images/somaatlas/ct-117.webp",
+    "bytes": 11508,
+    "sha256": "22988a871d94c7ec23aea1460173fdd70b5f9ff82a3ecd3b52c52a96bfccb9d7",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-3",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_3_stomach",
+    "file": "assets/images/somaatlas/mri-3.webp",
+    "bytes": 5574,
+    "sha256": "1e915d45d3cc313e668545935200f1b975606b4ed9cf0f05f00a860a2902a99a",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-4",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_4_spleen",
+    "file": "assets/images/somaatlas/mri-4.webp",
+    "bytes": 4556,
+    "sha256": "b35518ae74841a841ef7e318d4ae21057f11d2a2076f67db360a700704fe2ef8",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-5",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_5_renal-pelvis",
+    "file": "assets/images/somaatlas/mri-5.webp",
+    "bytes": 4360,
+    "sha256": "c6e75c00098c6713d99570e97d29a3c169501642d5d4f95b8e3cfa46d83fc700",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-8",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_8_thymus",
+    "file": "assets/images/somaatlas/mri-8.webp",
+    "bytes": 5552,
+    "sha256": "61ffcf3759cb0a93e3f38c83547762ae12fad543e966a688937f19a8d9e5993c",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-9",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_9_gallbladder",
+    "file": "assets/images/somaatlas/mri-9.webp",
+    "bytes": 4484,
+    "sha256": "f8dd6646db5a8fccddc6449b4a48318d39b783d28865b5d566271ed2e0f8ae24",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  },
+  {
+    "id": "mri-10",
+    "source": "https://somaatlas.org/data/imaging/mri-organs.glb",
+    "node": "label_10_adrenal-glands",
+    "file": "assets/images/somaatlas/mri-10.webp",
+    "bytes": 3548,
+    "sha256": "8ec7094ddb124a7b4218729f948a2e2d446c23e4f32f71ab0744993bb8bc5a76",
+    "method": "Rendered unchanged source geometry and materials with Three.js; camera framing only. 480x360 transparent WebP."
+  }
+]

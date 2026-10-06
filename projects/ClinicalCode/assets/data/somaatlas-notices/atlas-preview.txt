@@ -1,0 +1,9 @@
+SomaAtlas fast hero preview adaptations — 17 September 2026
+
+Retain all source notices in SOURCE-NOTICE.txt and licenses/. Anatomy derives from Z-Anatomy / BodyParts3D. Required attribution: “BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan”; “Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0”.
+
+Changes in this preview package: Blender 4.3.2 collapse simplification of heart, lung, muscle and vessel meshes; all original mesh objects retained. Existing normals and UVs interpolated by Blender; materials retained. Liver geometry remains exact source geometry. Existing embedded textures use a maximum 512 px edge and JPEG quality 84, except liver photographic images retain their full original pixel dimensions and use JPEG quality 90 to preserve small UV-window detail. No new image synthesis, vessel routes or anatomical surfaces. Changes supersede the original SOURCE-NOTICE.txt statements that geometry and PNG bytes were unchanged; those statements describe only the input package. Original files remain untouched. Detailed byte hashes, topology counts, bounds and measured bidirectional vertex-to-surface deviations appear in manifest.json.
+
+Liver appearance: Suseno, Human Hepar photograph, public domain, https://commons.wikimedia.org/wiki/File:Human_Hepar.jpg . Gallbladder/peritoneum appearance: Hic et nunc, Gallenblase photograph, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Gallenblase.jpg ; resized/re-encoded here. Anatomy mesh adaptations retain CC BY-SA 4.0 and all upstream exceptions/notices. Generated muscle/lung/heart appearance maps retain LifeCode / OpenAI attribution and CC BY 4.0 as recorded in source licenses.
+
+These visual LODs are for homepage display; use the original geometry for detailed anatomy inspection. Measured deviations are geometric preview comparisons, not clinical accuracy evidence.

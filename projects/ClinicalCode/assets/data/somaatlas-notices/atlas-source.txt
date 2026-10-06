@@ -1,0 +1,52 @@
+SomaAtlas homepage anatomical selections — 17 September 2026
+
+Anatomy source: Z-Anatomy / Models-of-human-anatomy
+https://github.com/Z-Anatomy/Models-of-human-anatomy
+Pinned commit: 3bdb6a795a5db3c7e6e943d4ad3c4945c354d63e
+
+Required source attribution:
+“BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan”
+“Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0”
+Kousaku OKUBO: original BodyParts3D model.
+Gauthier KERVYN: Z-Anatomy design, 3D and anatomy.
+Marcin ZIELINSKI: Blender add-on.
+
+Atlas adaptations are supplied under Creative Commons Attribution-ShareAlike
+4.0 International, subject to all original additional-source notices:
+https://creativecommons.org/licenses/by-sa/4.0/
+See licenses/Z-Anatomy-License.txt for the complete pinned original notice,
+including its additional-source exceptions. See licenses/selected-atlas-asset-records.json
+for recorded per-asset provenance status; the upstream per-object source mapping
+remains unresolved. Retaining the notice does not convert noncommercial source
+exceptions to unrestricted terms. No kidney or inner-ear selection is delivered.
+The later BodyParts3D source license is preserved as supplied in the source pack;
+it does not replace the pinned Z-Anatomy notice for these derived assets.
+
+Generated tissue maps: LifeCode / OpenAI image generation, CC BY 4.0.
+https://creativecommons.org/licenses/by/4.0/
+Heart: generated illustrative external myocardium; artery/valve semantic colors.
+Muscles: generated illustrative skeletal muscle and tendon collagen textures.
+Lungs: generated illustrative external pleural-surface material.
+Vessels: semantic arterial/venous display colors.
+These appearances are not patient photographs, histology measurements,
+calibrated albedo maps or measured physical tissue parameters. Original PNGs
+are embedded byte-for-byte with existing UVs; no new image synthesis or editing.
+Full retained prompts, hashes, authors and provenance are in licenses/.
+
+SomaAtlas changes: selected named existing anatomical structures; repackaged
+self-contained glTF 2.0 GLBs; embedded existing image bytes; losslessly reduced
+index width where possible. Muscle, lung and cardiac triangle connectivity,
+vertex positions, normals and texture coordinates are unchanged from sources.
+Vascular curves are evaluated with the original authored native controls, radii,
+bevel/tessellation settings and positions; their exact triangle meshes are merged
+by artery/vein display material without welding. No voxel anatomy, invented
+anatomical surfaces, added vessel routes, remeshing or decimation is included.
+Coordinates are glTF Y-up metres, +X atlas-left, +Z anterior. No patient or DICOM
+registration is implied. Detailed included-structure lists and camera framing
+are in the accompanying model JSON files and manifest.json.
+
+Retain attribution, source notices and license links when redistributing these
+GLBs or adaptations; mark changes and share adapted atlas mesh assets under the
+applicable ShareAlike terms. These notices apply to supplied anatomical assets
+and do not imply that separate website application code has the same license.
+No endorsement by upstream authors is implied.

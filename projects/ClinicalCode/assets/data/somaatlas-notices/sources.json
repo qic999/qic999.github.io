@@ -1,0 +1,27 @@
+[
+  {
+    "source": "https://somaatlas.org/data/hero/NOTICE.txt",
+    "file": "atlas-source.txt",
+    "sha256": "ae76af2555a4810fcd2ac3a01854ddc74c5d7189720362fbf61b39a72f2e7cea"
+  },
+  {
+    "source": "https://somaatlas.org/data/hero/preview/NOTICE.txt",
+    "file": "atlas-preview.txt",
+    "sha256": "fa093181987c2414eda239481f883457a017ebd4602484b39bb0e2c9dba38b6d"
+  },
+  {
+    "source": "https://somaatlas.org/data/hero/licenses/Z-Anatomy-License.txt",
+    "file": "Z-Anatomy-License.txt",
+    "sha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520"
+  },
+  {
+    "source": "https://somaatlas.org/data/imaging/CT-LICENSE.txt",
+    "file": "CT-LICENSE.txt",
+    "sha256": "7acde5b8666172b835e261e61cc5f12f7b354dc186e1635aa6056eba56cae514"
+  },
+  {
+    "source": "https://somaatlas.org/data/imaging/MRI-CC0-LICENSE.txt",
+    "file": "MRI-CC0-LICENSE.txt",
+    "sha256": "46633d9b124044cc1ff3d3891e45d3d866b9c6d29896d62d81072b6c5868816b"
+  }
+]

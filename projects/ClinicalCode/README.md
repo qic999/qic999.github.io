@@ -35,4 +35,16 @@ The author selected the Impeccable study: a centered research header, linear rea
 
 Design references: [4DCodeBench](https://4dcodebench.com/) for the initial code-and-render diagram concept; [VGGT](https://vgg-t.github.io/) and [MoGe](https://wangrc.site/MoGePage/) for bringing visual results and interactive inspection forward; [Nerfies](https://nerfies.github.io/) for a concise explanatory narrative; [SAM 2](https://ai.meta.com/research/sam2/) for capability-to-demo organization. No reference-page CSS is loaded in this version.
 
+## Affiliation logos and SomaAtlas asset gallery
+
+The header uses the existing Johns Hopkins and Stanford SVG wordmarks, preserving author affiliation numbers. The white Impeccable layout remains unchanged outside this addition.
+
+The `#assets` section connects [SomaAtlas](https://somaatlas.org/) to a searchable, filterable gallery: 5 atlas assemblies, 88 CT label surfaces, 10 fetal MRI atlas surfaces, and 1 SOFA contact reference geometry. These 104 entries are representations, not independent patients or 104 simulation experiments. Eighteen representative entries appear initially; the rest are available through filters, search, or “Show all.”
+
+Each entry opens a keyboard-accessible 3D inspector and links to the source model or asset kit, an exportable JSON asset record, source metadata, and license notices. The viewer loads public SomaAtlas GLBs only after selection, reuses one renderer, and renders only on interaction or resize. Source geometry and materials are unchanged. The 104 transparent WebP thumbnails total approximately 594 kB.
+
+Catalog: `assets/data/somaatlas.json`. Full retained source notices and thumbnail provenance: `assets/data/somaatlas-notices/`. CT labels are automatic and unreviewed; MRI surfaces retain the published fetal population-atlas labels. Atlas appearance does not imply measured tissue mechanics. The contact thumbnail shows reference geometry; the solved replay is linked separately. Original asset downloads remain hosted by SomaAtlas.
+
+New viewer dependency: the official Three.js 0.167.1 `GLTFLoader`, covered by the existing Three.js MIT license. Source and download URLs were verified on 6 October 2026.
+
 Three.js 0.167.1 is distributed under the MIT license in `assets/vendor/THREE-LICENSE.txt`. Inter is distributed under the SIL Open Font License in `assets/fonts/INTER-LICENSE.txt`. Institutional marks identify the authors' affiliations.
